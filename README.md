@@ -42,7 +42,7 @@ This project takes the official consolidated texts unchanged and splits them int
   - **0** of the 23,944 articles and points called current were wrong (26,509 compared);
   - 901 of 901 texts recovered from other official versions are correct.
 
-  The price of caution: 144 articles and points (0.5%) were flagged although e-tar shows them unchanged. The acts added since (1,425 on the site by 2026-11-14) were each checked this way when they went in, not yet again together.
+  The price of caution: 144 articles and points (0.5%) were flagged although e-tar shows them unchanged. The acts added since (1,425 on the site by 2026-11-14) were each checked this way when they went in; a random sample of 120 of them checked again on 2026-11-15: 0 of 4,568 labels "current" wrong.
 - **Checked against history** (2026-10-23, 219 acts): the rules applied to the Chancellery's own 2023–2025 consolidations would have called 0.067% of articles current wrongly ([`docs/ACCURACY.md`](docs/ACCURACY.md)). The acts added since will be back-tested once the open data's consolidation table answers again.
 - Each page says when its data were last checked. If the data are more than 2 days old, the page carries a warning.
 

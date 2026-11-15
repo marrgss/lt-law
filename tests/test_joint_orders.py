@@ -41,3 +41,12 @@ def test_vert_resolutions_are_cited_as_o3e_or_o3():
     assert not source.names_points_act(t, "O3E-296", "2019-08-03", "Nutarimas")  # the date must match too
     assert not source.names_points_act(t, "O3E-29", "2019-08-02", "Nutarimas")
     assert source.number_forms("1-38") == ["1-38"] and source.number_forms("O3E-296") == ["O3E-296", "O3-296"]
+
+
+def test_a_ministers_order_numbered_like_a_roman_numeral_is_keyed_with_its_date():
+    # B88: "V-300" (health, education, defence ministers' orders) was read as a Seimas number, so its note never met
+    # the order's metadata ("V-300/2016-03-03") and every point it changed was "unknown"
+    assert ref_key("V-300", "2016-03-03") == "V-300/2016-03-03"
+    assert ref_key("XV-969", "2025-12-18") == "XV-969" and ref_key("I-1240", "1996-03-19") == "I-1240"
+    assert ref_key("VIII-1864", "2000-07-18") == "VIII-1864" and ref_key("XIV-2404", "2023-12-19") == "XIV-2404"
+    assert ref_key("IX-785", "2002-03-14") == "IX-785" and ref_key("X-1367", "2007-12-13") == "X-1367"

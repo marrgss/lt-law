@@ -1254,9 +1254,12 @@ def assess(act: Act, scope_act: dict, laws: Laws, day: str, seen: str | None = N
         refs_anywhere = any(law.nr == r.nr for a in act.main.articles for r in a.all_refs())
         toks = [t for ts in law.targets.values() for t in ts] or list(law.title_targets)
         new = [t for t in toks if not any(_matches(t, l) for l in labels)]
-        if refs_anywhere and not new:
+        if refs_anywhere and not new and toks:
             continue
-        if not toks:  # no article targets we can map (a structural change): the whole act is uncertain
+        # no article targets we can map (a structural change, or an older order known by its metadata only): the whole
+        # act is uncertain, also where a note of the text names it: it took effect after this text's own start, so the
+        # text can hold only an earlier part of it (B88: HN107's 2020 text names V-383, whose rest applies from 2022)
+        if not toks:
             st.act_level_flags.append(f"{law.nr} (galioja nuo {ent}) dar neįtrauktas į tekstą")
         elif new:     # it adds (or renumbers) articles this text doesn't have yet
             dec = [_new_labels(sorted(set(new)), labels).get(t) for t in sorted(set(new))]

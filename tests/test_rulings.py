@@ -200,3 +200,20 @@ def test_repealed_article_an_unconsolidated_law_names_is_not_said_repealed():
     st = currency.assess(act, SCOPE, laws, "2026-10-21").articles["2"]
     assert st.state == "unknown" and "XII-9" in " ".join(st.reasons)
     assert currency.assess(act, SCOPE, laws, "2026-02-01").articles["2"].state == "repealed"  # before the law applies
+
+
+def test_an_amendment_without_readable_targets_named_in_a_note_still_leaves_the_act_uncertain():
+    # B88 (HN107): the text's note names the amendment (an earlier part of it is in), but it took effect after the
+    # text's own start and we can't read what it changes: every article is uncertain from that day, not "current"
+    text = ACT.replace("1 straipsnis. Pirmas\nTekstas.", "1 straipsnis. Pirmas\nTekstas.\nStraipsnio pakeitimai:\n"
+                       "Nr. XII-7, 2025-11-01, paskelbta TAR 2025-11-05, i. k. 2025-11111")
+    act = parse(text)
+    assert any(r.nr == "XII-7" for a in act.main.articles for r in a.all_refs())
+    nr, ent = "XII-7", "2026-06-01"
+    row = {"dokumento_id": nr, "atv_dok_nr": nr, "rusis": "Įstatymas", "paskelbta_tar": "2025-11-05", "priimtas": "2025-11-01",
+           "isigalioja": ent, "pavadinimas": "Lietuvos Respublikos bandomojo įstatymo Nr. XII-1 pakeitimo įstatymas"}
+    laws = FakeLaws([row], {})
+    laws._cache[nr] = currency.AmendingLaw(nr, ent, all_dates={ent})
+    st = currency.assess(act, SCOPE, laws, "2026-10-21").articles["2"]
+    assert st.state == "unknown" and "XII-7 (galioja nuo 2026-06-01)" in " ".join(st.reasons)
+    assert currency.assess(act, SCOPE, laws, "2026-05-01").articles["2"].state == "current"  # before it applies

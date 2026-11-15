@@ -144,10 +144,15 @@ def implied_stamp(lines: list[str]) -> list[str] | None:
     return None
 
 
+# a Seimas number: "I-" (1990–1996), then the term's numeral from VIII on. The numerals between were never used, and
+# "V-300" is a minister's order (health, education, defence: numbered anew every year)
+RE_SEIMAS_NR = re.compile(r"(?:I|VIII|IX|X{1,3}(?:IX|IV|V?I{0,3}))-\d+")
+
+
 def ref_key(nr: str, adopted: str) -> str:
     """Seimas numbers (XV-969) and Court rulings are unique; a resolution's or an order's number is not ("1950",
-    "1-208", VERT's "O3-1284" restart every year): those are keyed with their adoption date (B58)."""
-    if re.fullmatch(r"[IVXL]+-\d+|KT[\w()-]+/\d{4}", nr) or not adopted:
+    "1-208", "V-300", VERT's "O3-1284" restart every year): those are keyed with their adoption date (B58, B88)."""
+    if RE_SEIMAS_NR.fullmatch(nr) or re.fullmatch(r"KT[\w()-]+/\d{4}", nr) or not adopted:
         return nr
     return f"{nr}/{adopted}"
 
