@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Teisės aktai</a> › <a href="{{ root }}/sritis/energetika/">Energetika</a> › VERT sprendimai</nav>
+<h1>Valstybinės energetikos reguliavimo tarybos (VERT) sprendimai</h1>
+<p>Elektros, gamtinių dujų ir šilumos kainos, tarifai ir įkainiai nustatomi VERT (iki 2019 m. – VKEKK) nutarimais. Teisės aktų registre visi jie lieka „galiojantys“, todėl kiekvieną žymime patys: pagal laikotarpį nutarimo pavadinime („2026 metams“) ir tai, ar vėliau priimtas tos pačios srities nutarimas. Kai to nustatyti negalima, nurodome registro būseną. <strong>Kainų lentelės yra nutarimų prieduose, kurių atviruose duomenyse nėra</strong> – kiekvieno nutarimo puslapyje rasite nuorodą į juos e-tar.lt.</p>
+<ul class="toc">{% for s in sectors %}<li><a href="{{ root }}/vert/{{ s.slug }}/"><strong>{{ s.name }}</strong></a> · {{ s.n | lt_count('nutarimas', 'nutarimai', 'nutarimų') }}, iš jų taikomi šiandien arba įsigalios: {{ s.now }}</li>{% endfor %}</ul>
+<p>VERT patvirtintos taisyklės ir metodikos (pvz., kainų nustatymo metodika, pasinaudojimo tinklais tvarka) pateikiamos punktais – žr. <a href="{{ root }}/sritis/energetika/">energetikos sritį</a>.</p>
+<p class="aka">Žymos nustatytos {{ day }}, duomenys tikrinti {{ fetched }}. Duomenys mašinoms: <a href="{{ root }}/api/v1/vert.json">/api/v1/vert.json</a>.</p>
+{% endblock %}

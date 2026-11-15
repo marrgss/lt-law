@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Teisės aktai</a> › {% if group %}<a href="{{ root }}/sritis/{{ group.slug }}/">{{ group.name }}</a> › {% endif %}Kas pasikeitė</nav>
+<h1>Kas pasikeitė{% if group %}: {{ group.name }}{% endif %}</h1>
+<p>Ką per pastarąsias {{ days }} d. aptikome šios svetainės teisės aktuose: naujas tekstas (paskelbta nauja suvestinė redakcija) arba pasikeitusi žyma, pvz., straipsnis įsigaliojo. Data – kada tai aptikome, o ne kada pakeitimas priimtas ar įsigaliojo: oficialūs duomenys kartais vėluoja.</p>
+<p class="aka">{% if group %}<a href="{{ root }}/pakeitimai/">Visos sritys</a>{% else %}<strong>Visos sritys</strong>{% endif %}{% for a in areas %} · {% if group and a.slug == group.slug %}<strong>{{ a.name }}</strong>{% else %}<a href="{{ root }}/sritis/{{ a.slug }}/pakeitimai/">{{ a.name }}</a>{% endif %}{% endfor %} · <a href="{{ atom }}">Atom srautas</a></p>
+{% for d in digest %}
+<h2>{{ d.day }}</h2>
+{% for a in d.acts %}
+<details{% if a.n <= 5 %} open{% endif %}><summary><a href="{{ a.url }}">{{ a.name }}</a> – {% if a.n_text %}{{ a.n_text | lt_count('naujas tekstas', 'nauji tekstai', 'naujų tekstų') }}{% endif %}{% if a.n_text and a.n_mark %}, {% endif %}{% if a.n_mark %}{{ a.n_mark | lt_count('žyma', 'žymos', 'žymų') }}{% endif %}</summary>
+<ul>{% for i in a.entries %}<li>{% if i.url %}<a href="{{ i.url }}">{{ i.label }}</a>: {% endif %}{{ i.what }}</li>{% endfor %}{% if a.more %}<li>ir dar {{ a.more }}: <a href="{{ a.atom }}">visi šio akto pakeitimai (Atom)</a></li>{% endif %}</ul></details>
+{% endfor %}
+{% if d.added %}<details><summary>Į svetainę pridėta teisės aktų: {{ d.added | length }}</summary><ul>{% for i in d.added %}<li><a href="{{ i.url }}">{{ i.name }}</a></li>{% endfor %}</ul></details>{% endif %}
+{% else %}
+<p>Per šį laikotarpį pakeitimų neaptikta.</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{# the list of acts with their label counts: home page and area pages #}
+{% macro act_list(acts) %}
+<ul class="toc">
+{% for a in acts %}
+  <li><a href="{{ a.url }}">{% if a.tag %}<strong>{{ a.tag }}</strong> – {% endif %}{{ a.name }}</a> · {{ a.n }} {{ 'p.' if a.unit == 'punktas' else 'str.' }}
+    <span class="badge b-current">galioja: {{ a.counts.current }}</span>
+    {% if a.counts.pending %}<span class="badge b-pending">{{ "taikomi vėliau" if a.eu else "tik būsimas tekstas" }}: {{ a.counts.pending }}</span>{% endif %}
+    {% if a.counts.outdated %}<span class="badge b-outdated">gali būti pasenę: {{ a.counts.outdated }}</span>{% endif %}
+    {% if a.counts.unknown %}<span class="badge b-unknown">neaišku: {{ a.counts.unknown }}</span>{% endif %}
+    {% if a.counts.repealed %}<span class="badge b-repealed">neteko galios: {{ a.counts.repealed }}</span>{% elif a.expires %}<span class="badge b-unknown">netenka galios {{ a.expires }}</span>{% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endmacro %}

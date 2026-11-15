@@ -1,0 +1,321 @@
+# Nightly update (bin/nightly.py). No server: GitHub runs this, the MCP Worker serves the result as static assets (D-032; Pages is the way back).
+# Repository variables (Settings → Secrets and variables → Actions → Variables):
+#   SITE_URL   e.g. https://atviri-teises-aktai.lt (used for canonical links; default below)
+#   DEPLOY     "true" to deploy to Cloudflare Pages (secrets CLOUDFLARE_PAGES_TOKEN: Pages Edit only, CLOUDFLARE_ACCOUNT_ID)
+#   INDEXABLE  "true" only at launch: removes noindex and opens robots.txt (D-012)
+#   RELAY      "true" to fetch data.gov.lt through the relay Worker (worker/, relay.yml; D-018, D-019);
+#              secret RELAY_KEY; RELAY_URL (a secret; a variable still works): the Worker's https://…workers.dev address
+# Security: actions pinned by commit SHA; no job keeps credentials in .git; npm code (wrangler) runs
+# only in the deploy job, from the lockfile in deploy/, with no GitHub token rights.
+name: nightly
+
+on:
+  schedule:
+    # every night, but the `plan` job builds only every second day, or sooner when a label changes (D-050):
+    # 22:10 UTC = 00:10 winter / 01:10 summer time in Lithuania (GitHub often starts it hours later)
+    - cron: "10 22 * * *"
+    - cron: "30 1 * * *"   # backup at 03:30 (winter) / 04:30 (summer): builds only if the first run didn't get today's site out
+  workflow_dispatch:
+    inputs:
+      accept:
+        description: "Acts whose big change is expected (comma-separated abbreviations, e.g. VKĮ)"
+        required: false
+        default: ""
+      scheduled:
+        description: "Set by the relay Worker's cron: behave like a scheduled run (skip if today is done)"
+        required: false
+        default: ""
+      code:
+        description: "Code to build with: 'release' (what the site runs) or 'main' (to try development code; deploy is skipped)"
+        required: false
+        default: "release"
+
+permissions: {}
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    # Is a build due tonight? (D-050: Actions minutes; a build is ~60 of the 2,000 free a month.) A build when
+    # started by hand, when the live site is EVERY days old or its day can't be read, or when a label changes on a
+    # day after the live build (upcoming.json). Otherwise nothing runs: pages say the day their labels were set, and
+    # app.js marks a page whose label ends before the next build. ~10 s, no checkout, no secrets but the heartbeat.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {}
+    outputs:
+      build: ${{ steps.plan.outputs.build }}
+    env:
+      TZ: Europe/Vilnius
+    steps:
+      - id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULED_INPUT: ${{ github.event.inputs.scheduled || '' }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://atviri-teises-aktai.lt' }}
+          DEPLOY: ${{ vars.DEPLOY }}
+          EVERY: "2"   # days: a build at least every second day, so app.js's "labels set N days ago" box (> 2) stays off
+        run: |
+          today=$(date +%F)
+          out() { echo "build=$1" >> "$GITHUB_OUTPUT"; echo "plan: build=$1 ($2)"; }
+          if [ "$EVENT" != schedule ] && [ "$SCHEDULED_INPUT" != true ]; then out true "started by hand"; exit 0; fi
+          if [ "$DEPLOY" != true ]; then out true "deploys off: the build's own skip decides"; exit 0; fi
+          live=$(curl -fsS -m 30 --retry 2 "$SITE_URL/status.json" | jq -r '.day // empty' 2>/dev/null || true)
+          case "$live" in
+            [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;;
+            *) out true "the live site's day can't be read"; exit 0 ;;
+          esac
+          if [ "$live" = "$today" ]; then out false "today's site is live"; exit 0; fi
+          age=$(( ($(date -u -d "$today" +%s) - $(date -u -d "$live" +%s)) / 86400 ))
+          if [ "$age" -ge "$EVERY" ]; then out true "the live site is from $live, $age days ago"; exit 0; fi
+          due=$(curl -fsS -m 30 --retry 2 "$SITE_URL/api/v1/upcoming.json" \
+                | jq -r --arg a "$live" --arg b "$today" '[.label_changes_next_30_days[] | select(.on > $a and .on <= $b)] | length' 2>/dev/null || true)
+          case "$due" in
+            ''|*[!0-9]*) out true "label changes can't be read" ;;
+            0) out false "the live site is from $live and no label changes by $today" ;;
+            *) out true "$due label changes on or before $today" ;;
+          esac
+
+      - name: Heartbeat on a night without a build (the schedule ran and the site is current enough)
+        if: ${{ steps.plan.outputs.build == 'false' }}
+        env:
+          URL: ${{ secrets.HEALTHCHECK_URL }}
+        run: |
+          url=$(printf %s "$URL" | tr -d '[:space:]')
+          [ -n "$url" ] || { echo "no HEALTHCHECK_URL: heartbeat off"; exit 0; }
+          curl -fsS -m 10 --retry 3 -o /dev/null "$url" && echo "heartbeat: ok"
+
+  build:
+    needs: plan
+    if: ${{ needs.plan.outputs.build == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write        # read/write the "state" release asset
+    outputs:
+      skipped: ${{ steps.build.outputs.skipped }}
+    env:
+      TZ: Europe/Vilnius     # "today" for the labels is the Lithuanian date
+      PYTHONUNBUFFERED: "1"  # progress reaches the log as it happens (a hung step shows where)
+    steps:
+      # the site runs the code on the `release` branch (code is released deliberately, data update nightly)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.inputs.code || 'release' }}
+
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884  # v10.3.0
+        with:
+          version: "0.11.16"
+
+      - name: Restore state (data cache from the previous night)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p data
+          if gh release download state --repo "$REPO" --pattern state.tar.zst --dir /tmp; then
+            tar --zstd -xf /tmp/state.tar.zst -C data
+          else
+            echo "no state yet: the first run will fetch everything it needs"
+          fi
+          du -sh data/* || true
+
+      - name: Relay (Cloudflare Worker, D-019)
+        if: ${{ vars.RELAY == 'true' }}
+        continue-on-error: true   # without the relay the fetch is tried directly; failures are warnings
+        # no Cloudflare token in this job: it handles outside data and can write the state asset
+        env:
+          RELAY_KEY: ${{ secrets.RELAY_KEY }}
+          # a secret, so the step's env block in the log shows *** (a variable is printed there before the mask below)
+          RELAY_URL: ${{ secrets.RELAY_URL || vars.RELAY_URL }}
+        run: |
+          K=$(printf %s "$RELAY_KEY" | tr -d '[:space:]')
+          url=$(printf %s "$RELAY_URL" | tr -d '[:space:]')
+          echo "::add-mask::$url"   # the workers.dev name is the account's; keep it out of public logs
+          if [ -z "$url" ]; then
+            echo "::warning::RELAY=true but RELAY_URL (secret or variable) is empty: fetching directly (data.gov.lt refuses US runners)"
+            exit 0
+          fi
+          code=$(curl -s -o /tmp/relay.out -D /tmp/relay.h -m 60 -w "%{http_code}" -H "x-relay-key: $K" \
+            "$url/datasets/gov/lrsk/teises_aktai/Dokumentas?select(tar_kodas)&limit(1)")
+          echo "relay: HTTP $code $(grep -i '^cf-placement' /tmp/relay.h | tr -d '\r')"
+          [ "$code" = 200 ] && echo "LTLAW_RELAY_URL=$url" >> "$GITHUB_ENV"
+
+      - name: Install
+        run: uv sync --frozen
+
+      - name: Tests
+        run: uv run pytest -q
+
+      - name: Nightly build (fetch, rebuild, gates)
+        id: build
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://atviri-teises-aktai.lt' }}
+          INDEXABLE: ${{ vars.INDEXABLE == 'true' && '--indexable' || '' }}
+          LTLAW_RELAY_KEY: ${{ secrets.RELAY_KEY }}
+          ACCEPT: ${{ github.event.inputs.accept || '' }}
+          DEPLOY: ${{ vars.DEPLOY }}
+          SCHEDULED_INPUT: ${{ github.event.inputs.scheduled || '' }}
+          SITE_ON_WORKER: ${{ vars.SITE_ON_WORKER }}  # the file limit: 100,000 on the Worker, 20,000 on Pages
+        run: |
+          export LTLAW_RELAY_KEY=$(printf %s "$LTLAW_RELAY_KEY" | tr -d '[:space:]')
+          # a scheduled run skips when today's build exists AND (with deploys on) the live site shows today:
+          # if the midnight deploy failed, the backup run builds and deploys again
+          SKIP=""
+          if [ "$GITHUB_EVENT_NAME" = schedule ] || [ "$SCHEDULED_INPUT" = true ]; then
+            if [ "$DEPLOY" != true ] || [ "$(curl -s -m 30 "$SITE_URL/status.json" | jq -r .day 2>/dev/null)" = "$(date +%F)" ]; then
+              SKIP=--skip-if-done
+            fi
+          fi
+          uv run bin/nightly.py scope/v1.yaml --base-url "$SITE_URL" $INDEXABLE --accept "$ACCEPT" $SKIP
+          if [ -f .skip ]; then echo "SKIPPED=1" >> "$GITHUB_ENV"; echo "skipped=1" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Save state
+        # a trial run of development code ('main') must not leave state the released code can't read
+        if: ${{ env.SKIPPED != '1' && (github.event.inputs.code || 'release') == 'release' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          # data/seimas (the Seimas votes, D-054) only when present: it is the votes' on-switch (bin/state_asset.py)
+          mkdir -p data/decisions && tar --zstd -cf /tmp/state.tar.zst -C data state dokumentas amending suvestine decisions \
+            $(test -d data/seimas && echo seimas)
+          gh release upload state /tmp/state.tar.zst --repo "$REPO" --clobber
+          # a dated copy once a week (ISO week), the newest 12 kept: one bad night can't erase our version history
+          tag="state-$(date +%G-W%V)"
+          if ! gh release view "$tag" --repo "$REPO" >/dev/null 2>&1; then
+            gh release create "$tag" /tmp/state.tar.zst --repo "$REPO" --prerelease --latest=false \
+              --title "$tag" --notes "Weekly copy of the state asset (docs/OPERATIONS.md, Restoring the state)."
+            gh release list --repo "$REPO" --limit 200 --json tagName --jq '.[].tagName' | grep '^state-[0-9]' \
+              | sort -r | tail -n +13 | while read -r old; do gh release delete "$old" --repo "$REPO" --yes --cleanup-tag; done
+          fi
+
+      - name: Keep the built site for the deploy job
+        if: ${{ env.SKIPPED != '1' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
+        with:
+          name: site
+          path: out/site
+          include-hidden-files: true  # .well-known/mcp-registry-auth
+          retention-days: 1
+
+  deploy:
+    needs: build
+    if: ${{ vars.DEPLOY == 'true' && needs.build.outputs.skipped != '1' && (github.event.inputs.code || 'release') == 'release' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read         # checkout only: no write rights next to npm code
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ vars.SITE_ON_WORKER == 'true' && 'release' || '' }}  # the Worker's code: the released one
+          sparse-checkout: |
+            deploy
+            bin/indexnow.py
+            bin/split_site.py
+            worker-mcp
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "22"
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333  # v8.0.2
+        with:
+          name: site
+          path: out/site
+
+      - name: Deploy the site as the Workers' static assets (D-032, D-051; wrangler from deploy/package-lock.json)
+        if: ${{ vars.SITE_ON_WORKER == 'true' }}
+        env:
+          # Cloudflare token "lt-law GitHub: deploy MCP (Workers)", the one mcp.yml uses: Workers Scripts Edit on the
+          # account (it could also change the relay Worker: decision D-032), Workers Routes Edit on the zone
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_MCP_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://atviri-teises-aktai.lt' }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::secret CLOUDFLARE_MCP_TOKEN is missing (docs/OPERATIONS.md)"
+            exit 1
+          fi
+          export CLOUDFLARE_API_TOKEN=$(printf %s "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')
+          npm ci --prefix deploy --no-audit --no-fund
+          W=deploy/node_modules/.bin/wrangler
+          # a Worker holds at most 100,000 files (D-051): the extra Workers (worker-mcp/wrangler.site<N>.toml, files only)
+          # take the paths of their routes. Their files move out of out/site first; they deploy first, so their routes
+          # never point at a Worker without the files; then the main Worker with the rest and the MCP/REST code.
+          # (this file is read from main, the code from release: a release without the split deploys as before)
+          if [ -f bin/split_site.py ]; then python3 bin/split_site.py out/site --apply; fi
+          for cfg in $(ls worker-mcp/wrangler.site[0-9]*.toml 2>/dev/null | sort -V); do
+            $W deploy -c "$cfg"
+          done
+          $W deploy -c worker-mcp/wrangler.site.toml
+          if [ -f bin/split_site.py ]; then python3 bin/split_site.py out/site --smoke "$SITE_URL"; fi
+
+      - name: Deploy to Cloudflare Pages (wrangler from deploy/package-lock.json)
+        # with the site on the Worker, Pages stays the way back while the site fits its 20,000 files (beyond them
+        # this step fails, harmlessly)
+        continue-on-error: ${{ vars.SITE_ON_WORKER == 'true' }}
+        env:
+          # Cloudflare token "lt-law GitHub: deploy site (Pages)", Pages Write only: this step runs npm code,
+          # which must not be able to touch the relay Worker
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::secret CLOUDFLARE_PAGES_TOKEN is missing (a Cloudflare token with Pages Edit only; docs/OPERATIONS.md)"
+            exit 1
+          fi
+          export CLOUDFLARE_API_TOKEN=$(printf %s "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')
+          npm ci --prefix deploy --no-audit --no-fund
+          W=deploy/node_modules/.bin/wrangler
+          # the first deploy creates the Pages project (Direct Upload) if it does not exist yet
+          $W pages project list | grep -q 'atviri-teises-aktai' \
+            || $W pages project create atviri-teises-aktai --production-branch main
+          $W pages deploy out/site --project-name atviri-teises-aktai --branch main --commit-dirty=true  # with the site split (D-051): only the main part
+
+      - name: Tell search engines what changed (IndexNow; no secret, the key is public)
+        if: ${{ vars.INDEXABLE == 'true' }}
+        continue-on-error: true
+        run: python3 bin/indexnow.py out/site
+
+  keepalive:
+    # GitHub turns scheduled workflows off after 60 days without repository activity (public repos)
+    # and does not email about it. Re-enabling the workflow on every build night resets that clock.
+    needs: plan
+    if: ${{ needs.plan.outputs.build == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: gh workflow enable nightly.yml --repo "$REPO"
+
+  heartbeat:
+    # An outside check (healthchecks.io, secret HEALTHCHECK_URL): it emails the maintainer when no
+    # "ok" arrives in time, so a schedule that silently stops is noticed too (OPERATIONS, Heartbeat).
+    needs: [plan, build, deploy]
+    # only runs of the released code: a trial of 'main' must neither alarm nor vouch for the site;
+    # a night without a build pings from the plan job
+    if: ${{ always() && needs.plan.outputs.build == 'true' && (github.event.inputs.code || 'release') == 'release' }}
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - env:
+          URL: ${{ secrets.HEALTHCHECK_URL }}
+          BUILD: ${{ needs.build.result }}
+          DEPLOY: ${{ needs.deploy.result }}
+        run: |
+          url=$(printf %s "$URL" | tr -d '[:space:]')
+          [ -n "$url" ] || { echo "no HEALTHCHECK_URL: heartbeat off"; exit 0; }
+          if [ "$BUILD" = success ] && { [ "$DEPLOY" = success ] || [ "$DEPLOY" = skipped ]; }; then
+            curl -fsS -m 10 --retry 3 -o /dev/null "$url" && echo "heartbeat: ok"
+          else
+            curl -fsS -m 10 --retry 3 -o /dev/null "$url/fail" && echo "heartbeat: failed (build $BUILD, deploy $DEPLOY)"
+          fi

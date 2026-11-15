@@ -1,0 +1,56 @@
+# Deploys the agents' MCP/REST Worker (worker-mcp/, D-028) by hand only. Needs vars.MCP == 'true' and the secrets
+# CLOUDFLARE_MCP_TOKEN (Cloudflare "lt-law GitHub: deploy MCP (Workers)": Workers Scripts Edit + Account Settings Read
+# on the account, Workers Routes Edit on the zone atviri-teises-aktai.lt; R2 edit later, for dated answers),
+# CLOUDFLARE_ACCOUNT_ID, and while the site is private MCP_ACCESS_CLIENT_ID / MCP_ACCESS_CLIENT_SECRET (an Access
+# service token the Worker uses to read the gated site). Workers Free plan: nothing can be billed (OPERATIONS).
+name: mcp
+
+on:
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  deploy:
+    if: ${{ vars.MCP == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read         # checkout only
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            worker-mcp
+            deploy
+            bin/check_mcp.mjs
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Deploy the MCP Worker and set its secrets
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_MCP_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ACCESS_ID: ${{ secrets.MCP_ACCESS_CLIENT_ID }}
+          ACCESS_SECRET: ${{ secrets.MCP_ACCESS_CLIENT_SECRET }}
+        run: |
+          if [ "${{ vars.SITE_ON_WORKER }}" = true ]; then  # D-032: wrangler.toml has no site files: it would take the site down
+            echo "::error::the site is on this Worker (vars.SITE_ON_WORKER): run nightly instead, it deploys the Worker with the site"
+            exit 1
+          fi
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::secret CLOUDFLARE_MCP_TOKEN is missing (docs/OPERATIONS.md)"
+            exit 1
+          fi
+          export CLOUDFLARE_API_TOKEN=$(printf %s "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')
+          npm ci --prefix deploy --no-audit --no-fund
+          W=$PWD/deploy/node_modules/.bin/wrangler
+          cd worker-mcp
+          $W deploy
+          if [ -n "$ACCESS_ID" ]; then  # the site is behind Access: the Worker reads it with this service token
+            printf %s "$ACCESS_ID" | tr -d '[:space:]' | $W secret put ACCESS_CLIENT_ID
+            printf %s "$ACCESS_SECRET" | tr -d '[:space:]' | $W secret put ACCESS_CLIENT_SECRET
+          fi

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Teisės aktai</a> › <a href="{{ root }}/sritis/energetika/">Energetika</a> › <a href="{{ root }}/vert/">VERT sprendimai</a> › {{ sector }}</nav>
+<h1>VERT sprendimai: {{ sector | lower }}</h1>
+<p>Kainos, tarifai ir įkainiai nustatomi VERT (iki 2019 m. – VKEKK) nutarimais. Teisės aktų registre visi jie lieka „galiojantys“, todėl čia nurodome, kurie taikomi šiandien: pagal laikotarpį nutarimo pavadinime („2026 metams“) ir tai, ar vėliau priimtas tos pačios srities nutarimas. <strong>Pačios kainų lentelės yra nutarimų prieduose, kurių atviruose duomenyse nėra</strong> – kiekvieno nutarimo puslapyje rasite nuorodą į jo priedus e-tar.lt.</p>
+<h2 id="taikomi">Taikomi šiandien</h2>
+{% for company, items in groups %}
+<h3>{{ company }}</h3>
+<ul class="toc">{% for d in items %}<li><a href="{{ d.url }}">{{ d.pavadinimas | replace('Dėl ', '', 1) | ucfirst }}</a> · Nr. {{ d.atv_dok_nr }} · <span class="badge {{ 'b-pending' if d.label.state == 'pending' else 'b-current' }}">{{ d.label.text }}</span></li>{% endfor %}</ul>
+{% endfor %}
+<h2 id="kiti">Kiti registre galiojantys nutarimai</h2>
+<p class="aka">Vienkartiniai sprendimai (derinimai, leidimai, tvarkos aprašų tvirtinimai): ar jie dar taikomi, iš pavadinimo nustatyti negalima – nurodome registro būseną.</p>
+<ul class="toc">{% for d in register %}<li><a href="{{ d.url }}">{{ d.pavadinimas | replace('Dėl ', '', 1) | ucfirst }}</a> · Nr. {{ d.atv_dok_nr }}, {{ d.priimtas }}</li>{% endfor %}</ul>
+<p class="aka">Iš viso {{ n | lt_count('nutarimas', 'nutarimai', 'nutarimų') }}; ankstesnius rasite kiekvieno nutarimo puslapyje (ta pati sritis, kiti metai). Žymos nustatytos {{ day }}, duomenys tikrinti {{ fetched }}. Duomenys mašinoms: <a href="{{ root }}/api/v1/vert.json">/api/v1/vert.json</a>.</p>
+{% endblock %}

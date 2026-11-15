@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Pradžia</a> › {{ title }}</nav>
+<h1>{{ title }}</h1>
+<p>Šiuo Vyriausybės nutarimu patvirtinti keli dokumentai; čia pateikiami šie (kiekvienas – atskirais punktų puslapiais):</p>
+<ul class="toc">{% for a in docs %}<li><a href="{{ a.url }}">{{ a.name }}</a> · {{ a.n }} p.</li>{% endfor %}</ul>
+<p class="aka">Visas nutarimo tekstas su kitais jo dokumentais – <a href="{{ official }}">e-tar.lt ↗</a>.</p>
+{% endblock %}

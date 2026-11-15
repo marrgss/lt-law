@@ -1,0 +1,33 @@
+
+== 4ebe66c0262311e5bf92d6af3f6a2e8b
+  dump : version YpJczYbXsp valid 2026-06-30..open, prepared 2025-05-20T14:57:04; amending acts listed: 0, latest -
+  e-tar: version jXFmZxGWid valid 2026-10-01 - 2026-10-31; amending acts listed: 289, latest 2026-07-07
+  in e-tar list but NOT in dump text: 289 e.g. XV-970 (2026-05-21), XV-988 (2026-06-04), XV-1027 (2026-06-11), XV-1071 (2026-06-25), XV-1142 (2026-07-07)
+
+== f6d686707e7011e6b969d7ae07280e89
+  dump : version qOrFVaCegR valid 2025-01-01..open, prepared 2024-10-29T10:24:47; amending acts listed: 41, latest 2024-10-17
+  e-tar: version jlrUauipfr valid 2026-06-07 - 2026-10-31; amending acts listed: 42, latest 2026-05-21
+  in e-tar list but NOT in dump text: 1 e.g. XV-969 (2026-05-21)
+
+== TAR.8A39C83848CB
+  dump : version RQqxysUdFp valid 2026-04-01..open, prepared 2025-04-18T12:45:08; amending acts listed: 81, latest 2025-04-17
+  e-tar: version eMNCPopNFw valid 2026-09-27 - 2026-12-08; amending acts listed: 89, latest 2026-03-26
+  in e-tar list but NOT in dump text: 8 e.g. XV-529 (2025-11-13), XV-576 (2025-11-20), XV-647 (2025-12-09), XV-667 (2025-12-11), XV-779 (2026-03-26)
+
+== TAR.ED68997709F5
+  dump : version EFspPEtIPK valid 2025-05-01..open, prepared 2025-04-23T11:55:01; amending acts listed: 34, latest 2025-04-10
+  e-tar: version SyuwJSCZTS valid 2026-07-01 - 2026-12-31; amending acts listed: 38, latest 2026-06-04
+  in e-tar list but NOT in dump text: 4 e.g. XV-287 (2025-06-17), XV-366 (2025-06-26), XV-324 (2025-06-25), XV-984 (2026-06-04)
+
+== TAR.9A3AD08EA5D0
+  dump : version zxrpSkMLhb valid 2026-09-01..open, prepared 2024-08-26T16:44:15; amending acts listed: 65, latest 2024-08-13
+  e-tar: version bftwfUhiea valid 2026-09-01 - 2027-08-31; amending acts listed: 74, latest 2026-08-25
+  in e-tar list but NOT in dump text: 9 e.g. XV-805 (2026-04-09), XV-1014 (2026-06-11), XV-1121 (2026-06-30), XV-1158 (2026-07-14), XV-1183 (2026-08-25)
+
+Note on ANK (4ebe66c0…): the 0 on the dump side is not a parsing failure. The dump's six newest ANK
+versions (2025-05-15 … 2026-06-30, prepared 2025-05-19/20) have EMPTY tekstas_lt. The newest ANK
+version with text is 2025-05-01 (1,386,364 chars). Dataset-wide, Suvestine?tekstas_lt=null&count() = 2527.
+
+Method: the "Pakeitimai:" list at the end of each consolidated text names every amending act (Nr., date).
+Comparing the dump's newest text with e-tar's current text checks content, independent of date/label fields.
+e-tar HTML puts newlines inside "Nr. \nXII-2688\n, 2016-11-03"; the regex allows that.

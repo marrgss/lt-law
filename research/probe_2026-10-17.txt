@@ -1,0 +1,4 @@
+acts, total                                             480063
+acts in force                                           387722
+laws (Įstatymas) in force                               ERROR The read operation timed out
+codes (Kodeksas) in force                               ERROR The read operation timed out

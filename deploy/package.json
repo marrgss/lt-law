@@ -1,0 +1,11 @@
+{
+  "name": "lt-law-deploy",
+  "private": true,
+  "description": "Pinned deploy tooling for the nightly workflow (npm ci with the lockfile; no unpinned npx).",
+  "dependencies": {
+    "wrangler": "4.151.1"
+  },
+  "overrides": {
+    "undici": "7.30.1"
+  }
+}

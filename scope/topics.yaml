@@ -1,0 +1,102 @@
+# Everyday words → the article people look for: the law's own words differ ("alimentai" is nowhere in the Civil Code,
+# which says "išlaikymas"; DK 36 says "išbandymas", people "bandomasis laikotarpis"). `when`: word beginnings, folded (no
+# diacritics), all in the query, any order; one line of `when` is enough. The articles come first in search, the
+# ordinary results after them. Built into /api/v1/topics.json; an article that no longer exists is left out and reported in the nightly's warnings.
+# Add from Search Console (bin/search_console.py) and bin/search_questions: only what the law clearly answers.
+topics:
+  # work
+  - {when: ["kiek atost", "atost priklaus", "kasmet atost", "atost trukm"], refs: [DK 126, DK 127]}
+  - {when: ["bandom laikot", "bandom termin", "isbandym"], refs: [DK 36]}
+  - {when: ["savo nor", "darbuotoj iniciatyv", "atleid prasym"], refs: [DK 55]}
+  - {when: ["atleid isp", "ispejim termin atleid", "darbdavi iniciatyv", "atleid darbdav"], refs: [DK 57, DK 58]}
+  - {when: ["iseitin"], refs: [DK 57, DK 60]}
+  - {when: ["virsvaland"], refs: [DK 119, DK 144]}
+  - {when: ["nestum atost", "gimdym atost", "motinyst atost"], refs: [DK 132]}
+  - {when: ["tevyst atost"], refs: [DK 133]}
+  - {when: ["vaik prieziur atost", "atost vaik priziur"], refs: [DK 134]}
+  - {when: ["tiksl atost"], refs: [DK 131]}
+  - {when: ["mokym atost", "mokymosi atost"], refs: [DK 135]}
+  - {when: ["nemokam atost"], refs: [DK 137]}
+  - {when: ["pertrauk darb", "poils laik", "pamain poils"], refs: [DK 122]}
+  - {when: ["nedeklar darb"], refs: [UĮ 58]}
+  - {when: ["nelegal darb"], refs: [UĮ 56]}
+  - {when: ["minimal alg", "minimal menesin", "mma"], refs: [DK 141]}
+  - {when: ["nuotolin darb"], refs: [DK 52]}
+  - {when: ["naktin darb", "nakt darb"], refs: [DK 117]}
+  - {when: ["atostogin"], refs: [DK 130]}
+  - {when: ["material atsakom", "darbuot zal", "darbuot atlygin zal"], refs: [DK 151, DK 153]}
+  # family
+  - {when: ["aliment", "vaik islaik"], refs: [CK 3.192, CK 3.196]}
+  - {when: ["skyryb", "santuok nutraukim bendr", "isituok"], refs: [CK 3.51, CK 3.49]}
+  - {when: ["turt padalij", "skyryb turt"], refs: [CK 3.127, CK 3.116]}
+  - {when: ["artim giminait"], refs: [CK 3.135]}
+  # inheritance, obligations, property
+  - {when: ["testament"], refs: [CK 5.15, CK 5.16]}
+  - {when: ["palikim priem", "paveld priem"], refs: [CK 5.50]}
+  - {when: ["bust nuom nutrauk", "nuom sutart nutrauk", "gyvenam patalp nuom nutrauk"], refs: [CK 6.609, CK 6.611]}
+  - {when: ["servitut"], refs: [CK 4.111]}
+  - {when: ["ieskin senat", "senaties termin"], refs: [CK 1.125, CK 1.124]}
+  - {when: ["prek grazin", "grazin prek", "broket prek", "netinkam prek"], refs: [CK 6.363, CK 6.362]}
+  - {when: ["garantin termin"], refs: [CK 6.363]}
+  - {when: ["zal atlygin"], refs: [CK 6.245, CK 6.263]}
+  - {when: ["neturtin zal"], refs: [CK 6.250]}
+  - {when: ["atsisak pirk intern", "pirk intern", "nuotolin sutart atsisak"], refs: [CK 6.228-10]}
+  - {when: ["sutart nutrauk vienasal", "vienasal nutrauk"], refs: [CK 6.217, CK 6.218]}
+  - {when: ["bendraturc", "bendr nuosavyb"], refs: [CK 4.72, CK 4.75]}
+  - {when: ["palukan"], refs: [CK 6.37, CK 6.210]}
+  # traffic and offences
+  - {when: ["isger", "neblaiv vair", "vair neblaiv"], refs: [ANK 422, BK 281]}
+  - {when: ["greit virs"], refs: [ANK 416]}
+  - {when: ["smulk chuligan", "viesos tvark pazeid"], refs: [ANK 481]}
+  - {when: ["turt sugadin"], refs: [ANK 115, BK 187]}
+  # crimes
+  - {when: ["smeizt", "smeizim"], refs: [BK 154]}
+  - {when: ["sukciavim"], refs: [BK 182]}
+  - {when: ["vagyst"], refs: [BK 178]}
+  - {when: ["plesim"], refs: [BK 180]}
+  - {when: ["sunkin aplink"], refs: [BK 60]}
+  - {when: ["lengvin aplink"], refs: [BK 59]}
+  - {when: ["suzalojim", "sveikat sutrikd"], refs: [BK 135, BK 138]}
+  - {when: ["grobst", "turt pasisavin"], refs: [BK 183]}
+  - {when: ["ginkl laik neteis", "neteis ginkl"], refs: [BK 253]}
+  - {when: ["narkot turej", "narkot laik"], refs: [BK 259]}
+  # taxes
+  - {when: ["but pardav", "nam pardav", "nekilnoj turt pardav"], refs: [GPMĮ 17]}
+  - {when: ["gyventoj pajam mokest", "pajam mokes tarif"], refs: [GPMĮ 6]}
+  - {when: ["mokestin patikrin"], refs: [MAĮ 115, MAĮ 117]}
+  - {when: ["dividend"], refs: [GPMĮ 6, PMĮ 33]}
+  # building
+  - {when: ["statin technin prieziur", "pastat technin prieziur", "nam technin prieziur", "statin prieziur", "kasmetin statin apziur"], refs: [SĮ 48, SĮ 49, STR10703 1]}
+  - {when: ["savavalisk stat"], refs: [SĮ 32]}
+  - {when: ["statyb leidim", "statyb leid dokument"], refs: [SĮ 27]}
+  - {when: ["statyb uzbaig"], refs: [SĮ 28, STR10501 1]}
+  - {when: ["statytoj"], refs: [SĮ 2, SĮ 14]}
+  # companies
+  - {when: ["uab steig", "uzdar akcin steig", "akcin bendrov steig"], refs: [ABĮ 7, ABĮ 10]}
+  - {when: ["individual imon steig"], refs: [IĮĮ 3]}
+  - {when: ["asociacij steig"], refs: [AsĮ 4, AsĮ 5]}
+  - {when: ["bankrot", "nemokum proces"], refs: [JANĮ 1, JANĮ 11]}
+  - {when: ["akcinink susirink"], refs: [ABĮ 20, ABĮ 23]}
+  - {when: ["kartel"], refs: [KĮ 5]}
+  - {when: ["namu bendrij", "gyvenam nam bendrij", "daugiabuc bendrij"], refs: [DNSBĮ 1, DNSBĮ 2]}
+  # environment
+  - {when: ["medz kirt", "medz kert"], refs: [ŽelĮ 13]}
+  - {when: ["gyvun gerov", "gyvun apsaug"], refs: [GGAĮ 1]}
+  # state
+  - {when: ["mitin", "susirinkim laisv"], refs: [SusirĮ 2]}
+  - {when: ["dvig pilietyb"], refs: [PilĮ 7]}
+  - {when: ["vaik pinig", "ismok vaik"], refs: [IVĮ 6, IVĮ 3]}
+  - {when: ["pensij amz", "senatv pensij amz"], refs: [SDPĮ 15]}
+  # procedure
+  - {when: ["laikin apsaug priemon"], refs: [CPK 144, CPK 145]}
+  - {when: ["apeliac skund termin"], refs: [CPK 307]}
+  # data
+  - {when: ["teis but pamirst", "duomen istrin", "right erasure", "right forgotten"], refs: [BDAR 17]}
+  - {when: ["duomen saugum pazeid", "data breach"], refs: [BDAR 33, BDAR 34]}
+  - {when: ["sutik tvark", "tvark sutik", "consent"], refs: [BDAR 7, BDAR 6]}
+  # EU everyday
+  - {when: ["skrydz atsauk", "skrydz atidej", "oro kelei", "air passenger", "flight cancel"], refs: [EU04R261 5, EU04R261 7]}
+  # English words agents use
+  - {when: ["annual leave"], refs: [DK 126]}
+  - {when: ["remote work"], refs: [DK 52]}
+  - {when: ["notice period", "dismissal notice"], refs: [DK 57]}

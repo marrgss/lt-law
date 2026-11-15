@@ -1,0 +1,4 @@
+acts:
+  # 2026-11-11: the first EU decision (CELEX 3…D…): the ETS market stability reserve, cited by the ETS directive 2003/87
+  # and the Union Registry regulation 2019/1122 (ROADMAP 13)
+  - {abbr: RSRS, no_abbr: true, title: "Sprendimas (ES) 2015/1814 dėl Sąjungos šiltnamio efektą sukeliančių dujų apyvartinių taršos leidimų prekybos sistemos rinkos stabilumo rezervo sukūrimo ir veikimo", genitive: "Sprendimo (ES) 2015/1814", number: "(ES) 2015/1814", eu: 32015D1814, slug: rinkos-stabilumo-rezervo-sprendimas, area: energetika}

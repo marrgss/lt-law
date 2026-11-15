@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>Lietuvos teisės aktai – straipsnis po straipsnio</h1>
+<p>Kiekvienas straipsnis turi savo adresą ir žymą, ar jo tekstas <strong>galioja šiandien</strong>. Tekstas paimtas iš Seimo kanceliarijos Teisės aktų registro atvirų duomenų ir nekeičiamas. Svetainė neoficiali, nemokama, be registracijos ir be reklamos.</p>
+<form action="{{ root }}/paieska/" method="get" class="search" role="search"><input type="search" name="q" placeholder="Pvz.: DK 52, kasmetinės atostogos" aria-label="Paieška straipsniuose"> <button type="submit">Ieškoti</button></form>
+<p><a href="{{ root }}/pakeitimai/">Kas pasikeitė per pastarąsias dvi savaites →</a></p>
+
+<h2>Teisės aktai</h2>
+{% from "_acts.html" import act_list %}
+{% for g in groups %}
+<h3>{% if g.slug %}<a href="{{ root }}/sritis/{{ g.slug }}/">{{ g.name }}</a>{% else %}{{ g.name }}{% endif %}</h3>
+{{ act_list(g.acts) }}
+{% endfor %}
+<p class="aka">Žymos nustatytos {{ day }}, duomenys tikrinti {{ fetched }}. Kol kas – {{ acts | length }} teisės aktai; sąrašas bus plečiamas.</p>
+
+<h2>Kodėl ši svetainė</h2>
+<p>Oficialus tekstas skelbiamas <a href="https://www.e-tar.lt">e-tar.lt</a>, bet ten sunku rasti ir pacituoti vieną straipsnį – ypač paieškos sistemoms ir dirbtinio intelekto asistentams, kurie dažnai pateikia pasenusį arba ne to akto tekstą. Čia tas pats tekstas išdėstytas paprastais puslapiais: <strong>vienas straipsnis – vienas adresas</strong>, su redakcijos data, galiojimo žyma ir nuoroda į oficialų šaltinį.</p>
+
+<h2>Ką reiškia žymos</h2>
+<ul class="toc">
+  <li><span class="badge b-current">Galioja šiandien</span> – parodytas tekstas yra šiandien galiojantis.</li>
+  <li><span class="badge b-pending">Įsigalios …</span> – parodytas jau priimtas, bet dar neįsigaliojęs tekstas; šiandien galiojančio teksto atviruose duomenyse nėra. Jį rasite e-tar.lt (nuoroda kiekviename puslapyje).</li>
+  <li><span class="badge b-outdated">Gali būti pasenęs</span> – aptiktas jau įsigaliojęs pakeitimas, kurio šiame tekste gali dar nebūti.</li>
+  <li><span class="badge b-unknown">Neaišku, ar galioja</span> – nepavyko nustatyti, ar tekstas galioja. Tikrinkite e-tar.lt.</li>
+  <li><span class="badge b-repealed">Neteko galios …</span> – šis straipsnis ar visas teisės aktas nebegalioja; rodomas paskutinis tekstas. Prie akto skaičius rodo, kiek jo straipsnių nebegalioja.</li>
+</ul>
+<p>Jei kyla abejonių, žyma visada būna atsargesnė: tekstas pažymimas „Galioja šiandien“ tik tada, kai tai pavyksta patvirtinti.</p>
+
+<h2>Kaip tikriname</h2>
+{% if validation %}
+<p>Paskutinis patikrinimas {{ validation.day }}:</p>
+<ul>
+  <li><strong>{{ validation.compared }}</strong> straipsnių palyginta su e-tar.lt tos pačios redakcijos tekstu – <strong>{{ validation.text_diffs }}</strong> skirtumų.</li>
+  <li>Žymos „Galioja šiandien“ palygintos su e-tar.lt šiandien galiojančiu tekstu – <strong>{{ validation.silent }}</strong> klaidingų žymų.</li>
+</ul>
+{% else %}
+<p>Patikrinimo rezultatų šiame leidime nėra.</p>
+{% endif %}
+<p>Teksto mes niekada patys nekeičiame ir pakeitimų į jį neįrašome (nekonsoliduojame) – rodome Seimo kanceliarijos parengtas suvestines redakcijas. Daugiau: <a href="{{ root }}/apie/">kaip veikia ši svetainė</a>.</p>
+
+<h2>Kaip nurodyti straipsnį</h2>
+<p>Straipsnio adresas: <code>/ta/&lt;TAR kodas&gt;/str/&lt;numeris&gt;/</code>, pavyzdžiui <a href="{{ example.url }}">{{ example.label }}</a>. Viršutinis indeksas rašomas per brūkšnelį (21¹ → <code>21-1</code>, CK 6.228¹ → <code>6.228-1</code>). Konkreti straipsnio dalis: <code>#d2</code>, punktas: <code>#d2-p3</code>.</p>
+
+<h2>Dirbtiniam intelektui ir programuotojams</h2>
+<ul>
+  <li><strong>MCP serveris</strong> asistentams (Claude, ChatGPT ir kt.): <code>{{ root }}/mcp</code> – paieška, straipsnis ar jo dalis (taip pat kaip buvo nurodytą dieną), keli straipsniai vienu kartu, nuorodos į straipsnį ir iš jo (kiti aktai, VERT sprendimai), sąvokų apibrėžtys visuose aktuose, aktų sąrašas, artėjantys pakeitimai. Oficialiame MCP registre: <code>lt.atviri-teises-aktai/lithuanian-law</code>.</li>
+  <li><strong>REST API:</strong> <a href="{{ root }}/api">{{ root }}/api</a> – visų užklausų sąrašas su parametrais, pvz. <code>/api/article?act=DK&amp;n=52&amp;part=2</code>, <code>/api/definition?term=vartotojas</code>, <code>/api/search?q=nuotolinis+darbas</code>.</li>
+  <li><a href="{{ root }}/api/v1/definitions.json">/api/v1/definitions.json</a> – visos teisės aktuose apibrėžtos sąvokos: terminas, trumpinys, apibrėžtis, aktas, straipsnis ir dalis; <a href="{{ root }}/api/v1/definitions_by_reference.json">definitions_by_reference.json</a> – kur aktas nurodo sąvokas suprasti pagal kitus aktus; <a href="{{ root }}/api/v1/concepts.json">concepts.json</a> – sąvokų ryšiai (platesnė sąvoka, kur vartojama; kandidatai).</li>
+  <li>Puslapiai veikia be JavaScript – visas tekstas yra HTML kode.</li>
+  <li><a href="{{ root }}/index.json">/index.json</a> – visų aktų sąrašas su adresais, žymų suvestine ir patikrinimo rezultatais.</li>
+  <li><code>/ta/&lt;TAR kodas&gt;/data.json</code> – visas aktas: struktūra, tekstas, pakeitimų nuorodos, žymos ir šaltinis.</li>
+  <li><a href="{{ root }}/llms.txt">/llms.txt</a> (trumpas aprašas agentams; visas aktų sąrašas – <a href="{{ root }}/llms-full.txt">/llms-full.txt</a>) ir <a href="{{ root }}/sitemap.xml">/sitemap.xml</a>.</li>
+  <li>Duomenų licencija – CC BY 4.0 (šaltinis: Lietuvos Respublikos Seimo kanceliarija). Cituodami nurodykite straipsnio adresą ir tai, kad oficialus tekstas skelbiamas e-tar.lt.</li>
+</ul>
+
+<h2>Ribojimai</h2>
+<ul>
+  <li>Tai nėra teisinė konsultacija ir nėra oficialus teisės aktų skelbimas.</li>
+  <li>Priedų galiojimas automatiškai netikrinamas; teismų praktikos čia nėra.</li>
+</ul>
+
+<h2 lang="en">In English</h2>
+<p lang="en">An unofficial, free mirror of Lithuanian codes and laws: one page per article, each marked whether its text applies today, with a link to the official text on e-tar.lt. The text comes unchanged from the Seimas Chancellery's open data (CC BY 4.0); we never consolidate it ourselves. Built so that people, search engines and AI assistants can find and cite the current law. Machine-readable: <a href="{{ root }}/index.json">/index.json</a>, per-act <code>data.json</code>, <a href="{{ root }}/llms.txt">/llms.txt</a>.</p>
+{% endblock %}

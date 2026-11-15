@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "_acts.html" import act_list %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Teisės aktai</a> › {{ group.name }}</nav>
+<h1>{{ group.name }}</h1>
+<p>{{ acts_count }}, {{ n_arts | lt_count('straipsnis ar punktas', 'straipsniai ir punktai', 'straipsnių ir punktų') }}. Kiekvienas straipsnis – atskirame puslapyje, su žyma, ar jo tekstas galioja šiandien, ir nuoroda į oficialų tekstą {{ "e-tar.lt ar EUR-Lex" if n_eu else "e-tar.lt" }}.</p>
+<form action="{{ root }}/paieska/" method="get" class="search" role="search"><input type="search" name="q" placeholder="Paieška straipsniuose" aria-label="Paieška straipsniuose"> <button type="submit">Ieškoti</button></form>
+{% if group.slug == 'energetika' %}<p><strong><a href="{{ root }}/vert/">Energetikos reguliavimo tarybos (VERT) sprendimai dėl elektros kainų ir tarifų →</a></strong> – kurie taikomi šiandien.</p>{% endif %}
+{{ act_list(group.acts) }}
+<p class="aka"><a href="{{ root }}/sritis/{{ group.slug }}/pakeitimai/">Kas pasikeitė šioje srityje</a> · <a href="{{ root }}/sritis/{{ group.slug }}/atom.xml">Atom srautas</a> – vienas srautas visiems srities aktams.</p>
+<p class="aka">Žymos nustatytos {{ day }}, duomenys tikrinti {{ fetched }}. Tekstas neoficialus; oficialus – <a href="https://www.e-tar.lt">e-tar.lt</a>{% if n_eu %}, ES teisės aktų – <a href="https://eur-lex.europa.eu/">EUR-Lex</a>{% endif %}.</p>
+{% endblock %}

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="canonical" href="{{ canonical }}">
+{% if feed %}<link rel="alternate" type="application/atom+xml" href="{{ feed }}" title="{{ feed_title }}">
+{% endif %}<link rel="alternate" type="application/atom+xml" href="{{ root }}/atom.xml" title="Pakeitimai">
+{% if not indexable %}<meta name="robots" content="noindex">{% endif %}
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ canonical }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+{% if jsonld %}<script type="application/ld+json">{{ jsonld | safe }}</script>{% endif %}
+{% if jsonld2 %}<script type="application/ld+json">{{ jsonld2 | safe }}</script>{% endif %}
+<link rel="icon" href="{{ root }}/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ root }}/favicon.ico" sizes="32x32">
+<meta property="og:site_name" content="Atviri teisės aktai">
+<meta property="og:locale" content="lt_LT">
+<style>
+:root{--bg:#fdfdfc;--fg:#1d1d1b;--muted:#5f5f5a;--line:#e3e2dd;--link:#1f5fa8;--ok:#1d6b3a;--okbg:#e9f4ec;--warn:#7a4b00;--warnbg:#fff4dc;--bad:#8a1c1c;--badbg:#fbe9e9;--code:#f2f1ec}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--fg:#e8e7e2;--muted:#a3a29b;--line:#33332f;--link:#8ab8ef;--ok:#8fd3a5;--okbg:#14291b;--warn:#f1c46a;--warnbg:#2c2210;--bad:#f0a0a0;--badbg:#2e1515;--code:#22221f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main,header,footer{max-width:46rem;margin:0 auto;padding:0 16px}
+header{padding-top:12px;font-size:14px;color:var(--muted)}
+header a{color:var(--muted)}
+a{color:var(--link)}
+/* cross-references inside the law text: readable as text, visible as links */
+a.xref{color:inherit;text-decoration:underline;text-decoration-color:var(--link);text-decoration-thickness:1px;text-underline-offset:2px}
+a.xref:hover{color:var(--link)}
+nav.crumbs{font-size:14px;color:var(--muted);margin:8px 0 4px}
+nav.crumbs a{color:var(--muted)}
+h1{font-size:1.6rem;line-height:1.25;margin:.3em 0 .1em}
+.aka{font-size:14px;color:var(--muted);margin:0 0 12px}
+.strip{font-size:14px;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px 0;margin:12px 0}
+.badge{display:inline-block;margin:0 4px 2px 0;font-size:12px;font-weight:600;padding:1px 8px;border-radius:9px;vertical-align:middle}
+.b-current{background:var(--okbg);color:var(--ok)}
+.b-pending,.b-unknown{background:var(--warnbg);color:var(--warn)}
+.b-outdated,.b-repealed{background:var(--badbg);color:var(--bad)}
+.box{border-left:4px solid;padding:10px 14px;margin:14px 0;border-radius:4px}
+.box-pending,.box-unknown{border-color:var(--warn);background:var(--warnbg)}
+.box-outdated,.box-repealed,.box-stale{border-color:var(--bad);background:var(--badbg)}
+.law p{margin:.55em 0}
+.law .point{margin-left:1.4em}
+.law .sub{margin-left:2.8em}
+.law .editorial{font-size:14px;color:var(--muted);font-style:italic}
+.notes{font-size:13px;color:var(--muted);margin:-.3em 0 .6em}
+.notes a{color:var(--muted)}
+.law img{max-width:100%;height:auto;background:#fff;vertical-align:middle}.law .tbl{overflow-x:auto;margin:.6em 0}
+.law .tbl table{margin:0;font-size:14px}
+.law .tbl td{border:1px solid var(--line);padding:4px 6px;vertical-align:top}
+.law .tbl td:empty{border-top-color:transparent}
+.law :target{background:var(--code);outline:2px solid var(--line)}
+.pn{display:flex;justify-content:space-between;gap:12px;margin:28px 0;font-size:15px}
+ul.toc{list-style:none;padding-left:0}
+ul.toc ul{list-style:none;padding-left:1.1em}
+ul.toc li{margin:.15em 0}
+.h{font-weight:600;margin-top:.7em}
+/* contents-page headings (chapters, sections): real headings for screen readers, styled as list labels */
+.th{font-size:inherit;line-height:inherit;font-weight:600;margin:0}
+h2.th.h{margin-top:.7em}
+details{margin:12px 0}
+form.search input{width:100%;font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+main form.search input{width:auto;min-width:60%}
+button{font:inherit;font-size:14px;padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:var(--code);color:var(--fg);cursor:pointer}
+button.cite{margin:2px 0 8px}
+.diff del{background:var(--badbg);color:var(--bad);text-decoration:line-through}
+.diff ins{background:var(--okbg);color:var(--ok);text-decoration:none}
+.law.future{border-left:3px solid var(--warn);padding-left:12px}
+h2{font-size:1.2rem;margin:1.6em 0 .4em}
+code{background:var(--code);padding:0 4px;border-radius:3px;font-size:.92em}
+table{border-collapse:collapse;font-size:14px;width:100%;margin:.6em 0}
+th,td{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);margin-top:40px;padding-top:12px;padding-bottom:40px}
+header{display:flex;align-items:center;gap:10px;max-width:none;padding:10px 16px 0}
+.nav-t{position:absolute;opacity:0;width:1px;height:1px}
+.nav-b{cursor:pointer;user-select:none;white-space:nowrap;flex:none;font-size:14px;padding:3px 10px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+.nav-t:focus-visible + header .nav-b{outline:2px solid var(--link)}
+aside.side{font-size:14px;line-height:1.45}
+aside.side ul{list-style:none;padding-left:0;margin:.2em 0 .6em}
+aside.side ul ul{padding-left:.8em;border-left:1px solid var(--line)}
+aside.side li{margin:.15em 0}
+aside.side a{color:var(--fg);text-decoration:none}
+aside.side a:hover{text-decoration:underline}
+aside.side a[aria-current]{font-weight:700;color:var(--link)}
+aside.side .sec{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin:1em 0 .2em}
+aside.side .path{color:var(--muted);font-size:13px}
+aside.side .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-left:4px;vertical-align:middle}
+.dot-pending,.dot-unknown{background:var(--warn)}.dot-outdated,.dot-repealed{background:var(--bad)}
+@media (max-width:1099px){
+  aside.side{display:none;padding:8px 16px 12px;border-bottom:1px solid var(--line)}
+  .nav-t:checked ~ .layout aside.side{display:block}
+}
+@media (min-width:1100px){
+  .layout{display:grid;grid-template-columns:17rem minmax(0,46rem);gap:2.5rem;justify-content:center}
+  .layout main,.layout footer{margin:0;max-width:none}
+  aside.side{position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;padding:14px 10px 40px 16px;border-right:1px solid var(--line)}
+  .nav-t:checked ~ .layout{grid-template-columns:minmax(0,46rem)}
+  .nav-t:checked ~ .layout aside.side{display:none}
+}
+.skip{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--link);padding:8px 12px;z-index:10}
+.skip:focus{left:8px;top:8px;outline:2px solid var(--link)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media print{
+  header,aside.side,nav.pn,.nav-t,.skip,.search,form{display:none!important}
+  .layout{display:block}
+  body{background:#fff;color:#000;font-size:11pt}
+  a{color:#000;text-decoration:none}
+  a.xref{text-decoration:underline}
+  .box{border:1px solid #999;background:#fff!important;color:#000!important}
+  .badge{border:1px solid #000;background:#fff!important;color:#000!important}
+  main[data-cite]::after{content:"Citata: " attr(data-cite);display:block;margin-top:18px;font-size:9pt;color:#333}
+  footer{font-size:9pt;color:#333}
+}
+</style>
+</head>
+<body data-day="{{ day }}">
+<a class="skip" href="#turinys">Pereiti prie turinio</a>
+<input type="checkbox" id="nav" class="nav-t" aria-label="Rodyti arba slėpti naršymą">
+<header><label for="nav" class="nav-b" title="Rodyti / slėpti naršymą">☰ Naršymas</label><span><a href="{{ root }}/">Atviri teisės aktai</a> · neoficialus tekstas straipsniais</span></header>
+<div class="layout">
+<aside class="side" aria-label="Naršymas">
+  <form action="{{ root }}/paieska/" method="get" class="search"><input type="search" name="q" placeholder="Paieška: DK 52…" aria-label="Paieška"></form>
+  <div class="sec">Pradžia</div>
+  <ul><li><a href="{{ root }}/"{% if nav.here == "home" %} aria-current="page"{% endif %}>Visi teisės aktai</a></li>
+      <li><a href="{{ root }}/pakeitimai/"{% if nav.here == "changes" %} aria-current="page"{% endif %}>Kas pasikeitė</a></li>
+      <li><a href="{{ root }}/apie/"{% if nav.here == "about" %} aria-current="page"{% endif %}>Kaip tai veikia</a></li></ul>
+  {% if nav.act %}<div class="sec">Teisės aktas</div>
+  <ul><li><a href="{{ nav.act.url }}"{% if nav.here == "act" %} aria-current="page"{% endif %}><strong>{{ nav.act.tag or nav.act.name }}</strong></a>{% if nav.act.tag %} <span class="path">{{ nav.act.name }}</span>{% endif %}</li></ul>{% endif %}
+  {% if nav.arts %}
+  <div class="sec">{% if nav.act_tag %}{{ nav.act_tag }} {{ act.u.plural if act is defined and act.u else "straipsniai" }}{% else %}{{ (act.u.plural if act is defined and act.u else "straipsniai") | ucfirst }}{% endif %}</div>
+  {% for p in nav.path %}<div class="path">{{ p }}</div>{% endfor %}
+  <ul>
+    {% if nav.more_before %}<li><a href="{{ nav.contents }}">… ankstesni</a></li>{% endif %}
+    {% for it in nav.arts %}<li><a href="{{ it.url }}"{% if it.current %} aria-current="page"{% endif %}>{{ it.pretty }} {{ act.u.short if act is defined and act.u else "str." }}</a> <span class="path">{{ it.title }}</span>{% if it.state != "current" %}<span class="dot dot-{{ it.state }}" title="{{ it.state_label }}"></span><span class="sr">{{ it.state_label }}</span>{% endif %}</li>{% endfor %}
+    {% if nav.more_after %}<li><a href="{{ nav.contents }}">… tolesni</a></li>{% endif %}
+  </ul>
+  {% endif %}
+  {% if nav.contents %}<ul><li><a href="{{ nav.contents }}">Visas {% if nav.act_tag %}{{ nav.act_tag }} {% endif %}turinys →</a></li></ul>{% endif %}
+  <div class="sec">Sritys</div>
+  <ul>{% for g in nav.areas %}<li><a href="{{ g.url }}"{% if nav.area == g.slug %} aria-current="page"{% endif %}>{{ g.name }}</a></li>{% endfor %}</ul>
+</aside>
+<div class="content">
+<main id="turinys"{% if cite %} data-cite="{{ cite }}"{% endif %}{% if shown_state %} data-state="{{ shown_state }}" data-status-day="{{ day }}"{% if changes_on %} data-changes-on="{{ changes_on }}"{% endif %}{% endif %}>
+{% if stale %}<div class="box box-stale" role="alert"><strong>Duomenys nebuvo atnaujinti nuo {{ stale }}.</strong> Žymos gali neatitikti šiandienos padėties – tikrinkite <a href="https://www.e-tar.lt">e-tar.lt</a>.</div>{% endif %}
+{% block main %}{% endblock %}
+</main>
+<footer>
+{% if eu %}<p><strong>Neoficialus tekstas, ne teisinė konsultacija.</strong> Autentiškas tik Europos Sąjungos oficialiajame leidinyje paskelbtas tekstas (<a href="https://eur-lex.europa.eu">EUR-Lex</a>); konsoliduotas tekstas skirtas tik informacijai. Už sprendimus, priimtus remiantis šiuo tekstu, atsakote jūs.</p>
+<p>Šaltinis: EUR-Lex, © Europos Sąjunga, <a href="https://eur-lex.europa.eu">https://eur-lex.europa.eu</a> (Europos Sąjungos leidinių biuro atviri duomenys; pakartotinis naudojimas – Komisijos sprendimas 2011/833/ES), suskirstyta į straipsnius; tekstas nekeistas, išskyrus antraščių raidžių dydį.</p>
+{% else %}<p><strong>Neoficialus tekstas, ne teisinė konsultacija.</strong> Oficialiai skelbiama tik Teisės aktų registre (<a href="https://www.e-tar.lt">e-tar.lt</a>); prieš remdamiesi tekstu, patikrinkite jį ten. Už sprendimus, priimtus remiantis šiuo tekstu, atsakote jūs.</p>
+<p>Šaltinis: Lietuvos Respublikos Seimo kanceliarijos Teisės aktų registro atviri duomenys (<a href="https://data.gov.lt/datasets/2613/">data.gov.lt</a>, <a href="https://creativecommons.org/licenses/by/4.0/deed.lt">CC BY 4.0</a>), suskirstyti į straipsnius; tekstas nekeistas, išskyrus antraščių raidžių dydį.</p>{% endif %}
+<p>Žymos nustatytos {{ day }}{% if fetched %} · duomenys tikrinti {{ fetched }}{% endif %}{% if watermark %} · naujausi atviruose duomenyse teisės aktai paskelbti {{ watermark }}{% endif %} · <a href="{{ root }}/apie/">kaip tai veikia</a> · pastebėjote klaidą? <a href="mailto:{{ contact }}">{{ contact }}</a></p>
+</footer>
+</div>
+</div>
+<script src="{{ root }}/app.js" defer></script>
+</body>
+</html>

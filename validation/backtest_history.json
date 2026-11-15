@@ -1,0 +1,2457 @@
+{
+ "run": "2026-10-23",
+ "period": "2023-01-01..2025-05-31",
+ "totals": {
+  "pairs": 1316,
+  "articles": 170732,
+  "current_ok": 154748,
+  "flag_correct": 7533,
+  "false_alarm": 4049,
+  "repealed_ok": 4285,
+  "SILENT": 117,
+  "pairs_missing_text": 13
+ },
+ "acts": {
+  "Konstitucija": {},
+  "DK": {
+   "pairs": 13,
+   "articles": 3341,
+   "current_ok": 3259,
+   "flag_correct": 78,
+   "false_alarm": 4
+  },
+  "CK": {
+   "pairs": 14,
+   "articles": 28163,
+   "current_ok": 27826,
+   "flag_correct": 69,
+   "false_alarm": 1,
+   "repealed_ok": 266,
+   "SILENT": 1
+  },
+  "BK": {
+   "pairs": 16,
+   "articles": 6217,
+   "current_ok": 5336,
+   "repealed_ok": 164,
+   "flag_correct": 77,
+   "SILENT": 2,
+   "false_alarm": 638,
+   "pairs_missing_text": 1
+  },
+  "ANK": {
+   "pairs": 42,
+   "articles": 32436,
+   "current_ok": 31065,
+   "false_alarm": 573,
+   "flag_correct": 226,
+   "repealed_ok": 569,
+   "SILENT": 3,
+   "pairs_missing_text": 2
+  },
+  "CPK": {
+   "pairs": 10,
+   "articles": 8700,
+   "current_ok": 8229,
+   "flag_correct": 97,
+   "repealed_ok": 360,
+   "false_alarm": 13,
+   "SILENT": 1
+  },
+  "BPK": {
+   "pairs": 13,
+   "articles": 6474,
+   "current_ok": 6300,
+   "repealed_ok": 117,
+   "flag_correct": 49,
+   "false_alarm": 8
+  },
+  "ABTĮ": {
+   "pairs": 6,
+   "articles": 1146,
+   "current_ok": 1071,
+   "flag_correct": 59,
+   "repealed_ok": 6,
+   "false_alarm": 10
+  },
+  "PVMĮ": {
+   "pairs": 5,
+   "articles": 873,
+   "current_ok": 739,
+   "flag_correct": 72,
+   "false_alarm": 7,
+   "repealed_ok": 55
+  },
+  "GPMĮ": {
+   "pairs": 7,
+   "articles": 297,
+   "current_ok": 254,
+   "false_alarm": 19,
+   "flag_correct": 23,
+   "SILENT": 1
+  },
+  "PMĮ": {
+   "pairs": 5,
+   "articles": 376,
+   "current_ok": 335,
+   "flag_correct": 31,
+   "repealed_ok": 10
+  },
+  "MAĮ": {
+   "pairs": 11,
+   "articles": 2007,
+   "current_ok": 1884,
+   "false_alarm": 10,
+   "flag_correct": 40,
+   "repealed_ok": 72,
+   "SILENT": 1
+  },
+  "NTMĮ": {},
+  "AKĮ": {
+   "pairs": 10,
+   "articles": 782,
+   "current_ok": 602,
+   "flag_correct": 128,
+   "repealed_ok": 9,
+   "SILENT": 2,
+   "false_alarm": 41
+  },
+  "ABĮ": {
+   "pairs": 4,
+   "articles": 384,
+   "current_ok": 345,
+   "flag_correct": 35,
+   "repealed_ok": 4
+  },
+  "JANĮ": {
+   "pairs": 2,
+   "articles": 334,
+   "flag_correct": 2,
+   "current_ok": 332
+  },
+  "VPĮ": {
+   "pairs": 7,
+   "articles": 768,
+   "current_ok": 665,
+   "flag_correct": 72,
+   "false_alarm": 25,
+   "repealed_ok": 6
+  },
+  "KĮ": {
+   "pairs": 7,
+   "articles": 438,
+   "current_ok": 399,
+   "flag_correct": 34,
+   "false_alarm": 5,
+   "pairs_missing_text": 1
+  },
+  "VTAĮ": {
+   "pairs": 11,
+   "articles": 761,
+   "current_ok": 706,
+   "repealed_ok": 33,
+   "flag_correct": 22
+  },
+  "ADTAĮ": {
+   "pairs": 5,
+   "articles": 188,
+   "current_ok": 146,
+   "flag_correct": 36,
+   "false_alarm": 4,
+   "repealed_ok": 2
+  },
+  "UĮ": {
+   "pairs": 11,
+   "articles": 844,
+   "current_ok": 724,
+   "flag_correct": 63,
+   "repealed_ok": 33,
+   "false_alarm": 24,
+   "pairs_missing_text": 1
+  },
+  "VSDĮ": {
+   "pairs": 12,
+   "articles": 540,
+   "current_ok": 498,
+   "flag_correct": 40,
+   "false_alarm": 2
+  },
+  "SDĮ": {
+   "pairs": 8,
+   "articles": 427,
+   "current_ok": 369,
+   "flag_correct": 40,
+   "false_alarm": 8,
+   "SILENT": 2,
+   "repealed_ok": 8
+  },
+  "ŠĮ": {
+   "pairs": 18,
+   "articles": 1471,
+   "current_ok": 1236,
+   "flag_correct": 101,
+   "false_alarm": 128,
+   "SILENT": 6
+  },
+  "ŽĮ": {
+   "pairs": 22,
+   "articles": 1423,
+   "current_ok": 1089,
+   "repealed_ok": 6,
+   "SILENT": 3,
+   "flag_correct": 187,
+   "false_alarm": 138
+  },
+  "SĮ": {
+   "pairs": 18,
+   "articles": 1292,
+   "current_ok": 925,
+   "false_alarm": 235,
+   "flag_correct": 132
+  },
+  "TPĮ": {
+   "pairs": 9,
+   "articles": 450,
+   "current_ok": 376,
+   "false_alarm": 22,
+   "flag_correct": 52,
+   "pairs_missing_text": 1
+  },
+  "VSĮ": {
+   "pairs": 16,
+   "articles": 1183,
+   "false_alarm": 89,
+   "flag_correct": 138,
+   "current_ok": 956
+  },
+  "AAĮ": {
+   "pairs": 18,
+   "articles": 2976,
+   "current_ok": 2795,
+   "false_alarm": 26,
+   "repealed_ok": 72,
+   "flag_correct": 83
+  },
+  "EĮ": {
+   "pairs": 8,
+   "articles": 385,
+   "current_ok": 342,
+   "flag_correct": 33,
+   "repealed_ok": 8,
+   "false_alarm": 1,
+   "SILENT": 1
+  },
+  "EEĮ": {
+   "pairs": 17,
+   "articles": 1994,
+   "false_alarm": 128,
+   "current_ok": 1665,
+   "repealed_ok": 127,
+   "flag_correct": 73,
+   "SILENT": 1
+  },
+  "GDĮ": {
+   "pairs": 5,
+   "articles": 360,
+   "current_ok": 338,
+   "flag_correct": 16,
+   "SILENT": 1,
+   "repealed_ok": 5
+  },
+  "AIEĮ": {
+   "pairs": 5,
+   "articles": 374,
+   "false_alarm": 87,
+   "current_ok": 227,
+   "flag_correct": 26,
+   "repealed_ok": 33,
+   "SILENT": 1,
+   "pairs_missing_text": 1
+  },
+  "ŠŪĮ": {
+   "pairs": 3,
+   "articles": 120,
+   "current_ok": 76,
+   "flag_correct": 42,
+   "false_alarm": 2
+  },
+  "NotĮ": {
+   "pairs": 9,
+   "articles": 756,
+   "current_ok": 591,
+   "flag_correct": 91,
+   "repealed_ok": 63,
+   "SILENT": 3,
+   "false_alarm": 8
+  },
+  "AdvĮ": {
+   "pairs": 4,
+   "articles": 297,
+   "current_ok": 245,
+   "SILENT": 18,
+   "false_alarm": 21,
+   "flag_correct": 13
+  },
+  "AntĮ": {
+   "pairs": 4,
+   "articles": 209,
+   "current_ok": 162,
+   "SILENT": 3,
+   "flag_correct": 44
+  },
+  "GTDĮ": {
+   "pairs": 4,
+   "articles": 52,
+   "current_ok": 43,
+   "flag_correct": 9
+  },
+  "VTĮ": {
+   "pairs": 6,
+   "articles": 291,
+   "false_alarm": 89,
+   "flag_correct": 114,
+   "repealed_ok": 2,
+   "current_ok": 86
+  },
+  "DSSĮ": {
+   "pairs": 3,
+   "articles": 156,
+   "flag_correct": 22,
+   "current_ok": 128,
+   "false_alarm": 4,
+   "repealed_ok": 2
+  },
+  "LMSDĮ": {
+   "pairs": 13,
+   "articles": 468,
+   "flag_correct": 68,
+   "false_alarm": 30,
+   "current_ok": 369,
+   "SILENT": 1
+  },
+  "SDPĮ": {
+   "pairs": 4,
+   "articles": 248,
+   "current_ok": 218,
+   "flag_correct": 30
+  },
+  "IVĮ": {
+   "pairs": 3,
+   "articles": 79,
+   "current_ok": 57,
+   "flag_correct": 15,
+   "false_alarm": 7
+  },
+  "KTK": {
+   "pairs": 8,
+   "articles": 566,
+   "current_ok": 500,
+   "repealed_ok": 40,
+   "flag_correct": 16,
+   "false_alarm": 7,
+   "SILENT": 3
+  },
+  "SEAKĮ": {
+   "pairs": 16,
+   "articles": 697,
+   "current_ok": 581,
+   "flag_correct": 59,
+   "false_alarm": 57
+  },
+  "ERĮ": {
+   "pairs": 8,
+   "articles": 789,
+   "current_ok": 725,
+   "flag_correct": 38,
+   "false_alarm": 25,
+   "SILENT": 1
+  },
+  "KSĮ": {
+   "pairs": 4,
+   "articles": 111,
+   "flag_correct": 72,
+   "current_ok": 39
+  },
+  "BĮ": {
+   "pairs": 7,
+   "articles": 714,
+   "current_ok": 556,
+   "repealed_ok": 140,
+   "flag_correct": 18
+  },
+  "DrĮ": {
+   "pairs": 7,
+   "articles": 1687,
+   "current_ok": 1633,
+   "flag_correct": 19,
+   "repealed_ok": 35
+  },
+  "MokĮ": {
+   "pairs": 7,
+   "articles": 667,
+   "current_ok": 569,
+   "flag_correct": 22,
+   "false_alarm": 54,
+   "repealed_ok": 21,
+   "SILENT": 1
+  },
+  "MBĮ": {
+   "pairs": 3,
+   "articles": 105,
+   "current_ok": 90,
+   "flag_correct": 15
+  },
+  "VšĮĮ": {
+   "pairs": 7,
+   "articles": 189,
+   "current_ok": 147,
+   "false_alarm": 6,
+   "flag_correct": 34,
+   "SILENT": 2
+  },
+  "AsĮ": {
+   "pairs": 4,
+   "articles": 82,
+   "current_ok": 64,
+   "flag_correct": 17,
+   "SILENT": 1
+  },
+  "NTRĮ": {
+   "pairs": 3,
+   "articles": 106,
+   "flag_correct": 68,
+   "current_ok": 23,
+   "false_alarm": 2,
+   "repealed_ok": 1,
+   "SILENT": 12
+  },
+  "MATĮ": {
+   "pairs": 5,
+   "articles": 60,
+   "current_ok": 43,
+   "flag_correct": 12,
+   "false_alarm": 5
+  },
+  "VTAPĮ": {
+   "pairs": 7,
+   "articles": 386,
+   "SILENT": 6,
+   "current_ok": 350,
+   "flag_correct": 30
+  },
+  "SPĮ": {
+   "pairs": 6,
+   "articles": 299,
+   "current_ok": 178,
+   "flag_correct": 107,
+   "repealed_ok": 12,
+   "false_alarm": 2,
+   "pairs_missing_text": 1
+  },
+  "PSPĮ": {
+   "pairs": 7,
+   "articles": 217,
+   "current_ok": 164,
+   "false_alarm": 42,
+   "flag_correct": 11
+  },
+  "SPĮĮ": {
+   "pairs": 10,
+   "articles": 675,
+   "current_ok": 596,
+   "flag_correct": 27,
+   "repealed_ok": 50,
+   "false_alarm": 2
+  },
+  "PTŽĮ": {
+   "pairs": 6,
+   "articles": 168,
+   "current_ok": 154,
+   "flag_correct": 14
+  },
+  "FĮ": {
+   "pairs": 10,
+   "articles": 970,
+   "current_ok": 861,
+   "flag_correct": 49,
+   "repealed_ok": 50,
+   "false_alarm": 9,
+   "SILENT": 1
+  },
+  "ATGTĮ": {
+   "pairs": 4,
+   "articles": 604,
+   "current_ok": 600,
+   "flag_correct": 4
+  },
+  "VIĮ": {
+   "pairs": 10,
+   "articles": 658,
+   "current_ok": 582,
+   "flag_correct": 40,
+   "repealed_ok": 30,
+   "false_alarm": 6
+  },
+  "TGIĮ": {
+   "pairs": 4,
+   "articles": 76,
+   "current_ok": 68,
+   "flag_correct": 7,
+   "SILENT": 1
+  },
+  "VKĮ": {
+   "pairs": 3,
+   "articles": 175,
+   "current_ok": 134,
+   "flag_correct": 8,
+   "repealed_ok": 33
+  },
+  "NTKĮ": {
+   "pairs": 8,
+   "articles": 482,
+   "current_ok": 440,
+   "flag_correct": 24,
+   "repealed_ok": 16,
+   "SILENT": 2
+  },
+  "UTPĮ": {
+   "pairs": 14,
+   "articles": 2953,
+   "current_ok": 2447,
+   "flag_correct": 161,
+   "false_alarm": 27,
+   "repealed_ok": 314,
+   "SILENT": 4
+  },
+  "MSĮ": {
+   "pairs": 11,
+   "articles": 1108,
+   "current_ok": 642,
+   "false_alarm": 321,
+   "flag_correct": 90,
+   "repealed_ok": 55
+  },
+  "ATKPĮ": {
+   "pairs": 1,
+   "articles": 11,
+   "current_ok": 10,
+   "flag_correct": 1
+  },
+  "GVDĮ": {
+   "pairs": 2,
+   "articles": 26,
+   "current_ok": 22,
+   "flag_correct": 4
+  },
+  "PilĮ": {
+   "pairs": 4,
+   "articles": 196,
+   "current_ok": 181,
+   "flag_correct": 15
+  },
+  "ProkĮ": {
+   "pairs": 6,
+   "articles": 461,
+   "current_ok": 425,
+   "repealed_ok": 12,
+   "flag_correct": 24
+  },
+  "TeisĮ": {
+   "pairs": 8,
+   "articles": 1227,
+   "current_ok": 945,
+   "flag_correct": 105,
+   "repealed_ok": 96,
+   "SILENT": 1,
+   "false_alarm": 80
+  },
+  "PolĮ": {
+   "pairs": 2,
+   "articles": 60,
+   "current_ok": 53,
+   "flag_correct": 5,
+   "repealed_ok": 2
+  },
+  "GŠKĮ": {
+   "pairs": 6,
+   "articles": 288,
+   "flag_correct": 52,
+   "current_ok": 236
+  },
+  "AlkKĮ": {
+   "pairs": 9,
+   "articles": 462,
+   "current_ok": 397,
+   "flag_correct": 56,
+   "repealed_ok": 9
+  },
+  "TabKĮ": {
+   "pairs": 11,
+   "articles": 650,
+   "current_ok": 607,
+   "repealed_ok": 11,
+   "flag_correct": 32
+  },
+  "TurĮ": {
+   "pairs": 6,
+   "articles": 259,
+   "flag_correct": 89,
+   "false_alarm": 2,
+   "current_ok": 166,
+   "SILENT": 2
+  },
+  "FAĮ": {
+   "pairs": 9,
+   "articles": 153,
+   "current_ok": 130,
+   "flag_correct": 13,
+   "false_alarm": 10
+  },
+  "FAAĮ": {
+   "pairs": 9,
+   "articles": 770,
+   "current_ok": 654,
+   "flag_correct": 102,
+   "false_alarm": 14
+  },
+  "PPTFPĮ": {
+   "pairs": 15,
+   "articles": 867,
+   "current_ok": 773,
+   "false_alarm": 43,
+   "flag_correct": 43,
+   "SILENT": 3,
+   "repealed_ok": 5,
+   "pairs_missing_text": 1
+  },
+  "KPĮ": {
+   "pairs": 2,
+   "articles": 54,
+   "current_ok": 52,
+   "flag_correct": 2
+  },
+  "VPIDĮ": {
+   "pairs": 4,
+   "articles": 92,
+   "current_ok": 88,
+   "flag_correct": 4
+  },
+  "VSTĮ": {
+   "pairs": 9,
+   "articles": 261,
+   "current_ok": 235,
+   "flag_correct": 17,
+   "repealed_ok": 9
+  },
+  "VGTPĮ": {
+   "pairs": 5,
+   "articles": 190,
+   "current_ok": 162,
+   "flag_correct": 28
+  },
+  "MedĮ": {
+   "pairs": 5,
+   "articles": 161,
+   "current_ok": 121,
+   "flag_correct": 40
+  },
+  "KAĮ": {},
+  "MuitĮ": {
+   "pairs": 2,
+   "articles": 128,
+   "current_ok": 124,
+   "flag_correct": 4
+  },
+  "ŽMĮ": {
+   "pairs": 1,
+   "articles": 15,
+   "current_ok": 13,
+   "SILENT": 1,
+   "flag_correct": 1
+  },
+  "ASNTĮ": {
+   "pairs": 5,
+   "articles": 176,
+   "current_ok": 66,
+   "flag_correct": 75,
+   "false_alarm": 35
+  },
+  "ŠPĮ": {
+   "pairs": 6,
+   "articles": 150,
+   "current_ok": 86,
+   "flag_correct": 58,
+   "repealed_ok": 4,
+   "false_alarm": 2
+  },
+  "PŽĮ": {},
+  "PatĮ": {},
+  "ATĮ": {
+   "pairs": 11,
+   "articles": 1114,
+   "current_ok": 969,
+   "flag_correct": 78,
+   "repealed_ok": 44,
+   "false_alarm": 23
+  },
+  "MiškĮ": {
+   "pairs": 5,
+   "articles": 143,
+   "current_ok": 119,
+   "false_alarm": 6,
+   "flag_correct": 18
+  },
+  "STĮ": {
+   "pairs": 3,
+   "articles": 114,
+   "current_ok": 110,
+   "flag_correct": 4,
+   "pairs_missing_text": 1
+  },
+  "VKalbĮ": {},
+  "VAĮ": {
+   "pairs": 4,
+   "articles": 160,
+   "current_ok": 130,
+   "false_alarm": 2,
+   "flag_correct": 28
+  },
+  "GGAĮ": {
+   "pairs": 7,
+   "articles": 147,
+   "current_ok": 126,
+   "flag_correct": 21
+  },
+  "LPĮ": {
+   "pairs": 4,
+   "articles": 68,
+   "current_ok": 58,
+   "flag_correct": 9,
+   "false_alarm": 1
+  },
+  "IĮĮ": {
+   "pairs": 2,
+   "articles": 28,
+   "current_ok": 24,
+   "flag_correct": 4
+  },
+  "KBĮ": {
+   "pairs": 5,
+   "articles": 135,
+   "current_ok": 126,
+   "flag_correct": 9
+  },
+  "SSĮ": {
+   "pairs": 14,
+   "articles": 1423,
+   "current_ok": 1261,
+   "false_alarm": 57,
+   "repealed_ok": 70,
+   "flag_correct": 34,
+   "SILENT": 1
+  },
+  "RK": {
+   "pairs": 8,
+   "articles": 1552,
+   "current_ok": 1507,
+   "flag_correct": 42,
+   "false_alarm": 3
+  },
+  "Statutas": {
+   "pairs": 16,
+   "articles": 5107,
+   "current_ok": 4898,
+   "false_alarm": 4,
+   "repealed_ok": 115,
+   "flag_correct": 89,
+   "SILENT": 1
+  },
+  "BVK": {
+   "pairs": 5,
+   "articles": 582,
+   "flag_correct": 198,
+   "current_ok": 381,
+   "false_alarm": 3
+  },
+  "GTK": {
+   "pairs": 5,
+   "articles": 480,
+   "current_ok": 429,
+   "repealed_ok": 40,
+   "flag_correct": 11
+  },
+  "VVTK": {
+   "pairs": 7,
+   "articles": 577,
+   "current_ok": 499,
+   "repealed_ok": 65,
+   "flag_correct": 13
+  },
+  "FABĮ": {
+   "pairs": 3,
+   "articles": 102,
+   "current_ok": 95,
+   "flag_correct": 4,
+   "SILENT": 2,
+   "false_alarm": 1
+  },
+  "DNSBĮ": {
+   "pairs": 3,
+   "articles": 81,
+   "current_ok": 71,
+   "flag_correct": 10
+  },
+  "SBĮ": {
+   "pairs": 2,
+   "articles": 66,
+   "current_ok": 54,
+   "flag_correct": 6,
+   "repealed_ok": 6
+  },
+  "PTMĮ": {},
+  "TPVCAPDĮ": {
+   "pairs": 5,
+   "articles": 212,
+   "false_alarm": 54,
+   "SILENT": 1,
+   "flag_correct": 91,
+   "current_ok": 66
+  },
+  "NSDĮ": {
+   "pairs": 7,
+   "articles": 147,
+   "current_ok": 134,
+   "flag_correct": 13
+  },
+  "NADPLSDĮ": {
+   "pairs": 7,
+   "articles": 232,
+   "current_ok": 208,
+   "flag_correct": 24
+  },
+  "PKĮ": {
+   "pairs": 2,
+   "articles": 106,
+   "current_ok": 101,
+   "repealed_ok": 2,
+   "flag_correct": 3
+  },
+  "ŪBĮ": {
+   "pairs": 3,
+   "articles": 48,
+   "current_ok": 38,
+   "flag_correct": 10
+  },
+  "RekĮ": {
+   "pairs": 3,
+   "articles": 87,
+   "current_ok": 81,
+   "flag_correct": 6
+  },
+  "ASAAĮ": {
+   "pairs": 3,
+   "articles": 49,
+   "false_alarm": 13,
+   "flag_correct": 35,
+   "repealed_ok": 1
+  },
+  "LGĮ": {
+   "pairs": 2,
+   "articles": 62,
+   "current_ok": 44,
+   "flag_correct": 18
+  },
+  "PBĮ": {
+   "pairs": 2,
+   "articles": 62,
+   "current_ok": 53,
+   "flag_correct": 9,
+   "pairs_missing_text": 1
+  },
+  "MTPRMĮ": {
+   "pairs": 1,
+   "articles": 9,
+   "current_ok": 8,
+   "SILENT": 1
+  },
+  "ALĮ": {
+   "pairs": 8,
+   "articles": 485,
+   "current_ok": 447,
+   "flag_correct": 19,
+   "repealed_ok": 16,
+   "false_alarm": 3
+  },
+  "ŪŪĮ": {
+   "pairs": 2,
+   "articles": 24,
+   "current_ok": 20,
+   "false_alarm": 2,
+   "flag_correct": 2
+  },
+  "ŽŪPŽĮĮ": {
+   "pairs": 11,
+   "articles": 81,
+   "current_ok": 48,
+   "flag_correct": 28,
+   "false_alarm": 5
+  },
+  "NKPAĮ": {
+   "pairs": 2,
+   "articles": 92,
+   "current_ok": 90,
+   "flag_correct": 2
+  },
+  "IVPĮ": {
+   "pairs": 3,
+   "articles": 115,
+   "flag_correct": 30,
+   "SILENT": 1,
+   "current_ok": 84
+  },
+  "NKVVDĮ": {},
+  "NTRgĮ": {},
+  "VyrĮ": {
+   "pairs": 5,
+   "articles": 300,
+   "current_ok": 260,
+   "flag_correct": 35,
+   "repealed_ok": 5
+  },
+  "KTĮ": {},
+  "SKĮ": {
+   "pairs": 5,
+   "articles": 159,
+   "current_ok": 115,
+   "flag_correct": 20,
+   "repealed_ok": 10,
+   "false_alarm": 14
+  },
+  "RefKĮ": {},
+  "KASOKTĮ": {
+   "pairs": 9,
+   "articles": 742,
+   "current_ok": 503,
+   "flag_correct": 71,
+   "repealed_ok": 18,
+   "false_alarm": 150
+  },
+  "KVCSĮ": {
+   "pairs": 5,
+   "articles": 253,
+   "flag_correct": 77,
+   "current_ok": 176
+  },
+  "BSĮ": {
+   "pairs": 9,
+   "articles": 348,
+   "current_ok": 255,
+   "flag_correct": 77,
+   "false_alarm": 6,
+   "repealed_ok": 10
+  },
+  "LBĮ": {
+   "pairs": 11,
+   "articles": 839,
+   "current_ok": 689,
+   "false_alarm": 22,
+   "repealed_ok": 99,
+   "flag_correct": 29
+  },
+  "KelĮ": {
+   "pairs": 12,
+   "articles": 288,
+   "current_ok": 242,
+   "false_alarm": 22,
+   "SILENT": 1,
+   "flag_correct": 23
+  },
+  "SŽNSĮ": {
+   "pairs": 6,
+   "articles": 858,
+   "current_ok": 830,
+   "false_alarm": 1,
+   "flag_correct": 25,
+   "repealed_ok": 2,
+   "pairs_missing_text": 1
+  },
+  "VTS": {
+   "pairs": 6,
+   "articles": 518,
+   "current_ok": 415,
+   "flag_correct": 101,
+   "false_alarm": 2
+  },
+  "FPRĮ": {
+   "pairs": 9,
+   "articles": 1152,
+   "current_ok": 1094,
+   "false_alarm": 27,
+   "flag_correct": 31
+  },
+  "KRĮ": {
+   "pairs": 1,
+   "articles": 22,
+   "current_ok": 21,
+   "flag_correct": 1
+  },
+  "KUĮ": {
+   "pairs": 3,
+   "articles": 241,
+   "current_ok": 205,
+   "flag_correct": 22,
+   "SILENT": 3,
+   "repealed_ok": 11
+  },
+  "EPEPĮĮ": {
+   "pairs": 7,
+   "articles": 330,
+   "flag_correct": 19,
+   "current_ok": 290,
+   "repealed_ok": 21
+  },
+  "KET": {
+   "pairs": 8,
+   "articles": 2005,
+   "current_ok": 1799,
+   "false_alarm": 2,
+   "flag_correct": 124,
+   "repealed_ok": 80
+  },
+  "VDUTA": {
+   "pairs": 9,
+   "articles": 72,
+   "current_ok": 61,
+   "false_alarm": 9,
+   "flag_correct": 2
+  },
+  "PAILGA": {
+   "pairs": 9,
+   "articles": 162,
+   "current_ok": 142,
+   "false_alarm": 17,
+   "flag_correct": 3
+  },
+  "PAPILA": {
+   "pairs": 9,
+   "articles": 45,
+   "current_ok": 36,
+   "false_alarm": 6,
+   "flag_correct": 3
+  },
+  "DIENPA": {
+   "pairs": 5,
+   "articles": 60,
+   "false_alarm": 2,
+   "flag_correct": 6,
+   "repealed_ok": 24,
+   "current_ok": 28
+  },
+  "KOMIT": {
+   "pairs": 5,
+   "articles": 109,
+   "current_ok": 73,
+   "flag_correct": 6,
+   "repealed_ok": 20,
+   "false_alarm": 10
+  },
+  "LMSDIN": {
+   "pairs": 8,
+   "articles": 985,
+   "current_ok": 678,
+   "repealed_ok": 241,
+   "flag_correct": 62,
+   "false_alarm": 4
+  },
+  "IVSMN": {
+   "pairs": 4,
+   "articles": 209,
+   "current_ok": 142,
+   "repealed_ok": 20,
+   "SILENT": 1,
+   "flag_correct": 19,
+   "false_alarm": 27
+  },
+  "NADPLIN": {
+   "pairs": 2,
+   "articles": 156,
+   "current_ok": 123,
+   "repealed_ok": 6,
+   "flag_correct": 27
+  },
+  "JARN": {
+   "pairs": 18,
+   "articles": 5794,
+   "current_ok": 5249,
+   "flag_correct": 227,
+   "repealed_ok": 241,
+   "SILENT": 4,
+   "false_alarm": 73
+  },
+  "GRN": {
+   "pairs": 1,
+   "articles": 60,
+   "current_ok": 32,
+   "flag_correct": 28
+  },
+  "VGON": {
+   "pairs": 4,
+   "articles": 384,
+   "current_ok": 316,
+   "flag_correct": 67,
+   "false_alarm": 1
+  },
+  "VZSPNT": {
+   "pairs": 3,
+   "articles": 275,
+   "flag_correct": 69,
+   "current_ok": 202,
+   "SILENT": 4
+  },
+  "ALKLT": {
+   "pairs": 2,
+   "articles": 132,
+   "current_ok": 73,
+   "false_alarm": 29,
+   "flag_correct": 20,
+   "repealed_ok": 10
+  },
+  "TeisPĮ": {
+   "pairs": 6,
+   "articles": 234,
+   "current_ok": 218,
+   "flag_correct": 10,
+   "repealed_ok": 6
+  },
+  "NTKadĮ": {
+   "pairs": 6,
+   "articles": 134,
+   "current_ok": 116,
+   "SILENT": 2,
+   "flag_correct": 16
+  },
+  "CBARĮ": {
+   "pairs": 2,
+   "articles": 54,
+   "current_ok": 44,
+   "flag_correct": 10
+  },
+  "EAPĮ": {
+   "pairs": 5,
+   "articles": 137,
+   "flag_correct": 27,
+   "current_ok": 110
+  },
+  "GVTNTĮ": {
+   "pairs": 3,
+   "articles": 125,
+   "current_ok": 108,
+   "flag_correct": 16,
+   "false_alarm": 1
+  },
+  "AtmDĮ": {
+   "pairs": 6,
+   "articles": 6,
+   "flag_correct": 6
+  },
+  "VPopĮ": {
+   "pairs": 3,
+   "articles": 125,
+   "current_ok": 108,
+   "flag_correct": 17
+  },
+  "FinĮĮ": {
+   "pairs": 5,
+   "articles": 275,
+   "current_ok": 251,
+   "false_alarm": 13,
+   "repealed_ok": 5,
+   "flag_correct": 6
+  },
+  "PSPKĮ": {
+   "pairs": 4,
+   "articles": 264,
+   "false_alarm": 74,
+   "repealed_ok": 16,
+   "current_ok": 172,
+   "flag_correct": 2
+  },
+  "GDNĮ": {
+   "pairs": 7,
+   "articles": 184,
+   "current_ok": 127,
+   "false_alarm": 4,
+   "flag_correct": 44,
+   "repealed_ok": 9
+  },
+  "InvĮ": {
+   "pairs": 8,
+   "articles": 186,
+   "current_ok": 155,
+   "flag_correct": 30,
+   "SILENT": 1
+  },
+  "RinkĮ": {
+   "pairs": 8,
+   "articles": 176,
+   "current_ok": 161,
+   "flag_correct": 15
+  },
+  "BiudĮĮ": {
+   "pairs": 5,
+   "articles": 117,
+   "current_ok": 84,
+   "false_alarm": 4,
+   "flag_correct": 29
+  },
+  "ProfMĮ": {
+   "pairs": 9,
+   "articles": 380,
+   "current_ok": 322,
+   "flag_correct": 54,
+   "repealed_ok": 4
+  },
+  "PŪVPAVĮ": {
+   "pairs": 2,
+   "articles": 32,
+   "false_alarm": 4,
+   "flag_correct": 21,
+   "current_ok": 7
+  },
+  "PPATĮ": {
+   "pairs": 8,
+   "articles": 208,
+   "current_ok": 168,
+   "flag_correct": 16,
+   "repealed_ok": 24
+  },
+  "KPirkĮ": {
+   "pairs": 7,
+   "articles": 816,
+   "current_ok": 728,
+   "flag_correct": 55,
+   "false_alarm": 27,
+   "repealed_ok": 6
+  },
+  "PsSPĮ": {
+   "pairs": 2,
+   "articles": 30,
+   "current_ok": 28,
+   "flag_correct": 2
+  },
+  "PGSĮ": {},
+  "NPMKĮ": {
+   "pairs": 1,
+   "articles": 44,
+   "current_ok": 40,
+   "false_alarm": 3,
+   "flag_correct": 1
+  },
+  "LobVĮ": {},
+  "NVOPĮ": {
+   "pairs": 1,
+   "articles": 12,
+   "current_ok": 11,
+   "flag_correct": 1
+  },
+  "SavVĮ": {
+   "pairs": 2,
+   "articles": 27,
+   "flag_correct": 27
+  },
+  "SportĮ": {
+   "pairs": 4,
+   "articles": 104,
+   "current_ok": 93,
+   "flag_correct": 8,
+   "false_alarm": 3,
+   "pairs_missing_text": 1
+  },
+  "ŽPLĮ": {
+   "pairs": 3,
+   "articles": 117,
+   "current_ok": 107,
+   "repealed_ok": 6,
+   "flag_correct": 4
+  },
+  "SPMokĮ": {
+   "pairs": 4,
+   "articles": 76,
+   "current_ok": 67,
+   "flag_correct": 9
+  },
+  "MVLGĮ": {
+   "pairs": 3,
+   "articles": 60,
+   "current_ok": 52,
+   "flag_correct": 8
+  },
+  "ADegĮ": {
+   "pairs": 7,
+   "articles": 245,
+   "current_ok": 211,
+   "flag_correct": 34
+  },
+  "VPensĮ": {
+   "pairs": 3,
+   "articles": 57,
+   "current_ok": 36,
+   "flag_correct": 21
+  },
+  "TKompĮ": {
+   "pairs": 4,
+   "articles": 49,
+   "current_ok": 22,
+   "flag_correct": 15,
+   "false_alarm": 12
+  },
+  "SNŽKĮ": {
+   "pairs": 2,
+   "articles": 42,
+   "current_ok": 14,
+   "flag_correct": 12,
+   "false_alarm": 16
+  },
+  "BĮDAĮ": {
+   "pairs": 10,
+   "articles": 144,
+   "false_alarm": 21,
+   "flag_correct": 31,
+   "current_ok": 92
+  },
+  "ŽULPKĮ": {
+   "pairs": 4,
+   "articles": 183,
+   "current_ok": 149,
+   "flag_correct": 22,
+   "repealed_ok": 12
+  },
+  "ASPPĮ": {
+   "pairs": 2,
+   "articles": 28,
+   "current_ok": 25,
+   "false_alarm": 1,
+   "flag_correct": 2
+  },
+  "VetĮ": {
+   "pairs": 3,
+   "articles": 66,
+   "current_ok": 56,
+   "repealed_ok": 3,
+   "flag_correct": 7
+  },
+  "PaštoĮ": {
+   "pairs": 3,
+   "articles": 94,
+   "current_ok": 29,
+   "flag_correct": 65
+  },
+  "MokĮstĮ": {
+   "pairs": 6,
+   "articles": 247,
+   "current_ok": 212,
+   "flag_correct": 17,
+   "repealed_ok": 18
+  },
+  "KISĮ": {
+   "pairs": 5,
+   "articles": 875,
+   "current_ok": 852,
+   "repealed_ok": 10,
+   "flag_correct": 13
+  },
+  "AKISVĮ": {
+   "pairs": 3,
+   "articles": 195,
+   "current_ok": 191,
+   "flag_correct": 4
+  },
+  "IIKISĮ": {
+   "pairs": 2,
+   "articles": 134,
+   "current_ok": 132,
+   "flag_correct": 2
+  },
+  "MPĮNVDĮ": {
+   "pairs": 4,
+   "articles": 76,
+   "current_ok": 72,
+   "flag_correct": 4
+  },
+  "NPPŽŪĮ": {
+   "pairs": 3,
+   "articles": 75,
+   "current_ok": 59,
+   "flag_correct": 16
+  },
+  "ArchĮ": {
+   "pairs": 4,
+   "articles": 84,
+   "current_ok": 68,
+   "flag_correct": 16
+  },
+  "TPSVPĮ": {
+   "pairs": 7,
+   "articles": 246,
+   "current_ok": 162,
+   "flag_correct": 69,
+   "repealed_ok": 1,
+   "false_alarm": 14
+  },
+  "ŽPVPĮ": {
+   "pairs": 5,
+   "articles": 80,
+   "current_ok": 55,
+   "flag_correct": 25
+  },
+  "PNTAĮ": {
+   "pairs": 4,
+   "articles": 88,
+   "current_ok": 78,
+   "flag_correct": 8,
+   "false_alarm": 2
+  },
+  "ŽRefĮ": {
+   "pairs": 4,
+   "articles": 88,
+   "current_ok": 70,
+   "flag_correct": 18
+  },
+  "ŽelĮ": {
+   "pairs": 6,
+   "articles": 180,
+   "current_ok": 159,
+   "flag_correct": 21
+  },
+  "LGĮst": {
+   "pairs": 4,
+   "articles": 140,
+   "current_ok": 132,
+   "flag_correct": 8
+  },
+  "ŽuvĮ": {
+   "pairs": 2,
+   "articles": 158,
+   "current_ok": 147,
+   "flag_correct": 9,
+   "repealed_ok": 2
+  },
+  "PKanĮ": {
+   "pairs": 4,
+   "articles": 74,
+   "flag_correct": 12,
+   "current_ok": 62
+  },
+  "ŽŪMŪKPĮ": {
+   "pairs": 8,
+   "articles": 120,
+   "current_ok": 96,
+   "flag_correct": 22,
+   "SILENT": 2
+  },
+  "VKontrĮ": {
+   "pairs": 3,
+   "articles": 93,
+   "current_ok": 79,
+   "flag_correct": 14
+  },
+  "VSAĮ": {
+   "pairs": 5,
+   "articles": 119,
+   "flag_correct": 44,
+   "false_alarm": 23,
+   "current_ok": 52
+  },
+  "VIIVĮ": {
+   "pairs": 4,
+   "articles": 200,
+   "flag_correct": 92,
+   "current_ok": 96,
+   "false_alarm": 11,
+   "repealed_ok": 1
+  },
+  "GKĮ": {
+   "pairs": 5,
+   "articles": 165,
+   "current_ok": 127,
+   "flag_correct": 38
+  },
+  "LRTĮ": {
+   "pairs": 3,
+   "articles": 60,
+   "current_ok": 53,
+   "flag_correct": 7
+  },
+  "RPĮ": {
+   "pairs": 5,
+   "articles": 150,
+   "current_ok": 135,
+   "repealed_ok": 5,
+   "flag_correct": 9,
+   "false_alarm": 1
+  },
+  "AviacĮ": {
+   "pairs": 8,
+   "articles": 453,
+   "current_ok": 373,
+   "flag_correct": 24,
+   "false_alarm": 56
+  },
+  "TVPĮ": {
+   "pairs": 2,
+   "articles": 60,
+   "current_ok": 52,
+   "flag_correct": 8
+  },
+  "STTĮ": {
+   "pairs": 4,
+   "articles": 272,
+   "current_ok": 255,
+   "flag_correct": 14,
+   "repealed_ok": 3
+  }
+ },
+ "silent": [
+  {
+   "act": "CK",
+   "article": "6.751",
+   "case": "lag",
+   "day": "2023-03-31",
+   "held": "2023-01-01",
+   "truth": "2023-03-31"
+  },
+  {
+   "act": "BK",
+   "article": "39",
+   "case": "lag",
+   "day": "2024-03-16",
+   "held": "2024-01-01",
+   "truth": "2024-03-16"
+  },
+  {
+   "act": "BK",
+   "article": "9",
+   "case": "lag",
+   "day": "2024-11-13",
+   "held": "2024-11-01",
+   "truth": "2024-11-13"
+  },
+  {
+   "act": "ANK",
+   "article": "262",
+   "case": "lag",
+   "day": "2024-07-02",
+   "held": "2024-07-01",
+   "truth": "2024-07-02"
+  },
+  {
+   "act": "ANK",
+   "article": "57",
+   "case": "lag",
+   "day": "2024-07-08",
+   "held": "2024-07-02",
+   "truth": "2024-07-08"
+  },
+  {
+   "act": "ANK",
+   "article": "58",
+   "case": "lag",
+   "day": "2024-07-08",
+   "held": "2024-07-02",
+   "truth": "2024-07-08"
+  },
+  {
+   "act": "CPK",
+   "article": "109",
+   "case": "lag",
+   "day": "2024-04-01",
+   "held": "2024-01-01",
+   "truth": "2024-04-01"
+  },
+  {
+   "act": "GPMĮ",
+   "article": "40",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-11-10",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "MAĮ",
+   "article": "61-4",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-05-24"
+  },
+  {
+   "act": "AKĮ",
+   "article": "53",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2023-02-13",
+   "truth": "2024-01-01",
+   "said": "repealed"
+  },
+  {
+   "act": "AKĮ",
+   "article": "74",
+   "case": "lag",
+   "day": "2024-03-01",
+   "held": "2024-02-21",
+   "truth": "2024-03-01"
+  },
+  {
+   "act": "SDĮ",
+   "article": "15",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-12-15",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "SDĮ",
+   "article": "9",
+   "case": "lag",
+   "day": "2023-12-23",
+   "held": "2023-07-01",
+   "truth": "2023-12-23"
+  },
+  {
+   "act": "ŠĮ",
+   "article": "10",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2023-09-01",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "ŠĮ",
+   "article": "67",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2023-09-01",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "ŠĮ",
+   "article": "24",
+   "case": "lag",
+   "day": "2024-09-01",
+   "held": "2024-07-25",
+   "truth": "2024-09-01"
+  },
+  {
+   "act": "ŠĮ",
+   "article": "47",
+   "case": "lag",
+   "day": "2024-09-01",
+   "held": "2024-07-25",
+   "truth": "2024-09-01"
+  },
+  {
+   "act": "ŠĮ",
+   "article": "24",
+   "case": "future",
+   "day": "2024-08-31",
+   "held": "2024-09-01",
+   "truth": "2024-07-25"
+  },
+  {
+   "act": "ŠĮ",
+   "article": "47",
+   "case": "future",
+   "day": "2024-08-31",
+   "held": "2024-09-01",
+   "truth": "2024-07-25"
+  },
+  {
+   "act": "ŽĮ",
+   "article": "34",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-12-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "ŽĮ",
+   "article": "34",
+   "case": "future",
+   "day": "2022-12-31",
+   "held": "2023-01-01",
+   "truth": "2022-12-01"
+  },
+  {
+   "act": "ŽĮ",
+   "article": "13",
+   "case": "lag",
+   "day": "2025-01-01",
+   "held": "2024-11-01",
+   "truth": "2025-01-01"
+  },
+  {
+   "act": "EĮ",
+   "article": "1",
+   "case": "lag",
+   "day": "2024-11-01",
+   "held": "2024-07-06",
+   "truth": "2024-11-01"
+  },
+  {
+   "act": "EEĮ",
+   "article": "16",
+   "case": "lag",
+   "day": "2025-01-17",
+   "held": "2024-11-01",
+   "truth": "2025-01-17"
+  },
+  {
+   "act": "GDĮ",
+   "article": "13",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-07-12",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "AIEĮ",
+   "article": "39",
+   "case": "lag",
+   "day": "2023-05-01",
+   "held": "2023-02-01",
+   "truth": "2023-05-01"
+  },
+  {
+   "act": "NotĮ",
+   "article": "6-1",
+   "case": "lag",
+   "day": "2023-01-31",
+   "held": "2023-01-01",
+   "truth": "2023-01-31"
+  },
+  {
+   "act": "NotĮ",
+   "article": "27",
+   "case": "lag",
+   "day": "2023-01-31",
+   "held": "2023-01-01",
+   "truth": "2023-01-31"
+  },
+  {
+   "act": "NotĮ",
+   "article": "27",
+   "case": "lag",
+   "day": "2025-03-01",
+   "held": "2024-08-01",
+   "truth": "2025-03-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "2",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "9",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "16",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "17",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "23",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "24",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "35",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "39",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "56",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "57",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "59",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "60",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "64",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "66",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "67",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "68",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "69",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AdvĮ",
+   "article": "73",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-07-15",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "AntĮ",
+   "article": "2",
+   "case": "lag",
+   "day": "2024-04-01",
+   "held": "2022-07-15",
+   "truth": "2024-04-01"
+  },
+  {
+   "act": "AntĮ",
+   "article": "20",
+   "case": "lag",
+   "day": "2025-03-01",
+   "held": "2024-08-01",
+   "truth": "2025-03-01"
+  },
+  {
+   "act": "AntĮ",
+   "article": "20",
+   "case": "future",
+   "day": "2025-02-28",
+   "held": "2025-03-01",
+   "truth": "2024-08-01"
+  },
+  {
+   "act": "LMSDĮ",
+   "article": "6",
+   "case": "lag",
+   "day": "2023-06-24",
+   "held": "2023-05-31",
+   "truth": "2023-06-24"
+  },
+  {
+   "act": "KTK",
+   "article": "9-1",
+   "case": "lag",
+   "day": "2025-01-01",
+   "held": "2024-08-21",
+   "truth": "2025-01-01"
+  },
+  {
+   "act": "KTK",
+   "article": "10-1",
+   "case": "lag",
+   "day": "2025-01-01",
+   "held": "2024-08-21",
+   "truth": "2025-01-01"
+  },
+  {
+   "act": "KTK",
+   "article": "18-2",
+   "case": "lag",
+   "day": "2025-01-01",
+   "held": "2024-08-21",
+   "truth": "2025-01-01"
+  },
+  {
+   "act": "ERĮ",
+   "article": "78",
+   "case": "future",
+   "day": "2024-12-31",
+   "held": "2025-01-01",
+   "truth": "2024-11-01"
+  },
+  {
+   "act": "MokĮ",
+   "article": "9-1",
+   "case": "future",
+   "day": "2025-04-08",
+   "held": "2025-04-09",
+   "truth": "2025-01-01"
+  },
+  {
+   "act": "VšĮĮ",
+   "article": "25",
+   "case": "lag",
+   "day": "2024-07-01",
+   "held": "2024-05-01",
+   "truth": "2024-07-01"
+  },
+  {
+   "act": "VšĮĮ",
+   "article": "28",
+   "case": "lag",
+   "day": "2024-07-01",
+   "held": "2024-05-01",
+   "truth": "2024-07-01"
+  },
+  {
+   "act": "AsĮ",
+   "article": "17",
+   "case": "lag",
+   "day": "2024-07-01",
+   "held": "2023-11-01",
+   "truth": "2024-07-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "1",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "2",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "3",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "4",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "5",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "6",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "8",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "9",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "10",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "11",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "12",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTRĮ",
+   "article": "13",
+   "case": "future",
+   "day": "2023-12-31",
+   "held": "2024-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "VTAPĮ",
+   "article": "1",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-11-22",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "VTAPĮ",
+   "article": "4",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-11-22",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "VTAPĮ",
+   "article": "29",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-11-22",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "VTAPĮ",
+   "article": "1",
+   "case": "lag",
+   "day": "2023-04-01",
+   "held": "2023-01-01",
+   "truth": "2023-04-01"
+  },
+  {
+   "act": "VTAPĮ",
+   "article": "4",
+   "case": "lag",
+   "day": "2023-04-01",
+   "held": "2023-01-01",
+   "truth": "2023-04-01"
+  },
+  {
+   "act": "VTAPĮ",
+   "article": "29",
+   "case": "lag",
+   "day": "2023-04-01",
+   "held": "2023-01-01",
+   "truth": "2023-04-01"
+  },
+  {
+   "act": "FĮ",
+   "article": "35",
+   "case": "lag",
+   "day": "2023-06-02",
+   "held": "2023-01-01",
+   "truth": "2023-06-02"
+  },
+  {
+   "act": "TGIĮ",
+   "article": "16",
+   "case": "future",
+   "day": "2024-10-31",
+   "held": "2024-11-01",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "NTKĮ",
+   "article": "14",
+   "case": "lag",
+   "day": "2025-02-01",
+   "held": "2024-08-01",
+   "truth": "2025-02-01"
+  },
+  {
+   "act": "NTKĮ",
+   "article": "14",
+   "case": "future",
+   "day": "2025-01-31",
+   "held": "2025-02-01",
+   "truth": "2024-08-01"
+  },
+  {
+   "act": "UTPĮ",
+   "article": "21",
+   "case": "lag",
+   "day": "2023-06-07",
+   "held": "2023-05-03",
+   "truth": "2023-06-07"
+  },
+  {
+   "act": "UTPĮ",
+   "article": "105-1",
+   "case": "lag",
+   "day": "2024-07-01",
+   "held": "2024-06-08",
+   "truth": "2024-07-01"
+  },
+  {
+   "act": "UTPĮ",
+   "article": "115",
+   "case": "lag",
+   "day": "2024-11-15",
+   "held": "2024-07-01",
+   "truth": "2024-11-15"
+  },
+  {
+   "act": "UTPĮ",
+   "article": "140-19",
+   "case": "lag",
+   "day": "2024-11-15",
+   "held": "2024-07-01",
+   "truth": "2024-11-15"
+  },
+  {
+   "act": "TeisĮ",
+   "article": "58",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-08-01",
+   "truth": "2023-01-01",
+   "said": "repealed"
+  },
+  {
+   "act": "TurĮ",
+   "article": "40",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2023-05-01",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "TurĮ",
+   "article": "43",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2023-05-01",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "PPTFPĮ",
+   "article": "9",
+   "case": "lag",
+   "day": "2023-02-01",
+   "held": "2023-01-01",
+   "truth": "2023-02-01"
+  },
+  {
+   "act": "PPTFPĮ",
+   "article": "9",
+   "case": "future",
+   "day": "2023-01-31",
+   "held": "2023-02-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "PPTFPĮ",
+   "article": "7",
+   "case": "lag",
+   "day": "2024-07-25",
+   "held": "2024-05-01",
+   "truth": "2024-07-25"
+  },
+  {
+   "act": "ŽMĮ",
+   "article": "6",
+   "case": "lag",
+   "day": "2024-05-03",
+   "held": "2022-07-01",
+   "truth": "2024-05-03"
+  },
+  {
+   "act": "SSĮ",
+   "article": "65",
+   "case": "lag",
+   "day": "2024-06-21",
+   "held": "2024-02-01",
+   "truth": "2024-06-21"
+  },
+  {
+   "act": "Statutas",
+   "article": "15-4",
+   "case": "lag",
+   "day": "2024-06-14",
+   "held": "2024-06-08",
+   "truth": "2024-06-14"
+  },
+  {
+   "act": "FABĮ",
+   "article": "29",
+   "case": "lag",
+   "day": "2024-04-24",
+   "held": "2023-01-01",
+   "truth": "2024-04-24"
+  },
+  {
+   "act": "FABĮ",
+   "article": "29",
+   "case": "lag",
+   "day": "2024-10-25",
+   "held": "2024-04-24",
+   "truth": "2024-10-25"
+  },
+  {
+   "act": "TPVCAPDĮ",
+   "article": "44",
+   "case": "lag",
+   "day": "2023-06-23",
+   "held": "2018-11-01",
+   "truth": "2023-06-23",
+   "said": "repealed"
+  },
+  {
+   "act": "MTPRMĮ",
+   "article": "7",
+   "case": "lag",
+   "day": "2024-01-01",
+   "held": "2022-01-01",
+   "truth": "2024-01-01"
+  },
+  {
+   "act": "IVPĮ",
+   "article": "19",
+   "case": "lag",
+   "day": "2024-06-28",
+   "held": "2020-01-17",
+   "truth": "2024-06-28",
+   "said": "repealed"
+  },
+  {
+   "act": "KelĮ",
+   "article": "16",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-06-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "KUĮ",
+   "article": "51",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "KUĮ",
+   "article": "52",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "KUĮ",
+   "article": "53",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "IVSMN",
+   "article": "12",
+   "case": "lag",
+   "day": "2023-04-28",
+   "held": "2022-03-04",
+   "truth": "2023-04-28"
+  },
+  {
+   "act": "JARN",
+   "article": "94",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-12-23",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "JARN",
+   "article": "161",
+   "case": "lag",
+   "day": "2023-08-31",
+   "held": "2023-08-02",
+   "truth": "2023-08-31"
+  },
+  {
+   "act": "JARN",
+   "article": "162",
+   "case": "lag",
+   "day": "2023-08-31",
+   "held": "2023-08-02",
+   "truth": "2023-08-31"
+  },
+  {
+   "act": "JARN",
+   "article": "13",
+   "case": "lag",
+   "day": "2025-01-10",
+   "held": "2024-11-01",
+   "truth": "2025-01-10"
+  },
+  {
+   "act": "VZSPNT",
+   "article": "4",
+   "case": "future",
+   "day": "2025-04-02",
+   "held": "2025-04-03",
+   "truth": "2024-03-29"
+  },
+  {
+   "act": "VZSPNT",
+   "article": "25",
+   "case": "future",
+   "day": "2025-04-02",
+   "held": "2025-04-03",
+   "truth": "2024-03-29"
+  },
+  {
+   "act": "VZSPNT",
+   "article": "26",
+   "case": "future",
+   "day": "2025-04-02",
+   "held": "2025-04-03",
+   "truth": "2024-03-29"
+  },
+  {
+   "act": "VZSPNT",
+   "article": "27",
+   "case": "future",
+   "day": "2025-04-02",
+   "held": "2025-04-03",
+   "truth": "2024-03-29"
+  },
+  {
+   "act": "NTKadĮ",
+   "article": "6",
+   "case": "lag",
+   "day": "2023-01-01",
+   "held": "2022-01-01",
+   "truth": "2023-01-01"
+  },
+  {
+   "act": "NTKadĮ",
+   "article": "6",
+   "case": "future",
+   "day": "2022-12-31",
+   "held": "2023-01-01",
+   "truth": "2022-01-01"
+  },
+  {
+   "act": "InvĮ",
+   "article": "12",
+   "case": "lag",
+   "day": "2024-12-01",
+   "held": "2024-07-01",
+   "truth": "2024-12-01"
+  },
+  {
+   "act": "ŽŪMŪKPĮ",
+   "article": "13",
+   "case": "lag",
+   "day": "2025-04-01",
+   "held": "2024-01-02",
+   "truth": "2025-04-01"
+  },
+  {
+   "act": "ŽŪMŪKPĮ",
+   "article": "13",
+   "case": "future",
+   "day": "2025-03-31",
+   "held": "2025-04-01",
+   "truth": "2024-01-02"
+  }
+ ],
+ "note": "rules as of this commit, laws known by each simulated day; amending-law texts are today's copies"
+}

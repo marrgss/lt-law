@@ -1,0 +1,4 @@
+acts:
+  # 2026-11-10 (4): the Euratom radiation-protection directive, held the same day: a subscript between two paragraphs of a
+  # definition ("(H" <span>T</span> "(τ))", article 4(15) and 4(33)) was lost; the converter keeps it now
+  - {abbr: RSSD, no_abbr: true, title: "Direktyva 2013/59/Euratomas, kuria nustatomi pagrindiniai saugos standartai, skirti apsaugai nuo jonizuojančiosios spinduliuotės keliamų pavojų", genitive: "Direktyvos 2013/59/Euratomas", number: "2013/59/Euratomas", eu: 32013L0059, slug: radiacines-saugos-standartu-direktyva, area: energetika}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Pradžia</a> › Apie</nav>
+<h1>Kaip veikia ši svetainė</h1>
+
+<h2>Šaltinis</h2>
+<p>Tekstai paimti iš Lietuvos Respublikos Seimo kanceliarijos Teisės aktų registro atvirų duomenų (<a href="https://data.gov.lt/datasets/2613/">data.gov.lt</a>, licencija CC BY 4.0). Kiekvienam aktui naudojama naujausia ten paskelbta Seimo kanceliarijos parengta suvestinė redakcija. Tekstą suskirstome į dalis, skyrius ir straipsnius, o straipsnius – į dalis ir punktus, bet paties teksto nekeičiame.</p>
+<p>Europos Sąjungos teisės aktai (BDAR, TIS 2 direktyva, Dirbtinio intelekto aktas, Duomenų aktas ir kt.) paimti iš EUR-Lex (Europos Sąjungos leidinių biuro atviri duomenys, © Europos Sąjunga; pakartotinis naudojimas – Komisijos sprendimas 2011/833/ES), lietuvių kalba: naujausia konsoliduota redakcija, o jei jos nėra – Oficialiajame leidinyje paskelbtas tekstas. Kiekvieno straipsnio tekstas sutikrinamas su EUR-Lex žodis į žodį. Išnašos rodomos priedo ar straipsnio pabaigoje; prie straipsnių nerodomos tik tos, kuriose nurodomas šaltinis (pvz., Oficialusis leidinys). Konsoliduoti tekstai skirti tik informacijai; autentiškas – Oficialiajame leidinyje paskelbtas tekstas. Nuo kada taikomas kiekvienas straipsnis, nustatome pagal akto baigiamąjį straipsnį („Šis reglamentas taikomas nuo …“): jei straipsnis taikomas vėliau, jis žymimas „Taikomas nuo …“. Direktyva įpareigoja valstybes nares – asmenims taikomi ją perkeliantys Lietuvos teisės aktai, kurie nurodyti direktyvos puslapyje.</p>
+<p>Oficialiai teisės aktai skelbiami tik Teisės aktų registre <a href="https://www.e-tar.lt">e-tar.lt</a>. Kiekviename puslapyje yra nuoroda į oficialų tekstą.</p>
+<p>Be Konstitucijos, kodeksų ir įstatymų, svetainėje yra taisyklės ir tvarkos aprašai, patvirtinti Vyriausybės nutarimais, ministrų įsakymais ir Valstybinės energetikos reguliavimo tarybos (VERT) nutarimais; jie skaidomi ne į straipsnius, o į punktus. Teisės aktai sugrupuoti pagal sritis (pvz., <a href="{{ root }}/sritis/energetika/">energetika</a>).</p>
+<p><a href="{{ root }}/vert/">VERT sprendimai dėl elektros kainų ir tarifų</a> – atskiras atvejis: Teisės aktų registre visi jie lieka „galiojantys“, todėl kiekvieną žymime patys – pagal laikotarpį nutarimo pavadinime („2026 metams“) ir tai, ar vėliau priimtas tos pačios srities nutarimas. Tai mūsų įvertinimas, ir puslapyje taip ir parašyta. Pačios kainų lentelės yra nutarimų prieduose, kurių atviruose duomenyse nėra – pateikiame nuorodą į juos e-tar.lt.</p>
+
+<h2>Kaip nustatome, ar tekstas galioja šiandien</h2>
+<p>Atviruose duomenyse kiekvienam aktui yra tik viena suvestinė redakcija, ir ji gali būti ne šiandieninė: kartais jau ateities (su priimtais, bet dar neįsigaliojusiais pakeitimais), kartais pasenusi. Todėl kiekvienam straipsniui tikriname:</p>
+<ol>
+  <li>ar visi prie straipsnio nurodyti pakeitimai jau įsigaliojo – įsigaliojimo datas, taip pat ir atskirų straipsnių vėlesnes datas, nustatome iš pačių keičiančių įstatymų;</li>
+  <li>ar nėra jau įsigaliojusių pakeitimų, kurių šiame tekste dar nėra.</li>
+</ol>
+<p>Atvirus duomenis Seimo kanceliarija atnaujina su vėlavimu: naujai paskelbti teisės aktai juose atsiranda po vienos ar kelių darbo dienų. Pakeitimas, kuris paskelbtas ir įsigalioja per tą laiką, mūsų taisyklėms dar nematomas. Todėl kiekvieno puslapio apačioje nurodome, kada paskelbti naujausi atviruose duomenyse esantys teisės aktai{% if watermark %} (šiuo metu – {{ watermark }}){% endif %}, o jei ši data senesnė kaip 5 dienos, straipsnio puslapyje tai pažymime atskirai.</p>
+<p>Svetainė atnaujinama kas antrą naktį ir papildomai tą naktį, kai keičiasi kurio nors straipsnio žyma (pvz., įsigalioja pakeitimas). Kiekvieno puslapio apačioje nurodyta, kurią dieną nustatytos jo žymos.</p>
+<p>„Galioja šiandien“ rodome tik tada, kai abi sąlygos patvirtintos. Kitu atveju straipsnis pažymimas „Įsigalios …“, „Gali būti pasenęs“ arba „Neaišku, ar galioja“ ir pateikiama nuoroda į e-tar.lt.</p>
+
+<h2>Patikrinimai</h2>
+{% if validation %}
+<p>Paskutinis patikrinimas {{ validation.day }}. Tekstas lygintas su e-tar.lt tos pačios redakcijos tekstu; žymos – su e-tar.lt tą dieną galiojančiu tekstu.</p>
+<table>
+  <thead><tr><th>Aktas</th><th>Straipsniai</th><th>Teksto skirtumai</th><th>Galioja šiandien (patvirtinta)</th><th>Pažymėti kitaip</th><th>Klaidingos žymos</th></tr></thead>
+  <tbody>
+  {% for r in validation.rows %}
+    <tr><td>{{ r.abbr }}</td><td>{{ r.articles }}</td><td>{{ r.text_diff }}</td><td>{{ r.current_ok }}</td><td>{{ r.flagged }}</td><td>{{ r.silent }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Patikrinimo rezultatų šiame leidime nėra.</p>
+{% endif %}
+
+<h2>Kokybės kartelė</h2>
+<ul>
+  <li><strong>Klaidingų žymų „Galioja šiandien“ ir neparodyto galiojančio teksto – nė vienos žinomos.</strong> Kiekviena rasta klaida taisoma per kelias dienas ir įrašoma.</li>
+  <li>Visas šaltinio tekstas parodomas: per kiekvieną atnaujinimą tikrinama, ar kiekviena šaltinio eilutė yra kuriame nors puslapyje.</li>
+  <li>Atsargumo kaina – ne daugiau kaip 5 % straipsnių pažymėti „Neaišku, ar galioja“ ar „Gali būti pasenęs“, nors iš tikrųjų jų tekstas galioja.</li>
+  <li>Duomenys ne senesni nei 2 dienos; kitaip kiekviename puslapyje rodomas įspėjimas.</li>
+</ul>
+{% if validation and validation.backtest %}
+<p>Istorinis patikrinimas: mūsų taisyklės pritaikytos {{ validation.backtest.period | replace("..", "–") }} m. Seimo kanceliarijos suvestinėms redakcijoms ({{ validation.backtest.pairs }} redakcijų porų, {{ validation.backtest.situations }} straipsnių atvejų), žinant tik iki tos dienos paskelbtus įstatymus. Žyma „Galioja šiandien“ būtų buvusi klaidinga {{ validation.backtest.silent_pct }} % atvejų (viršutinė riba: dalis skirtumų – senų tekstų formato ypatumai), nereikalingų įspėjimų – {{ validation.backtest.false_pct }} %. Rastos priežastys taisomos.</p>
+{% endif %}
+{% if ledger and ledger.article_days %}
+<p>Nuolatinis patikrinimas: kai Seimo kanceliarija paskelbia naują suvestinę redakciją, palyginame, ką rodėme ankstesnėmis dienomis. Nuo {{ ledger.since }} patikrinta {{ ledger.article_days }} straipsnio dienų: klaidingų žymų {{ ledger.silent }}, nereikalingų įspėjimų {{ ledger.false_alarms }}.</p>
+{% else %}
+<p>Nuolatinis patikrinimas: kai Seimo kanceliarija paskelbia naują suvestinę redakciją, palyginame, ką rodėme ankstesnėmis dienomis{% if ledger and ledger.since %} (pradėta {{ ledger.since }}; rezultatų dar nėra){% endif %}.</p>
+{% endif %}
+
+<h2>Ko nedarome</h2>
+<ul>
+  <li>Neįrašome pakeitimų į tekstą patys (nekonsoliduojame).</li>
+  <li>Nekuriame teksto dirbtiniu intelektu ir nepateikiame santraukų kaip teisės akto.</li>
+  <li>Neskelbiame individualių aktų, kuriuose minimi asmenys (pilietybės, malonės, apdovanojimų, skyrimų).</li>
+  <li>Nereikalaujame registracijos, nenaudojame slapukų ir lankytojų sekimo.</li>
+</ul>
+
+<h2 id="programoms">Dirbtinio intelekto asistentams ir programoms</h2>
+<p>Tie patys duomenys prieinami ir mašinoms, be registracijos ir rakto:</p>
+<ul>
+  <li><strong>MCP serveris</strong> (Model Context Protocol, asistentams kaip Claude ar ChatGPT): <code>{{ root }}/mcp</code>. Įrankiai: paieška, straipsnis (ir koks jis buvo nurodytą dieną nuo 2020 m.), aktų sąrašas, turinys, artėjantys pakeitimai.</li>
+  <li><strong>REST:</strong> <code>{{ root }}/api/article?act=DK&amp;n=52</code>, <code>{{ root }}/api/search?q=nuotolinis+darbas</code>; visas aprašas – <a href="{{ root }}/llms.txt">llms.txt</a>.</li>
+  <li><strong>VERT sprendimai:</strong> <a href="{{ root }}/api/v1/vert.json">/api/v1/vert.json</a> – kiekvienas sprendimas su mūsų žyma ir nuoroda į e-tar.lt.</li>
+  <li><strong>Kaip buvo anksčiau:</strong> kiekvieno straipsnio puslapyje – nuoroda „ankstesnės redakcijos“ (Seimo kanceliarijos suvestinės redakcijos nuo 2020 m. ir kas pakeista).</li>
+</ul>
+
+<h2>Kodėl tai daroma</h2>
+<p>Seimo kanceliarijos atviri duomenys yra didelis žingsnis, bet jie skirti programuotojams, o oficialus e-tar.lt sunkiai skaitomas paieškos sistemoms ir dirbtinio intelekto asistentams. Ši svetainė tuos pačius duomenis paverčia paprastais, cituojamais puslapiais. Jei tokią paslaugą kada nors teiks valstybė, ši svetainė bus nebereikalinga – ir tai būtų geras rezultatas.</p>
+<h2 id="kontaktai">Kontaktai</h2>
+<p>Pastebėjote klaidingą žymą, trūkstamą ar netikslų tekstą, ar norite, kad kas nors būtų pašalinta? Rašykite <a href="mailto:{{ contact }}">{{ contact }}</a>. Nurodykite puslapio adresą; rastos klaidos taisomos ir įrašomos.</p>
+{% endblock %}

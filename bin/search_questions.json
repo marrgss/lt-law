@@ -1,0 +1,513 @@
+{
+"about": "Search benchmark (bin/check_search_ranking.mjs): everyday and professional questions, in the words people use, and the act(s) whose article should come first. `acts` are matched against the act's name (lowercase, any of them); `article` (optional) as the first result's label. Only answers we are sure of: a question with an arguable answer lists every reasonable act. 2026-11-03: 80 questions (the first 25 from 2026-10-23).",
+"questions": [
+{
+"q": "nuotolinis darbas",
+"acts": [
+"darbo kodeksas"
+],
+"article": "52"
+},
+{
+"q": "kasmetinės atostogos",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "išeitinė išmoka",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "darbo sutarties nutraukimas darbdavio iniciatyva",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "viršvalandžiai",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "bandomasis laikotarpis",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "pridėtinės vertės mokesčio tarifas",
+"acts": [
+"pridėtinės vertės mokesčio įstatymas"
+]
+},
+{
+"q": "nekilnojamojo turto mokesčio tarifas",
+"acts": [
+"nekilnojamojo turto mokesčio įstatymas"
+]
+},
+{
+"q": "gyventojų pajamų mokesčio lengvatos",
+"acts": [
+"gyventojų pajamų mokesčio įstatymas"
+]
+},
+{
+"q": "santuokos nutraukimas",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "testamento forma",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "paveldėjimas pagal įstatymą",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "medžių kirtimas",
+"acts": [
+"želdynų įstatymas",
+"miškų įstatymas"
+]
+},
+{
+"q": "valstybinė pensija",
+"acts": [
+"valstybinių pensijų įstatymas"
+]
+},
+{
+"q": "ligos išmoka",
+"acts": [
+"ligos ir motinystės socialinio draudimo įstatymas",
+"ligos ir motinystės socialinio draudimo išmokų nuostatai"
+]
+},
+{
+"q": "elektroninis parašas",
+"acts": [
+"elektroninės atpažinties ir elektroninių operacijų patikimumo užtikrinimo paslaugų įstatymas",
+"eidas"
+]
+},
+{
+"q": "asmens duomenų tvarkymas",
+"acts": [
+"asmens duomenų teisinės apsaugos įstatymas",
+"bendrasis duomenų apsaugos reglamentas"
+]
+},
+{
+"q": "vaiko globa",
+"acts": [
+"vaiko globos organizavimo nuostatai",
+"civilinis kodeksas",
+"vaiko teisių apsaugos pagrindų įstatymas"
+]
+},
+{
+"q": "greičio viršijimas",
+"acts": [
+"administracinių nusižengimų kodeksas"
+]
+},
+{
+"q": "gyvenamosios vietos deklaravimas",
+"acts": [
+"gyvenamosios vietos deklaravimo įstatymas"
+]
+},
+{
+"q": "vartotojo teisės",
+"acts": [
+"vartotojų teisių apsaugos įstatymas",
+"civilinis kodeksas"
+]
+},
+{
+"q": "laidojimas",
+"acts": [
+"žmonių palaikų laidojimo įstatymas"
+]
+},
+{
+"q": "dronai",
+"acts": [
+"aviacijos įstatymas"
+]
+},
+{
+"q": "lobistinė veikla",
+"acts": [
+"lobistinės veiklos įstatymas"
+]
+},
+{
+"q": "civilinės būklės aktų registravimas",
+"acts": [
+"civilinės būklės aktų registravimo įstatymas"
+]
+},
+{
+"q": "naktinis darbas",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "darbo laiko norma",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "nekonkuravimo susitarimas",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "darbuotojo materialinė atsakomybė",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "darbo sutarties nutraukimas šalių susitarimu",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "minimalioji mėnesinė alga",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "nėštumo ir gimdymo atostogos",
+"acts": [
+"darbo kodeksas"
+]
+},
+{
+"q": "nedarbo socialinio draudimo išmoka",
+"acts": [
+"nedarbo socialinio draudimo įstatymas"
+]
+},
+{
+"q": "senatvės pensijos amžius",
+"acts": [
+"socialinio draudimo pensijų įstatymas"
+]
+},
+{
+"q": "PVM mokėtojo registracija",
+"acts": [
+"pridėtinės vertės mokesčio įstatymas"
+]
+},
+{
+"q": "neapmokestinamasis pajamų dydis",
+"acts": [
+"gyventojų pajamų mokesčio įstatymas"
+]
+},
+{
+"q": "pelno mokesčio tarifas",
+"acts": [
+"pelno mokesčio įstatymas"
+]
+},
+{
+"q": "mokesčių permoka",
+"acts": [
+"mokesčių administravimo įstatymas"
+]
+},
+{
+"q": "delspinigiai už mokesčius",
+"acts": [
+"mokesčių administravimo įstatymas"
+]
+},
+{
+"q": "individualios veiklos pajamos",
+"acts": [
+"gyventojų pajamų mokesčio įstatymas"
+]
+},
+{
+"q": "ieškinio senatis",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "gyvenamųjų patalpų nuoma",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "neturtinė žala",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "servitutas",
+"acts": [
+"civilinis kodeksas",
+"žemės servitutų nustatymo administraciniu aktu taisyklės"
+]
+},
+{
+"q": "išlaikymas vaikams alimentai",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "daikto pirkimas pardavimas garantija",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "ieškinio pareiškimo turinys",
+"acts": [
+"civilinio proceso kodeksas"
+]
+},
+{
+"q": "fizinio asmens bankrotas",
+"acts": [
+"fizinių asmenų bankroto įstatymas"
+]
+},
+{
+"q": "vagystė",
+"acts": [
+"baudžiamasis kodeksas"
+]
+},
+{
+"q": "sukčiavimas",
+"acts": [
+"baudžiamasis kodeksas"
+]
+},
+{
+"q": "kyšininkavimas",
+"acts": [
+"baudžiamasis kodeksas"
+]
+},
+{
+"q": "neblaivus vairavimas",
+"acts": [
+"administracinių nusižengimų kodeksas",
+"baudžiamasis kodeksas"
+]
+},
+{
+"q": "smulkusis chuliganizmas",
+"acts": [
+"administracinių nusižengimų kodeksas"
+]
+},
+{
+"q": "apeliacinis skundas baudžiamojoje byloje",
+"acts": [
+"baudžiamojo proceso kodeksas"
+]
+},
+{
+"q": "skundas administraciniam teismui",
+"acts": [
+"administracinių bylų teisenos įstatymas"
+]
+},
+{
+"q": "duomenų apsaugos pareigūnas",
+"acts": [
+"bendrasis duomenų apsaugos reglamentas"
+]
+},
+{
+"q": "duomenų subjekto teisė susipažinti",
+"acts": [
+"bendrasis duomenų apsaugos reglamentas"
+]
+},
+{
+"q": "kibernetinio saugumo incidentas",
+"acts": [
+"kibernetinio saugumo įstatymas",
+"tis 2 direktyva",
+"nacionalinis kibernetinių incidentų valdymo planas"
+]
+},
+{
+"q": "dirbtinio intelekto sistemos",
+"acts": [
+"dirbtinio intelekto aktas"
+]
+},
+{
+"q": "elektroninių ryšių paslaugos",
+"acts": [
+"elektroninių ryšių įstatymas",
+"direktyva (es) 2018/1972"
+]
+},
+{
+"q": "gaminantis vartotojas",
+"acts": [
+"elektros energetikos įstatymas",
+"atsinaujinančių išteklių energetikos įstatymas"
+]
+},
+{
+"q": "elektros energijos tiekimo nutraukimas",
+"acts": [
+"elektros energijos tiekimo ir naudojimo taisyklės",
+"elektros energetikos įstatymas"
+]
+},
+{
+"q": "nepriklausomas elektros energijos tiekėjas",
+"acts": [
+"elektros energetikos įstatymas"
+]
+},
+{
+"q": "skirstomųjų tinklų operatorius",
+"acts": [
+"elektros energetikos įstatymas",
+"ab „energijos skirstymo operatorius“ pasinaudojimo"
+]
+},
+{
+"q": "elektros tinklų apsaugos zonos",
+"acts": [
+"elektros tinklų apsaugos taisyklės",
+"specialiųjų žemės naudojimo sąlygų įstatymas"
+]
+},
+{
+"q": "šilumos kainos nustatymas",
+"acts": [
+"šilumos ūkio įstatymas"
+]
+},
+{
+"q": "gamtinių dujų tiekimas buitiniams vartotojams",
+"acts": [
+"gamtinių dujų įstatymas",
+"gamtinių dujų tiekimo ir vartojimo taisyklės",
+"sutarčių su buitiniais vartotojais dėl gamtinių dujų"
+]
+},
+{
+"q": "energijos kaupimo įrenginiai",
+"acts": [
+"elektros energetikos įstatymas",
+"leidimo elektros tinklų operatoriui turėti"
+]
+},
+{
+"q": "elektros skaitiklio patikra",
+"acts": [
+"matavimo priemonių teisinio metrologinio reglamentavimo taisyklės",
+"metrologijos įstatymas",
+"elektros įrenginių įrengimo bendrosios taisyklės"
+]
+},
+{
+"q": "energijos vartojimo auditas",
+"acts": [
+"energijos vartojimo efektyvumo didinimo įstatymas",
+"energijos vartojimo efektyvumo direktyva"
+]
+},
+{
+"q": "viešųjų pirkimų būdai",
+"acts": [
+"viešųjų pirkimų įstatymas"
+]
+},
+{
+"q": "korupcijos prevencija",
+"acts": [
+"korupcijos prevencijos įstatymas"
+]
+},
+{
+"q": "leidimas gyventi užsieniečiui",
+"acts": [
+"įstatymas dėl užsieniečių teisinės padėties"
+]
+},
+{
+"q": "pilietybės įgijimas",
+"acts": [
+"pilietybės įstatymas"
+]
+},
+{
+"q": "statybą leidžiantis dokumentas",
+"acts": [
+"statybos įstatymas",
+"statybos techninis reglamentas str 1.05.01:2017"
+]
+},
+{
+"q": "atliekų tvarkymas",
+"acts": [
+"atliekų tvarkymo įstatymas",
+"atliekų tvarkymo taisyklės"
+]
+},
+{
+"q": "gyvūnų gerovė",
+"acts": [
+"gyvūnų gerovės ir apsaugos įstatymas"
+]
+},
+{
+"q": "medžioklės sezonas",
+"acts": [
+"medžioklės įstatymas",
+"medžioklės lietuvos respublikos teritorijoje taisyklės"
+]
+},
+{
+"q": "antstolio vykdymo veiksmai",
+"acts": [
+"antstolių įstatymas",
+"civilinio proceso kodeksas"
+]
+},
+{
+"q": "notarinė forma",
+"acts": [
+"notariato įstatymas",
+"civilinis kodeksas"
+]
+}
+]
+}

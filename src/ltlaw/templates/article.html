@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ act_url }}">{{ act.name }}{{ act.paren }}</a>{% for h in crumbs %} › {{ h }}{% endfor %}</nav>
+<h1>{{ art.pretty }} {{ act.u.nom }}{% if art.title %}. {{ art.title }}{% endif %}</h1>
+<p class="aka">{% if act.tag %}{{ act.tag }} {{ art.pretty }} {{ act.u.short }} · {% endif %}{{ act.genitive_cap }} {{ art.pretty }} {{ act.u.nom }}</p>
+
+<div class="strip">
+  <span class="badge b-{{ shown_state }}" data-law-status="{{ shown_state }}">{{ status_label }}</span>
+  {% if future %}<span class="badge b-pending">Keičiasi nuo {{ future.applies_from }}</span>{% endif %}
+  {% if future_change and not future %}<span class="badge b-pending">{{ 'Keisis' if future_change[2] else 'Gali keistis' }} nuo {{ future_change[0] }}</span>{% endif %}
+  {% if not today_src and status.state == "current" and status.part_pending %}<span class="badge b-pending">{{ "Dalis taikoma nuo" if act.eu else "Dalis įsigalios" }} {{ status.part_pending }}</span>{% endif %}
+  {% if changes_on and not (future or future_change or status.state == "pending" or repeal_on) %}<span class="aka">Žyma teisinga iki {{ changes_on }} (tą dieną keičiasi).</span>{% endif %}
+  Šaltinis: {% if today_src %}{{ today_src }}{% else %}{{ act.consolidation }} {{ version }}{% endif %}{% set fut = not today_src and version_from > day and status.state == "current" %}{% if fut or source_note %} ({% if fut %}būsima redakcija; šio straipsnio tekstas joje toks pat kaip šiandien{% if source_note %}; {% endif %}{% endif %}{{ source_note or "" }}){% endif %} · <a href="{{ act.etar_url }}">oficialus tekstas {{ act.official_site }} ↗</a>
+  {% if not act.eu %}· <a href="{{ root }}/kaip-buvo/?u={{ canonical[root | length:] | urlencode }}" rel="nofollow">ankstesnės redakcijos</a>{% endif %}
+</div>
+
+{% if register_lag and status.state == "current" %}<div class="box box-unknown"><strong>Atviruose duomenyse naujausi teisės aktai paskelbti {{ register_lag }}.</strong> Pakeitimai, paskelbti vėliau ir jau įsigalioję, čia dar neįvertinti – tikrinkite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>{% endif %}
+{% if expires and status.state != "repealed" %}<div class="box box-unknown"><strong>Visas šis teisės aktas netenka galios {{ expires }}.</strong> Iki tol taikomas žemiau pateiktas tekstas.</div>{% endif %}
+{% if gone_from and status.state == "current" %}<div class="box box-unknown"><strong>Šis {{ act.u.nom }} galioja šiandien, bet naujoje akto redakcijoje, taikomoje nuo {{ gone_from }}, jo nebėra</strong> (jis panaikinamas arba pernumeruojamas). Tuo pačiu numeriu nuo {{ gone_from }} gali būti kitas {{ act.u.nom }} – tikrinkite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>{% endif %}
+{% if status.state == "repealed" %}
+{% if expires and expires <= day %}<div class="box box-repealed"><strong>Šis teisės aktas neteko galios {{ expires }}.</strong> Žemiau – paskutinis jo tekstas, šiandien nebetaikomas. Galiojančius teisės aktus rasite <a href="https://www.e-tar.lt">e-tar.lt ↗</a>.</div>
+{% else %}<div class="box box-repealed"><strong>Šio {{ act.u.gen }} nebetaikoma.</strong> Žemiau – tik pakeitimų nuorodos.</div>{% endif %}
+{% elif today_src and shown_state == "current" %}
+{# today's text found in another official consolidation: no warning box needed #}
+{% elif status.state == "current" and future_change and not (status.part_pending or status.note) %}
+<div class="box box-pending"><strong>Dėmesio:</strong> jau priimtas {{ act.u.amender }} {{ future_change[1] | lawlinks }} šį {{ act.u.acc }} {{ 'keičia' if future_change[2] else 'gali keisti' }} nuo {{ future_change[0] }}. Žemiau – iki tol taikomas tekstas; naujas tekstas atviruose duomenyse dar neparengtas – žr. <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% elif status.state == "current" and (status.part_pending or status.note) %}
+<div class="box box-unknown"><strong>Pastaba:</strong> {{ status.note }}.{% if not act.eu %} Žr. pastabą tekste ir <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.{% endif %}</div>
+{% elif repeal_on %}
+<div class="box box-pending"><strong>Dėmesio:</strong> šis {{ act.u.nom }} <strong>netenka galios {{ repeal_on }}</strong>. Iki tol taikomo teksto atviruose duomenyse nėra – jį rasite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% elif status.state == "pending" and act.eu %}
+<div class="box box-pending"><strong>Šis {{ act.u.nom }} taikomas nuo {{ status.applies_from }}.</strong> Teisės aktas jau įsigaliojęs, bet šios nuostatos iki tos dienos netaikomos ({{ status.reasons[0] }}). Žemiau – tekstas, kuris bus taikomas.</div>
+{% elif status.state == "pending" and status.reasons and status.reasons[0].startswith("pagal TAR pastabą") %}
+<div class="box box-pending"><strong>Dėmesio:</strong> {{ status.reasons[0] }} (žr. pastabą tekste). Kitos šio {{ act.u.gen }} nuostatos taikomos jau dabar. Tikrinkite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% elif status.state == "pending" and status.reasons and status.reasons[0].startswith("visas teisės aktas įsigalioja") %}
+<div class="box box-pending"><strong>Šis teisės aktas įsigalioja {{ status.changes_on }}.</strong> Iki tol jis netaikomas; žemiau – tekstas, kuris bus taikomas nuo {{ status.applies_from }}. Tikrinkite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% elif status.state == "pending" %}
+<div class="box box-pending"><strong>Dėmesio:</strong> žemiau pateiktas šio {{ act.u.gen }} tekstas bus taikomas <strong>nuo {{ status.applies_from }}</strong>{% if status.changes_on != status.applies_from %} (pirmieji pakeitimai įsigalioja {{ status.changes_on }}){% endif %}.
+Šiandien ({{ day }}) galiojančio teksto atviruose duomenyse nėra – jį rasite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% elif status.state == "outdated" %}
+<div class="box box-outdated"><strong>Dėmesio: šis tekstas gali būti pasenęs.</strong> {{ status.reasons | join("; ") | ucfirst | lawlinks }}.
+Galiojantį tekstą rasite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% elif status.state == "unknown" %}
+<div class="box box-unknown"><strong>Nepavyko patvirtinti, kad šis tekstas galioja šiandien</strong> ({{ status.reasons | join("; ") | lawlinks }}).
+Tikrinkite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
+{% endif %}
+
+{% if section_remarks %}<div class="notes">{% for r in section_remarks %}Pastaba visam {{ r }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+<div class="law">
+{% if repeal_on and not blocks %}<p class="editorial">{{ act.u.nom | capitalize }} netenka galios {{ repeal_on }}.</p>{% endif %}
+{% for b in blocks %}
+  {% if b.cells %}{% if b.tbl_open %}<div class="tbl"><table>{% endif %}<tr>{% for c in (b.cells_html or b.cells) %}<td>{{ c }}</td>{% endfor %}</tr>{% if b.tbl_close %}</table></div>{% endif %}{% else %}<p class="{{ b.kind }}"{% if b.anchor %} id="{{ b.anchor }}"{% endif %}>{{ b.html or b.text }}</p>{% endif %}
+  {% if b.notes %}<div class="notes">{% for n in b.notes %}{{ n.label }}: {% for r in n.refs %}<a href="{{ r.url }}">{{ r.nr }}</a> ({{ r.adopted }}){% if not loop.last %}, {% endif %}{% endfor %}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+{% endfor %}
+{% if art_notes %}<div class="notes">{% for n in art_notes %}{{ n.label }}: {% for r in n.refs %}<a href="{{ r.url }}">{{ r.nr }}</a> ({{ r.adopted }}){% if not loop.last %}, {% endif %}{% endfor %}<br>{% endfor %}</div>{% endif %}
+</div>
+
+{% if future %}
+{% if future.repealed %}<h2 id="nuo">Nuo {{ future.applies_from }} šis {{ act.u.nom }} netenka galios</h2>
+<p class="aka">Taip nustatyta jau priimtoje, bet dar neįsigaliojusioje akto redakcijoje.</p>
+{% elif future.other_article %}<h2 id="nuo">Nuo {{ future.applies_from }} šiuo numeriu – kitas {{ act.u.nom }}{% if future.title %}: „{{ future.title }}“{% endif %}</h2>
+<p class="aka">Naujoje akto redakcijoje šiuo numeriu bus kito turinio {{ act.u.nom }} (aktas išdėstomas nauja redakcija arba {{ act.u.plural }} pernumeruojami), todėl pakeitimai nelyginami.</p>
+{% else %}<h2 id="nuo">Nuo {{ future.applies_from }} bus taip</h2>{% endif %}
+<p class="aka">Jau priimtas, bet dar neįsigaliojęs tekstas ({{ act.consolidation }} {{ version }}){% if future.changes_on != future.applies_from %}; pirmieji pakeitimai įsigalioja {{ future.changes_on }}{% endif %}.</p>
+{% if future.repealed %}{% elif future.blocks %}<div class="law future">{% for b in future.blocks %}<p class="{{ b.kind }}">{{ b.text }}</p>{% endfor %}</div>
+{% else %}<p class="aka">{{ act.u.nom | capitalize }} ilgas – rodomos tik besikeičiančios dalys (žr. „Kas keičiasi“). Visą tekstą rasite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</p>{% endif %}
+{% if not future.other_article and not future.repealed %}<details{% if not future.blocks %} open{% endif %}><summary>Kas keičiasi ({{ future.changes | length }})</summary>
+<div class="law diff">{% for c in future.changes %}<p><span class="aka">{{ c.kind }}:</span> {{ c.html | safe }}</p>{% endfor %}</div>
+</details>{% endif %}
+{% endif %}
+
+{% if refs_here %}
+<div class="notes" style="margin-top:14px">Šiame tekste nurodyta sąvokas suprasti taip, kaip jos apibrėžtos šiuose aktuose: {% for r in refs_here %}<a href="{{ r.url }}">{{ r.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</div>
+{% endif %}
+{% if defined_terms %}
+<div class="notes" style="margin-top:14px">Šiame {{ act.u.loc }} rastos apibrėžtos sąvokos: {% for t in defined_terms %}<a href="{{ t.url }}">{{ t.term }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</div>
+{% endif %}
+{% if eu_mentioned or eu_count %}
+<div class="notes" style="margin-top:14px">
+{% if eu_mentioned %}Šiame {{ act.u.loc }} minimi ES teisės aktai: {% for e in eu_mentioned %}<a href="{{ e.url }}">{{ e.short }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.<br>{% endif %}
+{% if eu_count %}{{ act.tag or act.name }} įgyvendina {{ eu_count | acts_count("ES ") }} (<a href="{{ eu_link }}">sąrašas</a>).{% endif %}
+</div>
+{% endif %}
+
+<details class="rel" hidden data-rel-act="{{ act.abbr }}" data-rel-n="{{ art.label }}"><summary>Kur šis {{ act.u.nom }} minimas</summary><div></div></details>
+
+{% if other_variants %}
+<details><summary>Kitos šio {{ act.u.gen }} redakcijos šiame tekste ({{ other_variants | length }})</summary>
+{% for v in other_variants %}<p><strong>{{ v.period }}</strong></p><div class="law">{% for b in v.blocks %}<p class="{{ b.kind }}">{{ b.html or b.text }}</p>{% endfor %}</div>{% endfor %}
+</details>
+{% endif %}
+
+<nav class="pn">
+  <span>{% if prev %}<a href="{{ prev.url }}" rel="prev">← {{ prev.pretty }} {{ act.u.short }}</a>{% endif %}</span>
+  <span><a href="{{ act_url }}">Turinys</a></span>
+  <span>{% if next %}<a href="{{ next.url }}" rel="next">{{ next.pretty }} {{ act.u.short }} →</a>{% endif %}</span>
+</nav>
+{% endblock %}

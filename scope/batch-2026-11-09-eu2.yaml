@@ -1,0 +1,3 @@
+acts:
+  - {abbr: ATLPSD, no_abbr: true, title: "Direktyva 2003/87/EB dėl šiltnamio efektą sukeliančių dujų apyvartinių taršos leidimų prekybos sistemos", genitive: "Direktyvos 2003/87/EB", number: "2003/87/EB", eu: 32003L0087, slug: es-atlps-direktyva}
+  - {abbr: EMSD, no_abbr: true, title: "Energetikos mokesčių direktyva 2003/96/EB", genitive: "Direktyvos 2003/96/EB", number: "2003/96/EB", eu: 32003L0096, slug: energetikos-mokesciu-direktyva}

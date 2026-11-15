@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Teisės aktai</a> › <a href="{{ root }}/sritis/energetika/">Energetika</a> › <a href="{{ root }}/vert/">VERT sprendimai</a> › <a href="{{ root }}/vert/{{ d.sector }}/">{{ {"elektra": "Elektra", "dujos": "Dujos", "siluma": "Šiluma"}[d.sector] }}</a> › Nr. {{ d.atv_dok_nr }}</nav>
+<h1>{{ d.pavadinimas }}</h1>
+<div class="strip"><span class="badge {{ {'current': 'b-current', 'pending': 'b-pending', 'earlier': 'b-outdated', 'replaced': 'b-outdated', 'repealed': 'b-repealed'}.get(d.label.state, 'b-unknown') }}">{{ d.label.text }}</span>
+Valstybinės energetikos reguliavimo tarybos nutarimas Nr. {{ d.atv_dok_nr }}, priimtas {{ d.priimtas }}{% if d.isigalioja %}, įsigalioja {{ d.isigalioja }}{% endif %} · <a href="{{ d.etar }}">oficialus tekstas ir priedai e-tar.lt ↗</a></div>
+{% if d.label.state in ('earlier', 'replaced') %}<div class="box box-unknown"><strong>Tai ne šiandien taikomas sprendimas.</strong> {{ d.label.text }}.</div>{% endif %}
+{% if rules_url %}<div class="box"><strong>Šiuo nutarimu patvirtintas dokumentas su visais pakeitimais – <a href="{{ rules_url }}">punktais šioje svetainėje</a></strong> (galiojantis tekstas, kiekvienas punktas su žyma).</div>{% endif %}
+{% if d.changed_by %}<div class="box box-unknown"><strong>Šį nutarimą keitė:</strong> {% for c in d.changed_by %}Nr. {{ c.atv_dok_nr }} ({{ c.priimtas }}){% if not loop.last %}, {% endif %}{% endfor %}. Žemiau – pradinis tekstas; pakeitimus žr. e-tar.lt.</div>{% endif %}
+{% if lines %}<div class="law">{% for l in lines %}<p>{{ l }}</p>{% endfor %}</div>
+<p class="aka">Priedai (pvz., kainų lentelės) atviruose duomenyse neskelbiami – <a href="{{ d.etar }}">žr. e-tar.lt ↗</a>.</p>
+{% else %}<p>Šio nutarimo teksto čia nepateikiame (ankstesnis sprendimas). Visas tekstas ir priedai – <a href="{{ d.etar }}">e-tar.lt ↗</a>.</p>{% endif %}
+{% if series | length > 1 %}<h2>Ta pati sritis: kiti nutarimai</h2>
+<ul class="toc">{% for x in series %}<li>{% if x.key == d.key %}<strong>Nr. {{ x.atv_dok_nr }} ({{ x.priimtas }})</strong>{% else %}<a href="{{ x.url }}">Nr. {{ x.atv_dok_nr }} ({{ x.priimtas }})</a>{% endif %} · {{ x.label.text }}</li>{% endfor %}</ul>{% endif %}
+<p class="aka">Žyma – šios svetainės įvertinimas pagal nutarimo pavadinimą ir vėlesnius tos pačios srities nutarimus; Teisės aktų registre nutarimas gali būti nurodytas kaip galiojantis. Tekstas neoficialus.</p>
+{% endblock %}

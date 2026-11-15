@@ -1,0 +1,18 @@
+# Deployed by .github/workflows/relay.yml; the secret RELAY_KEY is set there too.
+name = "lt-law-fetch-relay"
+main = "fetch-relay.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+# data.gov.lt answers Cloudflare from Europe but not when the Worker runs next to GitHub's
+# (US) runners, so the relay always runs in Stockholm (D-019).
+[placement]
+region = "aws:eu-north-1"
+
+# 00:05 in Lithuania all year (21:05 UTC in summer, 22:05 UTC in winter; the other is a harmless extra
+# that the build skips): starts the nightly workflow punctually. Inactive without GH_DISPATCH_TOKEN.
+[triggers]
+crons = ["5 21 * * *", "5 22 * * *"]
+
+[vars]
+GH_REPO = "marrgss/atviri-teises-aktai"

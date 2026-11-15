@@ -1,0 +1,10 @@
+acts:
+  # 2026-11-11: the laws our texts cite most that are not in yet (bin/rank_candidates.py laws --min 4)
+  - {abbr: KPPPF2Į, no_abbr: true, title: "kelių priežiūros ir plėtros programos finansavimo įstatymas", number: VIII-2032, area: transportas}  # cited 75
+  - {abbr: AŽŪP2Į, no_abbr: true, title: "atsiskaitymo už žemės ūkio produkciją įstatymas", number: VIII-1422, area: verslas}  # cited 26
+  - {abbr: CVVTV2Į, no_abbr: true, title: "centralizuotai valdomo valstybės turto valdytojo įstatymas", number: XII-791, area: valstybe}  # cited 22
+  - {abbr: EDT2Į, no_abbr: true, title: "Europos darbo tarybų įstatymas", number: IX-2031, area: darbas}  # cited 13
+  - {abbr: LKTKPLK2Į, no_abbr: true, title: "Lietuvos kariuomenės Tauragės karinio poligono ir Lietuvos kariuomenės Šilalės karinio poligono įstatymas", number: XIV-3051, area: valstybe}  # cited 9
+  - {abbr: VV2Į, no_abbr: true, title: "veterinarinių vaistų įstatymas", number: XIV-1088, area: sveikata}  # cited 7
+  - {abbr: ANM2Į, no_abbr: true, title: "administracinės naštos mažinimo įstatymas", number: XI-2386, area: verslas}  # cited 5
+  - {abbr: EB2Į, no_abbr: true, title: "Europos bendrovių įstatymas", number: IX-2199, area: verslas}  # cited 4

@@ -1,0 +1,35 @@
+# The agents' MCP server and REST API (D-028). Deployed by hand: .github/workflows/mcp.yml (OPERATIONS).
+# Workers Free plan: 100,000 requests a day, 10 ms CPU per request; over the limit requests fail, nothing is billed.
+name = "lt-law-mcp"
+main = "index.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+
+# On the site's own domain, behind the same Access gate while the site is private. The static /api/v1/ files
+# stay on Pages: these patterns don't match them.
+routes = [
+  { pattern = "atviri-teises-aktai.lt/mcp*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/api/search*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/api/definition*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/api/article*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/api/acts*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/api/contents*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/api/upcoming*", zone_name = "atviri-teises-aktai.lt" },
+  { pattern = "atviri-teises-aktai.lt/kaip-buvo*", zone_name = "atviri-teises-aktai.lt" },  # dated pages for people (D-030)
+]
+
+# Workers Paid (2026-10-24): requests beyond the included ones are billed, so every request is capped in CPU (a normal
+# answer takes 1–10 ms; a runaway one stops at 50 ms instead of billing up to 30 s). Floods are the rate-limiting
+# rule's job (OPERATIONS "Costs").
+[limits]
+cpu_ms = 50
+
+[vars]
+SITE_ORIGIN = "https://atviri-teises-aktai.lt"
+
+# Dated answers (D-029): the official consolidations since 2020 in an R2 bucket (bin/export_history.py,
+# bin/upload_history.py). R2 free tier; reads are bounded by the Workers Free plan's 100,000 requests a day.
+[[r2_buckets]]
+binding = "HISTORY"
+bucket_name = "lt-law-history"
+jurisdiction = "eu"  # the bucket was created in the EU jurisdiction; without this wrangler binds (and creates) a default-jurisdiction namesake

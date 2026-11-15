@@ -1,0 +1,22 @@
+# The second Worker of the site (D-051): files only, no script. A Worker version holds at most 100,000 static files;
+# the site outgrew one. This one serves the act pages whose TAR code starts with "1" (/ta/1*: about 41,000 files on
+# 2026-11-09); the route is more specific than the main Worker's /*, so Cloudflare sends those addresses here.
+# bin/split_site.py moves their files from out/site into out/site-2 (with copies of 404.html and _headers, and the
+# _redirects rules of these paths) before the deploy job deploys this Worker, then the main one.
+#
+# No `main`: requests answered from static assets are free and unlimited, and none of these addresses needs code
+# (the MCP Worker reads only api/v1/, which stays with it). Same token as the main Worker (Workers Scripts Edit,
+# Workers Routes Edit). Way back: delete this route (dashboard: Workers Routes) and deploy the main Worker with the
+# whole site while it fits 100,000 files (docs/OPERATIONS.md, "Second Worker").
+name = "lt-law-site-2"
+compatibility_date = "2026-10-01"
+workers_dev = false
+
+routes = [
+  { pattern = "atviri-teises-aktai.lt/ta/1*", zone_name = "atviri-teises-aktai.lt" },
+]
+
+[assets]
+directory = "../out/site-2"
+html_handling = "auto-trailing-slash"  # as the main Worker: /ta/x/str/52 -> /ta/x/str/52/
+not_found_handling = "404-page"        # its own copy of 404.html

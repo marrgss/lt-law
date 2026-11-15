@@ -1,0 +1,30 @@
+# The whole site served by this Worker (D-032, proposed): the built site as static assets (100,000 files on the
+# Workers Paid plan, against Pages' 20,000; asset requests are free), the script only for the paths listed in
+# run_worker_first and for paths no file matches. One route on the apex sits in front of the Pages project, so no DNS
+# change: removing the route (deploying wrangler.toml) is the way back. Local check: bin/check_site_worker.sh.
+name = "lt-law-mcp"
+main = "index.js"
+compatibility_date = "2026-10-01"
+workers_dev = false
+
+routes = [
+  { pattern = "atviri-teises-aktai.lt/*", zone_name = "atviri-teises-aktai.lt" },
+]
+
+[assets]
+directory = "../out/site"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"  # as Pages: /ta/x/str/52 -> /ta/x/str/52/
+not_found_handling = "404-page"        # 404.html
+run_worker_first = ["/mcp", "/api", "/api/", "/api/definition", "/api/search", "/api/article", "/api/acts", "/api/contents", "/api/upcoming", "/api/related", "/api/articles", "/kaip-buvo", "/kaip-buvo/*"]
+
+[limits]
+cpu_ms = 50
+
+[vars]
+SITE_ORIGIN = "https://atviri-teises-aktai.lt"
+
+[[r2_buckets]]
+binding = "HISTORY"
+bucket_name = "lt-law-history"
+jurisdiction = "eu"  # see wrangler.toml

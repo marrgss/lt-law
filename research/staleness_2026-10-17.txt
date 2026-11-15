@@ -1,0 +1,55 @@
+acts total 480063, in force 387722, with any consolidation in dump 123852
+amending acts published since 2025-06-13: 11126
+
+type                              in force  stale (est.)
+Įsakymas                            120671          1075
+Sprendimas                           78727           376
+Nutartis                             77545             0
+Nutarimas                            54016           136
+Potvarkis                            18298           129
+Įstatymas                            12325           361
+Dekretas                             11742             6
+Informacija                           4458             0
+Pranešimas                            3095             0
+Atitaisymas                           1467             0
+Nutartis dėl teismingumo              1375             0
+Rezoliucija                           1087             0
+ALL                                 387722          2087
+
+most-amended since the snapshot:
+   26  I-1489       Lietuvos Respublikos švietimo įstatymas
+   22  AD1-51       Dėl draudimo rūkyti (vartoti tabaką, tabako gaminius ir su jais susijusius gaminius) daugi
+   21  I-1343       Lietuvos Respublikos sveikatos draudimo įstatymas
+   20  I-446        Lietuvos Respublikos žemės įstatymas
+   20  1-265        Dėl 2021–2030 m. energetikos plėtros programos pažangos priemonės Nr. 03-001-06-03-02 „Did
+   19  4-885        Dėl 2022–2030 metų ekonomikos transformacijos ir konkurencingumo plėtros programos pažango
+   17  I-1336       Lietuvos Respublikos valstybinio socialinio draudimo įstatymas
+   16  I-1240       Lietuvos Respublikos statybos įstatymas
+   16  T1-403       Dėl finansavimo skyrimo projektams, pateiktiems kvietime KK-AM-MŽR02 pagal priemonę „Daugi
+   15  3D-139       Dėl Europos žemės ūkio garantijų fondo, Europos žemės ūkio fondo kaimo plėtrai ir viešosio
+   15  IX-884       Lietuvos Respublikos energetikos įstatymas
+   15  IX-1007      Lietuvos Respublikos gyventojų pajamų mokesčio įstatymas
+   15  VIII-1881    Lietuvos Respublikos elektros energetikos įstatymas
+   14  I-533        Lietuvos Respublikos vietos savivaldos įstatymas
+   14  I-2223       Lietuvos Respublikos aplinkos apsaugos įstatymas
+suv_duom_atnaujinimas by month (top 12):
+  2024-07 2261
+  2024-08 1454
+  2024-09 2016
+  2024-10 2180
+  2024-11 2136
+  2024-12 3055
+  2025-01 1936
+  2025-02 2170
+  2025-03 2158
+  2025-04 2615
+  2025-05 1722
+  NULL 10218
+
+Codes: amending LAWS (rusis=Įstatymas) published since 2025-06-13, matched by code name in title:
+  DK     4  latest 2026-07-10
+  CK     9  latest 2026-07-02
+  BK     3  latest 2026-07-02
+  ANK   26  latest 2026-07-14
+  CPK   11  latest 2026-06-26
+  BPK    2  latest 2026-07-02

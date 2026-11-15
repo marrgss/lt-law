@@ -1,0 +1,28 @@
+# P2 scope: 5 codes, local build only. dokumento_id is the TAR document id (stable).
+# abbr is the alias used in URLs (/dk/52) and titles ("DK 52 straipsnis").
+acts:
+  - abbr: DK
+    genitive: darbo kodekso   # how amending-law titles name the act
+    number: XII-2603
+    name: Darbo kodeksas
+    dokumento_id: f6d686707e7011e6b969d7ae07280e89
+  - abbr: CK
+    genitive: civilinio kodekso   # how amending-law titles name the act
+    number: VIII-1864
+    name: Civilinis kodeksas
+    dokumento_id: TAR.8A39C83848CB
+  - abbr: BK
+    genitive: baudžiamojo kodekso   # how amending-law titles name the act
+    number: VIII-1968
+    name: Baudžiamasis kodeksas
+    dokumento_id: TAR.2B866DFF7D43
+  - abbr: ANK
+    genitive: administracinių nusižengimų kodekso   # how amending-law titles name the act
+    number: XII-1869
+    name: Administracinių nusižengimų kodeksas
+    dokumento_id: 4ebe66c0262311e5bf92d6af3f6a2e8b
+  - abbr: PVMĮ
+    genitive: pridėtinės vertės mokesčio įstatymo   # how amending-law titles name the act
+    number: IX-751
+    name: Pridėtinės vertės mokesčio įstatymas
+    dokumento_id: TAR.ED68997709F5

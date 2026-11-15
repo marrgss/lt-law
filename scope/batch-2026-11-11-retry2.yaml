@@ -1,0 +1,5 @@
+acts:
+  # 2026-11-11 afternoon: held on one point each, parser misreads now fixed: SSTT 51 swallowed "52.Tarybos …" (no space);
+  # ITIVKDĮN 52 took e-tar's repealed-chapter stub "8 skyrius. Neteko galios nuo 2026-06-02" as its words
+  - {abbr: ITIVKDĮN, no_abbr: true, title: "išmetamų teršalų iš vidutinių kurą deginančių įrenginių normos", genitive: "išmetamų teršalų iš vidutinių kurą deginančių įrenginių normų", resolution: df291a809e9811e79127a823199cc174, area: energetika}  # MIN D1-778
+  - {abbr: SSTT, no_abbr: true, title: "sankcijų skyrimo taisyklės", genitive: "sankcijų skyrimo taisyklių", resolution: 213e6f40924711e397c8b55a09dd5905, area: energetika}  # VERT O3-44

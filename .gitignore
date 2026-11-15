@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+.env
+*.log
+out/
+
+# local tooling
+.claude/
+node_modules/
+.DS_Store
+
+# kept local, never published (D-022)
+private/
+CLAUDE.md
+.skip
+.wrangler/

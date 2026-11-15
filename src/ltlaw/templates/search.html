@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Pradžia</a> › Paieška</nav>
+<h1>Paieška</h1>
+<form action="{{ root }}/paieska/" method="get" class="search"><input type="search" name="q" placeholder="pvz. DK 52 arba nuotolinis darbas" aria-label="Paieška"> <button type="submit">Ieškoti</button></form>
+<div id="search-results" data-index="{{ root }}/search-index.json">
+<noscript><p>Paieškai reikia JavaScript. Be jo naudokite <a href="{{ root }}/">teisės aktų sąrašą</a> arba adresus <code>/dk/52/</code>, <code>/ck/6.228-1/</code>.</p></noscript>
+</div>
+<p class="aka">Ieškoma pagal akto santrumpą, straipsnio numerį, pavadinimą ir straipsnių tekstą (žodžiai nuo 4 raidžių; pvz. „DK atostogos“).</p>
+{% endblock %}

@@ -1,0 +1,2956 @@
+{
+ "day": "2026-11-02",
+ "answer_key": "e-tar.lt, same consolidated version",
+ "acts": {
+  "Konstitucija": {
+   "ok": true,
+   "version": "2022-05-22..",
+   "articles": 154,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "DK": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 257,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "CK": {
+   "ok": true,
+   "version": "2027-01-01..2027-10-31",
+   "articles": 2012,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BK": {
+   "ok": true,
+   "version": "2026-01-01..2026-07-02",
+   "articles": 400,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ANK": {
+   "ok": true,
+   "version": "2027-01-02..2027-04-30",
+   "articles": 793,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "CPK": {
+   "ok": true,
+   "version": "2026-07-01..2026-08-31",
+   "articles": 872,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BPK": {
+   "ok": true,
+   "version": "2026-06-30..2026-08-31",
+   "articles": 499,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ABTĮ": {
+   "ok": true,
+   "version": "2026-06-30..",
+   "articles": 191,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PVMĮ": {
+   "ok": true,
+   "version": "2029-07-01..",
+   "articles": 177,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GPMĮ": {
+   "ok": true,
+   "version": "2026-06-11..2026-12-31",
+   "articles": 43,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PMĮ": {
+   "ok": true,
+   "version": "2025-12-12..2025-12-31",
+   "articles": 76,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MAĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 186,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NTMĮ": {
+   "ok": true,
+   "version": "2031-01-01..",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AKĮ": {
+   "ok": true,
+   "version": "2027-07-01..",
+   "articles": 83,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ABĮ": {
+   "ok": true,
+   "version": "2026-11-01..2030-01-09",
+   "articles": 97,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "JANĮ": {
+   "ok": true,
+   "version": "2028-05-01..",
+   "articles": 169,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VPĮ": {
+   "ok": true,
+   "version": "2026-11-01..2026-12-31",
+   "articles": 110,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KĮ": {
+   "ok": true,
+   "version": "2026-05-01..2026-06-29",
+   "articles": 63,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTAĮ": {
+   "ok": true,
+   "version": "2026-07-31..",
+   "articles": 75,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ADTAĮ": {
+   "ok": true,
+   "version": "2025-01-01..2026-06-29",
+   "articles": 40,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "UĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 77,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSDĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 47,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SDĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 56,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠĮ": {
+   "ok": true,
+   "version": "2027-09-01..2029-08-31",
+   "articles": 93,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽĮ": {
+   "ok": true,
+   "version": "2027-07-01..2028-06-30",
+   "articles": 76,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SĮ": {
+   "ok": true,
+   "version": "2026-11-01..2026-12-31",
+   "articles": 75,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TPĮ": {
+   "ok": true,
+   "version": "2027-07-01..",
+   "articles": 51,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-12-31",
+   "articles": 75,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AAĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 190,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EĮ": {
+   "ok": true,
+   "version": "2026-11-01..2026-12-31",
+   "articles": 52,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EEĮ": {
+   "ok": true,
+   "version": "2030-01-01..",
+   "articles": 124,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDĮ": {
+   "ok": true,
+   "version": "2025-10-01..2026-04-30",
+   "articles": 72,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AIEĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 84,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠŪĮ": {
+   "ok": true,
+   "version": "2026-11-01..2027-04-30",
+   "articles": 43,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NotĮ": {
+   "ok": true,
+   "version": "2025-03-01..",
+   "articles": 88,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AdvĮ": {
+   "ok": true,
+   "version": "2024-09-01..2024-12-31",
+   "articles": 75,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AntĮ": {
+   "ok": true,
+   "version": "2025-03-01..",
+   "articles": 53,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GTDĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 41,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "DSSĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 54,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LMSDĮ": {
+   "ok": true,
+   "version": "2026-11-01..2026-12-31",
+   "articles": 36,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SDPĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-08-31",
+   "articles": 62,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IVĮ": {
+   "ok": true,
+   "version": "2026-06-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KTK": {
+   "ok": true,
+   "version": "2028-01-01..",
+   "articles": 71,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SEAKĮ": {
+   "ok": true,
+   "version": "2024-07-01..2024-12-31",
+   "articles": 44,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ERĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 100,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KSĮ": {
+   "ok": true,
+   "version": "2026-07-04..",
+   "articles": 38,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BĮ": {
+   "ok": true,
+   "version": "2030-01-10..",
+   "articles": 120,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "DrĮ": {
+   "ok": true,
+   "version": "2026-07-02..2030-01-09",
+   "articles": 241,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MokĮ": {
+   "ok": true,
+   "version": "2026-07-02..",
+   "articles": 98,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MBĮ": {
+   "ok": true,
+   "version": "2024-09-01..2025-12-31",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VšĮĮ": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 30,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AsĮ": {
+   "ok": true,
+   "version": "2025-06-21..2025-12-31",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NTRĮ": {
+   "ok": true,
+   "version": "2024-01-01..2026-12-31",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MATĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-01-01",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTAPĮ": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 56,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SPĮ": {
+   "ok": true,
+   "version": "2027-01-01..2028-12-31",
+   "articles": 45,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PSPĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-05-21",
+   "articles": 31,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SPĮĮ": {
+   "ok": true,
+   "version": "2026-07-01..2026-12-31",
+   "articles": 68,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PTŽĮ": {
+   "ok": true,
+   "version": "2025-07-01..",
+   "articles": 28,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 97,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ATGTĮ": {
+   "ok": true,
+   "version": "2026-06-01..",
+   "articles": 151,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VIĮ": {
+   "ok": true,
+   "version": "2026-06-30..2026-12-31",
+   "articles": 66,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TGIĮ": {
+   "ok": true,
+   "version": "2024-11-01..2025-12-31",
+   "articles": 19,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VKĮ": {
+   "ok": true,
+   "version": "2026-11-20..",
+   "articles": 63,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NTKĮ": {
+   "ok": true,
+   "version": "2026-05-01..2026-06-18",
+   "articles": 62,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "UTPĮ": {
+   "ok": true,
+   "version": "2026-11-01..2026-12-31",
+   "articles": 213,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MSĮ": {
+   "ok": true,
+   "version": "2029-01-01..",
+   "articles": 102,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ATKPĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 11,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GVDĮ": {
+   "ok": true,
+   "version": "2023-01-01..",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PilĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 49,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ProkĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 77,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TeisĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 155,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PolĮ": {
+   "ok": true,
+   "version": "2024-11-23..",
+   "articles": 30,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GŠKĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-01-31",
+   "articles": 48,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AlkKĮ": {
+   "ok": true,
+   "version": "2026-06-30..",
+   "articles": 53,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TabKĮ": {
+   "ok": true,
+   "version": "2027-05-01..",
+   "articles": 60,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TurĮ": {
+   "ok": true,
+   "version": "2025-07-01..2025-10-31",
+   "articles": 44,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FAĮ": {
+   "ok": true,
+   "version": "2025-05-01..",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FAAĮ": {
+   "ok": true,
+   "version": "2026-05-01..2026-06-29",
+   "articles": 95,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PPTFPĮ": {
+   "ok": true,
+   "version": "2026-06-30..2026-12-31",
+   "articles": 62,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KPĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VPIDĮ": {
+   "ok": true,
+   "version": "2024-10-24..",
+   "articles": 23,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSTĮ": {
+   "ok": true,
+   "version": "2026-11-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VGTPĮ": {
+   "ok": true,
+   "version": "2025-11-26..2026-05-06",
+   "articles": 38,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MedĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KAĮ": {
+   "ok": true,
+   "version": "2012-06-30..2017-06-30",
+   "articles": 51,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MuitĮ": {
+   "ok": true,
+   "version": "2025-07-01..2026-06-30",
+   "articles": 64,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽMĮ": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 15,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ASNTĮ": {
+   "ok": true,
+   "version": "2026-07-11..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠPĮ": {
+   "ok": true,
+   "version": "2026-07-11..2026-11-30",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PŽĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 79,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PatĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 86,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ATĮ": {
+   "ok": true,
+   "version": "2026-10-01..2026-12-31",
+   "articles": 105,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MiškĮ": {
+   "ok": true,
+   "version": "2026-01-07..2026-08-31",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VKalbĮ": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 28,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VAĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-10-31",
+   "articles": 41,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GGAĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-01-01",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IĮĮ": {
+   "ok": true,
+   "version": "2012-09-01..2024-08-31",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KBĮ": {
+   "ok": true,
+   "version": "2025-07-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SSĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 103,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RK": {
+   "ok": true,
+   "version": "2027-09-01..",
+   "articles": 197,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "Statutas": {
+   "ok": true,
+   "version": "2026-07-08..2026-10-19",
+   "articles": 336,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BVK": {
+   "ok": true,
+   "version": "2026-06-30..",
+   "articles": 100,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GTK": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 102,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VVTK": {
+   "ok": true,
+   "version": "2026-11-01..2027-12-31",
+   "articles": 83,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FABĮ": {
+   "ok": true,
+   "version": "2027-01-01..2028-04-30",
+   "articles": 34,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "DNSBĮ": {
+   "ok": true,
+   "version": "2023-03-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SBĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PTMĮ": {
+   "ok": true,
+   "version": "2015-01-01..",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TPVCAPDĮ": {
+   "ok": true,
+   "version": "2024-07-10..2025-07-23",
+   "articles": 41,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NSDĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NADPLSDĮ": {
+   "ok": true,
+   "version": "2024-06-21..2024-10-31",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PKĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 56,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŪBĮ": {
+   "ok": true,
+   "version": "2024-09-01..",
+   "articles": 16,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RekĮ": {
+   "ok": true,
+   "version": "2025-02-01..2026-06-29",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ASAAĮ": {
+   "ok": true,
+   "version": "2025-12-31..",
+   "articles": 19,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LGĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 32,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PBĮ": {
+   "ok": true,
+   "version": "2024-07-01..2025-06-30",
+   "articles": 31,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MTPRMĮ": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ALĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 67,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŪŪĮ": {
+   "ok": true,
+   "version": "2023-07-01..2026-12-31",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽŪPŽĮĮ": {
+   "ok": true,
+   "version": "2026-05-01..2026-05-01",
+   "articles": 8,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NKPAĮ": {
+   "ok": true,
+   "version": "2026-11-01..2028-06-30",
+   "articles": 48,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IVPĮ": {
+   "ok": true,
+   "version": "2025-04-01..2026-06-29",
+   "articles": 45,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NKVVDĮ": {
+   "ok": true,
+   "version": "2026-09-27..",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NTRgĮ": {
+   "ok": null,
+   "not_in_force": true,
+   "articles": 14
+  },
+  "VyrĮ": {
+   "ok": true,
+   "version": "2026-05-13..",
+   "articles": 60,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KTĮ": {
+   "ok": true,
+   "version": "2022-09-01..2025-06-16",
+   "articles": 95,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SKĮ": {
+   "ok": true,
+   "version": "2025-08-01..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RefKĮ": {
+   "ok": true,
+   "version": "2026-09-01..",
+   "articles": 38,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KASOKTĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 84,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KVCSĮ": {
+   "ok": true,
+   "version": "2030-01-01..",
+   "articles": 59,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BSĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-01-31",
+   "articles": 32,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LBĮ": {
+   "ok": true,
+   "version": "2026-07-02..2026-07-09",
+   "articles": 80,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KelĮ": {
+   "ok": true,
+   "version": "2026-06-01..2026-06-30",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SŽNSĮ": {
+   "ok": true,
+   "version": "2026-10-28..2027-02-28",
+   "articles": 143,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTS": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 87,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FPRĮ": {
+   "ok": true,
+   "version": "2027-01-01..2028-01-09",
+   "articles": 128,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KRĮ": {
+   "ok": true,
+   "version": "2026-04-29..2026-07-01",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KUĮ": {
+   "ok": true,
+   "version": "2024-07-01..2025-06-30",
+   "articles": 87,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EPEPĮĮ": {
+   "ok": true,
+   "version": "2025-04-09..2025-06-30",
+   "articles": 48,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KET": {
+   "ok": true,
+   "version": "2024-12-01..2025-12-31",
+   "articles": 256,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VDUTA": {
+   "ok": true,
+   "version": "2025-10-31..2025-12-31",
+   "articles": 8,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PAILGA": {
+   "ok": true,
+   "version": "2025-10-31..2025-12-31",
+   "articles": 18,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PAPILA": {
+   "ok": true,
+   "version": "2025-10-31..2025-12-31",
+   "articles": 5,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "DIENPA": {
+   "ok": true,
+   "version": "2026-10-01..2027-06-30",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KOMIT": {
+   "ok": true,
+   "version": "2026-10-01..2027-06-30",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LMSDIN": {
+   "ok": true,
+   "version": "2026-11-01..2026-12-31",
+   "articles": 135,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IVSMN": {
+   "ok": true,
+   "version": "2026-06-01..",
+   "articles": 53,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NADPLIN": {
+   "ok": true,
+   "version": "2025-09-01..",
+   "articles": 79,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "JARN": {
+   "ok": true,
+   "version": "2026-07-01..2026-08-23",
+   "articles": 358,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GRN": {
+   "ok": true,
+   "version": "2024-05-25..",
+   "articles": 64,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VGON": {
+   "ok": true,
+   "version": "2024-07-01..2026-04-30",
+   "articles": 96,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VZSPNT": {
+   "ok": true,
+   "version": "2026-10-09..",
+   "articles": 114,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ALKLT": {
+   "ok": true,
+   "version": "2024-06-28..",
+   "articles": 66,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TeisPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 39,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NTKadĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 26,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "CBARĮ": {
+   "ok": true,
+   "version": "2026-05-22..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EAPĮ": {
+   "ok": true,
+   "version": "2024-10-18..",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GVTNTĮ": {
+   "ok": true,
+   "version": "2024-10-01..2026-06-29",
+   "articles": 42,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AtmDĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 1,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VPopĮ": {
+   "ok": true,
+   "version": "2030-01-10..",
+   "articles": 42,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FinĮĮ": {
+   "ok": true,
+   "version": "2026-07-02..",
+   "articles": 55,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PSPKĮ": {
+   "ok": true,
+   "version": "2028-01-01..2028-01-09",
+   "articles": 69,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDNĮ": {
+   "ok": true,
+   "version": "2025-01-01..2025-12-31",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "InvĮ": {
+   "ok": true,
+   "version": "2025-11-02..2027-06-30",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RinkĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BiudĮĮ": {
+   "ok": true,
+   "version": "2024-01-01..2024-07-05",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ProfMĮ": {
+   "ok": true,
+   "version": "2026-09-01..",
+   "articles": 44,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PŪVPAVĮ": {
+   "ok": true,
+   "version": "2026-02-21..",
+   "articles": 16,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PPATĮ": {
+   "ok": true,
+   "version": "2026-04-01..2026-08-31",
+   "articles": 28,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KPirkĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 118,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PsSPĮ": {
+   "ok": true,
+   "version": "2023-01-01..",
+   "articles": 15,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PGSĮ": {
+   "ok": true,
+   "version": "2019-01-01..",
+   "articles": 28,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NPMKĮ": {
+   "ok": true,
+   "version": "2025-11-01..",
+   "articles": 44,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LobVĮ": {
+   "ok": true,
+   "version": "2026-06-30..",
+   "articles": 18,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NVOPĮ": {
+   "ok": true,
+   "version": "2025-08-01..",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SavVĮ": {
+   "ok": true,
+   "version": "2024-07-01..2026-06-16",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SportĮ": {
+   "ok": true,
+   "version": "2025-05-21..2025-12-31",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽPLĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 39,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SPMokĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 19,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MVLGĮ": {
+   "ok": true,
+   "version": "2025-12-31..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ADegĮ": {
+   "ok": true,
+   "version": "2030-01-01..",
+   "articles": 43,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VPensĮ": {
+   "ok": true,
+   "version": "2024-07-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TKompĮ": {
+   "ok": true,
+   "version": "2026-05-01..2026-05-21",
+   "articles": 15,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SNŽKĮ": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BĮDAĮ": {
+   "ok": true,
+   "version": "2026-11-01..",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽULPKĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 46,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ASPPĮ": {
+   "ok": true,
+   "version": "2025-01-01..2026-12-31",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VetĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PaštoĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MokĮstĮ": {
+   "ok": true,
+   "version": "2025-04-09..2025-06-30",
+   "articles": 42,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KISĮ": {
+   "ok": true,
+   "version": "2027-01-01..2028-01-09",
+   "articles": 175,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AKISVĮ": {
+   "ok": true,
+   "version": "2024-12-30..2025-06-30",
+   "articles": 65,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IIKISĮ": {
+   "ok": true,
+   "version": "2027-01-01..2028-01-09",
+   "articles": 67,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MPĮNVDĮ": {
+   "ok": true,
+   "version": "2026-06-30..",
+   "articles": 19,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NPPŽŪĮ": {
+   "ok": true,
+   "version": "2024-08-01..2026-06-29",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ArchĮ": {
+   "ok": true,
+   "version": "2024-05-01..",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TPSVPĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-01-01",
+   "articles": 38,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽPVPĮ": {
+   "ok": true,
+   "version": "2024-08-01..",
+   "articles": 16,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PNTAĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽRefĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-01-01",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽelĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 30,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LGĮst": {
+   "ok": true,
+   "version": "2024-07-01..2025-12-31",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽuvĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 79,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PKanĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 26,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽŪMŪKPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 15,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VKontrĮ": {
+   "ok": true,
+   "version": "2024-01-01..2025-12-31",
+   "articles": 31,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSAĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-01-31",
+   "articles": 20,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VIIVĮ": {
+   "ok": true,
+   "version": "2024-10-18..2025-12-31",
+   "articles": 47,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GKĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-10-31",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LRTĮ": {
+   "ok": true,
+   "version": "2027-01-01..2027-12-31",
+   "articles": 23,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RPĮ": {
+   "ok": true,
+   "version": "2024-01-01..2025-01-14",
+   "articles": 30,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AviacĮ": {
+   "ok": true,
+   "version": "2027-06-01..",
+   "articles": 63,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TVPĮ": {
+   "ok": true,
+   "version": "2026-06-30..2027-12-31",
+   "articles": 30,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STTĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-06-30",
+   "articles": 68,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MedPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 49,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "OPBPPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SPAPĮ": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽALODTĮ": {
+   "ok": true,
+   "version": "2019-07-01..2026-12-31",
+   "articles": 16,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PApvĮ": {
+   "ok": true,
+   "version": "2026-04-10..",
+   "articles": 18,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BTEĮ": {
+   "ok": true,
+   "version": "2023-09-01..",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KDĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 18,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PASPĮ": {
+   "ok": true,
+   "version": "2025-01-01..2026-12-31",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽMNKBĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 18,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VIIĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-06-30",
+   "articles": 16,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VAIĮ": {
+   "ok": true,
+   "version": "2023-01-01..",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠKĮ": {
+   "ok": true,
+   "version": "2020-01-01..",
+   "articles": 8,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠeimynĮ": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠSĮ": {
+   "ok": true,
+   "version": "2025-12-31..",
+   "articles": 16,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VMVPĮ": {
+   "ok": true,
+   "version": "2023-04-01..",
+   "articles": 32,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTAKĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 28,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PMAĮ": {
+   "ok": true,
+   "version": "2023-04-01..2026-05-21",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PPKĮ": {
+   "ok": true,
+   "version": "2030-01-10..",
+   "articles": 67,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PKVPĮ": {
+   "ok": true,
+   "version": "2024-01-01..2025-12-31",
+   "articles": 19,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VKTLĮ": {
+   "ok": true,
+   "version": "2026-06-01..",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SAIARBĮ": {
+   "ok": true,
+   "version": "2025-12-12..",
+   "articles": 7,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VPDNAMĮ": {
+   "ok": true,
+   "version": "2022-07-15..2024-05-31",
+   "articles": 10,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "FPPBĮJĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KPTAĮ": {
+   "ok": null,
+   "original_only": true,
+   "articles": 11
+  },
+  "MAKSVPĮ": {
+   "ok": true,
+   "version": "2017-07-01..",
+   "articles": 10,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AGPRĮ": {
+   "ok": null,
+   "original_only": true,
+   "articles": 8
+  },
+  "ĮĮGAĮ": {
+   "ok": true,
+   "version": "2026-01-01..2026-04-15",
+   "articles": 42,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SVVPĮ": {
+   "ok": true,
+   "version": "2025-07-01..",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSĮĮ": {
+   "ok": true,
+   "version": "2025-07-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KoncĮ": {
+   "ok": true,
+   "version": "2025-10-01..",
+   "articles": 81,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LPFĮ": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MecenĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 8,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IĮIDĮ": {
+   "ok": true,
+   "version": "2024-01-01..2024-06-20",
+   "articles": 49,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KAKPĮ": {
+   "ok": true,
+   "version": "2026-04-29..2026-11-19",
+   "articles": 36,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PTVVĮ": {
+   "ok": null,
+   "original_only": true,
+   "articles": 14
+  },
+  "PaslĮ": {
+   "ok": true,
+   "version": "2025-11-01..2027-10-31",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ProdSĮ": {
+   "ok": true,
+   "version": "2024-12-13..2026-06-29",
+   "articles": 24,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VKVAĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LotĮ": {
+   "ok": true,
+   "version": "2025-05-01..",
+   "articles": 40,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LLMĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MVGIĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 11,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PranĮ": {
+   "ok": true,
+   "version": "2025-05-21..",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SusirĮ": {
+   "ok": true,
+   "version": "2023-04-01..",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "POĮ": {
+   "ok": true,
+   "version": "2026-04-01..",
+   "articles": 39,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RBBĮ": {
+   "ok": true,
+   "version": "2023-05-01..",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TMĮ": {
+   "ok": null,
+   "original_only": true,
+   "articles": 16
+  },
+  "DAĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 24,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽAVINVĮ": {
+   "ok": true,
+   "version": "2025-07-01..",
+   "articles": 10,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IAGNTĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 24,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TEĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ProbĮ": {
+   "ok": true,
+   "version": "2024-05-14..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PNVNAĮ": {
+   "ok": null,
+   "original_only": true,
+   "articles": 15
+  },
+  "ATAĮ": {
+   "ok": true,
+   "version": "2020-07-01..",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KPAKATĮ": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 42,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NPĮ": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 34,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTEKĮ": {
+   "ok": true,
+   "version": "2026-07-04..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VDIĮ": {
+   "ok": true,
+   "version": "2024-07-01..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GRĮ": {
+   "ok": true,
+   "version": "2022-01-02..2025-05-31",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STSRĮ": {
+   "ok": true,
+   "version": "2022-01-01..",
+   "articles": 8,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "JARĮ": {
+   "ok": true,
+   "version": "2023-08-31..2026-04-28",
+   "articles": 9,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AVPRDĮ": {
+   "ok": null,
+   "original_only": true,
+   "articles": 6
+  },
+  "TSĮ": {
+   "ok": true,
+   "version": "2025-05-21..2026-06-29",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AOAĮ": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VandĮ": {
+   "ok": true,
+   "version": "2025-01-01..",
+   "articles": 29,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŽGĮ": {
+   "ok": true,
+   "version": "2026-07-01..",
+   "articles": 34,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MedžĮ": {
+   "ok": true,
+   "version": "2025-01-01..2025-12-31",
+   "articles": 26,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MŽĮ": {
+   "ok": true,
+   "version": "2024-01-01..2026-04-30",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KKVĮ": {
+   "ok": true,
+   "version": "2031-01-01..",
+   "articles": 31,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "TVĮ": {
+   "ok": true,
+   "version": "2020-09-01..2023-01-01",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PJĮ": {
+   "ok": true,
+   "version": "2024-01-01..2024-10-31",
+   "articles": 11,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MeliorĮ": {
+   "ok": true,
+   "version": "2024-01-01..2025-10-31",
+   "articles": 10,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "MaistoĮ": {
+   "ok": true,
+   "version": "2024-12-13..2026-06-29",
+   "articles": 26,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EVEDĮ": {
+   "ok": true,
+   "version": "2025-08-01..2025-09-30",
+   "articles": 24,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BEnĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 54,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BSaugĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 56,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RadSĮ": {
+   "ok": true,
+   "version": "2025-01-01..2026-12-31",
+   "articles": 34,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "RATĮ": {
+   "ok": true,
+   "version": "2025-12-01..",
+   "articles": 27,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BAEĮ": {
+   "ok": true,
+   "version": "2018-03-01..",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IAENĮ": {
+   "ok": true,
+   "version": "2014-06-17..2020-11-30",
+   "articles": 4,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "IAEDGĮ": {
+   "ok": true,
+   "version": "2024-07-01..",
+   "articles": 13,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NBEGĮ": {
+   "ok": true,
+   "version": "2021-12-04..",
+   "articles": 6,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EIRĮ": {
+   "ok": true,
+   "version": "2023-05-01..2026-10-31",
+   "articles": 28,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SinchrĮ": {
+   "ok": true,
+   "version": "2025-01-17..",
+   "articles": 17,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SGDTĮ": {
+   "ok": true,
+   "version": "2019-01-01..2023-01-01",
+   "articles": 14,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NPAĮ": {
+   "ok": true,
+   "version": "2022-06-29..2022-12-31",
+   "articles": 26,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AIMĮ": {
+   "ok": true,
+   "version": "2016-01-01..2022-12-31",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "CO2GSĮ": {
+   "ok": true,
+   "version": "2018-07-01..",
+   "articles": 21,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PPĮPĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EETNT": {
+   "ok": true,
+   "version": "2026-10-07..",
+   "articles": 216,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EĮPTA": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 175,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ETNauT": {
+   "ok": true,
+   "version": "2022-10-25..2023-06-30",
+   "articles": 103,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EĮĮBT": {
+   "ok": true,
+   "version": "2025-09-26..2025-12-23",
+   "articles": 380,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SEEĮT": {
+   "ok": true,
+   "version": "2024-05-25..",
+   "articles": 249,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠTVT": {
+   "ok": true,
+   "version": "2021-01-01..2026-09-30",
+   "articles": 249,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "BVSSA": {
+   "ok": true,
+   "version": "2025-06-01..",
+   "articles": 48,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VERTKM": {
+   "ok": true,
+   "version": "2026-09-05..",
+   "articles": 151,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PEPTA": {
+   "ok": true,
+   "version": "2026-08-15..",
+   "articles": 268,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PESTA": {
+   "ok": true,
+   "version": "2026-07-25..",
+   "articles": 324,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ESOLPTA": {
+   "ok": null,
+   "original_only": true,
+   "articles": 67
+  },
+  "ESOEDPA": {
+   "ok": null,
+   "original_only": true,
+   "articles": 95
+  },
+  "EEPPKRA": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 33,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VEELIT": {
+   "ok": true,
+   "version": "2025-11-24..",
+   "articles": 93,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EETEKT": {
+   "ok": true,
+   "version": "2024-11-30..2024-12-31",
+   "articles": 1692,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ETAT": {
+   "ok": true,
+   "version": "2021-07-20..2022-07-22",
+   "articles": 38,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDLT": {
+   "ok": true,
+   "version": "2012-09-01..2018-01-22",
+   "articles": 62,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EPĮNM": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 66,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDPĮNM": {
+   "ok": true,
+   "version": "2023-06-30..2026-04-30",
+   "articles": 44,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AIEKATA": {
+   "ok": null,
+   "original_only": true,
+   "articles": 10
+  },
+  "PEEDPT": {
+   "ok": true,
+   "version": "2019-03-28..2024-08-29",
+   "articles": 62,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EEĮAARA": {
+   "ok": true,
+   "version": "2024-09-14..",
+   "articles": 64,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EĮIVDA": {
+   "ok": true,
+   "version": "2026-09-01..",
+   "articles": 122,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EVKTA": {
+   "ok": true,
+   "version": "2025-11-24..2026-05-22",
+   "articles": 47,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EĮAT": {
+   "ok": true,
+   "version": "2026-02-27..",
+   "articles": 53,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VSNVT": {
+   "ok": true,
+   "version": "2022-09-22..",
+   "articles": 56,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VIAPTA": {
+   "ok": true,
+   "version": "2023-01-18..",
+   "articles": 41,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VIAPLA": {
+   "ok": true,
+   "version": "2024-09-27..",
+   "articles": 86,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "AIEPSA": {
+   "ok": true,
+   "version": "2023-12-14..",
+   "articles": 53,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDTDA": {
+   "ok": true,
+   "version": "2021-01-01..2021-12-31",
+   "articles": 61,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDTSUA": {
+   "ok": true,
+   "version": "2022-08-05..2027-01-31",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NPVAT": {
+   "ok": true,
+   "version": "2020-12-10..",
+   "articles": 44,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ŠTLT": {
+   "ok": true,
+   "version": "2015-10-31..2024-10-31",
+   "articles": 52,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VAEEPA": {
+   "ok": true,
+   "version": "2023-05-27..",
+   "articles": 40,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PGDT": {
+   "ok": true,
+   "version": "2020-03-28..",
+   "articles": 51,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDATA": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 99,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDKR": {
+   "ok": true,
+   "version": "2024-12-10..",
+   "articles": 8,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDSVSET": {
+   "ok": true,
+   "version": "2025-05-23..",
+   "articles": 139,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "GDSPTA": {
+   "ok": true,
+   "version": "2026-05-01..",
+   "articles": 69,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PNPT": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 81,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "LPNPIT": {
+   "ok": true,
+   "version": "2024-01-01..",
+   "articles": 83,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PŠKVSPA": {
+   "ok": true,
+   "version": "2022-06-01..2023-09-30",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "EDATA": {
+   "ok": true,
+   "version": "2024-01-01..2024-05-29",
+   "articles": 42,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NPKR": {
+   "ok": true,
+   "version": "2024-11-30..",
+   "articles": 51,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR10703": {
+   "ok": true,
+   "version": "2025-11-02..",
+   "articles": 133,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR10501": {
+   "ok": true,
+   "version": "2025-11-01..",
+   "articles": 184,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR10404": {
+   "ok": true,
+   "version": "2024-11-01..2026-12-31",
+   "articles": 187,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR10103": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 35,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR10601": {
+   "ok": true,
+   "version": "2024-11-01..2024-12-10",
+   "articles": 119,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR20209": {
+   "ok": true,
+   "version": "2018-02-08..2026-12-31",
+   "articles": 55,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR10108": {
+   "ok": true,
+   "version": "2024-11-01..",
+   "articles": 22,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "STR20102": {
+   "ok": true,
+   "version": "2026-01-01..",
+   "articles": 77,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NSUSOAĮ": {
+   "ok": true,
+   "version": "2027-01-01..",
+   "articles": 25,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VTPĮ": {
+   "ok": true,
+   "version": "2026-06-01..",
+   "articles": 51,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "ENSAR": {
+   "ok": true,
+   "version": "2025-06-01..",
+   "articles": 38,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KSSAPTA": {
+   "ok": null,
+   "original_only": true,
+   "articles": 62
+  },
+  "KSAAM": {
+   "ok": null,
+   "original_only": true,
+   "articles": 42
+  },
+  "KSMTA": {
+   "ok": true,
+   "version": "2026-01-27..",
+   "articles": 11,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "PDAVS": {
+   "ok": null,
+   "original_only": true,
+   "articles": 10
+  },
+  "PADSPA": {
+   "ok": true,
+   "version": "2018-08-30..",
+   "articles": 12,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "SSADTS": {
+   "ok": null,
+   "original_only": true,
+   "articles": 45
+  },
+  "ABADPA": {
+   "ok": true,
+   "version": "2022-07-01..",
+   "articles": 55,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KSRA": {
+   "ok": true,
+   "version": "2031-01-01..2035-12-31",
+   "articles": 72,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "KSSIM": {
+   "ok": true,
+   "version": "2031-01-01..2035-12-31",
+   "articles": 18,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "VUPTA": {
+   "ok": true,
+   "version": "2031-01-01..2035-12-31",
+   "articles": 7,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  },
+  "NKIVP": {
+   "ok": true,
+   "version": "2031-01-01..2035-12-31",
+   "articles": 24,
+   "text_diff": 0,
+   "missing": 0,
+   "extra": 0
+  }
+ }
+}

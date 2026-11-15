@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="crumbs"><a href="{{ root }}/">Teisės aktai</a>{% if part_title %} › <a href="{{ act_url }}">{{ act.name }}</a>{% endif %}</nav>
+<h1>{{ act.full_title }}</h1>
+<p class="aka">{% if act.tag %}{{ act.tag }} · {% endif %}{% if not act.eu %}Nr. {% endif %}{{ act.number }}{% if part_title %} · {{ part_title }}{% endif %}</p>
+<div class="strip">
+  {{ act.consolidation }} {{ version }}{% if version_from > day %} (būsima; straipsniai rodomi su šiandien galiojančiu tekstu){% endif %} · <a href="{{ act.etar_url }}">oficialus tekstas {{ act.official_site }} ↗</a><br>
+  Šiandien ({{ day }}): <span class="badge b-current">galioja: {{ counts.current }}</span>
+  {% if counts.changes_later %}<span class="badge b-pending">iš jų keisis vėliau: {{ counts.changes_later }}</span>{% endif %}
+  {% if counts.pending %}<span class="badge b-pending">{{ "taikomi vėliau" if act.eu else "šiandieninio teksto nėra (tik būsimas)" }}: {{ counts.pending }}</span>{% endif %}
+  {% if counts.outdated %}<span class="badge b-outdated">gali būti pasenę: {{ counts.outdated }}</span>{% endif %}
+  {% if counts.unknown %}<span class="badge b-unknown">nepatikrinti: {{ counts.unknown }}</span>{% endif %}
+  {% if counts.repealed %}<span class="badge b-repealed">neteko galios: {{ counts.repealed }}</span>{% endif %}
+</div>
+{% if expires %}<div class="box {{ 'box-repealed' if expires <= day else 'box-unknown' }}"><strong>Visas šis teisės aktas {{ 'neteko' if expires <= day else 'netenka' }} galios {{ expires }}.</strong></div>{% endif %}
+{% if eu_list %}
+<p><strong>ES teisės pagrindas:</strong> šis aktas įgyvendina {{ eu_list | length | acts_count("ES ") }}{% set dirs = eu_list | selectattr("kind", "equalto", "direktyva") | list %}{% if dirs %}, tarp jų {% for e in dirs[-3:] | reverse %}<a href="{{ e.url }}">{{ e.short }}</a>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %} – <a href="#es">visas sąrašas</a>.</p>
+{% endif %}
+{% if header_notes %}<div class="box box-unknown"><strong>Pastabos apie visą aktą (iš oficialaus teksto):</strong><br>{% for l in header_notes %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+{% if preamble %}<h2 id="preambule">Preambulė</h2><div class="law">{% for l in preamble %}<p class="para">{{ l }}</p>{% endfor %}</div>{% endif %}
+{% if notices %}<div class="box box-unknown">{% for f in notices %}{{ f }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+{% if implemented_by %}<p><strong>Lietuvos teisės aktai, kurie {{ "ją perkelia" if act.number.startswith("Direktyva") else "jį įgyvendina" }}</strong> (pagal jų priedus): {% for x in implemented_by %}<a href="{{ x.url }}">{{ x.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}.</p>{% endif %}
+{% if today_only %}<div class="box box-unknown"><strong>{% if future_from > day %}Šiandien galiojančioje redakcijoje yra {{ act.u.gen_pl }}, kurių naujoje redakcijoje (nuo {{ future_from }}) nebėra{% else %}Šiandien galiojančioje redakcijoje yra {{ act.u.gen_pl }}, kurių šiame tekste dar nėra{% endif %} ({{ today_only | length }}):</strong>
+{% for x in today_only %}<a href="{{ x.url }}">{{ x.pretty }} {{ act.u.short }}</a> {{ x.title }}{% if not loop.last %}; {% endif %}{% endfor %}.</div>{% endif %}
+{% if act_flags %}<div class="box box-unknown">{% for f in act_flags %}{{ f }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+
+{% if parts %}
+<ul class="toc">{% for p in parts %}<li><a href="{{ p.url }}">{{ p.label }}</a> – {{ p.title }} <span class="aka">({{ p.n }} {{ act.u.short }})</span></li>{% endfor %}</ul>
+{% endif %}
+
+{% if toc %}
+<ul class="toc">
+{% for item in toc %}
+  {% if item.kind == "heading" %}{% set hl = [item.depth + 2, 6] | min %}<li class="h" style="margin-left:{{ item.depth }}em"><h{{ hl }} class="th">{{ item.label }}{% if item.title %} – {{ item.title }}{% endif %}</h{{ hl }}></li>
+  {% else %}<li style="margin-left:{{ item.depth }}em"><a href="{{ item.url }}">{{ item.pretty }} {{ act.u.short }}</a> {{ item.title }}{% if item.state != "current" %} <span class="badge b-{{ item.state }}">{{ item.state_label }}</span>{% endif %}</li>{% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if eu_list %}
+<h2 id="es">Įgyvendinami Europos Sąjungos teisės aktai ({{ eu_list | length }})</h2>
+<p class="aka">Pagal šio akto priedą. Nuorodos veda į EUR-Lex (lietuvių kalba).</p>
+<ul class="toc">{% for e in eu_list %}<li>{% if e.url %}<a href="{{ e.url }}"><strong>{{ e.short }}</strong></a> · {% endif %}<span class="aka">{{ e.entry }}</span></li>{% endfor %}</ul>
+{% endif %}
+
+{% if approval and act.u.nom == "punktas" %}
+<h2 id="patvirtinimas">Nutarimas, kuriuo patvirtintos {{ act.name | lower }}</h2>
+<p class="aka">Lietuvos Respublikos Vyriausybės nutarimas Nr. {{ act.number }}.</p>
+{% for a in approval %}<div class="law">{% for t in a.blocks %}<p class="para">{{ t }}</p>{% endfor %}{% if a.notes %}<div class="notes">{% for n in a.notes %}{{ n | nrs }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}</div>{% endfor %}
+{% elif approval %}
+<h2 id="patvirtinimas">Kodekso patvirtinimo įstatymas</h2>
+<p class="aka">Įstatymas, kuriuo kodeksas patvirtintas (jo įsigaliojimo ir įgyvendinimo nuostatos).</p>
+{% for a in approval %}<div class="law">{% if a.label %}<p class="h">{{ a.label }} straipsnis. {{ a.title }}</p>{% endif %}{% for t in a.blocks %}<p class="para">{{ t }}</p>{% endfor %}{% if a.notes %}<div class="notes">{% for n in a.notes %}{{ n }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}</div>{% endfor %}
+{% endif %}
+{% if annexes %}<h2 class="th h">Priedai</h2><ul class="toc">{% for a in annexes %}<li><a href="{{ a.url }}">{{ a.label }}</a> – {{ a.title }}</li>{% endfor %}</ul>{% endif %}
+<p class="aka"><a href="{{ act_url }}articles.json">Straipsnių sąrašas JSON formatu</a> · <a href="{{ act_url }}data.json">visas aktas JSON formatu</a> · <a href="{{ act_url }}atom.xml">šio akto pakeitimai (Atom)</a></p>
+{% endblock %}

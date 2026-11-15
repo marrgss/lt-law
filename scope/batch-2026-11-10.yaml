@@ -1,0 +1,4 @@
+acts:
+  # 2026-11-10: the TSOs' methodology VERT approved, written in articles with the heading on the same line and no period
+  # ("1 straipsnis Dalykas ir apimtis"): read since ltlaw.parse._bare_articles. unit: straipsnis, as GADTMM, PPNMM, BTMMM
+  - {abbr: PORFPSDR, no_abbr: true, title: "pagrindiniai organizaciniai reikalavimai, funkcijos ir pareigos, susijusios su duomenų mainais ir eksploatavimo saugumu", genitive: "pagrindinių organizacinių reikalavimų, funkcijų, pareigų, susijusių su duomenų mainais ir eksploatavimo saugumu", name_checked: true, unit: straipsnis, area: energetika, resolution: 1213c8601a6b11e9875cdc20105dd260}  # VERT O3E-12

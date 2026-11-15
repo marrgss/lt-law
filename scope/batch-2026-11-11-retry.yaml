@@ -1,0 +1,8 @@
+acts:
+  # 2026-11-11 afternoon: held acts that pass the label check now (validate_currency: 0 silent; the morning's parser
+  # fixes and today's texts from Suvestine, which answers again)
+  - {abbr: BAĮT, no_abbr: true, title: "biržių atrėžimo ir įvertinimo taisyklės", genitive: "biržių atrėžimo ir įvertinimo taisyklių", resolution: TAR.591A432B1572, area: aplinka}  # cited 4, ministras D1-577
+  - {abbr: ŽITVVA, no_abbr: true, title: "žuvų išteklių tyrimų vidaus vandenyse tvarkos aprašas", genitive: "žuvų išteklių tyrimų vidaus vandenyse tvarkos aprašo", resolution: TAR.3FF9695BDDE1, area: aplinka}  # cited 6, ministras D1-767
+  - {abbr: PVTTRA, no_abbr: true, title: "paviršinių vandens telkinių tvarkymo reikalavimų aprašas", genitive: "paviršinių vandens telkinių tvarkymo reikalavimų aprašo", resolution: 0752156086b511e481c9c95e73113964, area: aplinka}  # cited 5, ministras D1-1038
+  - {abbr: ŠTTŠPĮT, no_abbr: true, title: "šilumos tiekimo tinklų ir šilumos punktų įrengimo taisyklės", genitive: "šilumos tiekimo tinklų ir šilumos punktų įrengimo taisyklių", resolution: TAR.D8B754E03B50, area: energetika}  # cited 6, ministras 1-160
+  - {abbr: EB2Į, no_abbr: true, title: "Europos bendrovių įstatymas", number: IX-2199, area: verslas}  # cited 4

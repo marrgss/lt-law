@@ -1,0 +1,4130 @@
+{
+ "day": "2026-11-02",
+ "answer_key": "e-tar.lt version in force on day",
+ "acts": {
+  "Konstitucija": {
+   "articles": 154,
+   "silent_errors": 0,
+   "current_ok": 154,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-05-22.."
+  },
+  "DK": {
+   "articles": 257,
+   "silent_errors": 0,
+   "current_ok": 253,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "CK": {
+   "articles": 2012,
+   "silent_errors": 0,
+   "current_ok": 1983,
+   "flagged": 29,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-27..2026-12-08"
+  },
+  "BK": {
+   "articles": 400,
+   "silent_errors": 0,
+   "current_ok": 388,
+   "flagged": 12,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-03.."
+  },
+  "ANK": {
+   "articles": 793,
+   "silent_errors": 0,
+   "current_ok": 761,
+   "flagged": 32,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "314-1",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: Straipsnio nuostatos taikomos nuo tos dienos, kurią Europos Komisija pagal 2019 m. balandžio 17 d. Europos Parlamento ir Tarybos reglame"
+    ]
+   ],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "CPK": {
+   "articles": 872,
+   "silent_errors": 0,
+   "current_ok": 826,
+   "flagged": 46,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "108",
+     "outdated",
+     "Nuo 2024-04-01 galioja jį keičiantis įstatymas Nr. XIV-2317, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-09-01..2026-12-31"
+  },
+  "BPK": {
+   "articles": 499,
+   "silent_errors": 0,
+   "current_ok": 488,
+   "flagged": 11,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "8-2",
+     "outdated",
+     "Nuo 2026-09-01 galioja jį keičiantis įstatymas Nr. XV-1090, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-09-01.."
+  },
+  "ABTĮ": {
+   "articles": 191,
+   "silent_errors": 0,
+   "current_ok": 184,
+   "flagged": 7,
+   "false_alarms": 6,
+   "false_alarm_list": [
+    [
+     "17",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 17 straipsnio 1 dalies 13 punkto nuostatos pradedamos taikyti, kai naujai išrinktos savivaldybių tarybos susirenka į pirmąjį posėdį…"
+    ],
+    [
+     "36",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 36 straipsnio 1 dalies 11 punkto nuostatos pradedamos taikyti, kai naujai išrinktos savivaldybių tarybos susirenka į pirmąjį posėdį…"
+    ],
+    [
+     "51",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 51 straipsnio 1 dalies nuostatos pradedamos taikyti, kai naujai išrinktos savivaldybių tarybos susirenka į pirmąjį posėdį…"
+    ],
+    [
+     "120",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 120 straipsnio 1 dalies nuostatos pradedamos taikyti, kai naujai išrinktos savivaldybių tarybos susirenka į pirmąjį posėdį…"
+    ],
+    [
+     "121",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 121 straipsnio nuostatos pradedamos taikyti, kai naujai išrinktos savivaldybių tarybos susirenka į pirmąjį posėdį…"
+    ],
+    [
+     "122",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 122 straipsnio nuostatos pradedamos taikyti, kai naujai išrinktos savivaldybių tarybos susirenka į pirmąjį posėdį…"
+    ]
+   ],
+   "etar_version": "2026-06-30.."
+  },
+  "PVMĮ": {
+   "articles": 177,
+   "silent_errors": 0,
+   "current_ok": 152,
+   "flagged": 25,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "50-1",
+     "unknown",
+     "pagal TAR pastabą įsigaliojimas priklauso nuo sąlygos: Straipsnis nelaimių aukoms, nukentėjusioms dėl Rusijos Federacijos 2022 m. vasario 24 d. pradėtos vykdyti karinės agresijos prieš Ukraino…"
+    ]
+   ],
+   "etar_version": "2026-07-01..2026-12-31"
+  },
+  "GPMĮ": {
+   "articles": 43,
+   "silent_errors": 0,
+   "current_ok": 41,
+   "flagged": 2,
+   "false_alarms": 2,
+   "false_alarm_list": [
+    [
+     "17",
+     "unknown",
+     "X-1543: nežinoma įsigaliojimo data"
+    ],
+    [
+     "20",
+     "unknown",
+     "X-1543: nežinoma įsigaliojimo data"
+    ]
+   ],
+   "etar_version": "2026-06-11..2026-12-31"
+  },
+  "PMĮ": {
+   "articles": 76,
+   "silent_errors": 0,
+   "current_ok": 60,
+   "flagged": 16,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-19..2026-12-31"
+  },
+  "MAĮ": {
+   "articles": 186,
+   "silent_errors": 0,
+   "current_ok": 176,
+   "flagged": 10,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "NTMĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01..2030-12-31"
+  },
+  "AKĮ": {
+   "articles": 83,
+   "silent_errors": 0,
+   "current_ok": 67,
+   "flagged": 16,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "43",
+     "unknown",
+     "XV-83: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2026-06-16..2026-12-31"
+  },
+  "ABĮ": {
+   "articles": 97,
+   "silent_errors": 0,
+   "current_ok": 96,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2030-01-09"
+  },
+  "JANĮ": {
+   "articles": 169,
+   "silent_errors": 0,
+   "current_ok": 113,
+   "flagged": 56,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "73",
+     "pending",
+     "keičiama nuo 2027-01-01"
+    ]
+   ],
+   "etar_version": "2026-06-13..2026-12-31"
+  },
+  "VPĮ": {
+   "articles": 110,
+   "silent_errors": 0,
+   "current_ok": 109,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "KĮ": {
+   "articles": 63,
+   "silent_errors": 0,
+   "current_ok": 59,
+   "flagged": 4,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "4-1",
+     "outdated",
+     "Nuo 2026-06-30 galioja jį keičiantis įstatymas Nr. XV-899, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-06-30.."
+  },
+  "VTAĮ": {
+   "articles": 75,
+   "silent_errors": 0,
+   "current_ok": 71,
+   "flagged": 4,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "48",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2026-07-31.."
+  },
+  "ADTAĮ": {
+   "articles": 40,
+   "silent_errors": 0,
+   "current_ok": 37,
+   "flagged": 3,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "19-1",
+     "unknown",
+     "pagal TAR pastabą įsigaliojimas priklauso nuo sąlygos: Įstatymo 191 straipsnio nuostatos taikomos ir asmens duomenų ir (ar) privatumo apsaugą reglamentuojančių teisės aktų pažeidimų nagrinėjim…"
+    ]
+   ],
+   "etar_version": "2026-06-30.."
+  },
+  "UĮ": {
+   "articles": 77,
+   "silent_errors": 0,
+   "current_ok": 74,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "VSDĮ": {
+   "articles": 47,
+   "silent_errors": 0,
+   "current_ok": 37,
+   "flagged": 10,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "23",
+     "pending",
+     "keičiama nuo 2027-01-01"
+    ]
+   ],
+   "etar_version": "2026-07-01..2026-12-31"
+  },
+  "SDĮ": {
+   "articles": 56,
+   "silent_errors": 0,
+   "current_ok": 46,
+   "flagged": 10,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01..2026-12-31"
+  },
+  "ŠĮ": {
+   "articles": 93,
+   "silent_errors": 0,
+   "current_ok": 89,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01..2026-12-31"
+  },
+  "ŽĮ": {
+   "articles": 76,
+   "silent_errors": 0,
+   "current_ok": 43,
+   "flagged": 33,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-08-01..2026-12-31"
+  },
+  "SĮ": {
+   "articles": 75,
+   "silent_errors": 0,
+   "current_ok": 75,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "TPĮ": {
+   "articles": 51,
+   "silent_errors": 0,
+   "current_ok": 32,
+   "flagged": 19,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-15..2026-12-31"
+  },
+  "VSĮ": {
+   "articles": 75,
+   "silent_errors": 0,
+   "current_ok": 68,
+   "flagged": 7,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01..2026-12-31"
+  },
+  "AAĮ": {
+   "articles": 190,
+   "silent_errors": 0,
+   "current_ok": 178,
+   "flagged": 12,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "EĮ": {
+   "articles": 52,
+   "silent_errors": 0,
+   "current_ok": 50,
+   "flagged": 2,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "36",
+     "unknown",
+     "pagal TAR pastabą įsigaliojimas priklauso nuo sąlygos: 22 dalies 2 punktas įsigalioja 2030 m. sausio 1 d. arba dieną, kai nustoja galioti Europos Komisijos oficialiai paskelbtomis rekomendacij…"
+    ]
+   ],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "EEĮ": {
+   "articles": 124,
+   "silent_errors": 0,
+   "current_ok": 105,
+   "flagged": 19,
+   "false_alarms": 2,
+   "false_alarm_list": [
+    [
+     "49",
+     "unknown",
+     "XIV-1170: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "58",
+     "unknown",
+     "XIV-1170: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2026-11-01..2026-12-30"
+  },
+  "GDĮ": {
+   "articles": 72,
+   "silent_errors": 0,
+   "current_ok": 70,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "AIEĮ": {
+   "articles": 84,
+   "silent_errors": 0,
+   "current_ok": 72,
+   "flagged": 12,
+   "false_alarms": 4,
+   "false_alarm_list": [
+    [
+     "2",
+     "unknown",
+     "XIV-1001: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "3",
+     "unknown",
+     "XIV-1001: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "22-1",
+     "unknown",
+     "XIV-1698: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "26",
+     "unknown",
+     "XIV-1001: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "ŠŪĮ": {
+   "articles": 43,
+   "silent_errors": 0,
+   "current_ok": 43,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2027-04-30"
+  },
+  "NotĮ": {
+   "articles": 88,
+   "silent_errors": 0,
+   "current_ok": 80,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-03-01.."
+  },
+  "AdvĮ": {
+   "articles": 75,
+   "silent_errors": 0,
+   "current_ok": 69,
+   "flagged": 6,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "AntĮ": {
+   "articles": 53,
+   "silent_errors": 0,
+   "current_ok": 51,
+   "flagged": 2,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "2",
+     "outdated",
+     "Nuo 2026-07-01 galioja jį keičiantis įstatymas Nr. XIV-2318, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2025-03-01.."
+  },
+  "GTDĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 13,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "VTĮ": {
+   "articles": 41,
+   "silent_errors": 0,
+   "current_ok": 39,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "DSSĮ": {
+   "articles": 54,
+   "silent_errors": 0,
+   "current_ok": 52,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-01..2026-12-31"
+  },
+  "LMSDĮ": {
+   "articles": 36,
+   "silent_errors": 0,
+   "current_ok": 36,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "SDPĮ": {
+   "articles": 62,
+   "silent_errors": 0,
+   "current_ok": 60,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01.."
+  },
+  "IVĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-01.."
+  },
+  "KTK": {
+   "articles": 71,
+   "silent_errors": 0,
+   "current_ok": 59,
+   "flagged": 12,
+   "false_alarms": 5,
+   "false_alarm_list": [
+    [
+     "8-1",
+     "pending",
+     "keičiama nuo 2028-01-01"
+    ],
+    [
+     "11",
+     "pending",
+     "keičiama nuo 2028-01-01"
+    ],
+    [
+     "16",
+     "pending",
+     "keičiama nuo 2028-01-01"
+    ],
+    [
+     "17-1",
+     "pending",
+     "keičiama nuo 2028-01-01"
+    ],
+    [
+     "18",
+     "pending",
+     "keičiama nuo 2028-01-01"
+    ]
+   ],
+   "etar_version": "2026-09-01..2027-12-31"
+  },
+  "SEAKĮ": {
+   "articles": 44,
+   "silent_errors": 0,
+   "current_ok": 35,
+   "flagged": 9,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "12",
+     "outdated",
+     "Nuo 2023-11-01 galioja jį keičiantis įstatymas Nr. XIV-2210, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-11-01..2027-10-31"
+  },
+  "ERĮ": {
+   "articles": 100,
+   "silent_errors": 0,
+   "current_ok": 100,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "KSĮ": {
+   "articles": 38,
+   "silent_errors": 0,
+   "current_ok": 38,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-04.."
+  },
+  "BĮ": {
+   "articles": 120,
+   "silent_errors": 0,
+   "current_ok": 87,
+   "flagged": 33,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-02..2027-01-10"
+  },
+  "DrĮ": {
+   "articles": 241,
+   "silent_errors": 0,
+   "current_ok": 236,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-02..2030-01-09"
+  },
+  "MokĮ": {
+   "articles": 98,
+   "silent_errors": 0,
+   "current_ok": 87,
+   "flagged": 11,
+   "false_alarms": 8,
+   "false_alarm_list": [
+    [
+     "30",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 30 straipsnio 2 dalies 4 punktas įsigalioja praėjus 18 mėnesių nuo Europos Komisijos priimto deleguotojo teisės akto, nurodyto 2015 m. l"
+    ],
+    [
+     "31",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 31 straipsnio 1 dalies 1 punktas įsigalioja praėjus 18 mėnesių nuo Europos Komisijos priimto deleguotojo teisės akto, nurodyto 2015 m. l"
+    ],
+    [
+     "32",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 32 straipsnio 1 dalies 1 punktas įsigalioja praėjus 18 mėnesių nuo Europos Komisijos priimto deleguotojo teisės akto, nurodyto 2015 m. l"
+    ],
+    [
+     "58",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 58 straipsnio 1 dalis įsigalioja praėjus 18 mėnesių nuo Europos Komisijos priimto deleguotojo teisės akto, nurodyto 2015 m. lapkričio 25"
+    ],
+    [
+     "61",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 61 straipsnis įsigalioja praėjus 9 mėnesiams nuo Europos Komisijos priimtų deleguotųjų teisės aktų, nurodytų 2014 m. liepos 23 d. Europo"
+    ],
+    [
+     "62",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 62 straipsnis įsigalioja praėjus 9 mėnesiams nuo Europos Komisijos priimtų deleguotųjų teisės aktų, nurodytų 2014 m. liepos 23 d. Europo"
+    ],
+    [
+     "63",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 63 straipsnis įsigalioja praėjus 9 mėnesiams nuo Europos Komisijos priimtų deleguotųjų teisės aktų, nurodytų 2014 m. liepos 23 d. Europo"
+    ],
+    [
+     "64",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 64 straipsnis įsigalioja praėjus 9 mėnesiams nuo Europos Komisijos priimtų deleguotųjų teisės aktų, nurodytų 2014 m. liepos 23 d. Europo"
+    ]
+   ],
+   "etar_version": "2026-07-02.."
+  },
+  "MBĮ": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 34,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "VšĮĮ": {
+   "articles": 30,
+   "silent_errors": 0,
+   "current_ok": 30,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "AsĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 2,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "17",
+     "outdated",
+     "Nuo 2025-07-01 galioja jį keičiantis įstatymas Nr. XIV-2818, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-01-01.."
+  },
+  "NTRĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 13,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01..2026-12-31"
+  },
+  "MATĮ": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 7,
+   "flagged": 5,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "6",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2026-10-01..2026-12-31"
+  },
+  "VTAPĮ": {
+   "articles": 56,
+   "silent_errors": 0,
+   "current_ok": 56,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "SPĮ": {
+   "articles": 45,
+   "silent_errors": 0,
+   "current_ok": 35,
+   "flagged": 10,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-02..2026-12-31"
+  },
+  "PSPĮ": {
+   "articles": 31,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 20,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "6",
+     "unknown",
+     "XIII-2883: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2026-06-01..2026-12-31"
+  },
+  "SPĮĮ": {
+   "articles": 68,
+   "silent_errors": 0,
+   "current_ok": 63,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01..2026-12-31"
+  },
+  "PTŽĮ": {
+   "articles": 28,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "FĮ": {
+   "articles": 97,
+   "silent_errors": 0,
+   "current_ok": 92,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "ATGTĮ": {
+   "articles": 151,
+   "silent_errors": 0,
+   "current_ok": 151,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-01.."
+  },
+  "VIĮ": {
+   "articles": 66,
+   "silent_errors": 0,
+   "current_ok": 63,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2026-12-31"
+  },
+  "TGIĮ": {
+   "articles": 19,
+   "silent_errors": 0,
+   "current_ok": 15,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-31"
+  },
+  "VKĮ": {
+   "articles": 63,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 63,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-04-29..2026-11-19"
+  },
+  "NTKĮ": {
+   "articles": 62,
+   "silent_errors": 0,
+   "current_ok": 59,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-19.."
+  },
+  "UTPĮ": {
+   "articles": 213,
+   "silent_errors": 0,
+   "current_ok": 183,
+   "flagged": 30,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "6-1",
+     "outdated",
+     "Nuo 2026-05-22 galioja jį keičiantis įstatymas Nr. XV-945, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "MSĮ": {
+   "articles": 102,
+   "silent_errors": 0,
+   "current_ok": 76,
+   "flagged": 26,
+   "false_alarms": 17,
+   "false_alarm_list": [
+    [
+     "2",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "3",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "4",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "8",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "34",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "48",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "49",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "57",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "59",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "61",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "68",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "76-1",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "76-2",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "83",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "84",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "85",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ],
+    [
+     "87",
+     "outdated",
+     "Nuo 2026-10-24 galioja jį keičiantis įstatymas Nr. XV-1219, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-05-22..2027-06-30"
+  },
+  "ATKPĮ": {
+   "articles": 11,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "GVDĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 13,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-01.."
+  },
+  "PilĮ": {
+   "articles": 49,
+   "silent_errors": 0,
+   "current_ok": 49,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "ProkĮ": {
+   "articles": 77,
+   "silent_errors": 0,
+   "current_ok": 75,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "TeisĮ": {
+   "articles": 155,
+   "silent_errors": 0,
+   "current_ok": 142,
+   "flagged": 13,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-09-01..2026-12-31"
+  },
+  "PolĮ": {
+   "articles": 30,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-23.."
+  },
+  "GŠKĮ": {
+   "articles": 48,
+   "silent_errors": 0,
+   "current_ok": 47,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-02-01.."
+  },
+  "AlkKĮ": {
+   "articles": 53,
+   "silent_errors": 0,
+   "current_ok": 52,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "TabKĮ": {
+   "articles": 60,
+   "silent_errors": 0,
+   "current_ok": 49,
+   "flagged": 11,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2027-04-30"
+  },
+  "TurĮ": {
+   "articles": 44,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 20,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-11-01.."
+  },
+  "FAĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 1,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "15",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 15 straipsnio 2 dalies nuostatos taikomos nuo bendros viešojo sektoriaus veiklos valdymo informacinės sistemos įdiegimo viešojo sektoria"
+    ]
+   ],
+   "etar_version": "2025-05-01.."
+  },
+  "FAAĮ": {
+   "articles": 95,
+   "silent_errors": 0,
+   "current_ok": 94,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2030-01-09"
+  },
+  "PPTFPĮ": {
+   "articles": 62,
+   "silent_errors": 0,
+   "current_ok": 60,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2026-12-31"
+  },
+  "KPĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "VPIDĮ": {
+   "articles": 23,
+   "silent_errors": 0,
+   "current_ok": 23,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-10-24.."
+  },
+  "VSTĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01.."
+  },
+  "VGTPĮ": {
+   "articles": 38,
+   "silent_errors": 0,
+   "current_ok": 37,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-07.."
+  },
+  "MedĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 33,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "KAĮ": {
+   "articles": 51,
+   "silent_errors": 0,
+   "current_ok": 48,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2017-07-01.."
+  },
+  "MuitĮ": {
+   "articles": 64,
+   "silent_errors": 0,
+   "current_ok": 60,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "ŽMĮ": {
+   "articles": 15,
+   "silent_errors": 0,
+   "current_ok": 15,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "ASNTĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 33,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-11.."
+  },
+  "ŠPĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-11..2026-11-30"
+  },
+  "PŽĮ": {
+   "articles": 79,
+   "silent_errors": 0,
+   "current_ok": 65,
+   "flagged": 14,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-01-01..2026-12-31"
+  },
+  "PatĮ": {
+   "articles": 86,
+   "silent_errors": 0,
+   "current_ok": 77,
+   "flagged": 9,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-01-01..2026-12-31"
+  },
+  "ATĮ": {
+   "articles": 105,
+   "silent_errors": 0,
+   "current_ok": 91,
+   "flagged": 14,
+   "false_alarms": 3,
+   "false_alarm_list": [
+    [
+     "3-1",
+     "outdated",
+     "Nuo 2025-10-07 galioja jį keičiantis įstatymas Nr. XV-444, kurio šiame tekste dar nėra"
+    ],
+    [
+     "3-4",
+     "outdated",
+     "Nuo 2025-10-07 galioja jį keičiantis įstatymas Nr. XV-444, kurio šiame tekste dar nėra"
+    ],
+    [
+     "34-14",
+     "outdated",
+     "Nuo 2025-10-07 galioja jį keičiantis įstatymas Nr. XV-444, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-10-01..2026-12-31"
+  },
+  "MiškĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01..2026-12-31"
+  },
+  "STĮ": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 11,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-31"
+  },
+  "VKalbĮ": {
+   "articles": 28,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "VAĮ": {
+   "articles": 41,
+   "silent_errors": 0,
+   "current_ok": 38,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-01..2026-12-31"
+  },
+  "GGAĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-01..2026-12-31"
+  },
+  "LPĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-31"
+  },
+  "IĮĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-09-01.."
+  },
+  "KBĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "SSĮ": {
+   "articles": 103,
+   "silent_errors": 0,
+   "current_ok": 95,
+   "flagged": 8,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "59-3",
+     "unknown",
+     "XIV-1059: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2026-05-28..2026-12-31"
+  },
+  "RK": {
+   "articles": 197,
+   "silent_errors": 0,
+   "current_ok": 196,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-02..2027-08-31"
+  },
+  "Statutas": {
+   "articles": 336,
+   "silent_errors": 0,
+   "current_ok": 316,
+   "flagged": 20,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-20..2027-06-30"
+  },
+  "BVK": {
+   "articles": 100,
+   "silent_errors": 0,
+   "current_ok": 97,
+   "flagged": 3,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "83",
+     "outdated",
+     "Nuo 2026-06-11 galioja Konstitucinio Teismo nutarimas Nr. KT44-A-N4/2026, kuriuo šio straipsnio nuostatos (ar jų dalis) pripažintos prieštaraujančiomis Konstitucijai; šiame tekste to dar nėra"
+    ]
+   ],
+   "etar_version": "2026-06-30.."
+  },
+  "GTK": {
+   "articles": 102,
+   "silent_errors": 0,
+   "current_ok": 88,
+   "flagged": 14,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-11"
+  },
+  "VVTK": {
+   "articles": 83,
+   "silent_errors": 0,
+   "current_ok": 73,
+   "flagged": 10,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2027-12-31"
+  },
+  "FABĮ": {
+   "articles": 34,
+   "silent_errors": 0,
+   "current_ok": 26,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-10-25..2026-12-31"
+  },
+  "DNSBĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-03-01.."
+  },
+  "SBĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 30,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "PTMĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2015-01-01.."
+  },
+  "TPVCAPDĮ": {
+   "articles": 41,
+   "silent_errors": 0,
+   "current_ok": 32,
+   "flagged": 9,
+   "false_alarms": 7,
+   "false_alarm_list": [
+    [
+     "1",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "15",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "17",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "18",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "20",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "23",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ],
+    [
+     "25",
+     "unknown",
+     "XIV-2388: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2025-07-24.."
+  },
+  "NSDĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 20,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "NADPLSDĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 32,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-01.."
+  },
+  "PKĮ": {
+   "articles": 56,
+   "silent_errors": 0,
+   "current_ok": 42,
+   "flagged": 14,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-31"
+  },
+  "ŪBĮ": {
+   "articles": 16,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-09-01.."
+  },
+  "RekĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "ASAAĮ": {
+   "articles": 19,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-12-31.."
+  },
+  "LGĮ": {
+   "articles": 32,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 32,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-02..2026-12-31"
+  },
+  "PBĮ": {
+   "articles": 31,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "MTPRMĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "ALĮ": {
+   "articles": 67,
+   "silent_errors": 0,
+   "current_ok": 54,
+   "flagged": 13,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2026-12-31"
+  },
+  "ŪŪĮ": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 1,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "11",
+     "unknown",
+     "XIV-1796: įsigaliojimo datas keitė ar keičia XIV-2042"
+    ]
+   ],
+   "etar_version": "2023-07-01..2026-12-31"
+  },
+  "ŽŪPŽĮĮ": {
+   "articles": 8,
+   "silent_errors": 0,
+   "current_ok": 7,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-02.."
+  },
+  "NKPAĮ": {
+   "articles": 48,
+   "silent_errors": 0,
+   "current_ok": 48,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2028-06-30"
+  },
+  "IVPĮ": {
+   "articles": 45,
+   "silent_errors": 0,
+   "current_ok": 44,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "NKVVDĮ": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-27.."
+  },
+  "NTRgĮ": {
+   "articles": 14,
+   "not_in_force": true,
+   "current_ok": 0,
+   "flagged": 14,
+   "silent_errors": 0
+  },
+  "VyrĮ": {
+   "articles": 60,
+   "silent_errors": 0,
+   "current_ok": 59,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-13.."
+  },
+  "KTĮ": {
+   "articles": 95,
+   "silent_errors": 0,
+   "current_ok": 94,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-06-17.."
+  },
+  "SKĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 31,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-08-01.."
+  },
+  "RefKĮ": {
+   "articles": 38,
+   "silent_errors": 0,
+   "current_ok": 38,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01.."
+  },
+  "KASOKTĮ": {
+   "articles": 84,
+   "silent_errors": 0,
+   "current_ok": 78,
+   "flagged": 6,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-01..2026-12-31"
+  },
+  "KVCSĮ": {
+   "articles": 59,
+   "silent_errors": 0,
+   "current_ok": 31,
+   "flagged": 28,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-15..2026-12-31"
+  },
+  "BSĮ": {
+   "articles": 32,
+   "silent_errors": 0,
+   "current_ok": 31,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-02-01.."
+  },
+  "LBĮ": {
+   "articles": 80,
+   "silent_errors": 0,
+   "current_ok": 69,
+   "flagged": 11,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "21-1",
+     "unknown",
+     "XIV-1452: dalis įsigalioja pagal sąlygą (be datos)"
+    ]
+   ],
+   "etar_version": "2026-07-10..2026-12-31"
+  },
+  "KelĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 2,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "17",
+     "unknown",
+     "XIII-3421: įsigaliojimo datas keitė ar keičia XV-635"
+    ]
+   ],
+   "etar_version": "2026-07-01.."
+  },
+  "SŽNSĮ": {
+   "articles": 143,
+   "silent_errors": 0,
+   "current_ok": 139,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-28..2027-02-28"
+  },
+  "VTS": {
+   "articles": 87,
+   "silent_errors": 0,
+   "current_ok": 87,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "FPRĮ": {
+   "articles": 128,
+   "silent_errors": 0,
+   "current_ok": 125,
+   "flagged": 3,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "29-1",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2026-07-02..2026-12-31"
+  },
+  "KRĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 21,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-02..2030-01-09"
+  },
+  "KUĮ": {
+   "articles": 87,
+   "silent_errors": 0,
+   "current_ok": 79,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "EPEPĮĮ": {
+   "articles": 48,
+   "silent_errors": 0,
+   "current_ok": 40,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "KET": {
+   "articles": 256,
+   "silent_errors": 0,
+   "current_ok": 245,
+   "flagged": 11,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "VDUTA": {
+   "articles": 8,
+   "silent_errors": 0,
+   "current_ok": 8,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "PAILGA": {
+   "articles": 18,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "PAPILA": {
+   "articles": 5,
+   "silent_errors": 0,
+   "current_ok": 5,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "DIENPA": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-01..2027-06-30"
+  },
+  "KOMIT": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 6,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "2",
+     "outdated",
+     "Nuo 2026-09-01 galioja jį keičiantis nutarimas 518/2026-07-01, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-10-01..2027-06-30"
+  },
+  "LMSDIN": {
+   "articles": 135,
+   "silent_errors": 0,
+   "current_ok": 104,
+   "flagged": 31,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "IVSMN": {
+   "articles": 53,
+   "silent_errors": 0,
+   "current_ok": 45,
+   "flagged": 8,
+   "false_alarms": 3,
+   "false_alarm_list": [
+    [
+     "42",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ],
+    [
+     "43",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ],
+    [
+     "44",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2026-06-01.."
+  },
+  "NADPLIN": {
+   "articles": 79,
+   "silent_errors": 0,
+   "current_ok": 76,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-09-01.."
+  },
+  "JARN": {
+   "articles": 358,
+   "silent_errors": 0,
+   "current_ok": 328,
+   "flagged": 30,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "125",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2026-10-15.."
+  },
+  "GRN": {
+   "articles": 64,
+   "silent_errors": 0,
+   "current_ok": 64,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-05-25.."
+  },
+  "VGON": {
+   "articles": 96,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 96,
+   "false_alarms": 11,
+   "false_alarm_list": [
+    [
+     "7",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "11",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "23",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "29",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "31",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "34",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "40",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "47",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "50",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "53",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ],
+    [
+     "54",
+     "outdated",
+     "Nuo 2026-05-01 galioja nauja akto redakcija (nutarimas 260/2026-04-15), kurios šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-05-01.."
+  },
+  "VZSPNT": {
+   "articles": 114,
+   "silent_errors": 0,
+   "current_ok": 113,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-09.."
+  },
+  "ALKLT": {
+   "articles": 66,
+   "silent_errors": 0,
+   "current_ok": 61,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-06-28.."
+  },
+  "TeisPĮ": {
+   "articles": 39,
+   "silent_errors": 0,
+   "current_ok": 37,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01..2026-12-31"
+  },
+  "NTKadĮ": {
+   "articles": 26,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 26,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-08-01..2026-12-31"
+  },
+  "CBARĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-22.."
+  },
+  "EAPĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-10-18.."
+  },
+  "GVTNTĮ": {
+   "articles": 42,
+   "silent_errors": 0,
+   "current_ok": 41,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "AtmDĮ": {
+   "articles": 1,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-04..2026-12-31"
+  },
+  "VPopĮ": {
+   "articles": 42,
+   "silent_errors": 0,
+   "current_ok": 38,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-10..2028-01-09"
+  },
+  "FinĮĮ": {
+   "articles": 55,
+   "silent_errors": 0,
+   "current_ok": 54,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-02.."
+  },
+  "PSPKĮ": {
+   "articles": 69,
+   "silent_errors": 0,
+   "current_ok": 62,
+   "flagged": 7,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-02..2027-12-31"
+  },
+  "GDNĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 20,
+   "flagged": 7,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "InvĮ": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 1,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "15-7",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 157 straipsnio nuostatos taikomos nuo šio įstatymo įsigaliojimo dienos visiems stambiems projektams ir laisvosios ekonominės zonos įmonė"
+    ]
+   ],
+   "etar_version": "2025-11-02..2027-06-30"
+  },
+  "RinkĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "BiudĮĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 23,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-15.."
+  },
+  "ProfMĮ": {
+   "articles": 44,
+   "silent_errors": 0,
+   "current_ok": 43,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01.."
+  },
+  "PŪVPAVĮ": {
+   "articles": 16,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-02-21.."
+  },
+  "PPATĮ": {
+   "articles": 28,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 11,
+   "false_alarms": 6,
+   "false_alarm_list": [
+    [
+     "2",
+     "unknown",
+     "XV-445: įsigaliojimo datas keitė ar keičia XV-648"
+    ],
+    [
+     "6",
+     "unknown",
+     "XV-445: įsigaliojimo datas keitė ar keičia XV-648"
+    ],
+    [
+     "7-1",
+     "unknown",
+     "XV-445: įsigaliojimo datas keitė ar keičia XV-648"
+    ],
+    [
+     "7-2",
+     "unknown",
+     "XV-445: įsigaliojimo datas keitė ar keičia XV-648"
+    ],
+    [
+     "10-1",
+     "unknown",
+     "XV-445: įsigaliojimo datas keitė ar keičia XV-648"
+    ],
+    [
+     "11-2",
+     "unknown",
+     "XV-445: įsigaliojimo datas keitė ar keičia XV-648"
+    ]
+   ],
+   "etar_version": "2026-09-01.."
+  },
+  "KPirkĮ": {
+   "articles": 118,
+   "silent_errors": 0,
+   "current_ok": 116,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "PsSPĮ": {
+   "articles": 15,
+   "silent_errors": 0,
+   "current_ok": 15,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-01.."
+  },
+  "PGSĮ": {
+   "articles": 28,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2019-01-01.."
+  },
+  "NPMKĮ": {
+   "articles": 44,
+   "silent_errors": 0,
+   "current_ok": 44,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-11-01.."
+  },
+  "LobVĮ": {
+   "articles": 18,
+   "silent_errors": 0,
+   "current_ok": 18,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "NVOPĮ": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-08-01.."
+  },
+  "SavVĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-17.."
+  },
+  "SportĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 10,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "ŽPLĮ": {
+   "articles": 39,
+   "silent_errors": 0,
+   "current_ok": 37,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "SPMokĮ": {
+   "articles": 19,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "MVLGĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-12-31.."
+  },
+  "ADegĮ": {
+   "articles": 43,
+   "silent_errors": 0,
+   "current_ok": 42,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-01..2029-12-31"
+  },
+  "VPensĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-07-01.."
+  },
+  "TKompĮ": {
+   "articles": 15,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-22.."
+  },
+  "SNŽKĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 21,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "BĮDAĮ": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01.."
+  },
+  "ŽULPKĮ": {
+   "articles": 46,
+   "silent_errors": 0,
+   "current_ok": 43,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "ASPPĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01..2026-12-31"
+  },
+  "VetĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01..2026-12-31"
+  },
+  "PaštoĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 26,
+   "flagged": 3,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "18",
+     "pending",
+     "keičiama nuo 2027-01-01"
+    ]
+   ],
+   "etar_version": "2026-08-01..2026-12-31"
+  },
+  "MokĮstĮ": {
+   "articles": 42,
+   "silent_errors": 0,
+   "current_ok": 33,
+   "flagged": 9,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "KISĮ": {
+   "articles": 175,
+   "silent_errors": 0,
+   "current_ok": 172,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01..2026-12-31"
+  },
+  "AKISVĮ": {
+   "articles": 65,
+   "silent_errors": 0,
+   "current_ok": 57,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "IIKISĮ": {
+   "articles": 67,
+   "silent_errors": 0,
+   "current_ok": 66,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01..2026-12-31"
+  },
+  "MPĮNVDĮ": {
+   "articles": 19,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "NPPŽŪĮ": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "ArchĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 7,
+   "false_alarms": 7,
+   "false_alarm_list": [
+    [
+     "7",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ],
+    [
+     "10",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ],
+    [
+     "11",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ],
+    [
+     "13",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ],
+    [
+     "15",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ],
+    [
+     "17",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ],
+    [
+     "18",
+     "unknown",
+     "XIV-2416: įsigaliojimo datas keitė ar keičia XIV-2525"
+    ]
+   ],
+   "etar_version": "2024-05-01.."
+  },
+  "TPSVPĮ": {
+   "articles": 38,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 11,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "1",
+     "outdated",
+     "Nuo 2026-10-28 galioja jį keičiantis įstatymas Nr. XV-1231, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-11-01..2026-12-31"
+  },
+  "ŽPVPĮ": {
+   "articles": 16,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-08-01.."
+  },
+  "PNTAĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "ŽRefĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-08-01..2026-12-31"
+  },
+  "ŽelĮ": {
+   "articles": 30,
+   "silent_errors": 0,
+   "current_ok": 30,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "LGĮst": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 34,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-31"
+  },
+  "ŽuvĮ": {
+   "articles": 79,
+   "silent_errors": 0,
+   "current_ok": 75,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2026-12-31"
+  },
+  "PKanĮ": {
+   "articles": 26,
+   "silent_errors": 0,
+   "current_ok": 26,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "ŽŪMŪKPĮ": {
+   "articles": 15,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01..2026-12-31"
+  },
+  "VKontrĮ": {
+   "articles": 31,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 9,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "VSAĮ": {
+   "articles": 20,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-02-01.."
+  },
+  "VIIVĮ": {
+   "articles": 47,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 18,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "13",
+     "outdated",
+     "Nuo 2024-01-01 galioja jį keičiantis įstatymas Nr. XIV-2440, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-01-01.."
+  },
+  "GKĮ": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 35,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-08-01..2026-12-31"
+  },
+  "LRTĮ": {
+   "articles": 23,
+   "silent_errors": 0,
+   "current_ok": 19,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-13..2026-12-31"
+  },
+  "RPĮ": {
+   "articles": 30,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-15.."
+  },
+  "AviacĮ": {
+   "articles": 63,
+   "silent_errors": 0,
+   "current_ok": 58,
+   "flagged": 5,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "53",
+     "unknown",
+     "XV-567: skyrių keitęs įstatymas įsigalioja dalimis (2025-12-05, 2026-12-31); neaišku, kuri dalis taikoma šiam straipsniui"
+    ]
+   ],
+   "etar_version": "2026-06-01..2026-12-30"
+  },
+  "TVPĮ": {
+   "articles": 30,
+   "silent_errors": 0,
+   "current_ok": 30,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2027-12-31"
+  },
+  "STTĮ": {
+   "articles": 68,
+   "silent_errors": 0,
+   "current_ok": 65,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "MedPĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01..2026-12-31"
+  },
+  "VSPĮ": {
+   "articles": 49,
+   "silent_errors": 0,
+   "current_ok": 38,
+   "flagged": 11,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01..2026-12-31"
+  },
+  "OPBPPĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-03-01..2026-12-31"
+  },
+  "SPAPĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "ŽALODTĮ": {
+   "articles": 16,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2019-07-01..2026-12-31"
+  },
+  "PApvĮ": {
+   "articles": 18,
+   "silent_errors": 0,
+   "current_ok": 18,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-04-10.."
+  },
+  "BTEĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-09-01.."
+  },
+  "KDĮ": {
+   "articles": 18,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2018-01-01..2026-12-31"
+  },
+  "PASPĮ": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01..2026-12-31"
+  },
+  "ŽMNKBĮ": {
+   "articles": 18,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-12-30..2026-12-31"
+  },
+  "VIIĮ": {
+   "articles": 16,
+   "silent_errors": 0,
+   "current_ok": 15,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "VAIĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-01.."
+  },
+  "ŠKĮ": {
+   "articles": 8,
+   "silent_errors": 0,
+   "current_ok": 8,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2020-01-01.."
+  },
+  "ŠeimynĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "ŠSĮ": {
+   "articles": 16,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-12-31.."
+  },
+  "VMVPĮ": {
+   "articles": 32,
+   "silent_errors": 0,
+   "current_ok": 32,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-04-01.."
+  },
+  "VTAKĮ": {
+   "articles": 28,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "PMAĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 2,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "10",
+     "unknown",
+     "pagal TAR pastabą dalis nuostatų įsigalioja tik įvykus sąlygai: 1 dalies nuostatos pradedamos taikyti, kai 2023 m. naujai išrinktos savivaldybių tarybos susirenka į pirmuosius posėdžius. Iki pirmųjų 2"
+    ]
+   ],
+   "etar_version": "2026-05-22.."
+  },
+  "PPKĮ": {
+   "articles": 67,
+   "silent_errors": 0,
+   "current_ok": 63,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-02..2030-01-09"
+  },
+  "PKVPĮ": {
+   "articles": 19,
+   "silent_errors": 0,
+   "current_ok": 16,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "VKTLĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-01.."
+  },
+  "SAIARBĮ": {
+   "articles": 7,
+   "silent_errors": 0,
+   "current_ok": 7,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-12-12.."
+  },
+  "VPDNAMĮ": {
+   "articles": 10,
+   "silent_errors": 0,
+   "current_ok": 6,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-06-01.."
+  },
+  "FPPBĮJĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "KPTAĮ": {
+   "articles": 11,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "MAKSVPĮ": {
+   "articles": 10,
+   "silent_errors": 0,
+   "current_ok": 10,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2017-07-01.."
+  },
+  "AGPRĮ": {
+   "articles": 8,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "ĮĮGAĮ": {
+   "articles": 42,
+   "silent_errors": 0,
+   "current_ok": 41,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-04-16.."
+  },
+  "SVVPĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "VSĮĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "KoncĮ": {
+   "articles": 81,
+   "silent_errors": 0,
+   "current_ok": 80,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-10-01.."
+  },
+  "LPFĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 27,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "MecenĮ": {
+   "articles": 8,
+   "silent_errors": 0,
+   "current_ok": 8,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "IĮIDĮ": {
+   "articles": 49,
+   "silent_errors": 0,
+   "current_ok": 36,
+   "flagged": 13,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-07-03.."
+  },
+  "KAKPĮ": {
+   "articles": 36,
+   "silent_errors": 0,
+   "current_ok": 36,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-04-29..2026-11-19"
+  },
+  "PTVVĮ": {
+   "articles": 14,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "PaslĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-11-01..2027-10-31"
+  },
+  "ProdSĮ": {
+   "articles": 24,
+   "silent_errors": 0,
+   "current_ok": 23,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "VKVAĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 13,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "LotĮ": {
+   "articles": 40,
+   "silent_errors": 0,
+   "current_ok": 39,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-05-01.."
+  },
+  "LLMĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "MVGIĮ": {
+   "articles": 11,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "PranĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-05-21.."
+  },
+  "SusirĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-04-01.."
+  },
+  "POĮ": {
+   "articles": 39,
+   "silent_errors": 0,
+   "current_ok": 39,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-04-01.."
+  },
+  "RBBĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 21,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-05-01.."
+  },
+  "TMĮ": {
+   "articles": 16,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "DAĮ": {
+   "articles": 24,
+   "silent_errors": 0,
+   "current_ok": 23,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "ŽAVINVĮ": {
+   "articles": 10,
+   "silent_errors": 0,
+   "current_ok": 10,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-07-01.."
+  },
+  "IAGNTĮ": {
+   "articles": 24,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "TEĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "ProbĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 32,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-05-14.."
+  },
+  "PNVNAĮ": {
+   "articles": 15,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "ATAĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2020-07-01.."
+  },
+  "KPAKATĮ": {
+   "articles": 42,
+   "silent_errors": 0,
+   "current_ok": 42,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "NPĮ": {
+   "articles": 34,
+   "silent_errors": 0,
+   "current_ok": 34,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "VTEKĮ": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 33,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-04.."
+  },
+  "VDIĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 21,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-07-01.."
+  },
+  "GRĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 14,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-06-01.."
+  },
+  "STSRĮ": {
+   "articles": 8,
+   "silent_errors": 0,
+   "current_ok": 8,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-01-01.."
+  },
+  "JARĮ": {
+   "articles": 9,
+   "silent_errors": 0,
+   "current_ok": 9,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-04-29..2028-01-09"
+  },
+  "AVPRDĮ": {
+   "articles": 6,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "TSĮ": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 21,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "AOAĮ": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "VandĮ": {
+   "articles": 29,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 1,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "15",
+     "outdated",
+     "Nuo 2026-01-01 galioja jį keičiantis įstatymas Nr. XIV-1280, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2025-01-01.."
+  },
+  "ŽGĮ": {
+   "articles": 34,
+   "silent_errors": 0,
+   "current_ok": 34,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-01.."
+  },
+  "MedžĮ": {
+   "articles": 26,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "MŽĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 13,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "KKVĮ": {
+   "articles": 31,
+   "silent_errors": 0,
+   "current_ok": 30,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30..2026-12-31"
+  },
+  "TVĮ": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 6,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-02.."
+  },
+  "PJĮ": {
+   "articles": 11,
+   "silent_errors": 0,
+   "current_ok": 10,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-01.."
+  },
+  "MeliorĮ": {
+   "articles": 10,
+   "silent_errors": 0,
+   "current_ok": 6,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-11-01.."
+  },
+  "MaistoĮ": {
+   "articles": 26,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-30.."
+  },
+  "EVEDĮ": {
+   "articles": 24,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 24,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-10-01.."
+  },
+  "BEnĮ": {
+   "articles": 54,
+   "silent_errors": 0,
+   "current_ok": 48,
+   "flagged": 6,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-02..2026-12-31"
+  },
+  "BSaugĮ": {
+   "articles": 56,
+   "silent_errors": 0,
+   "current_ok": 55,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-12-01..2026-12-31"
+  },
+  "RadSĮ": {
+   "articles": 34,
+   "silent_errors": 0,
+   "current_ok": 34,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01..2026-12-31"
+  },
+  "RATĮ": {
+   "articles": 27,
+   "silent_errors": 0,
+   "current_ok": 26,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-12-01.."
+  },
+  "BAEĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2018-03-01.."
+  },
+  "IAENĮ": {
+   "articles": 4,
+   "silent_errors": 0,
+   "current_ok": 2,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2021-01-01.."
+  },
+  "IAEDGĮ": {
+   "articles": 13,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-07-01.."
+  },
+  "NBEGĮ": {
+   "articles": 6,
+   "silent_errors": 0,
+   "current_ok": 6,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2021-12-04.."
+  },
+  "EIRĮ": {
+   "articles": 28,
+   "silent_errors": 0,
+   "current_ok": 22,
+   "flagged": 6,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-11-01.."
+  },
+  "SinchrĮ": {
+   "articles": 17,
+   "silent_errors": 0,
+   "current_ok": 17,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-17.."
+  },
+  "SGDTĮ": {
+   "articles": 14,
+   "silent_errors": 0,
+   "current_ok": 13,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-02.."
+  },
+  "NPAĮ": {
+   "articles": 26,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-01.."
+  },
+  "AIMĮ": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 10,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-01-01.."
+  },
+  "CO2GSĮ": {
+   "articles": 21,
+   "silent_errors": 0,
+   "current_ok": 21,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2018-07-01.."
+  },
+  "PPĮPĮ": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 8,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2020-05-01..2026-12-31"
+  },
+  "EETNT": {
+   "articles": 216,
+   "silent_errors": 0,
+   "current_ok": 212,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-10-07.."
+  },
+  "EĮPTA": {
+   "articles": 175,
+   "silent_errors": 0,
+   "current_ok": 145,
+   "flagged": 30,
+   "false_alarms": 4,
+   "false_alarm_list": [
+    [
+     "16-1",
+     "unknown",
+     "1-285/2025-12-23: nežinoma įsigaliojimo data"
+    ],
+    [
+     "46",
+     "unknown",
+     "1-285/2025-12-23: nežinoma įsigaliojimo data"
+    ],
+    [
+     "56",
+     "unknown",
+     "1-285/2025-12-23: nežinoma įsigaliojimo data"
+    ],
+    [
+     "67",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2026-05-01..2026-12-31"
+  },
+  "ETNauT": {
+   "articles": 103,
+   "silent_errors": 0,
+   "current_ok": 102,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-07-01.."
+  },
+  "EĮĮBT": {
+   "articles": 380,
+   "silent_errors": 0,
+   "current_ok": 375,
+   "flagged": 5,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "282",
+     "unknown",
+     "šaltinio tekste šis straipsnis pateiktas 2 kartus, be datų"
+    ]
+   ],
+   "etar_version": "2025-12-24.."
+  },
+  "SEEĮT": {
+   "articles": 249,
+   "silent_errors": 0,
+   "current_ok": 247,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-05-25.."
+  },
+  "ŠTVT": {
+   "articles": 249,
+   "silent_errors": 0,
+   "current_ok": 207,
+   "flagged": 42,
+   "false_alarms": 7,
+   "false_alarm_list": [
+    [
+     "104",
+     "unknown",
+     "I-858-13-14/2014-10-31: nežinoma įsigaliojimo data"
+    ],
+    [
+     "105",
+     "unknown",
+     "I-858-13-14/2014-10-31: nežinoma įsigaliojimo data"
+    ],
+    [
+     "106",
+     "unknown",
+     "I-858-13-14/2014-10-31: nežinoma įsigaliojimo data"
+    ],
+    [
+     "107",
+     "unknown",
+     "I-858-13-14/2014-10-31: nežinoma įsigaliojimo data"
+    ],
+    [
+     "108",
+     "unknown",
+     "I-858-13-14/2014-10-31: nežinoma įsigaliojimo data"
+    ],
+    [
+     "124",
+     "unknown",
+     "I-858-13-14/2014-10-31: nežinoma įsigaliojimo data"
+    ],
+    [
+     "132",
+     "outdated",
+     "Nuo 2026-10-01 galioja jį keičiantis įsakymas 1-208/2026-08-28, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2026-10-01..2027-04-30"
+  },
+  "BVSSA": {
+   "articles": 48,
+   "silent_errors": 0,
+   "current_ok": 48,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-06-01.."
+  },
+  "VERTKM": {
+   "articles": 151,
+   "silent_errors": 0,
+   "current_ok": 146,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-05.."
+  },
+  "PEPTA": {
+   "articles": 268,
+   "silent_errors": 0,
+   "current_ok": 268,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-08-15.."
+  },
+  "PESTA": {
+   "articles": 324,
+   "silent_errors": 0,
+   "current_ok": 324,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-25.."
+  },
+  "ESOLPTA": {
+   "articles": 67,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "ESOEDPA": {
+   "articles": 95,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "EEPPKRA": {
+   "articles": 33,
+   "silent_errors": 0,
+   "current_ok": 20,
+   "flagged": 13,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-06-26..2026-12-31"
+  },
+  "VEELIT": {
+   "articles": 93,
+   "silent_errors": 0,
+   "current_ok": 93,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-11-24.."
+  },
+  "EETEKT": {
+   "articles": 1692,
+   "silent_errors": 0,
+   "current_ok": 1690,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-01-01.."
+  },
+  "ETAT": {
+   "articles": 38,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 10,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-07-23.."
+  },
+  "GDLT": {
+   "articles": 62,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 62,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2018-01-23.."
+  },
+  "EPĮNM": {
+   "articles": 66,
+   "silent_errors": 0,
+   "current_ok": 66,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "GDPĮNM": {
+   "articles": 44,
+   "silent_errors": 0,
+   "current_ok": 28,
+   "flagged": 16,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "AIEKATA": {
+   "articles": 10,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "PEEDPT": {
+   "articles": 62,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 62,
+   "false_alarms": 2,
+   "false_alarm_list": [
+    [
+     "1",
+     "outdated",
+     "Nuo 2024-08-30 galioja nauja akto redakcija (nutarimas O3E-1122/2024-08-29), kurios šiame tekste dar nėra"
+    ],
+    [
+     "2",
+     "outdated",
+     "Nuo 2024-08-30 galioja nauja akto redakcija (nutarimas O3E-1122/2024-08-29), kurios šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2024-08-30.."
+  },
+  "EEĮAARA": {
+   "articles": 64,
+   "silent_errors": 0,
+   "current_ok": 61,
+   "flagged": 3,
+   "false_alarms": 3,
+   "false_alarm_list": [
+    [
+     "45",
+     "unknown",
+     "O3E-468/2018-12-21: nežinoma įsigaliojimo data"
+    ],
+    [
+     "47",
+     "unknown",
+     "O3E-468/2018-12-21: nežinoma įsigaliojimo data"
+    ],
+    [
+     "48",
+     "unknown",
+     "O3E-468/2018-12-21: nežinoma įsigaliojimo data"
+    ]
+   ],
+   "etar_version": "2024-09-14.."
+  },
+  "EĮIVDA": {
+   "articles": 122,
+   "silent_errors": 0,
+   "current_ok": 122,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-09-01.."
+  },
+  "EVKTA": {
+   "articles": 47,
+   "silent_errors": 0,
+   "current_ok": 45,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-23.."
+  },
+  "EĮAT": {
+   "articles": 53,
+   "silent_errors": 0,
+   "current_ok": 53,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-02-27.."
+  },
+  "VSNVT": {
+   "articles": 56,
+   "silent_errors": 0,
+   "current_ok": 56,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-09-22.."
+  },
+  "VIAPTA": {
+   "articles": 41,
+   "silent_errors": 0,
+   "current_ok": 34,
+   "flagged": 7,
+   "false_alarms": 3,
+   "false_alarm_list": [
+    [
+     "7",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 813/2026-10-28, kurio šiame tekste dar nėra"
+    ],
+    [
+     "8",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 813/2026-10-28, kurio šiame tekste dar nėra"
+    ],
+    [
+     "18",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 813/2026-10-28, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2023-01-18.."
+  },
+  "VIAPLA": {
+   "articles": 86,
+   "silent_errors": 0,
+   "current_ok": 81,
+   "flagged": 5,
+   "false_alarms": 5,
+   "false_alarm_list": [
+    [
+     "4",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 812/2026-10-28, kurio šiame tekste dar nėra"
+    ],
+    [
+     "19",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 812/2026-10-28, kurio šiame tekste dar nėra"
+    ],
+    [
+     "26",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 812/2026-10-28, kurio šiame tekste dar nėra"
+    ],
+    [
+     "49",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 812/2026-10-28, kurio šiame tekste dar nėra"
+    ],
+    [
+     "57",
+     "outdated",
+     "Nuo 2026-10-30 galioja jį keičiantis nutarimas 812/2026-10-28, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2024-09-27.."
+  },
+  "AIEPSA": {
+   "articles": 53,
+   "silent_errors": 0,
+   "current_ok": 53,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-12-14.."
+  },
+  "GDTDA": {
+   "articles": 61,
+   "silent_errors": 0,
+   "current_ok": 59,
+   "flagged": 2,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "2",
+     "outdated",
+     "Nuo 2022-01-01 galioja jį keičiantis nutarimas 966/2021-11-17, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2022-01-01.."
+  },
+  "GDTSUA": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-08-05..2027-01-31"
+  },
+  "NPVAT": {
+   "articles": 44,
+   "silent_errors": 0,
+   "current_ok": 44,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2020-12-10.."
+  },
+  "ŠTLT": {
+   "articles": 52,
+   "silent_errors": 0,
+   "current_ok": 0,
+   "flagged": 52,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-01.."
+  },
+  "VAEEPA": {
+   "articles": 40,
+   "silent_errors": 0,
+   "current_ok": 40,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-05-27.."
+  },
+  "PGDT": {
+   "articles": 51,
+   "silent_errors": 0,
+   "current_ok": 46,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2020-03-28.."
+  },
+  "GDATA": {
+   "articles": 99,
+   "silent_errors": 0,
+   "current_ok": 98,
+   "flagged": 1,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "GDKR": {
+   "articles": 8,
+   "silent_errors": 0,
+   "current_ok": 8,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-12-10.."
+  },
+  "GDSVSET": {
+   "articles": 139,
+   "silent_errors": 0,
+   "current_ok": 137,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-05-23.."
+  },
+  "GDSPTA": {
+   "articles": 69,
+   "silent_errors": 0,
+   "current_ok": 69,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-05-01.."
+  },
+  "PNPT": {
+   "articles": 81,
+   "silent_errors": 0,
+   "current_ok": 81,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "LPNPIT": {
+   "articles": 83,
+   "silent_errors": 0,
+   "current_ok": 80,
+   "flagged": 3,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-01-01.."
+  },
+  "PŠKVSPA": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 29,
+   "flagged": 6,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2023-10-01.."
+  },
+  "EDATA": {
+   "articles": 42,
+   "silent_errors": 0,
+   "current_ok": 40,
+   "flagged": 2,
+   "false_alarms": 2,
+   "false_alarm_list": [
+    [
+     "1",
+     "outdated",
+     "Nuo 2024-05-30 galioja jį keičiantis įsakymas 1-110/2024-05-29, kurio šiame tekste dar nėra"
+    ],
+    [
+     "2",
+     "outdated",
+     "Nuo 2024-05-30 galioja jį keičiantis įsakymas 1-110/2024-05-29, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2024-05-30.."
+  },
+  "NPKR": {
+   "articles": 51,
+   "silent_errors": 0,
+   "current_ok": 51,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-30.."
+  },
+  "STR10703": {
+   "articles": 133,
+   "silent_errors": 0,
+   "current_ok": 133,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-11-02.."
+  },
+  "STR10501": {
+   "articles": 184,
+   "silent_errors": 0,
+   "current_ok": 172,
+   "flagged": 12,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "2",
+     "outdated",
+     "Nuo 2024-11-08 galioja jį keičiantis įsakymas D1-377/2024-11-07, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2025-11-01.."
+  },
+  "STR10404": {
+   "articles": 187,
+   "silent_errors": 0,
+   "current_ok": 175,
+   "flagged": 12,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-01..2026-12-31"
+  },
+  "STR10103": {
+   "articles": 35,
+   "silent_errors": 0,
+   "current_ok": 30,
+   "flagged": 5,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-07-09..2026-12-31"
+  },
+  "STR10601": {
+   "articles": 119,
+   "silent_errors": 0,
+   "current_ok": 110,
+   "flagged": 9,
+   "false_alarms": 1,
+   "false_alarm_list": [
+    [
+     "81",
+     "outdated",
+     "Nuo 2024-12-11 galioja jį keičiantis įsakymas D1-447/2024-12-10, kurio šiame tekste dar nėra"
+    ]
+   ],
+   "etar_version": "2025-05-01.."
+  },
+  "STR20209": {
+   "articles": 55,
+   "silent_errors": 0,
+   "current_ok": 47,
+   "flagged": 8,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2018-02-08..2026-12-31"
+  },
+  "STR20212": {
+   "articles": 171,
+   "not_in_force": true,
+   "current_ok": 0,
+   "flagged": 171,
+   "silent_errors": 0
+  },
+  "STR10108": {
+   "articles": 22,
+   "silent_errors": 0,
+   "current_ok": 18,
+   "flagged": 4,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-11-01.."
+  },
+  "STR20102": {
+   "articles": 77,
+   "silent_errors": 0,
+   "current_ok": 77,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-01.."
+  },
+  "NSUSOAĮ": {
+   "articles": 25,
+   "silent_errors": 0,
+   "current_ok": 25,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2024-10-18..2026-12-31"
+  },
+  "VTPĮ": {
+   "articles": 51,
+   "silent_errors": 0,
+   "current_ok": 51,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-01.."
+  },
+  "ENSAR": {
+   "articles": 38,
+   "silent_errors": 0,
+   "current_ok": 38,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2025-06-01.."
+  },
+  "KSSAPTA": {
+   "articles": 62,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "KSAAM": {
+   "articles": 42,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "KSMTA": {
+   "articles": 11,
+   "silent_errors": 0,
+   "current_ok": 11,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-01-27.."
+  },
+  "PDAVS": {
+   "articles": 10,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "PADSPA": {
+   "articles": 12,
+   "silent_errors": 0,
+   "current_ok": 12,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2018-08-30.."
+  },
+  "SSADTS": {
+   "articles": 45,
+   "original_only": true,
+   "current_ok": 0,
+   "flagged": 0,
+   "silent_errors": 0
+  },
+  "ABADPA": {
+   "articles": 55,
+   "silent_errors": 0,
+   "current_ok": 55,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2022-07-01.."
+  },
+  "KSRA": {
+   "articles": 72,
+   "silent_errors": 0,
+   "current_ok": 70,
+   "flagged": 2,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-27..2026-12-31"
+  },
+  "KSSIM": {
+   "articles": 18,
+   "silent_errors": 0,
+   "current_ok": 18,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-27..2026-12-31"
+  },
+  "VUPTA": {
+   "articles": 7,
+   "silent_errors": 0,
+   "current_ok": 7,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-27..2026-12-31"
+  },
+  "NKIVP": {
+   "articles": 24,
+   "silent_errors": 0,
+   "current_ok": 24,
+   "flagged": 0,
+   "false_alarms": 0,
+   "false_alarm_list": [],
+   "etar_version": "2026-06-27..2026-12-31"
+  }
+ },
+ "silent_errors": 0,
+ "unverified": []
+}

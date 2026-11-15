@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>Puslapis nerastas</h1>
+<p>Tokio puslapio šioje svetainėje nėra. Gal adresas surinktas su klaida, ar straipsnis pernumeruotas?</p>
+<div id="nf-suggest" hidden><p><strong>Galbūt ieškojote:</strong></p><ul></ul></div>
+<ul>
+  <li><a href="{{ root }}/">Visi teisės aktai</a></li>
+  <li><a href="{{ root }}/paieska/">Paieška</a> (pvz. „DK 52“ arba „nuotolinis darbas“)</li>
+  <li>Trumpas adresas: <code>{{ root }}/dk/52/</code> – akto santrumpa ir straipsnio numeris</li>
+</ul>
+{% endblock %}
