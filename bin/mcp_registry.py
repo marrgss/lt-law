@@ -37,8 +37,8 @@ def server_json(version: str) -> dict:
         "icons": [{"src": f"https://{DOMAIN}/icon-512.png", "mimeType": "image/png", "sizes": ["512x512"]},
                   {"src": f"https://{DOMAIN}/favicon.svg", "mimeType": "image/svg+xml", "sizes": ["any"]}],
         "remotes": [{"type": "streamable-http", "url": f"https://{DOMAIN}/mcp"}],
-        # once the repository is public (ROADMAP, "The public repository"): "repository": {"url": ..., "source": "github",
-        # "id": <gh api repos/<owner>/<repo> --jq .id>}, and publish a new version
+        # the public code repository (D-055); id: gh api repos/marrgss/lt-law --jq .id
+        "repository": {"url": "https://github.com/marrgss/lt-law", "source": "github", "id": "1458570426"},
     }
 
 

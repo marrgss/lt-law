@@ -124,7 +124,8 @@ def main() -> int:
     print(f"committed in {WORK.relative_to(ROOT)}: {run('git', 'log', '--format=%h %an <%ae> %s', '-1', cwd=WORK)} ({files} files, "
           f"{len(run('git', 'rev-list', 'HEAD', cwd=WORK).splitlines())} commits)")
     if a.push:
-        subprocess.run(["git", "push", "-q", remote, "main"], cwd=WORK, check=True)
+        subprocess.run(["git", "-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential",  # gh's login
+                        "push", "-q", remote, "main"], cwd=WORK, check=True)
         print(f"pushed to {remote}")
     else:
         print("not pushed (--push)")

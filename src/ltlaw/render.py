@@ -210,6 +210,8 @@ def lt_count(n: int, one: str, few: str, many: str) -> str:
 
 env.filters["lt_count"] = lt_count
 env.globals["contact"] = CONTACT
+CODE_URL = "https://github.com/marrgss/lt-law"  # the public code repository (D-055)
+env.globals["code_url"] = CODE_URL
 
 
 AREAS = pathlib.Path(__file__).resolve().parents[2] / "scope" / "areas.yaml"
@@ -1671,12 +1673,14 @@ class Site:
                 "- Programs: please send a User-Agent header that names your program.", "",
                 "## Acts", "",
                 f"- {len(acts)} acts. The list with every act's address, alias and JSON: {self.base}/llms-full.txt; as JSON: {self.base}/index.json",
-                "", "## About", "", f"- [Method, sources, validation]({self.base}/apie/)", ""]
+                "", "## About", "", f"- [Method, sources, validation]({self.base}/apie/)",
+                f"- [Source code and the rules behind every label]({CODE_URL}) (MIT)", ""]
         self.write("llms.txt", "\n".join(llms))  # slim: an agent reads the rules before its context fills (feedback P14)
         full = llms[: llms.index("## Acts") + 2]
         full += [f"- [{a['abbr'] + ' – ' if a.get('tag') else ''}{a['name']}]({a['url']}): {a['n']} {'points' if a.get('unit') == 'punktas' else 'articles'}; "
                  f"short {a['alias']}; index {a['articles_json']}; full JSON {a['data_json']}" for a in acts]
-        full += ["", "## About", "", f"- [Method, sources, validation]({self.base}/apie/)", ""]
+        full += ["", "## About", "", f"- [Method, sources, validation]({self.base}/apie/)",
+                f"- [Source code and the rules behind every label]({CODE_URL}) (MIT)", ""]
         self.write("llms-full.txt", "\n".join(full))
         dynamic = [r for r in self.redirects if ":n" in r]
         lines = redirect_lines(self.redirects)
