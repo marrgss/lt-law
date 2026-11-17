@@ -44,6 +44,7 @@ MAX_DROP = 0.02
 MIN_LAWS = 10_000  # the full law metadata has ~15k laws; far fewer means it's missing (fresh clone, lost state)
 TEXT_ORIGIN_OK = {"Dokumentas"}
 FETCH_BUDGET_S = 40 * 60  # all fetching together: building, checks and saving must fit the job's 90 minutes
+BACKSTOP_S = 5 * 60  # unchanged texts re-fetched in full, the longest unfetched first (D-056): ~40–150 a night
 SEARCH_FLOOR = 65  # bin/search_questions.json: questions whose right act must come first (of 80)
 
 
@@ -105,6 +106,71 @@ def backtest_changed(scope: list[dict], changed: list[str], led: Ledger, day: st
         except Exception as e:  # noqa: BLE001
             warnings.append(f"{act['abbr']}: back-test skipped tonight ({type(e).__name__}: {e})")
     return out
+
+
+def refresh_texts(scope: list[dict], day: str, log: dict, warnings: list[str]) -> list[str]:
+    """Step 2: every scope act's text checked, the changed ones fetched. Returns the acts whose fetch failed."""
+    changed, failed, t_texts, late = [], [], time.time(), []
+    due = source.awaiting_consolidation(scope, day)  # acts just amended: their new consolidation first
+    log["steps"]["texts_due"] = len(due)
+    # which texts changed at all: their rows' revisions, under a minute for every act (D-039). An act whose revision is
+    # the one its last full fetch saw is checked without a request. Failing, every act's text is fetched as before.
+    lt_ids = [a["dokumento_id"] for a in scope if not a["dokumento_id"].startswith("EU.")]
+    try:
+        revs = source.revisions(lt_ids)
+        n_revs = len(revs)
+    except Exception as e:
+        revs, n_revs = {}, 0
+        warnings.append(f"revisions not read ({type(e).__name__}): every act's text fetched")
+    same = {i for i in lt_ids if source.revision_unchanged(i, revs.get(i))}
+    try:  # EU acts: every version list and metadata in a few queries (D-056); failing, each act is asked for alone
+        log["steps"]["eu_acts_in_batch"] = source.prefetch_eu([a["dokumento_id"] for a in scope])
+    except Exception as e:
+        warnings.append(f"EUR-Lex not read in one go ({type(e).__name__}): each EU act asked for alone")
+    # the unchanged first (no request: all of them in a second), then the ones that need the network: amended acts,
+    # Lithuanian before EU, the longest unchecked first, so a slow night's budget goes to changed texts and leaves
+    # different acts for tomorrow, not always the same ones (D-056)
+    for act in sorted(scope, key=lambda x: (x["dokumento_id"] not in same, x["dokumento_id"] not in due,
+                                            x["dokumento_id"].startswith("EU."), source.last_checked(x["dokumento_id"]))):
+        if time.time() - t_texts > 20 * 60:  # a slow source (2026-10-24: hours): the rest from yesterday's copies
+            late.append(act["abbr"])
+            continue
+        if source.DOWN and not act["dokumento_id"].startswith("EU."):  # EU acts come from EUR-Lex
+            late.append(act["abbr"])
+            continue
+        before = source.snapshots(act["dokumento_id"])
+        try:
+            p = source.snapshot(act["dokumento_id"], revision=revs.get(act["dokumento_id"]))
+        except Exception as e:  # the reason, so a one-off (data.gov.lt's 500s) and a lasting failure can be told apart
+            failed.append(f"{act['abbr']} ({type(e).__name__}: {str(e)[:80]})")
+            continue
+        if not before or p != before[-1]:
+            changed.append(act["abbr"])
+    # the backstop (D-056): unchanged revisions' texts fetched in full all the same, the longest unfetched first, for
+    # BACKSTOP_S a night. A text that differs there under the revision we were told changed without a new revision:
+    # revisions can't be trusted then, and the night says so (2026-11-17: 356 unchanged revisions over 17 days, 0 texts)
+    t_back, n_back, unseen = time.time(), 0, []
+    abbr = {x["dokumento_id"]: x["abbr"] for x in scope}
+    for i in sorted(same, key=lambda i: (source.full_fetched(i), i)):
+        if source.DOWN or time.time() - t_back > BACKSTOP_S or time.time() - t_texts > 20 * 60:
+            break
+        before = source.snapshots(i)
+        try:
+            p = source.snapshot(i, full=True)
+        except Exception:
+            continue  # the act is checked by its revision already; the backstop comes back to it
+        n_back += 1
+        if p != before[-1]:
+            changed.append(abbr[i])
+            if source.seen_revision(i) == revs[i]:  # else the row changed in these minutes: a new revision, as it should
+                unseen.append(abbr[i])
+    if unseen:
+        warnings.append(f"texts changed without a new revision (found by the full re-fetch; D-056 counts on revisions): {unseen}")
+    log["steps"]["texts_changed"] = changed
+    log["steps"]["texts_by_revision"] = {"revisions": n_revs, "not_fetched": source.REVISION_SKIPS, "refetched_in_full": n_back}
+    if late:
+        warnings.append(f"data.gov.lt {'not answering' if source.DOWN else 'slow'}: {len(late)} acts' texts not refreshed tonight, built from the last copies")
+    return failed
 
 
 def main() -> None:
@@ -210,41 +276,7 @@ def main() -> None:
             except Exception as e:
                 warnings.append(f"Seimas votes not fetched (yesterday's kept): {type(e).__name__}: {e}")
             tick("Seimas votes")
-        changed, failed, t_texts, late = [], [], time.time(), []
-        # longest unchecked first: a slow night's budget leaves different acts for tomorrow, not always the same ones
-        due = source.awaiting_consolidation(scope, day)  # acts just amended: their new consolidation first
-        log["steps"]["texts_due"] = len(due)
-        # which texts changed at all: their rows' revisions, seconds for every act (D-039); an unchanged one is fetched
-        # only about once a week. Failing, every act's text is fetched as before.
-        lt_ids = [a["dokumento_id"] for a in scope if not a["dokumento_id"].startswith("EU.")]
-        try:
-            revs = source.revisions(lt_ids)
-            n_revs = len(revs)
-        except Exception as e:
-            revs, n_revs = {}, 0
-            warnings.append(f"revisions not read ({type(e).__name__}): every act's text fetched")
-        # still, a seventh of the texts in full every night (the longest unfetched): each about weekly, spread evenly
-        for i in sorted(lt_ids, key=source.full_fetched)[:-(-len(lt_ids) // 7)]:
-            revs.pop(i, None)
-        for act in sorted(scope, key=lambda x: (x["dokumento_id"] not in due, source.last_checked(x["dokumento_id"]))):
-            if time.time() - t_texts > 20 * 60:  # a slow source (2026-10-24: hours): the rest from yesterday's copies
-                late.append(act["abbr"])
-                continue
-            if source.DOWN and not act["dokumento_id"].startswith("EU."):  # EU acts come from EUR-Lex
-                late.append(act["abbr"])
-                continue
-            before = source.snapshots(act["dokumento_id"])
-            try:
-                p = source.snapshot(act["dokumento_id"], revision=revs.get(act["dokumento_id"]))
-            except Exception as e:  # the reason, so a one-off (data.gov.lt's 500s) and a lasting failure can be told apart
-                failed.append(f"{act['abbr']} ({type(e).__name__}: {str(e)[:80]})")
-                continue
-            if not before or p != before[-1]:
-                changed.append(act["abbr"])
-        log["steps"]["texts_changed"] = changed
-        log["steps"]["texts_by_revision"] = {"revisions": n_revs, "not_fetched": source.REVISION_SKIPS}
-        if late:
-            warnings.append(f"data.gov.lt {'not answering' if source.DOWN else 'slow'}: {len(late)} acts' texts not refreshed tonight, built from the last copies")
+        failed = refresh_texts(scope, day, log, warnings)
         tick("act texts")
         # a new act whose first text didn't come (slow or failing source) waits for the next night (STSRĮ, 2026-10-26)
         nosnap = [x["abbr"] for x in scope if not source.snapshots(x["dokumento_id"]) and x["dokumento_id"] not in source.PINNED]

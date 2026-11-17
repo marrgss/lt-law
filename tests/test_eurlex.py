@@ -542,3 +542,44 @@ def test_an_inline_element_between_paragraphs_of_a_list_laid_out_as_a_table():  
            '</td></tr></table>')
     lines = _ok(_art("4", f'<p class="norm">Apibrėžtys:</p>{row}'))
     assert "15) kaupiamoji lygiavertė dozė (H T" in lines  # the subscript was lost
+
+
+def test_many_acts_versions_in_one_query_keep_only_their_own_numbers(monkeypatch):
+    asked = []
+    def sparql(q, timeout=120):
+        asked.append(q)
+        if '"32019L0944"' not in q:
+            raise TimeoutError
+        return [{"bc": "32019L0944", "celex": "02019L0944-20240716"}, {"bc": "32019L0944", "celex": "02019L0944-20190614"},
+                {"bc": "32019L0944", "celex": "02012L0027-20200101"}]  # another act's version, linked to this one
+    monkeypatch.setattr(eurlex, "sparql", sparql)
+    got = eurlex.versions_of(["32019L0944", "32016R0679", "32022L2555"], batch=2)
+    # 2016/679 has no consolidation (an empty list, an answer); 2022/2555's query failed (no answer: asked for alone later)
+    assert got == {"32019L0944": ["02019L0944-20190614", "02019L0944-20240716"], "32016R0679": []}
+    assert len(asked) == 2 and "act_consolidated_based_on_resource_legal" in asked[0] and '"32016R0679"^^xsd:string' in asked[0]
+
+
+def test_many_acts_metadata_in_one_query(monkeypatch):
+    rows = [{"c": "32019L0944", "date": "2019-06-05", "eif": "2019-07-04", "end": "2025-10-11", "force": "1"},
+            {"c": "32019L0944", "end": "9999-12-31", "force": "1", "title": "Direktyva"},
+            {"c": "32016R0679", "date": "2016-04-27", "force": "0"}]
+    monkeypatch.setattr(eurlex, "sparql", lambda q, timeout=120: rows)
+    got = eurlex.metadata_of(["32019L0944", "32016R0679", "32099R0001"])
+    assert got["32019L0944"]["end_of_validity"] == "9999-12-31" and got["32019L0944"]["title"] == "Direktyva"
+    assert not got["32016R0679"]["in_force"] and "32099R0001" not in got  # no row: asked for alone, as before
+
+
+def test_an_eu_act_uses_the_nights_batch_but_never_loses_a_version_it_held(monkeypatch):
+    from ltlaw import source
+    meta = {"date": "2019-06-05", "entry_into_force": "2019-07-04", "end_of_validity": "9999-12-31", "in_force": True, "title": "D"}
+    prev = {"eu_versions": ["02019L0944-20190614", "02019L0944-20240716"], "tekstas_lt": "1 straipsnis", "eu_converter": eurlex.CONVERTER}
+    slow = []
+    monkeypatch.setattr(eurlex, "metadata", lambda c: slow.append("metadata") or meta)
+    monkeypatch.setattr(eurlex, "versions", lambda c: slow.append("versions") or list(prev["eu_versions"]))
+    monkeypatch.setattr(source, "EU_BATCH", {"versions": {"32019L0944": list(prev["eu_versions"])}, "metadata": {"32019L0944": dict(meta, in_force=False)}})
+    row = source.eu_row("EU.32019L0944", "2026-11-17", prev)
+    assert not slow and row["tekstas_lt"] == "1 straipsnis" and row["galioj_busena"] == "negalioja"  # the batch's answers, no other query
+    # the batch's list lacks a version we held: the slow query decides, the text stays
+    monkeypatch.setattr(source, "EU_BATCH", {"versions": {"32019L0944": ["02019L0944-20190614"]}, "metadata": {"32019L0944": meta}})
+    row = source.eu_row("EU.32019L0944", "2026-11-17", prev)
+    assert slow == ["versions"] and row["eu_versions"] == prev["eu_versions"] and row["tekstas_lt"] == "1 straipsnis"

@@ -68,7 +68,7 @@ No server of our own, no database, no personal computer in production (D-006).
 | Prediction ledger | `data/state/ledger.json` | state asset |
 | Article history since 2020 (dated pages and answers) | R2 `lt-law-history` (EU), from `bin/export_history.py` / `upload_history.py` | R2 |
 | Validation results | `validation/` | git |
-| The built site | the Worker's assets (each deploy a version); Pages; a 1-day GitHub artifact | Cloudflare keeps versions |
+| The built site | the Worker's assets (each deploy a version); Pages; a GitHub artifact between the build and deploy jobs, deleted once deployed (D-056) | Cloudflare keeps versions |
 | Secrets | GitHub secrets; Worker secrets; `~/.config/lt-law/` | never in git |
 
 ## Limits and thresholds

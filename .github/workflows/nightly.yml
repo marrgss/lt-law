@@ -7,6 +7,7 @@
 #              secret RELAY_KEY; RELAY_URL (a secret; a variable still works): the Worker's https://…workers.dev address
 # Security: actions pinned by commit SHA; no job keeps credentials in .git; npm code (wrangler) runs
 # only in the deploy job, from the lockfile in deploy/, with no GitHub token rights.
+# Storage: the site artifact (build job → deploy job) is deleted by the last job once deployed (D-056).
 name: nightly
 
 on:
@@ -305,7 +306,8 @@ jobs:
     # a night without a build pings from the plan job
     if: ${{ always() && needs.plan.outputs.build == 'true' && (github.event.inputs.code || 'release') == 'release' }}
     runs-on: ubuntu-latest
-    permissions: {}
+    permissions:
+      actions: write  # the last step deletes this run's site artifact; no checkout, no code from the repository
     steps:
       - env:
           URL: ${{ secrets.HEALTHCHECK_URL }}
@@ -319,3 +321,18 @@ jobs:
           else
             curl -fsS -m 10 --retry 3 -o /dev/null "$url/fail" && echo "heartbeat: failed (build $BUILD, deploy $DEPLOY)"
           fi
+
+      - name: Delete the site artifact once deployed (it is only the hand-over between the two jobs)
+        # stored for minutes, not the 1 day minimum: 684 MB a build had used 90% of the plan's 0.5 GB-month of Actions
+        # storage by 2026-11-17 (D-056). A failed deploy keeps it for its day, for "Re-run failed jobs"
+        if: ${{ needs.deploy.result == 'success' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN: ${{ github.run_id }}
+        run: |
+          gh api "repos/$REPO/actions/runs/$RUN/artifacts" --jq '.artifacts[] | select(.name == "site") | .id' \
+            | while read -r id; do
+                gh api -X DELETE "repos/$REPO/actions/artifacts/$id" && echo "deleted artifact $id" \
+                  || echo "::warning::site artifact $id not deleted: it expires in a day"
+              done

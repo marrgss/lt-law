@@ -142,8 +142,29 @@ def revisions(dokumento_ids: list[str], batch: int = 25) -> dict[str, str]:
     return out
 
 
-FULL_EVERY_DAYS = 10  # a backstop: the nightly fetches a seventh of the texts in full each night anyway
+FULL_EVERY_DAYS = 60  # the ceiling: an older full fetch is repeated whatever the revision (the nightly's backstop, D-056,
+#                       re-fetches the longest unfetched texts a few minutes a night, so this is rarely reached)
 REVISION_SKIPS = 0  # texts not fetched this run: their revision unchanged (nightly log)
+
+
+def revision_unchanged(dokumento_id: str, revision: str | None, root: pathlib.Path = DATA / "dokumentas") -> bool:
+    """Whether `revision` (from revisions()) is the one this act's last full fetch saw, that fetch within
+    FULL_EVERY_DAYS: the text we hold is the source's, no fetch needed. Never for EU acts (EUR-Lex has no revisions)."""
+    rev_file = root / dokumento_id / "revision.txt"  # "<_revision> <time of the full fetch that saw it>"
+    if not revision or not rev_file.exists() or eurlex.is_eu(dokumento_id):
+        return False
+    seen, _, when = rev_file.read_text().strip().partition(" ")
+    try:
+        fresh = (dt.datetime.now().astimezone() - dt.datetime.fromisoformat(when)).days < FULL_EVERY_DAYS
+    except ValueError:
+        fresh = False
+    return seen == revision and fresh and bool(snapshots(dokumento_id, root))
+
+
+def seen_revision(dokumento_id: str, root: pathlib.Path = DATA / "dokumentas") -> str:
+    """The `_revision` this act's last full fetch saw ("" if none is kept)."""
+    p = root / dokumento_id / "revision.txt"
+    return p.read_text().strip().partition(" ")[0] if p.exists() else ""
 
 
 def full_fetched(dokumento_id: str, root: pathlib.Path = DATA / "dokumentas") -> str:
@@ -153,11 +174,12 @@ def full_fetched(dokumento_id: str, root: pathlib.Path = DATA / "dokumentas") ->
 
 
 def snapshot(dokumento_id: str, root: pathlib.Path = DATA / "dokumentas", day: str | None = None,
-             revision: str | None = None) -> pathlib.Path:
+             revision: str | None = None, full: bool = False) -> pathlib.Path:
     """Save today's Dokumentas row as <root>/<id>/<YYYY-MM-DD>.json (idempotent per day).
 
     With `revision` (from revisions()): when it is the one the last full fetch saw, within FULL_EVERY_DAYS, the text is
-    not fetched again; the act counts as checked (checked.txt), as an unchanged full fetch would."""
+    not fetched again; the act counts as checked (checked.txt), as an unchanged full fetch would. `full` fetches the
+    text whatever was checked today or by revision (the nightly's backstop, D-056)."""
     day = day or dt.date.today().isoformat()
     out = root / dokumento_id / f"{day}.json"
     if out.exists():
@@ -165,21 +187,13 @@ def snapshot(dokumento_id: str, root: pathlib.Path = DATA / "dokumentas", day: s
     # checked earlier today and unchanged (no day file): a second run the same day doesn't fetch it again (2026-11-02:
     # a manual re-run spent its 20 minutes on 429s re-fetching unchanged texts)
     chk = root / dokumento_id / "checked.txt"
-    if day != "fixed" and chk.exists() and chk.read_text()[:10] == day and (prev := snapshots(dokumento_id, root)):
+    if not full and day != "fixed" and chk.exists() and chk.read_text()[:10] == day and (prev := snapshots(dokumento_id, root)):
         return prev[-1]
-    rev_file = root / dokumento_id / "revision.txt"  # "<_revision> <time of the full fetch that saw it>"
-    if revision and rev_file.exists() and not eurlex.is_eu(dokumento_id):
-        seen, _, when = rev_file.read_text().strip().partition(" ")
-        prev = snapshots(dokumento_id, root)
-        try:
-            fresh = (dt.datetime.now().astimezone() - dt.datetime.fromisoformat(when)).days < FULL_EVERY_DAYS
-        except ValueError:
-            fresh = False
-        if prev and seen == revision and fresh:
-            global REVISION_SKIPS
-            REVISION_SKIPS += 1
-            (root / dokumento_id / "checked.txt").write_text(dt.datetime.now().astimezone().isoformat(timespec="seconds"))
-            return prev[-1]
+    if not full and revision_unchanged(dokumento_id, revision, root):
+        global REVISION_SKIPS
+        REVISION_SKIPS += 1
+        (root / dokumento_id / "checked.txt").write_text(dt.datetime.now().astimezone().isoformat(timespec="seconds"))
+        return snapshots(dokumento_id, root)[-1]
     if eurlex.is_eu(dokumento_id):
         prev = sorted(out.parent.glob("[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].json"))
         row = eu_row(dokumento_id, day, json.loads(prev[-1].read_text())["row"] if prev else None)
@@ -202,13 +216,32 @@ def snapshot(dokumento_id: str, root: pathlib.Path = DATA / "dokumentas", day: s
     return out
 
 
+EU_BATCH: dict[str, dict] = {"versions": {}, "metadata": {}}  # this run's answers for many acts at once (D-056)
+
+
+def prefetch_eu(dokumento_ids: list[str]) -> int:
+    """Ask EUR-Lex for every EU act's version list and metadata in a few queries (seconds for 170 acts; one act at a
+    time took 6–15 s each, most of the night's text budget). eu_row uses them; an act missing here is asked for alone,
+    as before. Returns how many acts got both answers."""
+    celexes = [eurlex.celex_of(i) for i in dokumento_ids if eurlex.is_eu(i)]
+    if not celexes:
+        return 0
+    EU_BATCH["versions"], EU_BATCH["metadata"] = eurlex.versions_of(celexes), eurlex.metadata_of(celexes)
+    return sum(c in EU_BATCH["versions"] and c in EU_BATCH["metadata"] for c in celexes)
+
+
 def eu_row(dokumento_id: str, day: str, prev: dict | None = None) -> dict:
     """An EU act (D-037) as a Dokumentas-like row: the newest consolidated version applying on `day`, else the act as
     published; its text in the register's layout, checked word for word against the XHTML (an article lost or changed
     in the conversion stops it here: the act keeps its previous text)."""
     celex = eurlex.celex_of(dokumento_id)
-    meta = eurlex.metadata(celex)
-    vs = [v for v in eurlex.versions(celex) if v.rsplit("-", 1)[1] <= day.replace("-", "")]
+    meta = EU_BATCH["metadata"].get(celex) or eurlex.metadata(celex)
+    listed = EU_BATCH["versions"].get(celex)
+    # not in the batch's answer, or a version we held is missing from it (a version list only grows): the slow query,
+    # which reads every CELEX number, decides. Never an older wording as today's because one query's link was incomplete
+    if listed is None or (prev and not set(prev.get("eu_versions") or []) <= set(listed)):
+        listed = eurlex.versions(celex)
+    vs = [v for v in listed if v.rsplit("-", 1)[1] <= day.replace("-", "")]
     # the same version as last time, converted the same way: its text is kept (EUR-Lex is asked for the version list
     # and metadata only)
     if prev and prev.get("eu_versions") == vs and prev.get("tekstas_lt") and prev.get("eu_converter") == eurlex.CONVERTER:

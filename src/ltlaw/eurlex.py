@@ -74,16 +74,13 @@ def versions(celex: str) -> list[str]:
     return sorted(r["celex"] for r in sparql(q))
 
 
-def metadata(celex: str) -> dict:
-    """Title (Lithuanian), date of the document, entry into force, end of validity, in force or not."""
-    q = ("PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>\n"
-         "SELECT ?date ?eif ?end ?force ?title WHERE { ?w cdm:resource_legal_id_celex ?c . "
-         f'FILTER(STR(?c) = "{celex}") '
-         "OPTIONAL { ?w cdm:work_date_document ?date } OPTIONAL { ?w cdm:resource_legal_date_entry-into-force ?eif } "
-         "OPTIONAL { ?w cdm:resource_legal_date_end-of-validity ?end } OPTIONAL { ?w cdm:resource_legal_in-force ?force } "
-         "OPTIONAL { ?e cdm:expression_belongs_to_work ?w . ?e cdm:expression_uses_language "
-         "<http://publications.europa.eu/resource/authority/language/LIT> . ?e cdm:expression_title ?title } } LIMIT 20")
-    rows = sparql(q)
+META_FIELDS = ("OPTIONAL { ?w cdm:work_date_document ?date } OPTIONAL { ?w cdm:resource_legal_date_entry-into-force ?eif } "
+               "OPTIONAL { ?w cdm:resource_legal_date_end-of-validity ?end } OPTIONAL { ?w cdm:resource_legal_in-force ?force } "
+               "OPTIONAL { ?e cdm:expression_belongs_to_work ?w . ?e cdm:expression_uses_language "
+               "<http://publications.europa.eu/resource/authority/language/LIT> . ?e cdm:expression_title ?title }")
+
+
+def _metadata(rows: list[dict]) -> dict:
     # several values: the first date; "1001-01-01" is the register's placeholder (REMIT's entry into force)
     pick = lambda k: min((r[k] for r in rows if r.get(k) and r[k] >= "1950"), default=None)  # noqa: E731
     # end of validity: one per consolidated version as well (2019/944: 2025-10-11 and 9999-12-31, in force): the latest
@@ -93,6 +90,62 @@ def metadata(celex: str) -> dict:
     eif = min((r["eif"] for r in rows if r.get("eif") and r["eif"] >= (date or "1950")), default=None) or pick("eif")
     return {"date": date, "entry_into_force": eif, "end_of_validity": end,
             "in_force": any(r.get("force") in ("true", "1") for r in rows), "title": next((r["title"] for r in rows if r.get("title")), None)}
+
+
+def metadata(celex: str) -> dict:
+    """Title (Lithuanian), date of the document, entry into force, end of validity, in force or not."""
+    q = ("PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>\n"
+         "SELECT ?date ?eif ?end ?force ?title WHERE { ?w cdm:resource_legal_id_celex ?c . "
+         f'FILTER(STR(?c) = "{celex}") ' + META_FIELDS + " } LIMIT 20")
+    return _metadata(sparql(q))
+
+
+# Many acts in one query (D-056): the CELEX numbers as typed values, which the endpoint finds by its index (0.2 s for two
+# acts where versions() alone took 10–14 s for one: its STRSTARTS filter reads every CELEX number there is).
+BATCH_PREFIX = ("PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n")
+
+
+def _values(celexes: list[str]) -> str:
+    return " ".join(f'"{c}"^^xsd:string' for c in celexes if re.fullmatch(r"[0-9A-Z()]+", c))
+
+
+def versions_of(celexes: list[str], batch: int = 40) -> dict[str, list[str]]:
+    """versions() for many acts: the consolidated versions based on each act (2026-11-17: the same lists as versions()
+    for all 170 acts of the scope; the link "consolidates" misses some, 16 acts' then). An act whose query failed is
+    not in the answer."""
+    out: dict[str, list[str]] = {}
+    for k in range(0, len(celexes), batch):
+        part = celexes[k:k + batch]
+        q = (BATCH_PREFIX + "SELECT DISTINCT ?bc ?celex WHERE { VALUES ?bc { " + _values(part) + " } "
+             "?base cdm:resource_legal_id_celex ?bc . ?cons cdm:act_consolidated_based_on_resource_legal ?base . "
+             "?cons cdm:resource_legal_id_celex ?celex }")
+        try:
+            rows = sparql(q)
+        except Exception:
+            continue
+        got: dict[str, set[str]] = {c: set() for c in part}
+        for r in rows:
+            if r["bc"] in got and r["celex"].startswith(f"0{r['bc'][1:]}-"):
+                got[r["bc"]].add(r["celex"])
+        out.update({c: sorted(v) for c, v in got.items()})
+    return out
+
+
+def metadata_of(celexes: list[str], batch: int = 40) -> dict[str, dict]:
+    """metadata() for many acts. An act whose query failed, or with no row, is not in the answer."""
+    out: dict[str, dict] = {}
+    for k in range(0, len(celexes), batch):
+        part = celexes[k:k + batch]
+        q = (BATCH_PREFIX + "SELECT ?c ?date ?eif ?end ?force ?title WHERE { VALUES ?c { " + _values(part) + " } "
+             "?w cdm:resource_legal_id_celex ?c . " + META_FIELDS + " }")
+        try:
+            rows = sparql(q)
+        except Exception:
+            continue
+        for c in part:
+            if mine := [r for r in rows if r.get("c") == c]:
+                out[c] = _metadata(mine)
+    return out
 
 
 def adopted_by(title: str) -> str:

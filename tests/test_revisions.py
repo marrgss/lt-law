@@ -1,9 +1,16 @@
-"""D-039: a text whose Dokumentas revision is unchanged is not fetched again (within FULL_EVERY_DAYS)."""
+"""D-039: a text whose Dokumentas revision is unchanged is not fetched again (within FULL_EVERY_DAYS).
+D-056: the nightly checks the unchanged first, fetches the changed, then re-fetches a few unchanged ones in full."""
 import datetime as dt
+import importlib.util
 import json
+import pathlib
 import urllib.parse
 
 from ltlaw import source
+
+spec = importlib.util.spec_from_file_location("nightly", pathlib.Path(__file__).resolve().parents[1] / "bin" / "nightly.py")
+nightly = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(nightly)
 
 
 def _row(text, rev):
@@ -129,3 +136,64 @@ def test_upcoming_versions_are_fetched_soonest_first_and_paced(tmp_path, monkeyp
     got = today.prefetch_upcoming(["X1"], "2026-11-02", horizon_days=45, gap_s=0)
     assert asked == ["soon", "later"] and got == {"fetched": 2, "left": 0}   # not today's, not beyond 45 days
     assert today.prefetch_upcoming(["X1"], "2026-11-02", gap_s=0) == {"fetched": 0, "left": 0}  # cached now
+
+
+def test_a_full_fetch_ignores_the_revision_and_todays_check(tmp_path, monkeypatch):
+    calls = []
+    monkeypatch.setattr(source, "fetch_dokumentas", lambda d: calls.append(d) or _row("text v1", "r1"))
+    first = source.snapshot("X1", root=tmp_path, day="2026-10-01")
+    assert source.revision_unchanged("X1", "r1", tmp_path) and not source.revision_unchanged("X1", "r2", tmp_path)
+    assert not source.revision_unchanged("X1", None, tmp_path) and source.seen_revision("X1", tmp_path) == "r1"
+    (tmp_path / "X1" / "checked.txt").write_text("2026-10-02T02:40:00+03:00")
+    assert source.snapshot("X1", root=tmp_path, day="2026-10-02", revision="r1", full=True) == first
+    assert calls == ["X1", "X1"]
+
+
+def _night(tmp_path, monkeypatch, texts, revs_now, row_revs=None):
+    """Three acts fetched in full some days ago (C the longest ago), then a night with `texts` at the source and
+    `revs_now` read first (`row_revs`: the rows' revisions when their texts are fetched, if they changed meanwhile)."""
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(source, "DOWN", False)
+    monkeypatch.setattr(source, "awaiting_consolidation", lambda scope, day: set())
+    rows = {i: {"dokumento_id": i, "tekstas_lt": f"{i} v1", "galioj_busena": "galioja", "_revision": f"{i}1"} for i in "ABC"}
+    calls = []
+    monkeypatch.setattr(source, "fetch_dokumentas", lambda d: calls.append(d) or rows[d])
+    now = dt.datetime.now().astimezone()
+    for n, i in enumerate("CAB"):
+        source.snapshot(i, day="2026-10-01")
+        when = (now - dt.timedelta(days=9 - n)).isoformat(timespec="seconds")
+        pathlib.Path("data/dokumentas", i, "revision.txt").write_text(f"{i}1 {when}")
+        pathlib.Path("data/dokumentas", i, "checked.txt").write_text(when)
+    calls.clear()
+    for i, t in texts.items():
+        rows[i] = dict(rows[i], tekstas_lt=t, _revision=(row_revs or revs_now)[i])
+    monkeypatch.setattr(source, "revisions", lambda ids: dict(revs_now))
+    log, warnings = {"steps": {}}, []
+    failed = nightly.refresh_texts([{"dokumento_id": i, "abbr": i} for i in "ABC"], now.date().isoformat(), log, warnings)
+    return calls, log["steps"], warnings, failed
+
+
+def test_the_night_fetches_the_changed_text_first_then_re_fetches_unchanged_ones(tmp_path, monkeypatch):
+    calls, steps, warnings, failed = _night(tmp_path, monkeypatch, {"B": "B v2"}, {"A": "A1", "B": "B2", "C": "C1"})
+    assert calls == ["B", "C", "A"]  # the changed one; then the backstop, the longest unfetched first
+    assert steps["texts_changed"] == ["B"] and steps["texts_by_revision"]["refetched_in_full"] == 2
+    assert not warnings and not failed
+    assert all(pathlib.Path("data/dokumentas", i, "checked.txt").read_text()[:10] == dt.date.today().isoformat() for i in "ABC")
+
+
+def test_without_backstop_time_only_the_changed_text_is_fetched(tmp_path, monkeypatch):
+    monkeypatch.setattr(nightly, "BACKSTOP_S", -1)
+    calls, steps, warnings, _ = _night(tmp_path, monkeypatch, {"B": "B v2"}, {"A": "A1", "B": "B2", "C": "C1"})
+    assert calls == ["B"] and steps["texts_by_revision"]["refetched_in_full"] == 0 and not warnings
+
+
+def test_a_text_changed_under_the_same_revision_is_found_and_reported(tmp_path, monkeypatch):
+    calls, steps, warnings, _ = _night(tmp_path, monkeypatch, {"C": "C v2"}, {"A": "A1", "B": "B1", "C": "C1"})
+    assert calls == ["C", "A", "B"] and steps["texts_changed"] == ["C"]
+    assert len(warnings) == 1 and "without a new revision" in warnings[0] and "['C']" in warnings[0]
+
+
+def test_a_row_changed_during_the_night_is_no_alarm(tmp_path, monkeypatch):
+    # the revisions were read, then the row changed (data.gov.lt's update): the full re-fetch sees a new revision
+    calls, steps, warnings, _ = _night(tmp_path, monkeypatch, {"C": "C v2"}, {"A": "A1", "B": "B1", "C": "C1"}, row_revs={"C": "C2"})
+    assert calls == ["C", "A", "B"] and steps["texts_changed"] == ["C"] and not warnings

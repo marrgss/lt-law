@@ -582,6 +582,7 @@ A test with 25 questions on energy, cyber security and data (as an agent asks th
   had changed). Rows did change during a pass (15 at ~06:00, data.gov.lt's update): fetched the next pass, as meant.
 - Why now: GitHub Actions minutes (private repo, 2,000 free a month): October used 1,573 with the nightly ~47 min;
   this saves ~15 minutes a night and lifts the cap on how many acts fit.
+- 2026-11-17: the weekly full re-fetch and its 10-day ceiling did not scale to 1,425 acts: changed by D-056.
 
 ## D-040 (2026-10-31): The change feeds say why a text changed
 - Every changed article text was announced as "tekstas pasikeitė (nauja Seimo kanceliarijos suvestinė redakcija)".
@@ -1047,3 +1048,48 @@ or revert the merge.
   secret: a variable is printed in a run's log). Actions minutes are then free and the build can run every night again
   (D-050).
 - **Way back:** delete the public repository; nothing in production reads it.
+
+## D-056 (2026-11-17): The night fetches only what changed; the site artifact is deleted once deployed
+- **What prompted it:** GitHub's notice that 90% of the plan's 0.5 GB-month of Actions storage was used by the 17th,
+  and the minutes: 1,499 of the 2,000 free by 2026-11-16.
+- **Storage:** the built site goes from the build job to the deploy job as an artifact: 684 MB zipped, kept 1 day (the
+  shortest GitHub allows), so each build cost 0.023 GB-month, and November's first half had 29 builds. The last job
+  now deletes it after a successful deploy: minutes of storage instead of a day. That job gets `actions: write` and
+  runs no code from the repository; a failed deploy keeps the artifact for its day, for "Re-run failed jobs".
+- **Minutes, measured (the build of 2026-11-16, 58 minutes):** fetching 29, building the pages 14, checks and saving 5,
+  deploy 10. Of the fetching, the texts step used its whole 20-minute budget on each of the last four builds and
+  still left 125 to 1,298 acts "not refreshed": a warning every night, which therefore said nothing.
+- **Why the texts step was slow, though nothing had changed** (that night no Lithuanian text's revision differed from
+  the one its last full fetch saw):
+  1. EU acts were asked for one at a time, two queries each; the version list's query reads every CELEX number there
+     is (6–15 s). 170 acts: 17–40 minutes on their own.
+  2. D-039's full re-fetch (a seventh of the texts a night, a 10-day ceiling) was sized for 375 acts and nightly
+     builds. With 1,425 acts and a build every second night most texts were always due, and the order (longest
+     unchecked first) put them ahead of a text that had really changed.
+- **Now:**
+  - the acts whose revision is unchanged are checked first, without a request (all of them in a second); then the ones
+    that need the network: amended acts, Lithuanian before EU, the longest unchecked first;
+  - EU acts: every version list and all metadata in a few queries (`eurlex.versions_of`, `metadata_of`: typed values,
+    which the endpoint finds by its index; 3 s for 170 acts). Checked against the lists the slow query had stored:
+    the same for all 170 acts with the link "based on"; the link "consolidates" missed versions for 16 acts and is
+    not used. If the batch's list ever lacks a version we held, the slow query decides for that act, so an older
+    wording never becomes today's because a link was incomplete;
+  - the full re-fetch stays as a backstop: 5 minutes a night, the longest unfetched first (40–300 texts by the
+    source's speed), with a ceiling of 60 days in `snapshot`. A text that differs there under the revision we were
+    told is reported in the night's warnings: revisions could not be trusted then.
+- **Why revisions can carry this:** over 17 days (2026-10-31 to 11-17) on 369 acts, 13 revisions changed and all 13
+  texts had changed; 356 revisions did not change and none of those texts had.
+- **Rehearsed** on a copy of the build's state with real requests: the texts step took 173 s instead of 1,200: all
+  1,425 acts checked, nothing to fetch, 122 texts re-fetched in full in 2 minutes, no warnings.
+- **Expected:** a build ~44 minutes instead of ~58; a month of builds every second night ~800 of the 2,000 minutes
+  (was ~1,100), storage near zero.
+- **Considered, not done:**
+  - *Stopping the schedule and building by hand:* a build by hand costs the same minutes, and between builds the
+    labels would age without anyone deciding so (D-050 already skips the nights when nothing can change).
+  - *Building or uploading only the changed pages:* every page states the day its labels were set, so every file
+    differs each build (the deploy uploads all ~99,700; 7 minutes). Pages without that day would upload in seconds,
+    but the day on the page is what a reader, or an assistant that runs no scripts, checks a label against.
+  - *Moving the build to the public repository (D-055):* minutes and storage are free there. Still the answer if the
+    scope doubles; not needed at these numbers.
+- **Way back:** `BACKSTOP_S` and `FULL_EVERY_DAYS`; without the `prefetch_eu` call each EU act is asked for alone, as
+  before; without the workflow's last step the artifact expires in a day.
