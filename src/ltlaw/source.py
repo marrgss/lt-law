@@ -649,6 +649,10 @@ def _act_metadata(path: pathlib.Path) -> dict[str, dict]:
     From data/raw (everything) only laws and resolutions are read; laws.jsonl holds only what keep_meta keeps.
     """
     out: dict[str, dict] = {}
+    if path.name == "laws.jsonl" and CITED.exists():  # acts our texts name, looked up one by one (update_cited, D-057)
+        for line in CITED.open():
+            d = json.loads(line)
+            out[meta_key(d)] = d
     with path.open() as f:
         for line in f:
             d = json.loads(line)
@@ -660,6 +664,49 @@ def _act_metadata(path: pathlib.Path) -> dict[str, dict]:
                     (path.name == "laws.jsonl" or keep_meta(d)):  # orders (D-033): laws.jsonl keeps only those amending
                 out[meta_key(d)] = d                              # one in scope; from data/raw, filter here
     return out
+
+
+CITED = STATE / "cited.jsonl"            # metadata of amending acts found by the number and date a text cites (D-057)
+CITED_WANTED = STATE / "cited_wanted.json"  # the numbers the last build could not date (currency.UNKNOWN_REFS)
+CITED_CHECKED = STATE / "cited_checked.json"  # number -> day last looked up (and not found): asked again after 30 days
+CITED_TEXT_SINCE = "2020-01-01"  # = currency.Laws.TEXT_SINCE: older ones are dated from their metadata alone
+
+
+def update_cited(budget_s: int = 180, retry_days: int = 30) -> dict:
+    """The amending acts a text's notes name ("V-1862/2020-08-18") that the metadata lacks: their title cites the
+    amended act in a form the title search misses (no space before „, another act's name first), or they are court
+    decisions. Looked up by number and adoption date, one request each. Kept only when exactly one row answers and it
+    is a resolution or an order (their texts are parsed as such), or any act adopted before CITED_TEXT_SINCE (dated from
+    its metadata, its text never read): a court decision annulling points is one. Returns counts for the night's log."""
+    wanted = json.loads(CITED_WANTED.read_text()) if CITED_WANTED.exists() else []
+    checked = json.loads(CITED_CHECKED.read_text()) if CITED_CHECKED.exists() else {}
+    have = set(_act_metadata(STATE / "laws.jsonl")) if (STATE / "laws.jsonl").exists() else set()
+    today = dt.date.today()
+    due = [n for n in wanted if n not in have and "/" in n
+           and (today - dt.date.fromisoformat(checked.get(n, "2000-01-01"))).days >= retry_days]
+    found, t0 = [], time.time()
+    for key in due:
+        if time.time() - t0 > budget_s:
+            break
+        number, _, adopted = key.rpartition("/")
+        try:
+            rows = query("Dokumentas", f'select(_id,{META_FIELDS})&atv_dok_nr="{number}"&priimtas="{adopted}"&limit(5)',
+                         tries=2, timeout=60)
+        except Exception:  # noqa: BLE001  next night
+            continue
+        rows = [r for r in rows if (r.get("priimtas") or "")[:10] == adopted]
+        ok = len(rows) == 1 and (rows[0].get("rusis") in POINT_TYPES or adopted < CITED_TEXT_SINCE)
+        if ok:
+            found.append({k: rows[0].get(k) for k in META_FIELDS.split(",")})
+        else:
+            checked[key] = today.isoformat()
+    if found:
+        with CITED.open("a") as f:
+            for r in found:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    STATE.mkdir(parents=True, exist_ok=True)
+    CITED_CHECKED.write_text(json.dumps(checked, indent=0, sort_keys=True))
+    return {"wanted": len(wanted), "asked": len(due), "found": len(found)}
 
 
 # the energy regulator's decisions (D-034): metadata in state, texts fetched once (a decision is not consolidated)

@@ -607,6 +607,7 @@ def parse_amending(nr: str, text: str, meta_date: str | None, title: str = "", p
 
 FETCH_FAILED: list[str] = []   # amending-law texts that could not be fetched this run (nightly health)
 REFRESHED: list[str] = []      # amending-law texts refetched because a later law changed them
+UNKNOWN_REFS: set[str] = set()  # amending acts a text names that the metadata lacks: looked up next night (source.update_cited)
 
 
 class Laws:
@@ -1354,6 +1355,7 @@ def assess(act: Act, scope_act: dict, laws: Laws, day: str, seen: str | None = N
             if law is None:
                 if re.fullmatch(r"[IVXL]+-\d+|[\w/-]+/\d{4}-\d{2}-\d{2}", r.nr):  # a law, resolution or order we don't know
                     reasons.append(f"{r.nr}: nežinoma įsigaliojimo data")
+                    UNKNOWN_REFS.add(r.nr)
                     continue
                 dates = {r.published or r.adopted}  # e.g. Constitutional Court rulings: from publication
             else:

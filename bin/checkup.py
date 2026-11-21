@@ -241,7 +241,7 @@ def main() -> None:
     mcp = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/list"}).encode()
     st, body, _, s = get(B + "/mcp", data=mcp, ctype="application/json")
     ntools = len(json.loads(body)["result"]["tools"]) if st == 200 else 0
-    add("OK" if st == 200 and ntools == 8 else "WARN", "MCP tools/list", f"{st} {ntools} tools {s:.2f}s")
+    add("OK" if st == 200 and ntools == 11 else "WARN", "MCP tools/list", f"{st} {ntools} tools {s:.2f}s")
     st, _, _, _ = get(B + "/llms.txt", ua="Python-urllib/3.12")  # Cloudflare Pages' own rule refuses it (OPERATIONS)
     add("OK" if st == 200 else "INFO", "Python-urllib on a static file", f"{st} (known: Pages refuses this User-Agent)")
     st, _, _, _ = get(B + "/mcp", ua="Python-urllib/3.12", data=mcp, ctype="application/json")

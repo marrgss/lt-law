@@ -236,6 +236,10 @@ def main() -> None:
                 log["steps"]["point_amenders_added"] = source.update_point_amenders()
             except Exception as e:  # the newest-n window still brings new ones; older ones come next night
                 warnings.append(f"amending resolutions not fetched: {e}")
+        try:  # amending acts the last build's texts named but the metadata lacked (D-057)
+            log["steps"]["cited_acts"] = source.update_cited()
+        except Exception as e:
+            warnings.append(f"cited amending acts not looked up: {e}")
         tick("rulings, amending resolutions")
         try:  # the energy regulator's decisions (D-034): new ones each night, texts fetched once (5-minute budget)
             log["steps"]["regulator_decisions_added"] = source.update_decisions()
@@ -469,6 +473,7 @@ def main() -> None:
                      "source_lines_not_shown": {b["abbr"]: b["dropped_lines"] for b in built if b["dropped_lines"]},
                      "signature_and_history_lines_excluded": sum(b["excluded_lines"] for b in built),
                      "amending_fetch_failed": currency.FETCH_FAILED[:20], "amending_refreshed": currency.REFRESHED[:50],
+                     "cited_without_metadata": sorted(currency.UNKNOWN_REFS),
                      "suvestine_refresh_failed": source.SUVESTINE_FAILED[:20],
                      "articles_not_in_stored_text": {b["abbr"]: b["today_only"] for b in built if b["today_only"]},
                      "notices": {b["abbr"]: b["notices"] for b in built if b["notices"]},
@@ -537,6 +542,7 @@ def main() -> None:
         print("WARNING", log["warnings"][-1])
     (a.out / "status.json").write_text(json.dumps(log, ensure_ascii=False, indent=1))
     manifest_path.write_text(json.dumps({"day": day, "laws": n_laws, "acts": now}, ensure_ascii=False, indent=1))
+    source.CITED_WANTED.write_text(json.dumps(sorted(currency.UNKNOWN_REFS), ensure_ascii=False, indent=0))  # D-057
     files = [f for f in a.out.rglob("*") if f.is_file()]
     print(f"OK {day}: {len(built)} acts, {len(files)} files, {log['seconds']} s; "
           f"new laws {log['steps'].get('new_laws', '-')}, texts changed {log['steps'].get('texts_changed', '-')}, "

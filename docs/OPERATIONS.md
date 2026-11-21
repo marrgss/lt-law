@@ -183,6 +183,15 @@ service account that can only read (the token asks for the `webmasters.readonly`
 
 **Revoke:** remove the user in Search Console, or delete the key in Google Cloud (Service Accounts → Keys).
 
+## Traffic page (who reads, who gathers)
+`uv run bin/traffic.py [--open]` writes `private/usage/traffic.html`: one page with Cloudflare's requests per day sorted
+by who makes them (AI assistants fetching for a person, search engines, AI crawlers, SEO crawlers, the MCP endpoint's
+callers, browser visits, our own checks and this machine), Google's clicks, impressions, sitemaps and key pages, Bing
+if connected, and the Workers' load. Aggregate counts only. Every finished day is kept in `private/usage/traffic.json`,
+so the history outlives Cloudflare's month: run it at least every few weeks. Bing: Bing Webmaster Tools → Settings →
+API access → generate a key, then `BING_WEBMASTER_API_KEY=…` in `~/.config/lt-law/.env` (read only: the script calls
+only the Get… methods).
+
 **Taking the site down** (a deliberate decision, never an automatic one): put the login
 gate back with `uv run bin/cf_staging.py access --email <your address>` (the same Access app and policy as private
 staging; nothing is deleted, the deploy stays), check from outside that a stranger gets the login, and write what and

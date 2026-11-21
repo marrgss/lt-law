@@ -1093,3 +1093,25 @@ or revert the merge.
     scope doubles; not needed at these numbers.
 - **Way back:** `BACKSTOP_S` and `FULL_EVERY_DAYS`; without the `prefetch_eu` call each EU act is asked for alone, as
   before; without the workflow's last step the artifact expires in a day.
+
+## D-057 (2026-11-17): Amending acts a text names are looked up by number and date
+- **The gap:** a point or article whose consolidation note names an amending order we hold no record of got
+  "nežinoma įsigaliojimo data" and the label "Neaišku, ar galioja". On 2026-11-17 that was 107 labels in 23 acts, from
+  27 numbers. The records were missing because the title search for a rule set's amenders (`update_point_amenders`)
+  reads the amended act's number and date out of the title, and some titles cite it differently: no space before the
+  quote ("Nr. 1-127„Dėl …"), a typo ("Respublios"), several orders amended at once ("Dėl … įsakymų pakeitimo"), a new
+  approval of the whole rule set; one is a court decision that annulled points.
+- **Now:** the build records the numbers it could not date (`currency.UNKNOWN_REFS`, saved as
+  `data/state/cited_wanted.json`); the next night looks each one up by number and adoption date, one request each,
+  3 minutes at most (`source.update_cited`), and keeps it in `data/state/cited.jsonl`, which the metadata reads next
+  to `laws.jsonl` (and `bin/compact_state.py` never rewrites). Kept only when exactly one record answers, and it is a
+  resolution or an order (their texts are parsed as amendments), or anything adopted before 2020 (dated from its
+  record alone, as older laws are): a court decision of 2014 is then dated by its entry into force. One not found is
+  asked again after 30 days.
+- **Measured on a copy of the build's state:** all 23 numbers asked were found, one record each. 89 labels went from
+  uncertain to current, 12 PVTTRA points to "changes on 2027-01-01" (D1-165/2026 takes effect then), none the other
+  way; 4 stay uncertain for other reasons; GPMĮ's 2 stay uncertain: the register gives its 2008 amending law no date.
+  The 22 acts against e-tar's text in force: 2,021 current, **0 silent**; the 12 pending labels correct.
+- **Also seen:** VMOA's 12 uncertain labels had records but no texts: their fetch had come after the night's fetching
+  budget was spent. D-056 leaves that budget room again.
+- **Way back:** delete `cited.jsonl`; the labels return to uncertain, the honest default.
