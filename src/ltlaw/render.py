@@ -594,6 +594,24 @@ def _description(a: Article, lead: str = "") -> str:
     return s if len(s) <= 155 else s[:152].rsplit(" ", 1)[0] + "…"
 
 
+def _annex_description(heading: str, x: Article) -> str:
+    """An annex's search snippet: which act's annex, its name, and the opening of its text. The name alone was often a
+    heading in capitals ("ĮGYVENDINAMI EUROPOS SĄJUNGOS TEISĖS AKTAI"), the snippet Bing called too short (2026-11-21)."""
+    title = (x.title or "").strip()
+    if title.isupper():  # a heading in capitals says the same as the text below it: the text it is
+        title = ""
+    text = ""
+    for b in x.blocks:
+        t = (b.text or "").strip()
+        if not t or t.isupper() or t == title:
+            continue
+        text = f"{text} {t}".strip()
+        if len(text) > 160:
+            break
+    s = " · ".join(p for p in (heading, title.rstrip("."), text) if p)
+    return s if len(s) <= 155 else s[:152].rsplit(" ", 1)[0] + "…"
+
+
 FAVICON_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#1f5fa8"/>'
                '<path d="M16 18h32M16 29h32M16 40h22M16 51h14" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg>')
 
@@ -1254,7 +1272,7 @@ class Site:
             short = sum(1 for b in x.blocks if len(b.text) < 25)
             x.flattened = len(x.blocks) >= 10 and short / len(x.blocks) > 0.4  # a table printed one cell per line
             self.page("annex.html", f"{base_path}priedas/{annex_key[id(x)]}/", page_title=f"{info.name} – {ax['heading']}",
-                      description=x.title, jsonld=None, annex=x, heading=ax["heading"], blocks=_blocks(x.blocks, meta), annex_today=ann_src == "Suvestine",
+                      description=_annex_description(ax["heading"], x), jsonld=None, annex=x, heading=ax["heading"], blocks=_blocks(x.blocks, meta), annex_today=ann_src == "Suvestine",
                       nav=self.nav("annex", info.abbr, contents=self.base + base_path), **dict(common, version=ann_version))
             alabel, a_path = f"priedas-{annex_key[id(x)]}", f"{base_path}priedas/{annex_key[id(x)]}/"
             annex_json.append({"label": alabel, "pretty": ax["label"], "title": x.title or x.header, "url": self.base + a_path,

@@ -653,3 +653,16 @@ def test_a_ministers_order_setting_out_the_whole_description_anew():
          "„1. Normos nustatomos.\n2. Sąvokos.“\n2. N u s t a t a u, kad šis įsakymas įsigalioja 2024 m. gruodžio 6 d.")
     law = currency.parse_amending_resolution("D1-434/2024-12-05", t, "2024-12-06")
     assert law.rewrite_own == 1 and law.default == "2024-12-06"
+
+
+def test_an_annex_snippet_says_whose_annex_and_how_it_begins():
+    """The annex's heading in capitals alone was the whole snippet (Bing: descriptions too short, 2026-11-21)."""
+    from types import SimpleNamespace as N
+    from ltlaw.render import _annex_description
+    caps = "ĮGYVENDINAMI EUROPOS SĄJUNGOS TEISĖS AKTAI"
+    x = N(title=caps, blocks=[N(text=caps), N(text="1. 2001 m. gruodžio 3 d. Europos Parlamento ir Tarybos direktyva "
+                                                    "2001/95/EB dėl bendros gaminių saugos (OL 2004 m. specialusis leidimas).")])
+    d = _annex_description("Lietuvos Respublikos produktų saugos įstatymo priedas", x)
+    assert d.startswith("Lietuvos Respublikos produktų saugos įstatymo priedas · 1. 2001 m.") and caps not in d
+    assert len(d) <= 155 and d.endswith("…")
+    assert _annex_description("Taisyklių 2 priedas", N(title="Prašymo forma", blocks=[])) == "Taisyklių 2 priedas · Prašymo forma"
