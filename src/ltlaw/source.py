@@ -86,25 +86,37 @@ def query(model: str, q: str, tries: int = 4, timeout: int = 120) -> list[dict]:
     """Run one Spinta query; `q` is the raw query string, e.g. 'select(a,b)&x="1"&limit(5)'.
 
     Suvestine (the consolidations table) can be extremely slow for hours (2026-10-24: over 10 minutes a query): its
-    queries get one try of 60 s, and after one failure every later Suvestine query of this run fails at once
-    (SUVESTINE_DOWN), so the night goes on with the cached texts instead of waiting out its 90 minutes."""
+    queries get one try of 60 s, and after a timeout every later Suvestine query of this run fails at once
+    (SUVESTINE_DOWN), so the night goes on with the cached texts instead of waiting out its 90 minutes.
+    A quick server error (5xx) is not a stalled table: the query is asked again twice, seconds apart, and only
+    SUVESTINE_5XX_LIMIT queries failing that way end Suvestine for the night (2026-11-18 and -20: one 500 among the
+    version lists cost every Suvestine text of the night; the same queries answer in 0.1 s by day)."""
     global SUVESTINE_DOWN
     url = f"{API}/{model}?" + urllib.parse.quote(q + FRESH, safe='()&=,"_-<>!/')
     if model != "Suvestine":
         return _get(url, tries=tries, timeout=timeout).get("_data", [])
-    if SUVESTINE_DOWN:
-        raise TimeoutError(f"Suvestine skipped for this run (failed earlier: {SUVESTINE_DOWN})")
-    try:
-        return _get(url, tries=1, timeout=60).get("_data", [])
-    except urllib.error.HTTPError as e:
-        if e.code == 429:  # rate limited, for minutes after big downloads (2026-11-02): not down, the caller may wait
-            RATE_LIMITED[0] += 1
+    for attempt in range(3):
+        if SUVESTINE_DOWN:
+            raise TimeoutError(f"Suvestine skipped for this run (failed earlier: {SUVESTINE_DOWN})")
+        try:
+            return _get(url, tries=1, timeout=60).get("_data", [])
+        except urllib.error.HTTPError as e:
+            if e.code == 429:  # rate limited, for minutes after big downloads (2026-11-02): not down, the caller may wait
+                RATE_LIMITED[0] += 1
+                raise
+            if 500 <= e.code < 600:
+                if attempt < 2:
+                    time.sleep(SUVESTINE_RETRY_S * (attempt + 1))
+                    continue
+                SUVESTINE_5XX[0] += 1
+                if SUVESTINE_5XX[0] < SUVESTINE_5XX_LIMIT:
+                    raise  # this query failed; the table is not given up on yet
+            SUVESTINE_DOWN = f"HTTP {e.code}"
             raise
-        SUVESTINE_DOWN = f"HTTP {e.code}"
-        raise
-    except Exception as e:
-        SUVESTINE_DOWN = type(e).__name__  # the reason, for the night's warning
-        raise
+        except Exception as e:
+            SUVESTINE_DOWN = type(e).__name__  # the reason, for the night's warning
+            raise
+    raise AssertionError("unreachable")
 
 
 # data.gov.lt's nginx caches a query's answer by its URL and, after 60 s, serves the old answer (X-Cache: STALE) to the
@@ -113,6 +125,9 @@ def query(model: str, q: str, tries: int = 4, timeout: int = 120) -> list[dict]:
 # makes the night's URLs its own; the run's own repeats still share the cache.
 FRESH = f'&_id!="{uuid.uuid4()}"'
 SUVESTINE_DOWN: str | bool = False  # set by query() after a Suvestine failure (its reason): the rest of the run skips Suvestine
+SUVESTINE_5XX = [0]  # Suvestine queries that failed with a server error after their retries, this run
+SUVESTINE_5XX_LIMIT = 3
+SUVESTINE_RETRY_S = 5
 NET = [0.0, 0, 0]  # this run's data.gov.lt requests: seconds waited, requests, bytes (a slow act's tick says how much was network)
 RATE_LIMITED = [0]  # Suvestine answers HTTP 429 (Too Many Requests) tonight
 

@@ -197,3 +197,46 @@ def test_a_row_changed_during_the_night_is_no_alarm(tmp_path, monkeypatch):
     # the revisions were read, then the row changed (data.gov.lt's update): the full re-fetch sees a new revision
     calls, steps, warnings, _ = _night(tmp_path, monkeypatch, {"C": "C v2"}, {"A": "A1", "B": "B1", "C": "C1"}, row_revs={"C": "C2"})
     assert calls == ["C", "A", "B"] and steps["texts_changed"] == ["C"] and not warnings
+
+
+def test_a_passing_suvestine_500_is_retried_not_down(monkeypatch):
+    """One quick server error among the night's Suvestine queries must not cost the night's texts (2026-11-18, -20)."""
+    calls = []
+
+    def flaky(url, tries=4, timeout=120):
+        calls.append(url)
+        if len(calls) == 1:
+            raise urllib.error.HTTPError(url, 500, "Internal Server Error", {}, None)
+        return {"_data": [{"suvestines_id": "x"}]}
+    monkeypatch.setattr(source, "_get", flaky)
+    monkeypatch.setattr(source, "SUVESTINE_DOWN", False)
+    monkeypatch.setattr(source, "SUVESTINE_5XX", [0])
+    monkeypatch.setattr(source, "SUVESTINE_RETRY_S", 0)
+    assert source.query("Suvestine", 'select(suvestines_id)&limit(1)') == [{"suvestines_id": "x"}]
+    assert len(calls) == 2 and source.SUVESTINE_DOWN is False
+
+
+def test_suvestine_is_given_up_after_repeated_server_errors_and_at_once_on_a_timeout(monkeypatch):
+    def broken(url, tries=4, timeout=120):
+        raise urllib.error.HTTPError(url, 500, "Internal Server Error", {}, None)
+    monkeypatch.setattr(source, "_get", broken)
+    monkeypatch.setattr(source, "SUVESTINE_DOWN", False)
+    monkeypatch.setattr(source, "SUVESTINE_5XX", [0])
+    monkeypatch.setattr(source, "SUVESTINE_RETRY_S", 0)
+    for n in range(source.SUVESTINE_5XX_LIMIT):
+        assert source.SUVESTINE_DOWN is False
+        try:
+            source.query("Suvestine", f'select(suvestines_id)&n="{n}"')
+        except urllib.error.HTTPError:
+            pass
+    assert source.SUVESTINE_DOWN == "HTTP 500"
+
+    def stalled(url, tries=4, timeout=120):
+        raise TimeoutError("timed out")
+    monkeypatch.setattr(source, "_get", stalled)
+    monkeypatch.setattr(source, "SUVESTINE_DOWN", False)
+    try:
+        source.query("Suvestine", 'select(suvestines_id)&limit(1)')
+    except TimeoutError:
+        pass
+    assert source.SUVESTINE_DOWN == "TimeoutError"
