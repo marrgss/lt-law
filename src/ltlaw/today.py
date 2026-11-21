@@ -285,6 +285,28 @@ def _candidates_for(doc: str, scope_act: dict, laws: Laws, day: str) -> list[tup
     return out
 
 
+def _needed(reasons: list[str]) -> set[str]:
+    """The laws an article's reasons name, as the references name them: a minister's order with its date since B88
+    ("V-434/2016-04-01"), a joint order with all its numbers. Matched bare ("V-434"), no candidate's note could match
+    them, and today's text was never found for the orders' points (HN71, 2026-11-21)."""
+    return set(re.findall(r"\b([IVXL]+-\d+(?:/[A-Z][A-Z0-9]*-\d+)*(?:/\d{4}-\d{2}-\d{2})?|KT[\w()-]+/\d{4})", " ".join(reasons)))
+
+
+def _consolidated(act_level: list[tuple[str, str]], origin: str, other: Act, prepared: str | None, laws: Laws) -> set[str]:
+    """The act-level laws (no article targets we can read) that an official consolidation holds by what it is: a
+    version valid from on or after the law's entry into force, prepared after the law was published, includes every
+    amendment then in force. Its article notes name only the laws that changed that article, so a point the law left
+    alone never lists it (HN71 1 p. in the 2017 consolidation names V-434, not V-257, which changed other points)."""
+    if origin not in ("Suvestine", "archive") or not other.version_from or not prepared:
+        return set()
+    out = set()
+    for nr, ent in act_level:
+        pub = (laws.meta.get(nr) or {}).get("paskelbta_tar") or ""
+        if pub and ent <= other.version_from[:10] and pub[:10] <= prepared[:10]:
+            out.add(nr)
+    return out
+
+
 def find_today(act: Act, st: ActStatus, doc: str, scope_act: dict, laws: Laws, day: str) -> dict[str, TodayText]:
     """For each flagged article of `act`, today's text from another official consolidation, if any."""
     # an article uncertain because a part enters into force on a condition is left flagged: an older text can't
@@ -297,6 +319,7 @@ def find_today(act: Act, st: ActStatus, doc: str, scope_act: dict, laws: Laws, d
     if not flagged:
         return {}
     stored = {a.label: a for a in act.main.articles}
+    act_level = [(m[1], m[2]) for f in st.act_level_flags if (m := re.match(r"(\S+) \(galioja nuo (\d{4}-\d{2}-\d{2})\)", f))]
     found: dict[str, TodayText] = {}
     for origin, ref, other, ost, prepared in candidates_for(doc, scope_act, laws, day):
         if _stale_for_today(act, other, prepared, laws, day):
@@ -312,10 +335,10 @@ def find_today(act: Act, st: ActStatus, doc: str, scope_act: dict, laws: Laws, d
             if origin != "new wording" and not _no_newer_law_in_force(stored[label], cand, label, laws, day):
                 continue  # (a new wording replaces every earlier change; later ones are assess()'s, above)
             # laws our stored text is flagged for (missing, in force) must already be in the candidate
-            needed = set(re.findall(r"\b([IVXL]+-\d+|KT[\w()-]+/\d{4})", " ".join(st.articles[label].reasons)))
+            needed = _needed(st.articles[label].reasons) | {nr for nr, _ in act_level}
             if origin == "new wording":
                 needed.discard(ref)  # the new wording is that law's own text: it doesn't list itself
-            if needed - {r.nr for r in cand.all_refs()}:
+            if needed - {r.nr for r in cand.all_refs()} - _consolidated(act_level, origin, other, prepared, laws):
                 continue
             if not _prepared_before_changes(cand, label, prepared, laws, day):
                 continue
