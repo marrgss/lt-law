@@ -1115,3 +1115,31 @@ or revert the merge.
 - **Also seen:** VMOA's 12 uncertain labels had records but no texts: their fetch had come after the night's fetching
   budget was spent. D-056 leaves that budget room again.
 - **Way back:** delete `cited.jsonl`; the labels return to uncertain, the honest default.
+
+## D-058 (2026-11-22): When Dokumentas lags, the act is built from today's official consolidation
+- **The gap:** D-009 builds every act from the consolidation in `Dokumentas.tekstas_lt`, said to be the newest one the
+  Chancellery prepared. For 262 acts on 2026-11-22 it is not: the version it holds has already ended ("Suvestinė
+  redakcija nuo 2015-10-31 iki 2024-10-31", the heat supply licensing rules ŠTLT), while the Suvestine table holds the
+  version that followed and is valid today (ŠTLT's new wording from 2024-11-01). Today's-text recovery (D-016) took
+  that version point by point, but only for points numbered alike in both, and its check that the older text lists
+  no law the candidate lacks ran the wrong way round (a new wording drops the old amendment notes). So points that
+  no longer exist were shown with their old text and flagged (HN41: 41 points, 15 in force since 2016), and points
+  whose notes changed stayed "Gali būti pasenęs".
+- **Now:** `source.act_text` uses a later Suvestine version instead of Dokumentas when the Dokumentas version has
+  ended before today and Suvestine holds versions that start after it: the one valid today if its text is cached
+  (`data/suvestine/<act>/<version>.json`, as recovery keeps them) or, on a night that fetches, fetched once then (one
+  request, which recovery would have made anyway); otherwise the newest cached later version. Texts are never removed,
+  so an act's version never moves back from one night to the next. The usual rules (D-010) then label it, against
+  the date it was prepared. When Dokumentas catches up, it is used again. The nightly's check that an act lost no more
+  than 2 % of its articles excuses such a switch (a new wording renumbers: HN41 41 → 15 points), as it does a known
+  rewrite; points must still start at 1.
+- **Measured on a copy of the 11-22 build's state (262 acts):** current 17,052 → 17,289, outdated 350 → 8, uncertain
+  202 → 89, repealed 215 → 267; 166 labels dropped (points not in today's text: HN41 16–41, ŠTLT 38–52…), none
+  added; no act lost a current label. Against e-tar's text in force today, 60 acts (the 35 most changed and 25 at
+  random): 3,776 current labels identical, **0 silent**; the version start dates agree in all 60, and every
+  point e-tar has today is on our pages (none missing); 36 stay flagged.
+- **The whole nightly, offline on that state:** every gate passed, no act fell back, MCP and search checks as before;
+  site-wide outdated 334 → 90, uncertain 615 → 486. Eight acts carry a new official name in today's version (HN41 is
+  now HN 41:2016 „Mokyklinės kuprinės…“; GDLT, LATŠIAIT, MKVVGĮT…): renamed in the scope, their API keys pinned as
+  `slug` so no link changes.
+- **Way back:** make `suvestine_newer_today` return None; the acts are built from Dokumentas as before.

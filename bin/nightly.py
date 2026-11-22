@@ -84,6 +84,8 @@ def check_act(b: dict, prev: dict | None, accept: set[str]) -> str | None:
         return f"articles disappeared from the same version: {lost[:8]}"
     if old_n and b["n"] < old_n * (1 - MAX_DROP):
         rewritten = any(old_from and old_from < w <= (b["consolidation_valid_from"] or "") for w in b["rewrites"])
+        # D-058: a later official consolidation in place of an ended Dokumentas text (HN41 41 -> 15 points: a new wording)
+        rewritten = rewritten or bool(b.get("instead_of") and old_from and (b["consolidation_valid_from"] or "") > old_from)
         if not rewritten:
             return f"articles {old_n} -> {b['n']} (more than {MAX_DROP:.0%} lost)"
     return None

@@ -602,7 +602,7 @@ def _annex_description(heading: str, x: Article) -> str:
         title = ""
     text = ""
     for b in x.blocks:
-        t = (b.text or "").strip()
+        t = re.sub(r"[□☐■]\s*(?:\[\s*\])?\s*", "", b.text or "").strip()  # form tick boxes ("□[] Pirminė paraiška")
         if not t or t.isupper() or t == title:
             continue
         text = f"{text} {t}".strip()
@@ -1326,7 +1326,7 @@ class Site:
                 "eu_implemented": len(eu_list), "fetched": fetched, "alias": self.base + f"/{alias}/",
                 "expires": st.expires, "unexplained": st.unexplained, "rewrites": [w for w, _ in act.rewrites],
                 "labels": [x.label for x in arts], "pages": len(art_json), "api_chunks": api_chunks,
-                "origin": origin["origin"], "pages_dir": str(self.out / base_path.strip("/")), "today_only": len(today_only),
+                "origin": origin["origin"], "instead_of": origin.get("instead_of"), "pages_dir": str(self.out / base_path.strip("/")), "today_only": len(today_only),
                 "notices": st.notices, "tail_lines": sum(len(sg.tail) for sg in act.segments),
                 "dropped_lines": len(dropped_lines(text, act, excluded := [])),
                 "excluded_lines": len(excluded),  # signatures and old amendment histories, never shown

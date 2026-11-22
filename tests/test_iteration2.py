@@ -666,3 +666,5 @@ def test_an_annex_snippet_says_whose_annex_and_how_it_begins():
     assert d.startswith("Lietuvos Respublikos produktų saugos įstatymo priedas · 1. 2001 m.") and caps not in d
     assert len(d) <= 155 and d.endswith("…")
     assert _annex_description("Taisyklių 2 priedas", N(title="Prašymo forma", blocks=[])) == "Taisyklių 2 priedas · Prašymo forma"
+    form = N(title="(Paraiškos forma)", blocks=[N(text="□[] Pirminė paraiška □[] Patikslinta paraiška")])
+    assert _annex_description("Taisyklių 1 priedas", form) == "Taisyklių 1 priedas · (Paraiškos forma) · Pirminė paraiška Patikslinta paraiška"

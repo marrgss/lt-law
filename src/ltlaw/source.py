@@ -796,6 +796,69 @@ def fetch_suvestine_newest(dokumento_id: str, day: str) -> dict | None:
     return rows[0] if rows else None
 
 
+_SCOPE_ROWS: dict = {}
+
+
+def _suvestine_rows(doc: str) -> list[dict]:
+    """suvestine_scope.jsonl rows of one act (the file read once per run, again if it changed)."""
+    path = STATE / "suvestine_scope.jsonl"
+    if not path.exists():
+        return []
+    key = (str(path), path.stat().st_mtime_ns)
+    if _SCOPE_ROWS.get("key") != key:
+        by: dict[str, list] = {}
+        for l in path.open():
+            r = json.loads(l)
+            by.setdefault(r["dokumento_id"], []).append(r)
+        _SCOPE_ROWS.clear()
+        _SCOPE_ROWS.update(key=key, by=by)
+    return _SCOPE_ROWS["by"].get(doc, [])
+
+
+def suvestine_newer_today(dokumento_id: str, text: str, day: str | None = None) -> tuple[str, dict] | None:
+    """Today's official consolidation when Dokumentas lags behind it (D-058): the Dokumentas text is a version that has
+    ended before `day` ("Suvestinė redakcija nuo 2015-10-31 iki 2024-10-31", ŠTLT), and Suvestine holds later versions
+    (ŠTLT's new wording from 2024-11-01; 262 acts on 2026-11-22). The one valid on `day` is used when its text is cached
+    (data/suvestine/<act>/<version>.json, as today's-text recovery keeps them) or, on a night that fetches, fetched
+    once now; otherwise the newest cached later version, which is never older than the one used the night before
+    (texts are never removed), so the act's version never moves back. None when Dokumentas is still running, or
+    nothing later is at hand: then Dokumentas is used, as before."""
+    day = day or dt.date.today().isoformat()
+    m = re.search(r"Suvestinė redakcija nuo (\d{4}-\d{2}-\d{2}) iki (\d{4}-\d{2}-\d{2})", "\n".join(text.split("\n")[:40]))
+    if not m or m[2] >= day:
+        return None
+    later = [r for r in _suvestine_rows(dokumento_id) if m[1] < (r["galioja_nuo"] or "")[:10] <= day]
+    if not later:
+        return None
+    later = sorted(dedupe_versions(later, "latest"), key=lambda r: (r["galioja_nuo"], r.get("suv_duom_atnaujinimas") or ""))
+    path = lambda r: DATA / "suvestine" / dokumento_id / f"{r['suvestines_id']}.json"  # noqa: E731
+    valid = [r for r in later if not r.get("galioja_iki") or day <= r["galioja_iki"][:10]]
+    if valid and not path(valid[-1]).exists() and REFRESH_SUVESTINE and not SUVESTINE_DOWN:
+        r = valid[-1]
+        try:
+            got = query("Suvestine", f'select(suvestines_id,galioja_nuo,galioja_iki,suv_duom_atnaujinimas,tekstas_lt)'
+                                     f'&dokumento_id="{dokumento_id}"&suvestines_id="{r["suvestines_id"]}"&limit(1)')
+            if got and got[0].get("tekstas_lt"):
+                path(r).parent.mkdir(parents=True, exist_ok=True)
+                path(r).write_text(json.dumps(got[0], ensure_ascii=False))
+        except Exception as e:  # noqa: BLE001  the newest cached one tonight
+            SUVESTINE_FAILED.append(f"{dokumento_id}: today's version not fetched ({e})")
+    for r in reversed(later):
+        if not path(r).exists():
+            continue
+        row = json.loads(path(r).read_text()) or {}
+        t = row.get("tekstas_lt")
+        if not t:
+            continue
+        if not has_consolidation(t):
+            t = (f"Suvestinė redakcija nuo {r['galioja_nuo'][:10]}" + (f" iki {r['galioja_iki'][:10]}" if r.get("galioja_iki") else "")
+                 + "\n" + t)
+        return t, {"origin": "Suvestine", "suvestines_id": r["suvestines_id"],
+                   "prepared": row.get("suv_duom_atnaujinimas") or r.get("suv_duom_atnaujinimas"),
+                   "instead_of": f"Dokumentas {m[1]} – {m[2]}"}
+    return None
+
+
 def act_text(dokumento_id: str) -> tuple[str, dict]:
     """The text we build from, plus where it came from (D-009).
 
@@ -809,6 +872,10 @@ def act_text(dokumento_id: str) -> tuple[str, dict]:
     if eurlex.is_eu(dokumento_id):  # D-037
         return text, {"origin": "EUR-Lex", "eu_version": snap["row"].get("eu_version"), "fetched": snap["fetched"]}
     if has_consolidation(text):
+        newer = suvestine_newer_today(dokumento_id, text)
+        if newer:
+            t, info = newer
+            return t, {**info, "fetched": snap["fetched"]}
         return text, {"origin": "Dokumentas", "fetched": snap["fetched"]}
     cache = DATA / "dokumentas" / dokumento_id / "suvestine.json"
     stale = cache.exists() and (dt.date.today() - dt.date.fromisoformat(

@@ -3225,10 +3225,12 @@ acts:
 - abbr: GDLT
   slug: gamtiniu-duju-licencijavimo-taisykles
   no_abbr: true
-  name: Gamtinių dujų perdavimo, skirstymo, laikymo, skystinimo, tiekimo ir rinkos
-    operatoriaus licencijavimo taisyklės
-  genitive: gamtinių dujų perdavimo, skirstymo, laikymo, skystinimo, tiekimo ir rinkos
-    operatoriaus licencijavimo taisyklių
+  name: Gamtinių dujų perdavimo, skirstymo, laikymo, suskystintų gamtinių dujų pakartotinio
+    dujinimo, rinkos operatoriaus licencijavimo ir gamtinių dujų tiekimo leidimų išdavimo
+    taisyklės
+  genitive: gamtinių dujų perdavimo, skirstymo, laikymo, suskystintų gamtinių dujų
+    pakartotinio dujinimo, rinkos operatoriaus licencijavimo ir gamtinių dujų tiekimo
+    leidimų išdavimo taisyklių
   number: '1246'
   adopted: '2011-10-27'
   dokumento_id: TAR.82205415D430
@@ -8640,11 +8642,12 @@ acts:
   issuer: Lietuvos Respublikos aplinkos ministro
   issuer_nom: Lietuvos Respublikos aplinkos ministerija
 - abbr: EŽSKDBRA
+  slug: elektronines-zemes-sklypo-kadastro-duomenu-bylos-ir-elektroninio-zemes-sklypo-plano-rengimo,-teikimo-tikrinti-ir-derinti-tvarkos-aprasas
   no_abbr: true
-  name: Elektroninės žemės sklypo kadastro duomenų bylos ir elektroninio žemės sklypo
-    plano rengimo, teikimo tikrinti ir derinti tvarkos aprašas
-  genitive: elektroninės žemės sklypo kadastro duomenų bylos ir elektroninio žemės
-    sklypo plano rengimo, teikimo tikrinti ir derinti tvarkos aprašo
+  name: Elektroninės žemės sklypo kadastro duomenų bylos rengimo, teikimo tikrinti
+    ir derinti tvarkos aprašas
+  genitive: elektroninės žemės sklypo kadastro duomenų bylos rengimo, teikimo tikrinti
+    ir derinti tvarkos aprašo
   number: D1-298
   adopted: '2024-09-09'
   dokumento_id: 92f454d06e8011efa9a4c2046a78b308
@@ -8679,11 +8682,18 @@ acts:
   issuer: Lietuvos Respublikos ūkio ministro
   issuer_nom: Lietuvos Respublikos ūkio ministerija
 - abbr: LATŠIAIT
+  slug: leidimu-atlikti-tarsos-saltiniu-ismetamu-i-aplinka-tersalu-ir-tersalu-aplinkos-elementuose-matavimus-ir-tyrimus-isdavimo-tvarkos-aprasas
   no_abbr: true
-  name: Leidimų atlikti taršos šaltinių išmetamų į aplinką teršalų ir teršalų aplinkos
-    elementuose matavimus ir tyrimus išdavimo tvarkos aprašas
-  genitive: leidimų atlikti taršos šaltinių išmetamų į aplinką teršalų ir teršalų
-    aplinkos elementuose matavimus ir tyrimus išdavimo tvarkos aprašo
+  name: Leidimų atlikti taršos šaltinių išmetamų ir (arba) išleidžiamų į aplinką teršalų
+    ir teršalų aplinkos elementuose (ore, vandenyje, dirvožemyje) laboratorinius tyrimus
+    ir (ar) matavimus ir (ar) imti ėminius laboratoriniams tyrimams atlikti išdavimo,
+    leidimų galiojimo sustabdymo, galiojimo sustabdymo panaikinimo, leidimų galiojimo
+    panaikinimo taisyklės
+  genitive: leidimų atlikti taršos šaltinių išmetamų ir (arba) išleidžiamų į aplinką
+    teršalų ir teršalų aplinkos elementuose (ore, vandenyje, dirvožemyje) laboratorinius
+    tyrimus ir (ar) matavimus ir (ar) imti ėminius laboratoriniams tyrimams atlikti
+    išdavimo, leidimų galiojimo sustabdymo, galiojimo sustabdymo panaikinimo, leidimų
+    galiojimo panaikinimo taisyklių
   number: D1-711
   adopted: '2004-12-30'
   dokumento_id: TAR.F255BFB25450
@@ -9468,7 +9478,8 @@ acts:
   slug: hn-35-2007
   no_abbr: true
   name: Lietuvos higienos norma HN 35:2007 „Didžiausia leidžiama cheminių medžiagų
-    (teršalų) koncentracija gyvenamosios aplinkos ore“
+    (teršalų) koncentracija gyvenamosios ir visuomeninės paskirties pastatų patalpų
+    ore“
   genitive: Lietuvos higienos normos HN 35:2007
   number: V-362
   adopted: '2007-05-10'
@@ -9492,8 +9503,9 @@ acts:
 - abbr: HN41
   slug: hn-41-2003
   no_abbr: true
-  name: Lietuvos higienos norma HN 41:2003 „Mokyklinės prekės“
-  genitive: Lietuvos higienos normos HN 41:2003
+  name: Lietuvos higienos norma HN 41:2016 „Mokyklinės kuprinės. Bendrieji ir specialieji
+    sveikatos saugos reikalavimai“
+  genitive: Lietuvos higienos normos HN 41:2016
   number: V-556
   adopted: '2003-09-25'
   dokumento_id: TAR.86ADC6B9438E
@@ -11153,13 +11165,14 @@ acts:
   issuer: Lietuvos Respublikos aplinkos ministro
   issuer_nom: Lietuvos Respublikos aplinkos ministerija
 - abbr: VSNPMPPT
+  slug: veiklos,-susijusios-su-narkotiniu-ir-psichotropiniu-medziagu-pirmtakais-(prekursoriais),-licencijavimo,-vietos-registravimo,-importo-ir-eksporto-leidimu-isdavimo-ir-sios-veiklos-prieziuros-ir-kontroles-vykdymo-taisykles
   no_abbr: true
   name: Veiklos, susijusios su narkotinių ir psichotropinių medžiagų pirmtakais (prekursoriais),
     licencijavimo, vietos registravimo, importo ir eksporto leidimų išdavimo ir šios
-    veiklos priežiūros ir kontrolės vykdymo taisyklės
+    veiklos priežiūros vykdymo taisyklės
   genitive: veiklos, susijusios su narkotinių ir psichotropinių medžiagų pirmtakais
     (prekursoriais), licencijavimo, vietos registravimo, importo ir eksporto leidimų
-    išdavimo ir šios veiklos priežiūros ir kontrolės vykdymo taisyklių
+    išdavimo ir šios veiklos priežiūros vykdymo taisyklių
   number: '221'
   adopted: '2006-03-09'
   dokumento_id: TAR.B92030B5E1D0
@@ -12149,9 +12162,10 @@ acts:
   issuer: Lietuvos Respublikos finansų ministro
   issuer_nom: Lietuvos Respublikos finansų ministerija
 - abbr: MKVVGĮT
+  slug: medziu-ir-krumu-veisimo,-veju-ir-gelynu-irengimo-taisykles
   no_abbr: true
-  name: Medžių ir krūmų veisimo, vejų ir gėlynų įrengimo taisyklės
-  genitive: medžių ir krūmų veisimo, vejų ir gėlynų įrengimo taisyklių
+  name: Želdynų įrengimo ir želdinių veisimo taisyklės
+  genitive: želdynų įrengimo ir želdinių veisimo taisyklių
   number: D1-717
   adopted: '2007-12-29'
   dokumento_id: TAR.F467B46501DE
@@ -13150,10 +13164,11 @@ acts:
   dokumento_id: TAR.CFE79DB62CD2
   unit: punktas
 - abbr: MKPVKNSA
+  slug: misko-kirtimo-privaciose-valdose,-kurioms-nera-sudarytas-miskotvarkos-projektas,-tvarkos-aprasas
   no_abbr: true
-  name: Miško kirtimo privačiose valdose, kurioms nėra sudarytas miškotvarkos projektas,
-    tvarkos aprašas
-  genitive: miško kirtimo privačiose valdose, kurioms nėra sudarytas miškotvarkos
+  name: Miško kirtimo privačiose valdose, kurioms nėra sudarytas vidinės miškotvarkos
+    projektas, tvarkos aprašas
+  genitive: miško kirtimo privačiose valdose, kurioms nėra sudarytas vidinės miškotvarkos
     projektas, tvarkos aprašo
   number: D1-569
   adopted: '2004-11-08'

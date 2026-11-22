@@ -271,3 +271,68 @@ def test_a_stalled_suvestine_names_the_act_it_was_asking_for(monkeypatch):
     except TimeoutError:
         pass
     assert source.SUVESTINE_DOWN == "TimeoutError asking for TAR.X1"
+
+
+def _newer_setup(tmp_path, monkeypatch, cached=True):
+    monkeypatch.setattr(source, "STATE", tmp_path / "state")
+    monkeypatch.setattr(source, "DATA", tmp_path)
+    (tmp_path / "state").mkdir()
+    (tmp_path / "state" / "suvestine_scope.jsonl").write_text("".join(json.dumps(r) + "\n" for r in [
+        {"dokumento_id": "X1", "suvestines_id": "old", "galioja_nuo": "2015-10-31T00:00:00", "galioja_iki": "2024-10-31T00:00:00"},
+        {"dokumento_id": "X1", "suvestines_id": "new", "galioja_nuo": "2024-11-01T00:00:00", "galioja_iki": None,
+         "suv_duom_atnaujinimas": "2024-10-08T10:48:37"}]))
+    if cached:
+        (tmp_path / "suvestine" / "X1").mkdir(parents=True)
+        (tmp_path / "suvestine" / "X1" / "new.json").write_text(json.dumps(
+            {"suvestines_id": "new", "galioja_nuo": "2024-11-01T00:00:00", "galioja_iki": None,
+             "suv_duom_atnaujinimas": "2024-10-08T10:48:37", "tekstas_lt": "1. Nauja redakcija."}))
+    source._SCOPE_ROWS.clear()
+
+
+def test_an_ended_dokumentas_text_gives_way_to_todays_cached_consolidation(tmp_path, monkeypatch):
+    _newer_setup(tmp_path, monkeypatch)
+    ended = "Suvestinė redakcija nuo 2015-10-31 iki 2024-10-31\n\n1. Sena."
+    t, info = source.suvestine_newer_today("X1", ended, day="2026-11-22")
+    assert t.startswith("Suvestinė redakcija nuo 2024-11-01\n") and "Nauja redakcija" in t
+    assert info["origin"] == "Suvestine" and info["suvestines_id"] == "new" and info["prepared"].startswith("2024-10-08")
+    # a Dokumentas version still running, or one with no end date, is kept
+    assert source.suvestine_newer_today("X1", "Suvestinė redakcija nuo 2015-10-31 iki 2027-01-01\n", day="2026-11-22") is None
+    assert source.suvestine_newer_today("X1", "Suvestinė redakcija nuo 2015-10-31\n", day="2026-11-22") is None
+    # Dokumentas newer than the Suvestine version valid today: kept
+    assert source.suvestine_newer_today("X1", "Suvestinė redakcija nuo 2025-01-01 iki 2025-12-31\n", day="2026-11-22") is None
+
+
+def test_an_uncached_newer_consolidation_is_not_fetched_here(tmp_path, monkeypatch):
+    _newer_setup(tmp_path, monkeypatch, cached=False)
+    monkeypatch.setattr(source, "query", lambda *a, **k: (_ for _ in ()).throw(AssertionError("no request")))
+    assert source.suvestine_newer_today("X1", "Suvestinė redakcija nuo 2015-10-31 iki 2024-10-31\n", day="2026-11-22") is None
+
+
+def test_todays_version_is_fetched_on_a_fetching_night_else_the_newest_cached_one(tmp_path, monkeypatch):
+    _newer_setup(tmp_path, monkeypatch)
+    with (tmp_path / "state" / "suvestine_scope.jsonl").open("a") as f:
+        f.write(json.dumps({"dokumento_id": "X1", "suvestines_id": "newest", "galioja_nuo": "2026-11-20T00:00:00",
+                            "galioja_iki": None}) + "\n")
+    source._SCOPE_ROWS.clear()
+    ended = "Suvestinė redakcija nuo 2015-10-31 iki 2024-10-31\n"
+    monkeypatch.setattr(source, "SUVESTINE_DOWN", False)
+    monkeypatch.setattr(source, "REFRESH_SUVESTINE", False)
+    assert source.suvestine_newer_today("X1", ended, day="2026-11-22")[1]["suvestines_id"] == "new"  # no request: cached one
+    monkeypatch.setattr(source, "REFRESH_SUVESTINE", True)
+    monkeypatch.setattr(source, "query", lambda m, q: [{"suvestines_id": "newest", "galioja_nuo": "2026-11-20T00:00:00",
+                                                        "galioja_iki": None, "tekstas_lt": "1. Naujausia."}])
+    t, info = source.suvestine_newer_today("X1", ended, day="2026-11-22")
+    assert info["suvestines_id"] == "newest" and "Naujausia" in t
+    assert (tmp_path / "suvestine" / "X1" / "newest.json").exists()
+
+
+def test_a_later_consolidation_in_place_of_an_ended_text_may_have_fewer_points():
+    import importlib.util as iu
+    spec = iu.spec_from_file_location("nightly", pathlib.Path(__file__).parents[1] / "bin" / "nightly.py")
+    nightly = iu.module_from_spec(spec)
+    spec.loader.exec_module(nightly)
+    prev = {"articles": 41, "version_from": "2004-12-15", "labels": [str(i) for i in range(1, 42)]}
+    b = {"abbr": "HN41", "n": 15, "labels": [str(i) for i in range(1, 16)], "unit": "punktas", "rewrites": [],
+         "consolidation_valid_from": "2016-06-01", "consolidation_valid_to": None}
+    assert "lost" in nightly.check_act(b, prev, set())
+    assert nightly.check_act({**b, "instead_of": "Dokumentas 2004-12-15 – 2016-05-31"}, prev, set()) is None
