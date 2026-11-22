@@ -1040,7 +1040,8 @@ CONDITIONAL = re.compile(r"kiek tai susiję|sutartims|gaminiams|kurie įsigalioj
 
 
 def _starts(t: str) -> list[str]:
-    return [_iso(m) for m in RE_DATE.finditer(t) if not re.search(r"\biki\s*$", t[:m.start()])]
+    # not "iki D" (an end) nor "ne vėliau kaip D" (a deadline for the Agency's guidance, 2026/256 17 str.)
+    return [_iso(m) for m in RE_DATE.finditer(t) if not re.search(r"\b(?:iki|ne vėliau kaip)\s*$", t[:m.start()], re.I)]
 
 
 def _ends(t: str) -> list[str]:
@@ -1094,6 +1095,8 @@ def application(act, day: str) -> tuple[dict[str, tuple[str, str, str]], list[st
         return {}, []
     cite = f"{final.label} straipsnį"  # "žr. 71 straipsnį"
     text = " ".join(b.text for b in final.blocks)
+    # some translations write dates day first, without "m." and "d." ("nuo 29 spalio 2027", 2026/256): one form
+    text = re.sub(r"\b(\d{1,2}) (" + "|".join(_LT_MONTHS) + r") (\d{4})\b(?! m\.)", r"\3 m. \2 \1 d.", text)
     # clauses: sentences, and the lettered items of "Tačiau: a) …; b) …"
     clauses = [c.strip() for c in re.split(r"(?<=[.;])\s+(?=(?:[a-z]\)|[A-ZĄČĘĖĮŠŲŪŽ0-9]))", text) if c.strip()]
     general = None

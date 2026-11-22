@@ -336,3 +336,17 @@ def test_a_later_consolidation_in_place_of_an_ended_text_may_have_fewer_points()
          "consolidation_valid_from": "2016-06-01", "consolidation_valid_to": None}
     assert "lost" in nightly.check_act(b, prev, set())
     assert nightly.check_act({**b, "instead_of": "Dokumentas 2004-12-15 – 2016-05-31"}, prev, set()) is None
+
+
+def test_an_act_repealed_on_a_known_day_is_labelled_repealed_not_uncertain():
+    from ltlaw.currency import ActStatus, Status, apply_register_state
+    st = ActStatus("2026-11-22", "current")
+    st.articles = {"1": Status("current", []), "2": Status("current", [])}
+    row = {"galioj_busena": "negalioja", "negalioja": "2026-04-28", "priemusi_inst": "Europos Sąjunga"}
+    assert apply_register_state(st, row, "2026-11-22") == (False, True)
+    assert {v.state for v in st.articles.values()} == {"repealed"} and st.expires == "2026-04-28"
+    assert st.notices == ["Šis teisės aktas neteko galios 2026-04-28 (EUR-Lex)"]
+    st2 = ActStatus("2026-11-22", "current")
+    st2.articles = {"1": Status("current", [])}
+    apply_register_state(st2, {"galioj_busena": "negalioja", "negalioja": None}, "2026-11-22")  # no day: uncertain
+    assert st2.articles["1"].state == "unknown"

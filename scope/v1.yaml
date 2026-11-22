@@ -13231,3 +13231,11 @@ acts:
   kind: Įsakymas
   issuer: Lietuvos Respublikos sveikatos apsaugos ministro
   issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: REMITDTR
+  slug: remit-duomenu-teikimo-reglamentas
+  no_abbr: true
+  name: REMIT įgyvendinimo reglamentas (ES) 2026/256 dėl duomenų teikimo
+  genitive: Reglamento (ES) 2026/256
+  number: (ES) 2026/256
+  dokumento_id: EU.32026R0256
+  kind: Reglamentas

@@ -583,3 +583,13 @@ def test_an_eu_act_uses_the_nights_batch_but_never_loses_a_version_it_held(monke
     monkeypatch.setattr(source, "EU_BATCH", {"versions": {"32019L0944": ["02019L0944-20190614"]}, "metadata": {"32019L0944": meta}})
     row = source.eu_row("EU.32019L0944", "2026-11-17", prev)
     assert slow == ["versions"] and row["eu_versions"] == prev["eu_versions"] and row["tekstas_lt"] == "1 straipsnis"
+
+
+def test_day_first_dates_count_and_guidance_deadlines_do_not():
+    """2026/256 17 str.: "taikomas nuo 29 spalio 2027"; "Ne vėliau kaip 29 balandžio 2027 Agentūra pateikia gaires"."""
+    text = ("Suvestinė redakcija nuo 2026-04-29\n3 straipsnis. Duomenys\nTekstas.\n9 straipsnis. Kiti\nTekstas.\n"
+            "17 straipsnis. Įsigaliojimas ir taikymas\n1. Šis reglamentas įsigalioja dvidešimtą dieną po jo paskelbimo. "
+            "2. 3 straipsnis taikomas nuo 29 spalio 2027. Ne vėliau kaip 29 balandžio 2027 Agentūra pateikia gaires, "
+            "susijusias su 9 straipsniu. 9 straipsnis taikomas nuo 29 balandžio 2028.\n")
+    stages, _ = eurlex.application(parse(text), "2026-11-22")
+    assert stages["3"][:2] == ("pending", "2027-10-29") and stages["9"][:2] == ("pending", "2028-04-29")

@@ -1483,6 +1483,16 @@ def apply_register_state(st: ActStatus, row: dict, day: str) -> tuple[bool, bool
             if v.state in ("current", "pending"):
                 st.articles[k] = Status("pending", [f"visas teisės aktas įsigalioja {d0}"], changes_on=d0,
                                         applies_from=max(d0, v.applies_from or d0))
+    gone = (row.get("negalioja") or "")[:10]
+    if register_bad and row.get("galioj_busena") == "negalioja" and gone and gone <= day:
+        # repealed as a whole on a known day (REMITĮR: Regulation 1348/2014, repealed by 2026/256 from 2026-04-28):
+        # every article is "Neteko galios D", as when the text itself says so, not "Neaišku"
+        src = "EUR-Lex" if row.get("priemusi_inst") == "Europos Sąjunga" else "Teisės aktų registras"
+        st.expires = gone
+        st.notices.append(f"Šis teisės aktas neteko galios {gone} ({src})")
+        for k in st.articles:
+            st.articles[k] = Status("repealed", [f"visas teisės aktas neteko galios {gone}"], applies_from=gone)
+        return not_yet, register_bad
     if register_bad:
         why = f"Teisės aktų registre šio akto būsena: „{row['galioj_busena']}“"
         st.notices.append(why)
