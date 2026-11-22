@@ -114,7 +114,8 @@ def query(model: str, q: str, tries: int = 4, timeout: int = 120) -> list[dict]:
             SUVESTINE_DOWN = f"HTTP {e.code}"
             raise
         except Exception as e:
-            SUVESTINE_DOWN = type(e).__name__  # the reason, for the night's warning
+            doc = re.search(r'dokumento_id="([^"]+)"', q)  # the reason, for the night's warning
+            SUVESTINE_DOWN = type(e).__name__ + (f" asking for {doc[1]}" if doc else "")
             raise
     raise AssertionError("unreachable")
 
@@ -128,6 +129,8 @@ SUVESTINE_DOWN: str | bool = False  # set by query() after a Suvestine failure (
 SUVESTINE_5XX = [0]  # Suvestine queries that failed with a server error after their retries, this run
 SUVESTINE_5XX_LIMIT = 3
 SUVESTINE_RETRY_S = 5
+SUVESTINE_429_WAIT_S = 60  # the version lists wait out a 429 this long, at most SUVESTINE_429_WAITS times a run
+SUVESTINE_429_WAITS = 3
 NET = [0.0, 0, 0]  # this run's data.gov.lt requests: seconds waited, requests, bytes (a slow act's tick says how much was network)
 RATE_LIMITED = [0]  # Suvestine answers HTTP 429 (Too Many Requests) tonight
 
@@ -541,19 +544,31 @@ def update_suvestine_lists(acts: list[dict], refresh_days: int = 7, per_run: int
                 and checked.get(a["dokumento_id"], "2000-01-01") < stale), key=lambda a: checked.get(a["dokumento_id"], ""))
     import time
     changed, failed, t0 = 0, 0, time.time()
-    for a in due[:per_run]:
+    todo, waits = list(due[:per_run]), 0
+    while todo:
         if time.time() - t0 > budget_s:  # a slow night (the API through the relay): the rest next night
             break
-        doc = a["dokumento_id"]
+        doc = todo[0]["dokumento_id"]
         if SUVESTINE_DOWN:  # tripped by an earlier query tonight: the rest next night
             break
         try:
             got = query("Suvestine", f'select(_id,dokumento_id,suvestines_id,galioja_nuo,galioja_iki,suv_duom_atnaujinimas)'
                                      f'&dokumento_id="{doc}"&limit(2000)')
+        except urllib.error.HTTPError as e:
+            # 429 (rate limited for a minute or so, 2026-11-22: it ended the list after 203 of 314 acts): wait and ask
+            # the same act again, within the budget; not counted as checked
+            if e.code == 429 and waits < SUVESTINE_429_WAITS and time.time() - t0 + SUVESTINE_429_WAIT_S < budget_s:
+                waits += 1
+                time.sleep(SUVESTINE_429_WAIT_S)
+                continue
+            failed += 1
+            checked[doc] = today
+            break
         except Exception:  # this act's query timed out (an act the table lacks makes it scan everything, 2026-10-24):
             failed += 1      # counted as checked, so it goes to the back of the queue and is asked again next week
             checked[doc] = today
             break
+        todo.pop(0)
         for r in got:
             c = {k: r.get(k) for k in keys}
             if rows.get(c["suvestines_id"]) != c:

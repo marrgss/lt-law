@@ -240,3 +240,34 @@ def test_suvestine_is_given_up_after_repeated_server_errors_and_at_once_on_a_tim
     except TimeoutError:
         pass
     assert source.SUVESTINE_DOWN == "TimeoutError"
+
+
+def test_version_lists_wait_out_a_429_and_go_on(tmp_path, monkeypatch):
+    monkeypatch.setattr(source, "STATE", tmp_path)
+    monkeypatch.setattr(source, "SUVESTINE_DOWN", False)
+    monkeypatch.setattr(source, "SUVESTINE_429_WAIT_S", 0)
+    asked = []
+
+    def q(model, query):
+        doc = query.split('dokumento_id="')[1].split('"')[0]
+        asked.append(doc)
+        if len(asked) == 2:
+            raise urllib.error.HTTPError("u", 429, "Too Many Requests", {}, None)
+        return [{"_id": doc, "dokumento_id": doc, "suvestines_id": f"s-{doc}", "galioja_nuo": "2026-01-01"}]
+    monkeypatch.setattr(source, "query", q)
+    acts = [{"dokumento_id": d} for d in ("A", "B", "C")]
+    assert source.update_suvestine_lists(acts, per_run=10) == 3
+    assert asked == ["A", "B", "B", "C"]
+    assert sorted(json.loads((tmp_path / "suvestine_checked.json").read_text())) == ["A", "B", "C"]
+
+
+def test_a_stalled_suvestine_names_the_act_it_was_asking_for(monkeypatch):
+    def stalled(url, tries=4, timeout=120):
+        raise TimeoutError("timed out")
+    monkeypatch.setattr(source, "_get", stalled)
+    monkeypatch.setattr(source, "SUVESTINE_DOWN", False)
+    try:
+        source.query("Suvestine", 'select(_id)&dokumento_id="TAR.X1"&limit(5)')
+    except TimeoutError:
+        pass
+    assert source.SUVESTINE_DOWN == "TimeoutError asking for TAR.X1"
