@@ -1343,6 +1343,7 @@ def assess(act: Act, scope_act: dict, laws: Laws, day: str, seen: str | None = N
                 elif S > day and day < when <= S:
                     pending.append(when)
         kt_later = []
+        later_chapters = []  # (date, law): this article's chapter set out anew after today by a law in its notes
         for nr, eff, toks in rulings:
             if toks and any(_matches(t, a.label) for t in toks):
                 if eff <= day:
@@ -1368,8 +1369,15 @@ def assess(act: Act, scope_act: dict, laws: Laws, day: str, seen: str | None = N
                     # a consolidation valid on `day` with no stage inside its range holds exactly the stages in force
                     # then, whichever this article's is (GKĮ 30, XV-1073: 2026-08-01 / 2027-01-01, text 08-01..12-31)
                     settled = T and S <= day <= T and all(x <= S or x > T for x in dates)
+                    # the newest consolidation, open-ended, from S holds the stages up to S and none after today (the
+                    # next stage gets a consolidation of its own): D1-188 for RŽNTKŽŠA, 2026-10-20 / 2027-01-01, text
+                    # from 2026-10-20. A stage between S and today is still unsettled
+                    settled = settled or (not T and S <= day and all(x <= S or x > day for x in dates))
+                    later_chapters += [(w, law.nr) for o, chs in law.chapters.items() if any(_in_part(a.path, c) for c in chs)
+                                       for w in law.own_dates.get(o) or {law.default} - {None} if w > day]
                     if min(dates) <= day < max(dates) and not settled:
-                        reasons.append(f"{r.nr}: skyrių keitęs įstatymas įsigalioja dalimis "
+                        kind = _kind(r.nr, laws.meta.get(r.nr, {}).get("rusis")).split()[0]
+                        reasons.append(f"{r.nr}: skyrių keitęs {kind} įsigalioja dalimis "
                                        f"({', '.join(sorted(dates))}); neaišku, kuri dalis taikoma šiam straipsniui")
                         continue
                 if law.conditional_for(a.label) and (state != "current" or law.not_in_force):
@@ -1461,6 +1469,15 @@ def assess(act: Act, scope_act: dict, laws: Laws, day: str, seen: str | None = N
                 for w in law.staged.get(a.label, ()):
                     if w > day and (fc is None or w < fc[0]):
                         fc = (w, law.nr, True)
+                # or its chapter set out anew on a later day (D1-188: RŽNTKŽŠA's chapter I again from 2027-01-01)
+                for o, chs in law.chapters.items():
+                    if any(_in_part(a.path, c) for c in chs):
+                        for w in law.own_dates.get(o) or {law.default} - {None}:
+                            if w > day and (fc is None or w < fc[0]):
+                                fc = (w, law.nr, True)
+            for w, nr in later_chapters:  # the same, found through the article's own notes
+                if fc is None or w < fc[0]:
+                    fc = (w, nr, True)
             if fc:
                 s.future_change = fc
                 s.changes_on = min(x for x in (s.changes_on, fc[0]) if x)
@@ -1468,12 +1485,25 @@ def assess(act: Act, scope_act: dict, laws: Laws, day: str, seen: str | None = N
     return st
 
 
-def apply_register_state(st: ActStatus, row: dict, day: str) -> tuple[bool, bool]:
+def apply_register_state(st: ActStatus, row: dict, day: str, scope_act: dict | None = None) -> tuple[bool, bool]:
     """The act's own state in the register, applied to its labels (pages and validators alike):
     - adopted, not in force yet ("neįsigaliojęs" with a later entry date, NTRgĮ until 2027-01-01): every article
       is "Įsigalios D";
-    - otherwise not "galioja" (and no repeal date in the text): nothing on its pages is "current".
+    - otherwise not "galioja" (and no repeal date in the text): nothing on its pages is "current";
+    - repealed as a whole by another act's provision that neither the register's state nor any consolidation shows
+      (the scope's `repealed: {from: D, by: "… papunktį"}`, read from the repealing act's text): every article "Neteko galios D".
     Returns (not_yet, register_bad)."""
+    rep = (scope_act or {}).get("repealed")
+    if rep and str(rep["from"]) <= day and not (st.expires and st.expires <= day):
+        # VTPPMMT: aplinkos ministro įsakymas Nr. 623 repealed from 2012-12-22 by D1-416 item 5.3; the register still
+        # says "galioja" (with "negalioja" 2010-05-18, the repealing order's date) and its last text ends 2010-05-22
+        gone = str(rep["from"])
+        st.expires = gone
+        st.act_level_flags = []  # amendments the text lacks don't matter once the act itself is gone
+        st.notices.append(f"Šis teisės aktas neteko galios {gone} pagal {rep['by']}")  # by: "… įsakymo Nr. D1-416 5.3 papunktį"
+        for k in st.articles:
+            st.articles[k] = Status("repealed", [f"visas teisės aktas neteko galios {gone}"], applies_from=gone)
+        return False, True
     not_yet = row.get("galioj_busena") == "neįsigaliojęs" and (row.get("isigalioja") or "") > day
     register_bad = row.get("galioj_busena") not in (None, "galioja") and not st.expires and not not_yet
     if not_yet:

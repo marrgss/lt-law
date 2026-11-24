@@ -33,7 +33,7 @@ from .today import _suvestine_valid_on, _with_header, find_today, find_today_onl
 from .validate import dropped_lines
 from .xref import Linker, Others
 from . import eurlex
-from . import api, definitions, feeds, fulltext
+from . import api, definitions, feeds, fulltext, seimas
 from .parse import Act, Article, Block, Note, parse
 from . import source
 
@@ -144,13 +144,21 @@ def unit_name(u: dict, pretty: str, title: str) -> str:
     return f"{pretty} {u['nom']}" + (f". {title}" if title else "")
 
 
+# a resolution's or order's key: '875/2025-12-03', 'D1-188/2026-10-19', '1-348/D1-1014/3-742/2024-11-29' (a joint
+# order); the whole number before the date ("D1-Nr. 188" was shown for D1-188 until 2026-11-24)
+RE_KEY = re.compile(r"(?<![\w/-])(?!\d{4}-\d{2}-\d{2}/)((?:[A-ZĄČĘĖĮŠŲŪŽ0-9]+-)*\d+(?:/(?:[A-ZĄČĘĖĮŠŲŪŽ0-9]+-)*\d+)*)"
+                    r"/(\d{4}-\d{2}-\d{2})\b")
+
+
 def nr_text(s: str) -> str:
-    """Resolution keys in text for people: '875/2025-12-03' -> 'Nr. 875 (2025-12-03)'."""
-    return re.sub(r"\b(\d+)/(\d{4}-\d{2}-\d{2})\b", r"Nr. \1 (\2)", s or "")
+    """Resolution and order keys in text for people: '875/2025-12-03' -> 'Nr. 875 (2025-12-03)', 'D1-188/2026-10-19'
+    -> 'Nr. D1-188 (2026-10-19)'."""
+    return RE_KEY.sub(r"Nr. \1 (\2)", s or "")
 
 
 env.filters["nrs"] = nr_text
 LAW_DOCS: dict[str, str] = {}  # amending act number or key -> dokumento_id (filled by Site), for links on pages
+ADOPTED: dict[str, dict] = {}  # law number -> the Seimas vote that adopted it (seimas.adopted_votes, filled by Site)
 
 
 def law_links(text: str):
@@ -161,12 +169,26 @@ def law_links(text: str):
         doc = LAW_DOCS.get(nr)
         return f'<a href="{escape(ETAR_DOC.format(doc))}">{shown}</a>' if doc else shown
     t = str(escape(text or ""))
-    t = re.sub(r"\b(\d+)/(\d{4}-\d{2}-\d{2})\b", lambda m: link(m.group(0), f"Nr. {m.group(1)} ({m.group(2)})"), t)
+    t = RE_KEY.sub(lambda m: link(m.group(0), f"Nr. {m.group(1)} ({m.group(2)})"), t)
     t = re.sub(r"(?<![\w-])([IVXL]+-\d+)\b", lambda m: link(m.group(1), m.group(1)), t)
     return Markup(t)
 
 
 env.filters["lawlinks"] = law_links
+
+
+def vote_text(v: dict | None):
+    """'; Seime už 90, prieš 0, susilaikė 1' after an amending law's date in the notes, linked to the lrs.lt record."""
+    from markupsafe import Markup, escape
+    if not v:
+        return ""
+    t = f"už {v['for']}, prieš {v['against']}, susilaikė {v['abstain']}"
+    if v.get("record"):
+        t = f'<a href="{escape(v["record"])}" title="Seimo balsavimas dėl įstatymo priėmimo {escape(v["at"])}">{t}</a>'
+    return Markup(f"; Seime {t}")
+
+
+env.filters["vote"] = vote_text
 env.filters["ucfirst"] = lambda t: (t[:1].upper() + t[1:]) if t else t  # keeps "XV-659" (capitalize would not)
 
 
@@ -317,7 +339,8 @@ def _refs(notes: list[Note], meta: dict) -> list[dict]:
         for r in n.refs:
             d = meta.get(r.nr)
             url = ETAR_DOC.format(d["dokumento_id"]) if d else "https://www.e-tar.lt"
-            refs.append({"nr": r.nr.split("/")[0], "adopted": r.adopted, "url": url})  # '875/2025-12-03' shown as 875
+            refs.append({"nr": r.nr.split("/")[0], "adopted": r.adopted, "url": url,  # '875/2025-12-03' shown as 875
+                         **({"vote": ADOPTED[r.nr]} if r.nr in ADOPTED else {})})
         out.append({"label": n.label, "refs": refs})
     return out
 
@@ -679,6 +702,8 @@ class Site:
         self.watermark = source.register_watermark()  # the open data's newest TAR publication (A19)
         if laws is not None:
             LAW_DOCS.update({k: v["dokumento_id"] for k, v in laws.meta.items() if v.get("dokumento_id")})
+            if (source.DATA / "seimas").exists():  # the adoption vote next to an amending law in the notes (D-054 step 2)
+                ADOPTED.update(seimas.adopted_votes(source.DATA / "seimas", laws.meta))
         self.built = dt.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M")
         self.sitemap: list[str] = []
         self.refs: list[tuple[str, str]] = []  # (from URL, to URL): links between articles and from decisions (D-036)
@@ -842,7 +867,7 @@ class Site:
         if not eurlex.is_eu(scope_act["dokumento_id"]) and sum(EQUATION_ONLY.fullmatch(b.text.strip()) is not None
                                                                for x in act.main.articles for b in x.blocks) >= 3:
             st.notices.append(FORMULAS_NOTICE)
-        not_yet, register_bad = apply_register_state(st, row, self.day)
+        not_yet, register_bad = apply_register_state(st, row, self.day, scope_act)
         meta = self.laws.meta
         # "Įstatymo „Dėl užsieniečių teisinės padėties“": the genitive is lower case (it is matched in titles)
         gen_cap = re.sub(r"„(\w)", lambda m: "„" + m.group(1).upper(), scope_act["genitive"][:1].upper() + scope_act["genitive"][1:])
@@ -1061,7 +1086,8 @@ class Site:
                             **({"images": {n: self.base + IMAGES[n] for n in eurlex.IMAGE.findall(x["text"]) if n in IMAGES}}
                                if "[paveikslas " in x["text"] else {})}
                            for x in _blocks(shown.blocks, meta)],
-                "notes": [{"label": n.label, "refs": [r.__dict__ for r in n.refs]} for n in shown.notes],
+                "notes": [{"label": n.label, "refs": [{**r.__dict__, **({"vote": ADOPTED[r.nr]} if r.nr in ADOPTED else {})}
+                                                       for r in n.refs]} for n in shown.notes],
                 "future": {"applies_from": future["applies_from"], "changes_on": future["changes_on"],
                            "different_article": future["other_article"], "repealed": future["repealed"],
                            "title": future["title"], "blocks": [{"kind": b.kind, "anchor": b.anchor, "text": display_text(b)}

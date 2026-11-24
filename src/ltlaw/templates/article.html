@@ -50,9 +50,9 @@ Tikrinkite <a href="{{ act.etar_url }}">{{ act.official_site }} ↗</a>.</div>
 {% if repeal_on and not blocks %}<p class="editorial">{{ act.u.nom | capitalize }} netenka galios {{ repeal_on }}.</p>{% endif %}
 {% for b in blocks %}
   {% if b.cells %}{% if b.tbl_open %}<div class="tbl"><table>{% endif %}<tr>{% for c in (b.cells_html or b.cells) %}<td>{{ c }}</td>{% endfor %}</tr>{% if b.tbl_close %}</table></div>{% endif %}{% else %}<p class="{{ b.kind }}"{% if b.anchor %} id="{{ b.anchor }}"{% endif %}>{{ b.html or b.text }}</p>{% endif %}
-  {% if b.notes %}<div class="notes">{% for n in b.notes %}{{ n.label }}: {% for r in n.refs %}<a href="{{ r.url }}">{{ r.nr }}</a> ({{ r.adopted }}){% if not loop.last %}, {% endif %}{% endfor %}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+  {% if b.notes %}<div class="notes">{% for n in b.notes %}{{ n.label }}: {% for r in n.refs %}<a href="{{ r.url }}">{{ r.nr }}</a> ({{ r.adopted }}{{ r.vote|vote }}){% if not loop.last %}, {% endif %}{% endfor %}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
 {% endfor %}
-{% if art_notes %}<div class="notes">{% for n in art_notes %}{{ n.label }}: {% for r in n.refs %}<a href="{{ r.url }}">{{ r.nr }}</a> ({{ r.adopted }}){% if not loop.last %}, {% endif %}{% endfor %}<br>{% endfor %}</div>{% endif %}
+{% if art_notes %}<div class="notes">{% for n in art_notes %}{{ n.label }}: {% for r in n.refs %}<a href="{{ r.url }}">{{ r.nr }}</a> ({{ r.adopted }}{{ r.vote|vote }}){% if not loop.last %}, {% endif %}{% endfor %}<br>{% endfor %}</div>{% endif %}
 </div>
 
 {% if future %}

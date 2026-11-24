@@ -61,3 +61,60 @@ def test_votes_linked_to_acts_with_every_mps_choice(tmp_path):
     assert (c["first"], c["last"], c["votes"]) == ("2026-11-05T10:00", "2026-11-05T10:00", 1)
     meta = json.loads((tmp_path / "out" / "api" / "v1" / "seimas" / "meta.json").read_text())
     assert "Factions are not in the open data" in meta["lacks"] and "present (registered)" in meta["lacks"] and meta["terms"][0]["votes"] == 5 and meta["terms"][0]["without_item"] == 2
+
+
+def test_the_vote_that_adopted_a_law_is_found_by_title_and_day_and_only_when_unique(tmp_path):
+    from ltlaw.seimas import _title_core, adopted_votes
+    assert _title_core("Lietuvos Respublikos išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymas") == \
+        _title_core("Išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymo projektas (Nr. XVP-1023(2))")
+    item = "Išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymo projektas (Nr. XVP-1023(2))"
+    vote = {"balsavimo_id": "-58955", "balsavimo_pradzia": "2026-05-14T12:01:00", "darb_klausimas": item,
+            "balsavimo_klausimas": "dėl šio įstatymo priėmimo", "uz": "90", "pries": "0", "susilaike": "1",
+            "verdiktas": "pritarta", "suvestine": "https://www.lrs.lt/sip/portal.show?p_r=37067&p_kl_stad_id=-101504"}
+    other = dict(vote, balsavimo_id="-58950", balsavimo_klausimas="dėl pritarimo po svarstymo")  # not the adoption
+    (tmp_path / "10").mkdir()
+    (tmp_path / "10" / "votes.json").write_text(json.dumps([other, vote]))
+    meta = {"XV-946": {"rusis": "Įstatymas", "priimtas": "2026-05-14",
+                       "pavadinimas": "Lietuvos Respublikos išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymas"},
+            "XV-947": {"rusis": "Įstatymas", "priimtas": "2026-05-15",  # another day: not this vote
+                       "pavadinimas": "Lietuvos Respublikos išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymas"}}
+    got = adopted_votes(tmp_path, meta)
+    assert list(got) == ["XV-946"]
+    assert {k: got["XV-946"][k] for k in ("at", "for", "against", "abstain", "term")} == \
+        {"at": "2026-05-14", "for": 90, "against": 0, "abstain": 1, "term": 10}
+    assert got["XV-946"]["record"].endswith("p_kl_stad_id=-101504")
+    # two adoption votes for the same title that day (a re-vote): which one adopted it is not ours to guess
+    (tmp_path / "10" / "votes.json").write_text(json.dumps([vote, dict(vote, balsavimo_id="-58956")]))
+    assert adopted_votes(tmp_path, meta) == {}
+    (tmp_path / "10" / "votes.json").write_text(json.dumps([dict(vote, verdiktas="nepritarta")]))
+    assert adopted_votes(tmp_path, meta) == {}
+
+
+def test_the_adoption_vote_reads_in_the_notes():
+    from ltlaw.render import vote_text
+    v = {"at": "2026-05-14", "for": 90, "against": 0, "abstain": 1, "record": "https://www.lrs.lt/x?a=1&b=2"}
+    assert str(vote_text(v)) == ('; Seime <a href="https://www.lrs.lt/x?a=1&amp;b=2" title="Seimo balsavimas dėl įstatymo '
+                                 'priėmimo 2026-05-14">už 90, prieš 0, susilaikė 1</a>')
+    assert str(vote_text(dict(v, record=None))) == "; Seime už 90, prieš 0, susilaikė 1"
+    assert vote_text(None) == ""
+
+
+def test_order_keys_read_whole_in_reasons():
+    from ltlaw.render import nr_text
+    assert nr_text("(D1-188/2026-10-19): skyrių keitęs įsakymas") == "(Nr. D1-188 (2026-10-19)): skyrių keitęs įsakymas"
+    assert nr_text("875/2025-12-03 ir 1-348/D1-1014/3-742/2024-11-29") == \
+        "Nr. 875 (2025-12-03) ir Nr. 1-348/D1-1014/3-742 (2024-11-29)"
+    assert nr_text("XV-659 ir V-434/2016-04-01") == "XV-659 ir Nr. V-434 (2016-04-01)"
+
+
+def test_the_api_lists_part_level_amenders_with_their_adoption_votes():
+    from ltlaw.api import _article
+    v = {"at": "2023-12-19", "for": 85, "against": 2, "abstain": 4, "term": 9, "id": "-51480", "record": "https://www.lrs.lt/x"}
+    x = {"label": "8", "pretty": "8", "title": "T", "url": "u", "status": {"state": "current"}, "notes": [],
+         "blocks": [{"anchor": "d1", "text": "1. …", "notes": []},
+                    {"anchor": "d2", "text": "2. …", "notes": [{"label": "Straipsnio dalies pakeitimai",
+                                                               "refs": [{"nr": "XI-738"}, {"nr": "XIV-2398", "vote": v}]}]}]}
+    out = _article(x)
+    assert out["amended_by"] == ["XI-738", "XIV-2398"]
+    assert out["adoption_votes"] == {"XIV-2398": {"at": "2023-12-19", "for": 85, "against": 2, "abstain": 4, "record": "https://www.lrs.lt/x"}}
+    assert _article({**x, "blocks": []})["adoption_votes"] is None

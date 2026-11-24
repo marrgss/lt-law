@@ -36,6 +36,50 @@ LACKS = ("Factions are not in the open data. An MP's id is the term's own; `pers
          "explained by the source).")
 
 
+RE_ITEM_DRAFT = re.compile(r"\(nr\.\s*[ivxl]*p-\d+(?:\([^)]*\))?\)")
+ADOPTED_KINDS = ("Įstatymas", "Kodeksas", "Konstitucinis įstatymas", "Statutas")
+
+
+def _title_core(t: str) -> str:
+    """'Lietuvos Respublikos išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymas' (the register) and
+    'Išmokų vaikams įstatymo Nr. I-621 1 straipsnio pakeitimo įstatymo projektas (Nr. XVP-1023(2))' (the agenda item)
+    -> 'išmokų vaikams įstatymo nr. i-621 1 straipsnio pakeitimo'."""
+    t = RE_ITEM_DRAFT.sub("", t.lower().strip(' „“"'))
+    t = re.sub(r"^lietuvos respublikos\s+", "", t.strip())
+    t = re.sub(r"\s*projektas\s*$", "", t.strip())
+    t = re.sub(r"\s*(?:įstatymas|įstatymo|statutas|statuto|kodeksas|kodekso)\s*$", "", t.strip())
+    return re.sub(r"\s+", " ", re.sub(r"[„“\"]", "", t)).strip()
+
+
+def adopted_votes(data: pathlib.Path, meta: dict[str, dict]) -> dict[str, dict]:
+    """Law number -> the Seimas vote that adopted it ("dėl šio įstatymo priėmimo"), for the amendment notes on article
+    pages and in the API (D-054 step 2). The open data name the draft, not the law it became, so a law is matched by
+    its title and adoption day: the agenda item with the same title, voted that day, with exactly one adoption vote,
+    "pritarta" and with totals. Anything else (no such vote, two of them, a law re-adopted after a veto) shows nothing:
+    a wrong vote under a law is worse than none. Measured 2026-11-24 on term 10: 710 of 851 laws."""
+    by_key: dict[tuple[str, str], list[dict]] = {}
+    terms = sorted((p for p in data.glob("*") if p.is_dir() and p.name.isdigit()), key=lambda p: int(p.name))
+    for td in terms:
+        for v in json.loads((td / "votes.json").read_text()):
+            item = v.get("darb_klausimas")
+            if not item or item == "None" or not re.search(r"priėmimo", v.get("balsavimo_klausimas") or ""):
+                continue
+            by_key.setdefault(((v.get("balsavimo_pradzia") or "")[:10], _title_core(item)), []).append(dict(v, term=int(td.name)))
+    out = {}
+    for nr, d in meta.items():
+        if d.get("rusis") not in ADOPTED_KINDS or not d.get("priimtas") or not d.get("pavadinimas"):
+            continue
+        vs = by_key.get((d["priimtas"][:10], _title_core(d["pavadinimas"])), [])
+        if len(vs) != 1 or vs[0].get("verdiktas") != "pritarta" or _num(vs[0].get("uz")) is None:
+            continue
+        v = vs[0]
+        rec = re.sub(r".*[?&]p_kl_stad_id=", "", v.get("suvestine") or "") or None
+        out[nr] = {"at": (v.get("balsavimo_pradzia") or "")[:10], "for": _num(v["uz"]), "against": _num(v.get("pries")) or 0,
+                   "abstain": _num(v.get("susilaike")) or 0, "term": v["term"], "id": v["balsavimo_id"],
+                   "record": RECORD + rec if rec else None}
+    return out
+
+
 def _num(v) -> int | None:
     try:
         return int(v)
@@ -141,5 +185,7 @@ def build(data: pathlib.Path, out: pathlib.Path, scope: list[dict], acts: list[d
     (root / "meta.json").write_text(json.dumps({
         "terms": terms, "choices": {"1": "for (už)", "2": "against (prieš)", "3": "abstain (susilaikė)"},
         "lacks": LACKS, "source": "Lietuvos Respublikos Seimo kanceliarija, data.gov.lt datasets/gov/lrsk/balsavimai, CC BY 4.0",
-        "status": "proof of concept (D-054): not on the site"}, ensure_ascii=False, indent=1))
+        "status": "D-054: the votes are served to the MCP tools; on the site only the vote that adopted an amending law, next to "
+                  "it in an article's notes (also `notes[].refs[].vote` in each act's data.json, which get_article reads), matched by the law's title and "
+                  "adoption day, shown only when exactly one adoption vote matches"}, ensure_ascii=False, indent=1))
     return report

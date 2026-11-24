@@ -350,3 +350,22 @@ def test_an_act_repealed_on_a_known_day_is_labelled_repealed_not_uncertain():
     st2.articles = {"1": Status("current", [])}
     apply_register_state(st2, {"galioj_busena": "negalioja", "negalioja": None}, "2026-11-22")  # no day: uncertain
     assert st2.articles["1"].state == "unknown"
+
+
+def test_an_act_repealed_by_another_acts_provision_is_labelled_repealed():
+    # VTPPMMT: the register says "galioja" (its "negalioja" is the repealing order's date), its last text ends
+    # 2010-05-22; D1-416 item 5.3 repealed it from 2012-12-22: the scope records that, the pages say it
+    from ltlaw.currency import ActStatus, Status, apply_register_state
+    act = {"repealed": {"from": "2012-12-22", "by": "aplinkos ministro 2010 m. gegužės 18 d. įsakymo Nr. D1-416 5.3 papunktį"}}
+    row = {"galioj_busena": "galioja", "negalioja": "2010-05-18"}
+    st = ActStatus("2026-11-24", "current")
+    st.articles = {"1": Status("unknown", ["D1-416 dar neįtrauktas"]), "2": Status("current", [])}
+    st.act_level_flags = ["D1-416/2010-05-18 (galioja nuo 2010-05-23) dar neįtrauktas į tekstą"]
+    assert apply_register_state(st, row, "2026-11-24", act) == (False, True)
+    assert st.act_level_flags == []
+    assert {v.state for v in st.articles.values()} == {"repealed"} and st.expires == "2012-12-22"
+    assert st.notices == ["Šis teisės aktas neteko galios 2012-12-22 pagal aplinkos ministro 2010 m. gegužės 18 d. "
+                          "įsakymo Nr. D1-416 5.3 papunktį"]
+    st2 = ActStatus("2012-12-01", "current")  # before that day: as the register says
+    st2.articles = {"1": Status("current", [])}
+    assert apply_register_state(st2, row, "2012-12-01", act) == (False, False) and st2.articles["1"].state == "current"

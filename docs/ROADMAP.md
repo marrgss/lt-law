@@ -54,8 +54,9 @@ What isn't built yet, in order. How the current system works is in [ARCHITECTURE
     vote, apps.lrs.lt didn't answer us, manoseimas.lt is gone).
     - Step 1 (POC): the current term's votes, nightly sync, MCP tools `search_votes`, `get_vote`, `mp_votes`; JSON served
       by the Worker, no HTML pages (the file limit).
-    - Step 2: `/seimas/` pages per draft (its stages and votes) and per MP; on an article page, the adoption vote of the law
-      that changed it ("Pakeista įstatymu XV-81" → for 78, against 12 …).
+    - Step 2: ~~on an article page, the adoption vote of the law that changed it~~ (done 2026-11-24, D-059: in the notes
+      and the API's `adoption_votes`, 2,124 laws of terms 9–10); `/seimas/` pages per draft (its stages and votes) and
+      per MP: not yet (the file limit).
     - Step 3: earlier terms (back to 1997); the drafts' metadata (`pasiulyti_ta`).
     - Not in the data, said on the pages: factions; individual votes for consensus decisions ("bendru sutarimu", 30% this
       term) and secret ballots; who was present but didn't vote. Draft texts are only on e-seimas (linked).

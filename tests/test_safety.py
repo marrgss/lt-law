@@ -122,8 +122,14 @@ def test_a_staged_chapter_law_is_settled_by_the_consolidations_range():
     sa = {"genitive": "bandomojo įstatymo", "number": "XV-0"}
     state = lambda frm, to: assess(_chapter_act(frm, to), sa, OneLaw(), "2026-11-02").articles["30"].state  # noqa: E731
     assert state("2026-08-01", "2026-12-31") == "current"
-    assert state("2026-08-01", None) == "unknown"            # open-ended: the next stage may be in it
+    # open-ended from the first stage: the next stage (after today) gets a consolidation of its own, so this text holds
+    # the first stage only (RŽNTKŽŠA from 2026-10-20: D1-188's 2027 wording of point 7 is not in it), and the chapter
+    # set out anew from 2027-01-01 is a known later change
+    assert state("2026-08-01", None) == "current"
+    st = assess(_chapter_act("2026-08-01", None), sa, OneLaw(), "2026-11-02").articles["30"]
+    assert st.future_change == ("2027-01-01", "XV-9", True) and st.changes_on == "2027-01-01"
     assert state("2026-07-15", "2026-12-31") == "unknown"    # a stage inside the range
+    assert state("2026-07-15", None) == "unknown"            # open-ended, but a stage between its start and today
 
 
 def test_backtest_survives_a_text_it_cannot_read(monkeypatch):

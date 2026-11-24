@@ -1143,3 +1143,21 @@ or revert the merge.
   now HN 41:2016 „Mokyklinės kuprinės…“; GDLT, LATŠIAIT, MKVVGĮT…): renamed in the scope, their API keys pinned as
   `slug` so no link changes.
 - **Way back:** make `suvestine_newer_today` return None; the acts are built from Dokumentas as before.
+
+## D-059 (2026-11-24): The vote that adopted an amending law, next to it in the notes
+- **What:** where an article's notes name an amending law ("Straipsnio dalies pakeitimai: XIV-2398 (2023-12-19)"),
+  the Seimas vote that adopted it follows: "(2023-12-19; Seime už 85, prieš 2, susilaikė 4)", linked to the item's
+  lrs.lt record. The same in the API and MCP: each article's `adoption_votes` {law: {at, for, against, abstain,
+  record}}, next to `amended_by`, which now also lists the laws named in its parts' notes (before, only the
+  article's own notes: most of a law's amendments are noted on parts). Step 2 of D-054, the part that needs no new
+  pages (the file limit); per-draft and per-MP pages stay out.
+- **How a vote is matched:** the open data name the draft ("… projektas (Nr. XVP-1023(2))"), not the law it became.
+  A law is matched by its title (the register's, without "Lietuvos Respublikos" and the closing "įstatymas"; the
+  agenda item's, without "projektas" and the draft number) and its adoption day, to the agenda item's vote "dėl šio
+  įstatymo priėmimo". Only when exactly one such vote matches, "pritarta", with totals. Anything else shows nothing:
+  a vote under the wrong law would be worse than none. Laws re-adopted after a veto, and those adopted before the
+  data's terms (2020-11), show none.
+- **Measured (11-24 data, terms 9 and 10):** 2,124 laws matched; of term 10's 851 laws in our list, 710 (83%), the
+  rest have no item title equal to the law's or no adoption vote that day. 4,463 article pages show a vote.
+- **Shown as it is:** the counts are the data's; nothing is scored or compared.
+- **Way back:** `seimas.adopted_votes` returning {} removes every vote from the pages and the API.

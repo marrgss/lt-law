@@ -46,7 +46,7 @@ def main() -> None:
         ours = parse(text, act.get("document"))
         ours.prepared = origin.get("prepared")
         st = assess(ours, act, laws, a.day, source.first_seen(doc, ours.version_from))
-        apply_register_state(st, source.latest_snapshot(doc)["row"], a.day)  # as the pages show it
+        apply_register_state(st, source.latest_snapshot(doc)["row"], a.day, act)  # as the pages show it
         v = etar.version_valid_on(doc, a.day)
         row = source.latest_snapshot(doc)["row"]
         if v is None and ((ours.version_from is None and row.get("galioj_busena") == "galioja")

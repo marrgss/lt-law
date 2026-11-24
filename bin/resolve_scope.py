@@ -88,7 +88,8 @@ def main() -> None:
     out, problems = [], []
 
     def add(s: dict, act: dict) -> None:  # `name_checked: true`: the name differs from the text's heading on purpose (ltlaw.scopecheck)
-        out.append({**act, **({"name_checked": True} if s.get("name_checked") else {})})
+        out.append({**act, **({"name_checked": True} if s.get("name_checked") else {}),
+                    **({"repealed": s["repealed"]} if s.get("repealed") else {})})  # repealed by another act's provision
     for s in seeds:
         if s.get("eu"):  # an EU act from EUR-Lex (D-037), by CELEX: its number as cited ("(ES) 2016/679") in the seed
             add(s, {"abbr": s["abbr"], **({"slug": s["slug"]} if s.get("slug") else {}), **({"no_abbr": True} if s.get("no_abbr") else {}),

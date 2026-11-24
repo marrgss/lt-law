@@ -39,8 +39,15 @@ def chunks_for(n: int) -> int:
     return max(1, -(-n // PER_CHUNK))
 
 
+def _amenders(x: dict) -> list[dict]:
+    """Every ref in the article's notes and its parts' notes ("Straipsnio dalies pakeitimai" are on the part)."""
+    return [r for n in (x.get("notes") or []) + [n for b in x.get("blocks") or [] for n in b.get("notes") or []]
+            for r in n.get("refs") or [] if r.get("nr")]
+
+
 def _article(x: dict) -> dict:
     st = x["status"]
+    refs = _amenders(x)
     return {"label": x["label"], "number": x["pretty"], "title": x["title"] or None, "url": x["url"],
             "place": [" ".join(p for p in (h.get("num"), h.get("kind")) if p) + (f" – {h['title']}" if h.get("title") else "")
                       for h in x.get("path") or []],
@@ -48,7 +55,10 @@ def _article(x: dict) -> dict:
                                                "future_change", "repealed_from", "applies_from") if st.get(k)},
             "source": x.get("text"),
             "text": [{"anchor": b.get("anchor"), "text": b["text"]} for b in x.get("blocks") or []],
-            "amended_by": sorted({r.get("nr") for n in x.get("notes") or [] for r in n.get("refs") or [] if r.get("nr")}),
+            "amended_by": sorted({r["nr"] for r in refs}),
+            # the Seimas vote that adopted each amending law, where one matches (D-054 step 2; seimas.adopted_votes)
+            "adoption_votes": {r["nr"]: {k: r["vote"][k] for k in ("at", "for", "against", "abstain", "record")}
+                               for r in refs if r.get("vote")} or None,
             "future": {"applies_from": x["future"]["applies_from"], "text": [b["text"] for b in x["future"]["blocks"]],
                        "changed_parts": x["future"].get("changed_parts") or []}
             if x.get("future") else None,
