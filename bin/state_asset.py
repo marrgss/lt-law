@@ -16,6 +16,7 @@ import argparse
 import datetime as dt
 import json
 import pathlib
+import shutil
 import subprocess
 import sys
 import tarfile
@@ -54,7 +55,7 @@ def pack(state: pathlib.Path, allow_removals: bool) -> None:
     old = backup / f"state-{dt.datetime.now().strftime('%H%M%S')}.tar.zst"
     with tempfile.TemporaryDirectory() as d:
         gh("release", "download", "state", "--pattern", "state.tar.zst", "--dir", d)
-        pathlib.Path(d, "state.tar.zst").rename(old)
+        shutil.move(pathlib.Path(d, "state.tar.zst"), old)  # /tmp may be another file system (tmpfs): no rename
     print(f"the asset on GitHub: {old} ({old.stat().st_size / 1e6:.1f} MB)")
     data = ROOT / "data"
     with tempfile.TemporaryDirectory() as d:  # the state folder under its published name, whatever its path here

@@ -53,6 +53,12 @@ The site runs on the real domain from now on, but only the maintainer can open i
 - To try development code on real data without deploying: Actions → nightly → Run workflow → `code` = `main`. Such a run saves neither the site nor the state (newer code may keep data the released code can't read, e.g. Constitutional Court rulings since 2026-10-21).
 - **Adding acts**: `bin/add_acts.py <batch.yaml>` (seed lines from `bin/rank_candidates.py --seeds`, each with `area:`): seed → resolve → fetch → name, document and area checks → the three validators (batch only) → failures to `scope/queued_seed.yaml` with their reasons → areas → the gate. Resumable (`--from STEP`). Then review, commit, `bin/state_asset.py pack` (backs up the asset on GitHub, packs `data/`, refuses to drop files) and `bin/state_asset.py upload` (refuses while a nightly runs) → release.
   - **Before the gate, take in the asset** (2026-11-11): the nightly saves the state at its end, so after a build the asset is ahead of the local `data/`. Download it (`gh release download state --pattern state.tar.zst`), unpack it over `data/` (the asset wins; the batch's new files stay), then run the gate; `pack` must list only the batch's files as added and the manifest as changed.
+    **Take it in before the fetch step, not after** (2026-11-24): unpacking replaces whole files, and `state/laws.jsonl`
+    (the amending acts' metadata) and `state/suvestine_scope.jsonl` (version lists) are single files the fetch adds the
+    batch's lines to. Unpacked after the fetch, the new acts lose them (the gate then builds them from ended texts and
+    without their amendments). If it happened: run the three fetch commands again on the batch (`fetch_new_acts.py
+    <subset> --amenders`, `snapshot_scope.py <subset> --amending`, `fetch_new_acts.py <subset> --lists --texts`); texts
+    are cached, only the lines come back.
   - **A parser fix that drops a live act's articles** (IASESASA 51 → 8 points, its annex read as points): `add_acts.py … --from gate --accept ABBR`, then copy that act's entry from `out/gate/status.json` (`acts`) into the manifest of the state to pack (`out/add/<batch>/state.before-gate/manifest.json`), or the nightly's gate stops the build on "articles disappeared".
 - **An EU act** (D-037): a seed `{abbr, title, genitive, number: "(ES) 2016/679", eu: <CELEX>}`; `bin/snapshot_scope.py`
   (or `source.snapshot("EU.<CELEX>")`) reads EUR-Lex and stops if a single article's words differ from its XHTML; the

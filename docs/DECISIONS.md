@@ -1161,3 +1161,21 @@ or revert the merge.
   rest have no item title equal to the law's or no adoption vote that day. 4,463 article pages show a vote.
 - **Shown as it is:** the counts are the data's; nothing is scored or compared.
 - **Way back:** `seimas.adopted_votes` returning {} removes every vote from the pages and the API.
+
+## D-060 (2026-11-24): Breadth across every sector, ranked by how often rule sets are amended
+- **Why:** energy came first (D-033, D-034); the site is meant for every sector. Laws are nearly complete (85 in force
+  are left out, mostly one-off: old budgets, bank rescues, a year's army structure), and every rule set our texts cite
+  is in. What is left are 5,000 Government resolutions and ministers' orders that nobody on the site cites.
+- **How they are ranked:** by the amending acts that name them in their title (`rank_candidates.py rules --by
+  amendments`): a rule set changed often is one people and businesses work with (vehicle registration, driving
+  licences, milk purchase, health-insurance payments, school exams, residence permits). Left out by name: development
+  programmes' measures, a ministry's own work rules, committees and their membership, closed EU funding periods,
+  COVID-19, prizes, internal control. Kept: amended 6+ times and still in 2022+, or 10+ times.
+- **This batch (2026-11-24):** 264 candidates (252 rule sets, 12 laws), each through the usual checks (D-042): 240
+  added, 24 held in `scope/queued_seed.yaml` with their reasons. The validators held VV3Į (20 articles "current" in an
+  old wording) and SCDSPTRA (33): the checks work as meant. 13 had a new name since adoption: added under today's name
+  from their text (9; 3 still held). A new area, "Žemės ūkis ir maistas" (`/sritis/zemes-ukis/`), holds the farming
+  and food acts, old and new.
+- **Cost:** 1,666 acts, 116,000 files (two Workers hold 200,000); a build about 10% longer. GitHub Actions minutes:
+  November ~2,100 of 2,000 free (charged ~$1 of the $5 cap), December ~1,050 at 15 builds.
+- **Next batches:** the same ranking further down (amended 3–5 times), then by search demand when there is some.

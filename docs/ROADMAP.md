@@ -74,6 +74,8 @@ What isn't built yet, in order. How the current system works is in [ARCHITECTURE
 
 ## Corpus
 - **More laws and rules, chosen by search demand** (Search Console, the MCP search log is not kept: aggregate counts only). Candidates are ranked by how often other acts amend them.
+- **Every sector** (D-060, 2026-11-24): 240 acts added across health, education, farming and food, transport, social
+  security, environment and the state (`rank_candidates.py rules --by amendments`); next, the same list further down.
 - Left out on purpose: individual acts naming people. (Profesinių sąjungų įstatymas was left out as "only the 1991 text"; its
   2013 consolidation was there under an old e-tar id, B66: added 2026-11-03.) Acts held back by the checks wait in
   `scope/queued_seed.yaml`, each with its reason.

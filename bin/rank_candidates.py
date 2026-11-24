@@ -10,6 +10,12 @@ rules: Government resolutions, ministers' and VERT orders approving one set of r
        / nuostatų / metodikos … patvirtinimo"), cited by the rules' genitive name. Agencies' orders ("… prie … ministerijos")
        are left out (resolve_scope.py takes ministers' orders only); so are titles approving two documents at once.
 --issuer keeps rules whose issuer contains TEXT ("energetikos"), cited or not.
+--by amendments (rules): rank by how many amending acts name the rule set in their title ("… įsakymo Nr. 260 „Dėl
+Motorinių transporto priemonių … taisyklių patvirtinimo“ pakeitimo"), all-time and since 2022: once every cited rule set
+is in (2026-11-24), how often it is changed is the best sign of rules people work with. Rule sets nobody outside the
+administration applies are left out (FILLER: development programmes' measures, a ministry's own work rules, committees,
+closed EU funding periods, COVID-19). The seed lines then carry an `area:` guessed from the issuer and the name (AREA):
+a human checks it.
 --seeds prints seed lines for scope/v1_seed.yaml (a coined internal abbreviation, no_abbr: true; for rules the
 nominative name, which a human checks against the heading in the text: amendments rename rules, the register keeps
 the title as adopted).
@@ -35,6 +41,55 @@ NOUN = [("tvarkos aprašo", "tvarkos aprašas", "A"), ("aprašo", "aprašas", "A
         ("reikalavimų", "reikalavimai", "R"), ("normų", "normos", "N")]
 FEM = {"taisyklės", "normos"}
 PROPER = re.compile(r"(Lietuvos|Europos|Klaipėdos|Vilniaus|Kauno)\b")
+FILLER = re.compile(r"plėtros program\w* (?:valdytoj|pažangos priemon)|pažangos priemonės|darbo reglament|komisijos sudarymo|"
+                    r"komiteto sudarymo|tarybos sudarymo|grupės sudarymo|sudarymo ir (?:jos|jo|jų) (?:darbo|nuostatų)|"
+                    r"20(?:04|07|14)[–-]20(?:06|13|20)|COVID|koronavirus|veiksmų programos|ministerijos nuostatų|"
+                    r"apdovanojim|vardinio|premijos|stipendij|konkurso .*nuostatų|ženkl\w* nuostatų|medali|"
+                    r"\bVP\d-|projektų finansavimo sąlygų|sudėties|Europos Komisijai|sanglaudos fondo|fondų lėšų|"
+                    r"\b20\d\d[–-]20(?:1\d|2[0-4])\s+metų|darbuotojų, dirbančių pagal darbo sutartis|premij|vidaus kontrolės|"
+                    r"ministerijoje ir jai pavaldžiose|viešųjų pirkimų organizavimo", re.I)
+# (issuer word or name word, area slug): the first match wins; the name is tried before the issuer
+AREA = [(r"žemės ūkio|žemdirb|ūkinink|pieno|maisto produkt|veterinar|gyvūn|gyvul|augal|sėklos|bič|žuvininkyst|"
+         r"kaimo plėtros|pašar|trąš|spiritinių|ekologinės gamybos|agrarin", "zemes-ukis"),
+        (r"transporto priemon|vairuotoj|vairuoti|kelių eismo|geležinkel|pervaž|aviacij|laivų|jūrų uost|autobus|keleivių|"
+         r"krovinių", "transportas"),
+        (r"atliek|aplinkos|vandens|miškų|medienos|medžiokl|gamtos|taršos|teršal|klimato|pavojingųjų medžiagų", "aplinka"),
+        (r"mokesč|akcizų|muitin|buhalterinės apskaitos|PVM", "mokesciai"),
+        (r"statyb|statini|teritorijų planavim|nekilnojam|žemės sklyp|kadastr|geodez", "nekilnojamasis-turtas"),
+        (r"sveikatos|vaist|medicinos|slaugos|ligoninės|farmac|transplantac|švietimo|mokykl|ugdymo|mokini|mokytoj|studij|"
+         r"vaikų|brandos|egzamin", "sveikata"),
+        (r"socialinės apsaugos|darbo |užimtum|pensij|išmok|neįgal|socialin|savivaldybių funkcijoms", "darbas"),
+        (r"teisingumo|teism|antstol|notar|kalėjim|bausm|probacij|vardo ir pavardės", "teismai"),
+        (r"energetikos|elektros energ|dujų|šilumos", "energetika"),
+        (r"informacinės sistemos|elektroninių ryšių|kibernet|registrų", "duomenys-it"),
+        (r"ekonomikos|finansų|verslo|vartotoj|prekyb", "verslas"),
+        (r"vidaus reikalų|krašto apsaugos|užsienio reikalų|kultūros|Vyriausybė", "valstybe")]
+
+
+def amendments() -> tuple[collections.Counter, collections.Counter]:
+    """(number, rule-set name in lower case) -> amending acts naming it, all-time and since 2022."""
+    alltime, recent = collections.Counter(), collections.Counter()
+    for line in open("data/raw/dokumentas.jsonl"):
+        d = json.loads(line)
+        t = re.sub(r"\s+", " ", d.get("pavadinimas") or "")
+        if "pakeitimo" not in t and "papildymo" not in t:
+            continue
+        for m in re.finditer(r"Nr\.\s*([\w./-]+)\s*[„\"]Dėl (.+?) patvirtinimo[“\"]", t):
+            k = (m.group(1).strip("."), re.sub(r"[„“\"]", "", m.group(2)).lower())
+            alltime[k] += 1
+            if (d.get("priimtas") or "") >= "2022-01-01":
+                recent[k] += 1
+    return alltime, recent
+
+
+def guess_area(name: str, inst: str) -> str:
+    for pat, slug in AREA:
+        if re.search(pat, name, re.I):
+            return slug
+    for pat, slug in AREA:
+        if re.search(pat, inst, re.I):
+            return slug
+    return "valstybe"
 
 
 def norm(t: str) -> str:
@@ -69,6 +124,7 @@ def main() -> None:
     ap.add_argument("--kind", dest="issuer_kind", default="",  # its own name: "kind" is the positional's (2026-11-09: every rule dropped)
                     help="rules: only Vyriausybė, ministras or VERT (a tenth of the time for Vyriausybė)")
     ap.add_argument("--seeds", action="store_true")
+    ap.add_argument("--by", choices=["citations", "amendments"], default="citations")
     a = ap.parse_args()
     acts = yaml.safe_load(open("scope/v1.yaml"))["acts"]
     ours = {x.get("dokumento_id") for x in acts} | {x.get("tar_kodas") for x in acts}
@@ -108,17 +164,27 @@ def main() -> None:
             name = re.sub(r"[„“\"]", "", m.group(1)).strip()
             if len(name.split()) < 3 or TWO.search(name) or (a.issuer and a.issuer.lower() not in inst.lower()):
                 continue
+            if a.by == "amendments" and FILLER.search(name):
+                continue
             cands.append({"name": name, "kind": k, "inst": inst, "id": d["dokumento_id"], "nr": d["atv_dok_nr"]})
-    blob = stored_texts()
-    for c in cands:
-        c["n"] = len(re.findall(re.escape(c["core"].lower()) + r"\s+(?:įstatym|kodeks)", blob)) if a.kind == "laws" \
-            else blob.count(c["name"].lower())
+    if a.by == "amendments" and a.kind == "rules":
+        alltime, recent = amendments()
+        for c in cands:
+            k = (c["nr"], c["name"].lower())
+            c["n"], c["recent"] = alltime[k], recent[k]
+    else:
+        blob = stored_texts()
+        for c in cands:
+            c["n"] = len(re.findall(re.escape(c["core"].lower()) + r"\s+(?:įstatym|kodeks)", blob)) if a.kind == "laws" \
+                else blob.count(c["name"].lower())
     same = collections.Counter(c.get("title") or c["name"] for c in cands)
     cands = [c for c in cands if same[c.get("title") or c["name"]] == 1]  # two in force under one name: a human decides
-    pick = sorted((c for c in cands if a.min <= c["n"] <= a.max or (a.issuer and a.kind == "rules")), key=lambda c: -c["n"])
+    pick = sorted((c for c in cands if a.min <= c["n"] <= a.max or (a.issuer and a.kind == "rules")),
+                  key=lambda c: (-c["n"], -c.get("recent", 0)))
+    what = "amended" if a.by == "amendments" else "cited"
     for c in pick:
         if not a.seeds:
-            print(c["n"], c.get("kind"), c["nr"], c.get("title") or c["name"])
+            print(c["n"], *([c["recent"]] if "recent" in c else []), c.get("kind"), c["nr"], c.get("title") or c["name"])
         elif a.kind == "laws":
             ab = coin(re.findall(r"[\wąčęėįšųūžĄČĘĖĮŠŲŪŽ]+", c["core"]), "K" if c["kind"] == "kodeksas" else "Į", used)
             print(f'  - {{abbr: {ab}, no_abbr: true, title: "{c["title"]}", number: {c["nr"]}}}  # cited {c["n"]}')
@@ -138,8 +204,10 @@ def main() -> None:
                     w[:-2] + (("ės" if nom in FEM else "iai") if w.endswith("inių") else ("ios" if nom in FEM else "ūs"))
             lower = lambda s: s if PROPER.match(s) else s[0].lower() + s[1:]
             ab = coin(re.findall(r"[\wąčęėįšųūžĄČĘĖĮŠŲŪŽ]+", g[: -len(gen)]), letter, used)
+            area = f', area: {guess_area(g, c["inst"])}' if a.by == "amendments" else ""
             print(f'  - {{abbr: {ab}, no_abbr: true, title: "{lower(" ".join(words + [nom]))}", genitive: "{lower(g)}", '
-                  f'resolution: {c["id"]}}}  # cited {c["n"]}, {c["kind"]} {c["nr"]}')
+                  f'resolution: {c["id"]}{area}}}  # {what} {c["n"]}' + (f'/{c["recent"]} since 2022' if "recent" in c else "")
+                  + f', {c["kind"]} {c["nr"]}')
     print(f"# {len(pick)} of {len(cands)} candidates", flush=True)
 
 
