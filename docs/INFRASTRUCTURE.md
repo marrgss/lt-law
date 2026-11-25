@@ -74,7 +74,7 @@ No server of our own, no database, no personal computer in production (D-006).
 ## Limits and thresholds
 | Limit | Value | Our use | When it bites |
 |---|---|---|---|
-| Worker static assets: files per version | 100,000 per Worker (Workers Paid) | 101,372 on two Workers (1,425 acts, 2026-11-14: 55,539 + 45,833) | a third Worker at ~2,800 acts (`bin/split_site.py`) |
+| Worker static assets: files per version | 100,000 per Worker (Workers Paid) | 116,918 on two Workers (1,666 acts, 2026-11-24: 62,769 + 54,149; ~70 per act) | a third Worker at ~2,800 acts (`bin/split_site.py`) |
 | Static asset requests | free, unlimited | all page traffic | never |
 | Worker requests | 10 M/month included, then ~$0.30/M | ~1–40 k/day (agents, dated pages, 404s) | alerts at 2 M |
 | Worker CPU | 50 ms cap per request (ours) | search is the heaviest | an oversized query is cut (300 characters, 12 words) |

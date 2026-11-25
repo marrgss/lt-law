@@ -34,6 +34,13 @@ REDIRECT_LIMIT = 2_000    # static rules in one `_redirects`
 SHARED = ("404.html", "_headers")  # each part needs its own
 
 
+def mcp_reads(rel: str) -> bool:
+    """A file the MCP Worker reads through its own assets outside api/v1/: an act's article list (get_act_contents).
+    It goes to the part that serves its address and a copy stays with the main Worker (2026-11-25: since the split,
+    get_act_contents answered "0 articles" for every act under /ta/1*: its articles.json was only on the second Worker)."""
+    return rel.endswith("/articles.json")
+
+
 def configs(root: pathlib.Path = ROOT) -> list[pathlib.Path]:
     """The extra Workers' configurations, in a stable order (wrangler.site2.toml, wrangler.site3.toml, ...)."""
     return sorted((root / "worker-mcp").glob("wrangler.site[0-9]*.toml"), key=lambda p: int(p.stem.removeprefix("wrangler.site")))
@@ -74,7 +81,10 @@ def plan(site: pathlib.Path, parts: list[dict]) -> dict:
     for f in site.rglob("*"):
         if f.is_file():
             rel = f.relative_to(site).as_posix()
-            files[0 if rel in SHARED or rel == "_redirects" else owner(rel, parts)].append(rel)
+            i = 0 if rel in SHARED or rel == "_redirects" else owner(rel, parts)
+            files[i].append(rel)
+            if i and mcp_reads(rel):
+                files[0].append(rel)  # the MCP Worker's copy
     rules = {i: [] for i in files}
     red = site / "_redirects"
     for line in (red.read_text(encoding="utf-8").splitlines() if red.exists() else []):
@@ -111,7 +121,7 @@ def apply(site: pathlib.Path, parts: list[dict]) -> list[dict]:
         dest.mkdir(parents=True)
         for rel in p["files"][i]:
             (dest / rel).parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(site / rel, dest / rel)
+            (shutil.copy2 if mcp_reads(rel) else shutil.move)(site / rel, dest / rel)
         for s in SHARED:
             if (site / s).exists():
                 shutil.copy2(site / s, dest / s)
@@ -136,7 +146,8 @@ def counts_after(site: pathlib.Path, parts: list[dict]) -> list[dict]:
 
 
 def smoke(base: str, site: pathlib.Path, parts: list[dict], wait: int = 90) -> list[str]:
-    """One page of each part answers 200 from the public site (a new route can take some seconds to apply)."""
+    """One page of each part answers 200 from the public site (a new route can take some seconds to apply), and the MCP
+    Worker lists the articles of an act in each part (its own copy of the act's articles.json)."""
     pages = [("main", "/")]
     for p in parts:
         html = next((f for f in sorted(p["dir"].rglob("index.html"))), None)
@@ -159,6 +170,23 @@ def smoke(base: str, site: pathlib.Path, parts: list[dict], wait: int = 90) -> l
         print(f"{name}: {path} -> {status}")
         if status != 200:
             bad.append(f"{name}: {path} -> {status}")
+    for p in parts:
+        lst = next((f for f in sorted(p["dir"].rglob("articles.json")) if f.parent.parent.name == "ta"), None)
+        if not lst:
+            continue
+        tar = lst.parent.name
+        body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                           "params": {"name": "get_act_contents", "arguments": {"act": tar, "limit": 1}}}).encode()
+        try:
+            req = urllib.request.Request(base.rstrip("/") + "/mcp", body, {"Content-Type": "application/json",
+                                         "Accept": "application/json", "User-Agent": "atviri-teises-aktai-deploy-check"})
+            r = json.load(urllib.request.urlopen(req, timeout=30))
+            total = json.loads(r["result"]["content"][0]["text"]).get("total")
+        except Exception as e:  # noqa: BLE001
+            total = type(e).__name__
+        print(f"mcp get_act_contents {tar} ({p['name']}): {total} articles")
+        if not isinstance(total, int) or total < 1:
+            bad.append(f"mcp get_act_contents {tar} ({p['name']}): {total}")
     return bad
 
 

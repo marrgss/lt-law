@@ -5,7 +5,7 @@ How the site is built today (2026-11-11). The reasons behind each choice are in 
 ## Goals, in priority order
 1. **Correct and honest.** Every page says the text is unofficial, links to the official text on e-tar.lt, gives the version dates and when the data were last checked. An article is called "in force today" only when that can be established (D-010).
 2. **Readable by any machine.** Static HTML, one URL per article, the full text in the HTML, JavaScript optional (D-001, D-017).
-3. **Small enough to be right.** 1,425 acts (2026-11-14), each validated against e-tar before it goes in (D-003, `bin/add_acts.py`).
+3. **Small enough to be right.** 1,666 acts (2026-11-26), each validated against e-tar before it goes in (D-003, `bin/add_acts.py`).
 4. **Survives neglect.** No server of our own; a scheduled job; pages say when their data are old.
 5. **No sign-up, no keys, free to read** (D-005). Hosting costs the Workers Paid plan ($5/month, D-032).
 
@@ -139,7 +139,7 @@ Actions are pinned by commit SHA, and no job keeps credentials on disk.
 Operating it: [OPERATIONS.md](OPERATIONS.md). Accounts, data locations and limits: [INFRASTRUCTURE.md](INFRASTRUCTURE.md).
 
 ## 7. Limits and cost
-- Worker static assets (Workers Paid): 100,000 files per version per Worker (the site has ~100k over two Workers, D-051), 25 MiB per file; requests for static files are free. A third Worker is a route and a config away (`bin/split_site.py`).
+- Worker static assets (Workers Paid): 100,000 files per version per Worker (the site has ~117k over two Workers, D-051), 25 MiB per file; requests for static files are free. A third Worker is a route and a config away (`bin/split_site.py`).
 - The Worker's own requests (MCP, REST, dated pages, unmatched paths): 10 million a month included; a CPU cap of 50 ms a request; a rate limit (50 requests per 10 s per address) and a firewall rule keeping crawlers off `/kaip-buvo/`.
 - GitHub Actions: 2,000 free minutes a month (private repository), budget $5 with a stop; a build every second day (D-050).
 - Cost: the domain (about €10 a year) and Workers Paid ($5/month); usage alerts on Workers requests, CPU and R2 reads.

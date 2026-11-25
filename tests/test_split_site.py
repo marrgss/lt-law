@@ -26,11 +26,13 @@ def test_split_by_routes_longest_prefix_wins(tmp_path):
              {"name": "three", "prefixes": ["ta/11"], "dir": tmp_path / "three"}]
     before = split_site.counts(s, parts)
     after = split_site.apply(s, parts)
-    assert [c["files"] for c in before] == [c["files"] for c in after]
+    assert [c["files"] for c in before] == [c["files"] for c in after]  # the copies counted for both
     two, three = tmp_path / "two", tmp_path / "three"
     assert (two / "ta/1001010ISTAIII-1864/str/1/index.html").exists() and (two / "ta/1001010ISTAIII-1864/articles.json").exists()
     assert (three / "ta/11/x/index.html").exists() and not (two / "ta/11").exists()      # the more specific route wins
-    assert not (s / "ta/1001010ISTAIII-1864").exists() and (s / "ta/2016-23709/str/52/index.html").exists()
+    assert not (s / "ta/1001010ISTAIII-1864/index.html").exists() and (s / "ta/2016-23709/str/52/index.html").exists()
+    # the act's article list: served by its part, and a copy for the MCP Worker (get_act_contents, 2026-11-25)
+    assert (s / "ta/1001010ISTAIII-1864/articles.json").exists() and sorted(p.name for p in (s / "ta/1001010ISTAIII-1864").iterdir()) == ["articles.json"]
     assert (s / "api/v1/acts.json").exists() and (s / "es/32016R0679/str/17/index.html").exists()  # the MCP Worker's files stay
     for d in (two, three):                                                                  # each part: its own 404 and headers
         assert (d / "404.html").read_text() == "404.html" and (d / "_headers").exists()

@@ -697,6 +697,17 @@ def parse(text: str, document: str | None = None) -> Act:
             art, signing = None, True
             i += 1
             continue
+        # an approval law whose document follows its signature with no stamp: "Patvirtinti Lietuvos kariuomenės drausmės
+        # statutą (pridedama)." / "Skelbiu …" / "LIETUVOS KARIUOMENĖS DRAUSMĖS STATUTAS" / "I DALIS" (LKDSP2Į 2026-11-25:
+        # the statute's 106 articles were read as headings, their text as signature lines)
+        if signing and seg is not None and seg.kind == "main" and annex is None and _is_upper(l) \
+                and _TITLE_END.search(l.strip()) and (_heading(nxt) or RE_ART.match(nxt)) \
+                and any("pridedam" in b.text for a in seg.articles for b in a.blocks):
+            seg.kind = "approval"
+            seg = new_segment("main", l.strip())
+            signing = False
+            i += 1
+            continue
         if signing and not (RE_ANNEX.match(l) or RE_APPROVED.match(l) or RE_ART.match(l) or _heading(l)):
             seg.signature.append(l)
             i += 1

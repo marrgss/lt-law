@@ -2,7 +2,7 @@
 
 **[atviri-teises-aktai.lt](https://atviri-teises-aktai.lt)** · for agents: [MCP and REST](https://atviri-teises-aktai.lt/llms.txt) (`lt.atviri-teises-aktai/lithuanian-law` in the [MCP registry](https://registry.modelcontextprotocol.io))
 
-**Lithuanian codes, laws and rules, one page per article or point, each marked whether its text is in force today.** Free, unofficial, no registration, readable by people, search engines and AI assistants alike. Live at **https://atviri-teises-aktai.lt** since 2026-10-23: 1,400 acts (2026-11-11): the Constitution, every code and 528 laws and statutes in all, 703 sets of rules (Government, ministers, the energy regulator) and 169 EU acts.
+**Lithuanian codes, laws and rules, one page per article or point, each marked whether its text is in force today.** Free, unofficial, no registration, readable by people, search engines and AI assistants alike. Live at **https://atviri-teises-aktai.lt** since 2026-10-23: 1,666 acts (2026-11-26): the Constitution, every code and 529 laws and statutes in all, 966 sets of rules (Government, ministers, the energy regulator) and 171 EU acts, across every area of law: energy first and in depth, then health, education, farming and food, transport, social security, environment and the state. Amending laws show their Seimas adoption vote wherever the voting data identify it.
 
 > **Unofficial text, not legal advice.** The only official publication is the Register of Legal Acts, [e-tar.lt](https://www.e-tar.lt). Every page links to the official text; check it there before relying on it.
 
@@ -10,6 +10,8 @@
 The official site (e-tar.lt) is current but hard for machines: the text loads in an iframe, there are no per-article addresses, and AI fetchers see an empty shell. The official open data on [data.gov.lt](https://data.gov.lt/datasets/2613/) is machine-friendly, but it says neither which version of an article applies *today* nor which amendments are already in force but missing from the text. So assistants often quote outdated or wrong text. More: [docs/PROBLEM.md](docs/PROBLEM.md).
 
 This project takes the official consolidated texts unchanged and splits them into one page per article. It works out from the amending laws whether each article's text applies today, and says plainly when it can't be sure.
+
+The site itself is the product: for people and the AI assistants they use, with no account, sign-up or consent screen in the way. It is a working example of what the official register could offer. The code is public so the rules behind every label can be checked and reused; it is not a kit for an institution to install, since an official service would build on the register's own systems. If the official sources offer the same, the site will point there and retire ([D-061](docs/DECISIONS.md)).
 
 ## What you get
 - `/ta/<TAR code>/str/<article>/`: one article (superscripts as `-n`: `21-1`, `6.228-1`), with anchors `#d2` (part) and `#d2-p3` (point). Short forms such as `/dk/52/` redirect there.
@@ -42,7 +44,7 @@ This project takes the official consolidated texts unchanged and splits them int
   - **0** of the 23,944 articles and points called current were wrong (26,509 compared);
   - 901 of 901 texts recovered from other official versions are correct.
 
-  The price of caution: 144 articles and points (0.5%) were flagged although e-tar shows them unchanged. The acts added since (1,425 on the site by 2026-11-14) were each checked this way when they went in; a random sample of 120 of them checked again on 2026-11-15: 0 of 4,568 labels "current" wrong.
+  The price of caution: 144 articles and points (0.5%) were flagged although e-tar shows them unchanged. The acts added since (1,666 on the site by 2026-11-26) were each checked this way when they went in; a random sample of 120 of them checked again on 2026-11-15: 0 of 4,568 labels "current" wrong.
 - **Checked against history** (2026-10-23, 219 acts): the rules applied to the Chancellery's own 2023–2025 consolidations would have called 0.067% of articles current wrongly ([`docs/ACCURACY.md`](docs/ACCURACY.md)). The acts added since will be back-tested once the open data's consolidation table answers again.
 - Each page says when its data were last checked. If the data are more than 2 days old, the page carries a warning.
 

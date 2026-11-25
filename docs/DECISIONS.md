@@ -1179,3 +1179,18 @@ or revert the merge.
 - **Cost:** 1,666 acts, 116,000 files (two Workers hold 200,000); a build about 10% longer. GitHub Actions minutes:
   November ~2,100 of 2,000 free (charged ~$1 of the $5 cap), December ~1,050 at 15 builds.
 - **Next batches:** the same ranking further down (amended 3–5 times), then by search demand when there is some.
+
+## D-061 (2026-11-25): The site is the product, for people and their assistants; the code is for checking, not a handover kit
+- **Earlier framing:** the research (`research/2026-10-17_international_analogues.md`, lessons 4 and 8) planned to be
+  "adopted or replaced", and the go criteria counted the Chancellery's interest. That read as if the code were meant for
+  an institution to take over.
+- **Why that doesn't hold:** an official service would run on the register's own systems, which hold directly what this
+  project rebuilds from the open dump (structure, versions, entry dates). It wouldn't run a pipeline that reads
+  data.gov.lt around a relay. What could carry over are the ideas: one address per article and point, the "applies
+  today" label and its rules, the JSON and MCP shapes, the checks.
+- **So:** the site is the deliverable. It shows people, and the assistants they use, what the official register could
+  offer: free, no account, no sign-up, no consent screens or pop-ups, plain HTML and open machine access. The code is
+  public so that anyone can check how every label is decided, report a wrong one and reuse a rule; it is not packaged
+  for installation elsewhere. If the official sources offer the same, the site points there and retires (unchanged).
+- **Stays:** the access promise above. Anything that would put a step between a reader (or an agent) and the text is
+  out, including for any future way to support the project.

@@ -350,6 +350,20 @@ function withTopic(args, base, first) {
 // duomenų saugumo pažeidimą … tvarkos aprašas")
 const NAME_STOP = new Set(["apie", "pagal", "arba", "taip", "kaip", "prie", "tarp", "kuris", "kuri", "kurie", "kurios", "kurio",
   "kuriu", "kada", "kodel", "kiek", "koks", "kokia", "kokie", "kokios", "kokius", "kokiu", "turi", "gali", "reikia", "privalo"]);
+// everyday words that are also an act's short name once folded: "turi" (TurĮ), "kai" (KAĮ), "tai", "ši" (ŠĮ), "ant",
+// "pat" ("taip pat": PatĮ), "abi" (ABĮ), "keli", "pati". In a query they name the act only written as one ("TurĮ 7",
+// "KAĮ", "ABĮ 2": a capital after the first letter); "uždarosios akcinės bendrovės įstatinis kapitalas turi būti ne
+// mažesnis" was searched in the Tourism Law alone (2026-11-25). Found by comparing the acts' folded keys with the
+// words of the texts (`bin/check_mcp.mjs` checks one).
+const WORD_LIKE = new Set(["turi", "kai", "tai", "si", "sis", "ant", "pat", "abi", "keli", "kelis", "pati", "pats", "pan", "kas",
+  "ka", "ar", "yra", "tas", "jie", "per", "nuo", "iki", "del", "kad", "jei", "nes", "bet", "dar", "jau", "gal", "gali", "kur",
+  "kam", "kuo", "visi", "ten"]);
+const asAbbr = (tok) => /\p{Lu}/u.test(String(tok).slice(1));  // "TurĮ", "KAĮ", "ŠĮ", "ABI"; not "Kai" opening a sentence
+// the words of a question that no article holds for its meaning ("ką daryti, kai darbdavis nemoka atlyginimo", "ar galima
+// dirbti dviejuose darbuose"): left out of the search when other words remain (2026-11-25: "daryti" made every result
+// "all but one word")
+const FILLER = new Set(["daryti", "padaryti", "galima", "galiu", "galime", "reikia", "noriu", "norime", "turiu", "turime",
+  "kokia", "kokie", "kokios", "koks", "kokiu", "kada", "kaip", "kodel", "kiek", "budu", "reiketi", "privalau", "galeciau"]);
 
 async function searchOne(env, { query, act, limit }, snip = true, guess = true) {
   const m = await meta(env);
@@ -367,8 +381,10 @@ async function searchOne(env, { query, act, limit }, snip = true, guess = true) 
   // an EU act by its number, in any form: "Reglamento (ES) 2016/679 6 straipsnis", "2019/944 15", "direktyvos 2003/88 7"
   if (!only && (only = euNumbered(all, words.join(" ")))) words = words.filter((w) => !EU_NUMBER.test(w) && !EU_WORDS.test(w));
   if (!only) {
+    const written = new Set(String(q).split(/[\s,;]+/).filter(asAbbr).map(fold));  // the words written as short names
     for (let n = Math.min(words.length, 8); n >= 1 && !only; n--) {
       for (let i = 0; i + n <= words.length && !only; i++) {
+        if (n === 1 && WORD_LIKE.has(words[i]) && !written.has(words[i])) continue;
         const a = await findActQuiet(all, words.slice(i, i + n).join(" "));
         if (a) { only = a; words = words.slice(0, i).concat(words.slice(i + n)); }
       }
@@ -441,6 +457,7 @@ async function searchOne(env, { query, act, limit }, snip = true, guess = true) 
     if (!r.error) return { ...envelope(m), results: [summary(r)] };
   }
   const common = new Set((m.fulltext && m.fulltext.common) || []);
+  if (words.some((w) => /^[a-z]{4,}$/.test(w) && !FILLER.has(w))) words = words.filter((w) => !FILLER.has(w));
   const longw = words.filter((w) => /^[a-z]{4,}$/.test(w));
   const terms = longw.filter((w) => !common.has(stemOf(w)));
   // the titles index has its own (shorter) common list: "darbas" is too common for the text index, not for titles

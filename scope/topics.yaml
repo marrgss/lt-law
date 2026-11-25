@@ -24,6 +24,13 @@ topics:
   - {when: ["nuotolin darb"], refs: [DK 52]}
   - {when: ["naktin darb", "nakt darb"], refs: [DK 117]}
   - {when: ["atostogin"], refs: [DK 130]}
+  # 2026-11-25 (an MCP test with everyday questions): wages, second jobs, sick pay
+  - {when: ["nemok atlyg", "nemok darb uzmok", "veluo atlyg", "neismok atlyg", "atlyg veluo"], refs: [DK 147, DK 146]}
+  - {when: ["atlyg mok kart", "kart per menes", "atlyg mokej termin", "darb uzmok mokej termin", "atlyg atleid", "atsiskait atleid"], refs: [DK 146]}
+  - {when: ["dviej darb", "antr darb", "papild darb", "kelet darb", "keli darbdav", "keliems darbdav"], refs: [DK 35]}
+  - {when: ["nedarbing", "ligos ismok", "ligos pasalp", "biuletenis", "sirgim darb"], refs: [LMSDĮ 14, LMSDĮ 9]}
+  - {when: ["motinyst ismok", "motinyst pinig"], refs: [LMSDĮ 18]}
+  - {when: ["bedarb ismok", "nedarb ismok", "nedarb draud ismok"], refs: [NSDĮ 5, NSDĮ 7, NSDĮ 8]}
   - {when: ["material atsakom", "darbuot zal", "darbuot atlygin zal"], refs: [DK 151, DK 153]}
   # family
   - {when: ["aliment", "vaik islaik"], refs: [CK 3.192, CK 3.196]}
@@ -32,6 +39,7 @@ topics:
   - {when: ["artim giminait"], refs: [CK 3.135]}
   # inheritance, obligations, property
   - {when: ["testament"], refs: [CK 5.15, CK 5.16]}
+  - {when: ["testament notar", "notar testament", "testament sudar", "testament form", "oficial testament"], refs: [CK 5.28, CK 5.27]}
   - {when: ["palikim priem", "paveld priem"], refs: [CK 5.50]}
   - {when: ["bust nuom nutrauk", "nuom sutart nutrauk", "gyvenam patalp nuom nutrauk"], refs: [CK 6.609, CK 6.611]}
   - {when: ["servitut"], refs: [CK 4.111]}
@@ -44,9 +52,16 @@ topics:
   - {when: ["sutart nutrauk vienasal", "vienasal nutrauk"], refs: [CK 6.217, CK 6.218]}
   - {when: ["bendraturc", "bendr nuosavyb"], refs: [CK 4.72, CK 4.75]}
   - {when: ["palukan"], refs: [CK 6.37, CK 6.210]}
+  - {when: ["netesyb"], refs: [CK 6.71, CK 6.73]}
+  - {when: ["sun kand", "suns kand", "gyvun padar zal", "gyvun zal"], refs: [CK 6.267]}
+  - {when: ["direktor atsakom", "vadov atsakom", "direktor zal", "vadov zal"], refs: [CK 2.87, ABĮ 37]}
+  - {when: ["kaimyn triuksm", "triuksm nakt", "viesos rimt"], refs: [ANK 488, ANK 48]}
   # traffic and offences
   - {when: ["isger", "neblaiv vair", "vair neblaiv"], refs: [ANK 422, BK 281]}
   - {when: ["greit virs"], refs: [ANK 416]}
+  - {when: ["be draud", "neapdraust", "privalom draud transport", "draud vairuo"], refs: [ANK 415, TPVCAPDĮ 4]}
+  - {when: ["telefon vair", "vair telefon", "mobil telefon", "mobil rys vair"], refs: [KET 20, ANK 417]}
+  - {when: ["ziemin padang", "ziem padang", "vasarin padang", "padang keit"], refs: [KET 230, KET 229]}
   - {when: ["smulk chuligan", "viesos tvark pazeid"], refs: [ANK 481]}
   - {when: ["turt sugadin"], refs: [ANK 115, BK 187]}
   # crimes
@@ -65,6 +80,9 @@ topics:
   - {when: ["gyventoj pajam mokest", "pajam mokes tarif"], refs: [GPMĮ 6]}
   - {when: ["mokestin patikrin"], refs: [MAĮ 115, MAĮ 117]}
   - {when: ["dividend"], refs: [GPMĮ 6, PMĮ 33]}
+  - {when: ["dovan apmokest", "dovan mokest", "dovanoj pajam"], refs: [GPMĮ 17]}
+  - {when: ["verslo liudij"], refs: [GPMĮ 2, GPMĮ 6]}
+  - {when: ["nekilnoj turt mokest", "nt mokest", "bust mokest"], refs: [NTMĮ 6, NTMĮ 7]}
   # building
   - {when: ["statin technin prieziur", "pastat technin prieziur", "nam technin prieziur", "statin prieziur", "kasmetin statin apziur"], refs: [SĮ 48, SĮ 49, STR10703 1]}
   - {when: ["savavalisk stat"], refs: [SĮ 32]}
@@ -76,6 +94,7 @@ topics:
   - {when: ["individual imon steig"], refs: [IĮĮ 3]}
   - {when: ["asociacij steig"], refs: [AsĮ 4, AsĮ 5]}
   - {when: ["bankrot", "nemokum proces"], refs: [JANĮ 1, JANĮ 11]}
+  - {when: ["mazos vert pirk", "mazos vertes pirkim"], refs: [VPĮ 25]}
   - {when: ["akcinink susirink"], refs: [ABĮ 20, ABĮ 23]}
   - {when: ["kartel"], refs: [KĮ 5]}
   - {when: ["namu bendrij", "gyvenam nam bendrij", "daugiabuc bendrij"], refs: [DNSBĮ 1, DNSBĮ 2]}
@@ -85,6 +104,7 @@ topics:
   # state
   - {when: ["mitin", "susirinkim laisv"], refs: [SusirĮ 2]}
   - {when: ["dvig pilietyb"], refs: [PilĮ 7]}
+  - {when: ["natural"], refs: [PilĮ 18]}
   - {when: ["vaik pinig", "ismok vaik"], refs: [IVĮ 6, IVĮ 3]}
   - {when: ["pensij amz", "senatv pensij amz"], refs: [SDPĮ 15]}
   # procedure
@@ -94,9 +114,17 @@ topics:
   - {when: ["teis but pamirst", "duomen istrin", "right erasure", "right forgotten"], refs: [BDAR 17]}
   - {when: ["duomen saugum pazeid", "data breach"], refs: [BDAR 33, BDAR 34]}
   - {when: ["sutik tvark", "tvark sutik", "consent"], refs: [BDAR 7, BDAR 6]}
+  - {when: ["vaizd steb darb", "darbuot steb", "vaizd kamer darb"], refs: [ADTAĮ 5]}
   # EU everyday
   - {when: ["skrydz atsauk", "skrydz atidej", "oro kelei", "air passenger", "flight cancel"], refs: [EU04R261 5, EU04R261 7]}
   # English words agents use
   - {when: ["annual leave"], refs: [DK 126]}
   - {when: ["remote work"], refs: [DK 52]}
   - {when: ["notice period", "dismissal notice"], refs: [DK 57]}
+  - {when: ["probation"], refs: [DK 36]}
+  - {when: ["minimum wage"], refs: [DK 141]}
+  - {when: ["sick pay", "sick leave"], refs: [LMSDĮ 14]}
+  - {when: ["vat rate"], refs: [PVMĮ 19]}
+  - {when: ["income tax rate"], refs: [GPMĮ 6]}
+  - {when: ["share capital", "minimum capital"], refs: [ABĮ 2]}
+  - {when: ["limitation period", "statute limitation"], refs: [CK 1.125]}

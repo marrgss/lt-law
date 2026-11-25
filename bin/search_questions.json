@@ -1,5 +1,5 @@
 {
-"about": "Search benchmark (bin/check_search_ranking.mjs): everyday and professional questions, in the words people use, and the act(s) whose article should come first. `acts` are matched against the act's name (lowercase, any of them); `article` (optional) as the first result's label. Only answers we are sure of: a question with an arguable answer lists every reasonable act. 2026-11-03: 80 questions (the first 25 from 2026-10-23).",
+"about": "Search benchmark (bin/check_search_ranking.mjs): everyday and professional questions, in the words people use, and the act(s) whose article should come first. `acts` are matched against the act's name (lowercase, any of them); `article` (optional) as the first result's label. Only answers we are sure of: a question with an arguable answer lists every reasonable act. 2026-11-03: 80 questions (the first 25 from 2026-10-23). 2026-11-25: 101 questions (21 from an MCP test with everyday questions: the question's own filler words, abbreviations that are also words, everyday terms the law words otherwise).",
 "questions": [
 {
 "q": "nuotolinis darbas",
@@ -508,6 +508,147 @@
 "notariato įstatymas",
 "civilinis kodeksas"
 ]
+},
+{
+"q": "ką daryti kai darbdavis nemoka atlyginimo",
+"acts": [
+"darbo kodeksas"
+],
+"article": "147"
+},
+{
+"q": "kiek kartų per mėnesį mokamas darbo užmokestis",
+"acts": [
+"darbo kodeksas"
+],
+"article": "146"
+},
+{
+"q": "ar galima dirbti dviejuose darbuose",
+"acts": [
+"darbo kodeksas"
+],
+"article": "35"
+},
+{
+"q": "darbuotojo nedarbingumas pirmos dvi dienos kas moka",
+"acts": [
+"ligos ir motinystės socialinio draudimo įstatymas"
+],
+"article": "14"
+},
+{
+"q": "uždarosios akcinės bendrovės įstatinis kapitalas turi būti ne mažesnis",
+"acts": [
+"akcinių bendrovių įstatymas"
+],
+"article": "2"
+},
+{
+"q": "testamento sudarymas pas notarą",
+"acts": [
+"civilinis kodeksas"
+],
+"article": "5.28"
+},
+{
+"q": "šuns kandimas atsakomybė",
+"acts": [
+"civilinis kodeksas"
+],
+"article": "6.267"
+},
+{
+"q": "netesybos už pavėluotą mokėjimą",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "direktoriaus atsakomybė už žalą bendrovei",
+"acts": [
+"civilinis kodeksas",
+"akcinių bendrovių įstatymas"
+]
+},
+{
+"q": "kaimynų triukšmas naktį",
+"acts": [
+"administracinių nusižengimų kodeksas"
+]
+},
+{
+"q": "važiavimas be draudimo bauda",
+"acts": [
+"administracinių nusižengimų kodeksas",
+"transporto priemonių valdytojų civilinės atsakomybės"
+]
+},
+{
+"q": "mobilaus telefono naudojimas vairuojant",
+"acts": [
+"kelių eismo taisyklės",
+"administracinių nusižengimų kodeksas"
+]
+},
+{
+"q": "žiemos padangos privalomos",
+"acts": [
+"kelių eismo taisyklės"
+]
+},
+{
+"q": "dovanos apmokestinimas",
+"acts": [
+"gyventojų pajamų mokesčio įstatymas"
+],
+"article": "17"
+},
+{
+"q": "vaizdo stebėjimas darbe",
+"acts": [
+"asmens duomenų teisinės apsaugos įstatymas"
+],
+"article": "5"
+},
+{
+"q": "viešieji pirkimai mažos vertės",
+"acts": [
+"viešųjų pirkimų įstatymas"
+]
+},
+{
+"q": "pilietybė natūralizacijos tvarka",
+"acts": [
+"pilietybės įstatymas"
+],
+"article": "18"
+},
+{
+"q": "privalomoji palikimo dalis",
+"acts": [
+"civilinis kodeksas"
+],
+"article": "5.20"
+},
+{
+"q": "vaiko gyvenamosios vietos nustatymas",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "abi šalys turi teisę nutraukti sutartį",
+"acts": [
+"civilinis kodeksas"
+]
+},
+{
+"q": "probation period employment contract",
+"acts": [
+"darbo kodeksas"
+],
+"article": "36"
 }
 ]
 }

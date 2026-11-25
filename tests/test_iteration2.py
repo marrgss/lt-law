@@ -668,3 +668,31 @@ def test_an_annex_snippet_says_whose_annex_and_how_it_begins():
     assert _annex_description("Taisyklių 2 priedas", N(title="Prašymo forma", blocks=[])) == "Taisyklių 2 priedas · Prašymo forma"
     form = N(title="(Paraiškos forma)", blocks=[N(text="□[] Pirminė paraiška □[] Patikslinta paraiška")])
     assert _annex_description("Taisyklių 1 priedas", form) == "Taisyklių 1 priedas · (Paraiškos forma) · Pirminė paraiška Patikslinta paraiška"
+
+
+STATUTE_AFTER_SIGNATURE = """Suvestinė redakcija nuo 2024-07-01
+LIETUVOS RESPUBLIKOS BANDOMOJO STATUTO PATVIRTINIMO ĮSTATYMAS
+1999 m. gegužės 20 d. Nr. VIII-1
+Vilnius
+1 straipsnis. Bandomojo statuto patvirtinimas
+Patvirtinti bandomąjį statutą (pridedama).
+Skelbiu šį Lietuvos Respublikos Seimo priimtą įstatymą.
+RESPUBLIKOS PREZIDENTAS VARDAS PAVARDĖ
+BANDOMASIS STATUTAS
+I DALIS
+BENDROSIOS NUOSTATOS
+1 straipsnis. Statuto paskirtis
+Statuto paskirtis – bandyti.
+2 straipsnis. Taikymas
+Statutas taikomas kariams.
+"""
+
+
+def test_document_after_the_approval_laws_signature_is_the_main_act():
+    """LKDSP2Į (2026-11-25): no "PATVIRTINTA" stamp; the statute's title follows the signature."""
+    act = parse(STATUTE_AFTER_SIGNATURE)
+    assert [s.kind for s in act.segments] == ["approval", "main"]
+    assert act.main.title == "BANDOMASIS STATUTAS"
+    assert [(a.label, a.blocks[0].text) for a in act.main.articles] == [
+        ("1", "Statuto paskirtis – bandyti."), ("2", "Statutas taikomas kariams.")]
+    assert not act.main.signature

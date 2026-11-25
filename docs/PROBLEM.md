@@ -91,7 +91,7 @@ Anyone, or any AI, asking about a Lithuanian legal provision can within one sear
 3. any amendments published but not yet reflected, flagged at article level;
 4. no sign-up, no install, no JavaScript required.
 
-If the state later publishes this itself, the project has succeeded and can retire.
+If the state later publishes this itself, the project has succeeded and can retire. What carries over then is the example (addresses, labels and their rules, the machine formats), not the pipeline: the register's own systems already hold what this project rebuilds from the open dump (D-061).
 
 ## 5. What this project is not
 - Not legal advice, and no AI-generated answers or summaries presented as law.

@@ -115,7 +115,7 @@ Government resolutions, ministers' orders and the energy regulator's acts are in
 | Label timing | changes at the 03:30–04:30 build | changes at midnight | T4 |
 | Date rules | unit tests for known forms | frozen corpus of all entry articles since 2020 | T5 |
 | History | `/kaip-buvo/`, `date=`, Atom feeds (2026-10-23) | immutable archive, dated permalinks, feeds | T6 ✓ |
-| Scale | 1,425 acts, ~101k files on two Workers, room for more Workers (2026-11-14) | ~720 laws + resolutions, 50–100k pages | T7 ✓ (serving); corpus growing |
+| Scale | 1,666 acts, ~117k files on two Workers, room for more Workers (2026-11-26) | ~720 laws + resolutions, 50–100k pages | T7 ✓ (serving); corpus growing |
 | Agents | data.json, articles.json, /api/v1, REST, MCP (registry) | per-article JSON, API, MCP | T8 ✓ |
 | Monitoring | failed-run email, status.json, heartbeat, checkup | heartbeat, status page | T9 (mostly) |
 

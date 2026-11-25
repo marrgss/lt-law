@@ -2,22 +2,25 @@
 
 What isn't built yet, in order. How the current system works is in [ARCHITECTURE.md](ARCHITECTURE.md); why, in [DECISIONS.md](DECISIONS.md).
 
-## Where we are (2026-11-11)
+## Where we are (2026-11-25)
 - **Public since 2026-10-23** (D-031); repository private. Served by two Workers as static assets (D-032, D-051: the main
   Worker `lt-law-mcp` with the MCP/REST code, `lt-law-site-2` for `/ta/1*`), Workers Paid. A build every second day, or
   sooner when a label changes (D-050), to stay within the $5 Actions cap.
-- **1,425 acts** (main, 2026-11-14; 1,417 live, release 67d764a): the Constitution, every code and
-  the laws and statutes (523 in all); 732 sets of rules approved by Government resolutions, ministers' orders and the
-  energy regulator (D-025, D-033, D-034, D-052); 170 EU acts from EUR-Lex (D-037). Energy in depth (the project's
-  priority): `/sritis/energetika/` (344 acts; every cited rule set the energy minister and VERT have in force is in) and
-  `/vert/` (the regulator's decisions). Held back by the checks: `scope/queued_seed.yaml`, each with its reason.
+- **1,666 acts** (live from the 2026-11-26 build): the Constitution, every code and the laws and statutes (529 in
+  all); 966 sets of rules approved by Government resolutions, ministers' orders and the energy regulator (D-025, D-033,
+  D-034, D-052); 171 EU acts from EUR-Lex (D-037). Energy in depth first: `/sritis/energetika/` (every cited rule set the
+  energy minister and VERT have in force is in) and `/vert/` (the regulator's decisions). Since 2026-11-24 every sector
+  (D-060): every rule set our texts cite is in, and the rest are added by how often they are amended (health, education,
+  farming and food, transport, social security, environment, the state). Held back by the checks:
+  `scope/queued_seed.yaml`, each with its reason.
 - **Checked against e-tar** before an act goes in (`bin/add_acts.py`: text, labels, recovered texts); the whole scope
   last on 2026-10-27 (0 wrong "current" labels on 22,244 articles and points). Parser changes are checked by re-parsing
   every stored text and comparing changed acts with e-tar (2026-11-11: D-053 and the annex-header fix).
 - For agents: MCP and REST at `/mcp` and `/api/*` (D-028), in the official MCP registry; past versions since 2020
   (`date=`, `/kaip-buvo/`, D-029/D-030). Search answers in ~1 s for a new query, 0.1 s repeated.
 - Built and in daily use: change feeds (Atom), cross-reference links, full-text search, defined terms, the ledger (D-024),
-  Constitutional Court rulings (B3), print stylesheet, topic pages.
+  Constitutional Court rulings (B3), print stylesheet, topic pages, Seimas votes (MCP since 2026-11-15; each amending
+  law's adoption vote on article pages and in the API from 2026-11-26, D-059).
 
 ## Next
 1. **Energy, the rest** (D-033, D-034):
@@ -75,7 +78,10 @@ What isn't built yet, in order. How the current system works is in [ARCHITECTURE
 ## Corpus
 - **More laws and rules, chosen by search demand** (Search Console, the MCP search log is not kept: aggregate counts only). Candidates are ranked by how often other acts amend them.
 - **Every sector** (D-060, 2026-11-24): 240 acts added across health, education, farming and food, transport, social
-  security, environment and the state (`rank_candidates.py rules --by amendments`); next, the same list further down.
+  security, environment and the state (`rank_candidates.py rules --by amendments`); next (2026-11-26), 217 rule sets
+  amended 3–5 times and at least twice since 2022 (`scope/batch-2026-11-26-amended3to5.yaml`; one institution's statutes,
+  ministries' internal rules and closed programmes left out by hand); after that, the laws still left out and rule sets
+  amended fewer times.
 - Left out on purpose: individual acts naming people. (Profesinių sąjungų įstatymas was left out as "only the 1991 text"; its
   2013 consolidation was there under an old e-tar id, B66: added 2026-11-03.) Acts held back by the checks wait in
   `scope/queued_seed.yaml`, each with its reason.
@@ -106,7 +112,7 @@ All progressive enhancement: every word of law and every link stays in the HTML 
 - indexed pages and impressions (Search Console, Bing Webmaster Tools);
 - citations in AI answers (Bing's AI performance report, the AI panel each month) and assistants fetching pages (`ChatGPT-User`, `Claude-User` in Cloudflare's statistics: ~90 a day by 2026-10-26).
 
-**Go:** impressions grow and AI answers start citing the site, or the Chancellery shows interest. Then all laws in force and the most-used rules.
+**Go:** impressions grow and AI answers start citing the site, or the Chancellery shows interest (in the ideas: addresses, labels and their rules, the formats; not in running this pipeline, D-061). Then all laws in force and the most-used rules.
 
 **Stop or pivot:**
 - if the official sources start offering the same (current text per article, machine-readable), retire the project and point to them;
