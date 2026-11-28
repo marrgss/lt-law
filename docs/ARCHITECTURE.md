@@ -5,7 +5,7 @@ How the site is built today (2026-11-11). The reasons behind each choice are in 
 ## Goals, in priority order
 1. **Correct and honest.** Every page says the text is unofficial, links to the official text on e-tar.lt, gives the version dates and when the data were last checked. An article is called "in force today" only when that can be established (D-010).
 2. **Readable by any machine.** Static HTML, one URL per article, the full text in the HTML, JavaScript optional (D-001, D-017).
-3. **Small enough to be right.** 1,666 acts (2026-11-26), each validated against e-tar before it goes in (D-003, `bin/add_acts.py`).
+3. **Small enough to be right.** 1,865 acts (2026-11-26), each validated against e-tar before it goes in (D-003, `bin/add_acts.py`).
 4. **Survives neglect.** No server of our own; a scheduled job; pages say when their data are old.
 5. **No sign-up, no keys, free to read** (D-005). Hosting costs the Workers Paid plan ($5/month, D-032).
 

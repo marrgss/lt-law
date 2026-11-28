@@ -6,11 +6,11 @@ What isn't built yet, in order. How the current system works is in [ARCHITECTURE
 - **Public since 2026-10-23** (D-031); repository private. Served by two Workers as static assets (D-032, D-051: the main
   Worker `lt-law-mcp` with the MCP/REST code, `lt-law-site-2` for `/ta/1*`), Workers Paid. A build every second day, or
   sooner when a label changes (D-050), to stay within the $5 Actions cap.
-- **1,666 acts** (live from the 2026-11-26 build): the Constitution, every code and the laws and statutes (529 in
-  all); 966 sets of rules approved by Government resolutions, ministers' orders and the energy regulator (D-025, D-033,
+- **1,865 acts** (1,666 live from the 2026-11-26 build, 199 more with the next release): the Constitution, every code and the
+  laws and statutes (530 in all); 1,164 sets of rules approved by Government resolutions, ministers' orders and the energy regulator (D-025, D-033,
   D-034, D-052); 171 EU acts from EUR-Lex (D-037). Energy in depth first: `/sritis/energetika/` (every cited rule set the
   energy minister and VERT have in force is in) and `/vert/` (the regulator's decisions). Since 2026-11-24 every sector
-  (D-060): every rule set our texts cite is in, and the rest are added by how often they are amended (health, education,
+  (D-060): every rule set our texts cite is in, and the rest are added by how often they are amended (6+ times, then 3–5 times: health, education,
   farming and food, transport, social security, environment, the state). Held back by the checks:
   `scope/queued_seed.yaml`, each with its reason.
 - **Checked against e-tar** before an act goes in (`bin/add_acts.py`: text, labels, recovered texts); the whole scope

@@ -57,7 +57,7 @@ jobs:
           SCHEDULED_INPUT: ${{ github.event.inputs.scheduled || '' }}
           SITE_URL: ${{ vars.SITE_URL || 'https://atviri-teises-aktai.lt' }}
           DEPLOY: ${{ vars.DEPLOY }}
-          EVERY: "2"   # days: a build at least every second day, so app.js's "labels set N days ago" box (> 2) stays off
+          EVERY: ${{ vars.EVERY || '2' }}   # days: a build at least every second day (1 in the public repository, free minutes), so app.js's "labels set N days ago" box (> 2) stays off
         run: |
           today=$(date +%F)
           out() { echo "build=$1" >> "$GITHUB_OUTPUT"; echo "plan: build=$1 ($2)"; }
@@ -105,7 +105,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: false
-          ref: ${{ github.event.inputs.code || 'release' }}
+          ref: ${{ (github.event.inputs.code || 'release') == 'release' && (vars.RELEASE_REF || 'release') || github.event.inputs.code }}  # the released code: the `release` branch here, `main` (the snapshots) in the public repository
 
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884  # v10.3.0
         with:
@@ -214,7 +214,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           persist-credentials: false
-          ref: ${{ vars.SITE_ON_WORKER == 'true' && 'release' || '' }}  # the Worker's code: the released one
+          ref: ${{ vars.SITE_ON_WORKER == 'true' && (vars.RELEASE_REF || 'release') || '' }}  # the Worker's code: the released one
           sparse-checkout: |
             deploy
             bin/indexnow.py

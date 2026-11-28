@@ -536,6 +536,9 @@ def main() -> None:
         over = ([f"{n_files} files, more than Pages' {PAGES_FILE_LIMIT}"] if n_files > PAGES_FILE_LIMIT else []) + \
                ([f"_redirects has {n_redirects} lines (limit {STATIC_REDIRECTS})"] if n_redirects > STATIC_REDIRECTS else [])
         near = [f"{n_files} files"] if n_files > PAGES_FILE_LIMIT - 300 else []
+    # a file name the deploy's artifact upload refuses (2026-11-26: a colon from "M 1:5 000"; the build was lost)
+    bad = [str(f.relative_to(a.out)) for f in a.out.rglob("*") if any(c in f.name for c in '":<>|*?\r\n\\')]
+    over += [f"file names the artifact upload refuses: {bad[:5]}"] if bad else []
     if over or big:
         print(f"GATES FAILED:\n  the host would refuse this: {over}; files over 25 MiB: {big} (OPERATIONS: another Worker, D-051)")
         sys.exit(1)

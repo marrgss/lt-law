@@ -16136,3 +16136,2481 @@ acts:
   kind: Įsakymas
   issuer: Lietuvos Respublikos aplinkos ministro
   issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: LKDSP2Į
+  no_abbr: true
+  name: Lietuvos kariuomenės drausmės statutas
+  genitive: Lietuvos kariuomenės drausmės statuto
+  number: VIII-1191
+  dokumento_id: TAR.29CFE27F6B13
+- abbr: LŽŪKP222T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Investicijos į žemės ūkio valdas įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Investicijos į žemės ūkio valdas įgyvendinimo taisyklių
+  number: 3D-640
+  adopted: '2023-10-04'
+  dokumento_id: 0275a1a0628511eebc77e58877a83c4e
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+  name_checked: true
+- abbr: LNSSVBĮA
+  no_abbr: true
+  name: Lietuvos nacionalinės sveikatos sistemos viešųjų ir biudžetinių įstaigų, teikiančių
+    asmens sveikatos priežiūros paslaugas, palyginimo pagal veiklos rezultatų vertinimo
+    rodiklių siektinų reikšmių įvykdymą tvarkos aprašas
+  genitive: Lietuvos nacionalinės sveikatos sistemos viešųjų ir biudžetinių įstaigų,
+    teikiančių asmens sveikatos priežiūros paslaugas, palyginimo pagal veiklos rezultatų
+    vertinimo rodiklių siektinų reikšmių įvykdymą tvarkos aprašo
+  number: V-1218
+  adopted: '2019-10-28'
+  dokumento_id: 5e5ae450faf411e99681cd81dcdca52c
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: SPSSPPA
+  slug: specialiuju-priemoniu-panaudojimas
+  no_abbr: true
+  name: Specialiųjų priemonių panaudojimo tvarkos aprašas
+  genitive: specialiųjų priemonių panaudojimo tvarkos aprašo
+  number: '1162'
+  adopted: '2016-11-23'
+  dokumento_id: a45d9670b54011e6aae49c0b9525cbbb
+  unit: punktas
+  document: specialiųjų priemonių panaudojimo tvarkos aprašas
+  docslug: specialiuju-priemoniu-panaudojimas
+- abbr: NKVVAKA
+  no_abbr: true
+  name: Nekilnojamųjų kultūros vertybių vertinimo atrankos ir reikšmingumo lygmens
+    nustatymo kriterijų aprašas
+  genitive: nekilnojamųjų kultūros vertybių vertinimo atrankos ir reikšmingumo lygmens
+    nustatymo kriterijų aprašo
+  number: ĮV-150
+  adopted: '2005-04-15'
+  dokumento_id: TAR.9A8B1926C66E
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: VSVA
+  no_abbr: true
+  name: Vaiko situacijos vertinimo tvarkos aprašas
+  genitive: vaiko situacijos vertinimo tvarkos aprašo
+  number: A1-803
+  adopted: '2019-12-30'
+  dokumento_id: 3c6dd8702b1911eabe008ea93139d588
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: IPTLATPA
+  no_abbr: true
+  name: Individualios pagalbos teikimo, lengvojo automobilio ar jo techninio pritaikymo
+    išlaidų kompensacijų poreikių nustatymo tvarkos aprašas
+  genitive: individualios pagalbos teikimo, lengvojo automobilio ar jo techninio pritaikymo
+    išlaidų kompensacijų poreikių nustatymo tvarkos aprašo
+  number: A1-765/V-1530
+  adopted: '2018-12-27'
+  dokumento_id: ef7052500aa811e9a5eaf2cd290f1944
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro ir Lietuvos Respublikos
+    sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija, Lietuvos
+    Respublikos sveikatos apsaugos ministerija
+- abbr: LKMLAVKA
+  no_abbr: true
+  name: Lietuvių kalbos mokėjimo lygio ir (arba) valstybinės kalbos mokėjimo kategorijos
+    nustatymo, egzaminų organizavimo, vykdymo ir apmokėjimo bei pažymėjimo turinio,
+    formos ir išdavimo tvarkos aprašas
+  genitive: lietuvių kalbos mokėjimo lygio ir (arba) valstybinės kalbos mokėjimo kategorijos
+    nustatymo, egzaminų organizavimo, vykdymo ir apmokėjimo bei pažymėjimo turinio,
+    formos ir išdavimo tvarkos aprašo
+  number: V-234
+  adopted: '2022-02-10'
+  dokumento_id: f8644f608a6b11ec902c973ca77da22a
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: PFGDPVFT
+  no_abbr: true
+  name: Parengiamųjų filmo ir gamybos darbų projektų valstybinio finansavimo taisyklės
+  genitive: parengiamųjų filmo ir gamybos darbų projektų valstybinio finansavimo taisyklių
+  number: ĮV-248
+  adopted: '2016-03-23'
+  dokumento_id: badbddd0f10511e5989ee743dd0efbb0
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: IFASSĮAA
+  no_abbr: true
+  name: Investicijų, finansavimo ir administravimo sutarčių sudarymo, įgyvendinimo
+    ir administravimo tvarkos aprašas
+  genitive: investicijų, finansavimo ir administravimo sutarčių sudarymo, įgyvendinimo
+    ir administravimo tvarkos aprašo
+  number: 4-797
+  adopted: '2014-11-10'
+  dokumento_id: 5bbdb19068e711e4b6b89037654e22b1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos ūkio ministro
+  issuer_nom: Lietuvos Respublikos ūkio ministerija
+- abbr: LŽŪKP2214T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Konsultavimo paslaugos įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Konsultavimo paslaugos įgyvendinimo taisyklių
+  number: 3D-837
+  adopted: '2023-12-12'
+  dokumento_id: df3bcf2098b711eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: JRAN
+  no_abbr: true
+  name: Jaunimo reikalų agentūros nuostatai
+  genitive: jaunimo reikalų agentūros nuostatų
+  number: A1-87
+  adopted: '2022-02-09'
+  dokumento_id: 128fa0c089a311ec902c973ca77da22a
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: LŽŪKP2215T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Sumanieji kaimai įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Sumanieji kaimai įgyvendinimo taisyklių
+  number: 3D-841
+  adopted: '2023-12-12'
+  dokumento_id: 89f8c35098b811eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: PRASPPGA
+  no_abbr: true
+  name: Pacientų registravimo asmens sveikatos priežiūros paslaugoms gauti tvarkos
+    aprašas
+  genitive: pacientų registravimo asmens sveikatos priežiūros paslaugoms gauti tvarkos
+    aprašo
+  number: V-812
+  adopted: '2018-07-16'
+  dokumento_id: 29750e508f6b11e8b93ad15b34c9248c
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: VPSRAT
+  no_abbr: true
+  name: Vietos plėtros strategijų rengimo ir atrankos taisyklės
+  genitive: vietos plėtros strategijų rengimo ir atrankos taisyklių
+  number: 1V-672
+  adopted: '2022-10-28'
+  dokumento_id: a492ff10569b11edbc04912defe897d1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos vidaus reikalų ministro
+  issuer_nom: Lietuvos Respublikos vidaus reikalų ministerija
+- abbr: LŽŪKP2216T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Investicijos į prevencinę veiklą, kuria siekiama sumažinti galimų gaivalinių
+    nelaimių, nepalankių klimato reiškinių ir katastrofinių įvykių padarinius įgyvendinimo
+    taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Investicijos į prevencinę veiklą, kuria siekiama sumažinti
+    galimų gaivalinių nelaimių, nepalankių klimato reiškinių ir katastrofinių įvykių
+    padarinius įgyvendinimo taisyklių
+  number: 3D-470
+  adopted: '2023-07-24'
+  dokumento_id: d4a9a66029ed11ee9de9e7e0fd363afc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: MAOPPPTA
+  no_abbr: true
+  name: Mobiliųjų ambulatorinių odontologinės priežiūros (pagalbos) paslaugų teikimo
+    reikalavimų aprašas
+  genitive: mobiliųjų ambulatorinių odontologinės priežiūros (pagalbos) paslaugų teikimo
+    reikalavimų aprašo
+  number: V-68
+  adopted: '2019-01-17'
+  dokumento_id: 9c58c0001b2611e9875cdc20105dd260
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: LŽŪKP2217T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Vietovės su gamtinėmis ar kitomis specifinėmis kliūtimis įgyvendinimo
+    taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Vietovės su gamtinėmis ar kitomis specifinėmis kliūtimis
+    įgyvendinimo taisyklių
+  number: 3D-165
+  adopted: '2024-03-05'
+  dokumento_id: 9d075950dabe11eead77e967e3995264
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: MRASGPSA
+  no_abbr: true
+  name: Medicininės reabilitacijos ir antirecidyvinio sanatorinio gydymo paslaugų
+    skyrimo ir teikimo tvarkos aprašas
+  genitive: medicininės reabilitacijos ir antirecidyvinio sanatorinio gydymo paslaugų
+    skyrimo ir teikimo tvarkos aprašo
+  number: V-1738
+  adopted: '2022-11-23'
+  dokumento_id: ac949da06b2b11edbc04912defe897d1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: LŽŪKP2218T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Europos inovacijų partnerystė žemės ūkio našumo ir tvarumo srityje įgyvendinimo
+    taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Europos inovacijų partnerystė žemės ūkio našumo ir tvarumo
+    srityje įgyvendinimo taisyklių
+  number: 3D-686
+  adopted: '2023-10-18'
+  dokumento_id: ebd6f8306dbb11ee8f3cbca2fb16d96d
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: GSTAASPA
+  no_abbr: true
+  name: Gydytojų specialistų teikiamų ambulatorinių asmens sveikatos priežiūros paslaugų
+    ir stacionarinių asmens sveikatos priežiūros paslaugų organizavimo tvarkos aprašas
+  genitive: gydytojų specialistų teikiamų ambulatorinių asmens sveikatos priežiūros
+    paslaugų ir stacionarinių asmens sveikatos priežiūros paslaugų organizavimo tvarkos
+    aprašo
+  number: '329'
+  adopted: '1998-06-18'
+  dokumento_id: TAR.732447872E9C
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: MDBUPMNA
+  no_abbr: true
+  name: Mokytojų, dirbančių pagal bendrojo ugdymo, profesinio mokymo ir neformaliojo
+    švietimo programas (išskyrus ikimokyklinio ir priešmokyklinio ugdymo programas),
+    darbo krūvio sandaros nustatymo tvarkos aprašas
+  genitive: mokytojų, dirbančių pagal bendrojo ugdymo, profesinio mokymo ir neformaliojo
+    švietimo programas (išskyrus ikimokyklinio ir priešmokyklinio ugdymo programas),
+    darbo krūvio sandaros nustatymo tvarkos aprašo
+  number: V-186
+  adopted: '2019-03-01'
+  dokumento_id: 983247503c2111e99595d005d42b863e
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: SRSARSSA
+  no_abbr: true
+  name: Specialiųjų reikalavimų, specialiųjų architektūros reikalavimų, specialiųjų
+    saugomos teritorijos tvarkymo ir apsaugos reikalavimų struktūros ir išdavimo tvarkos
+    aprašas
+  genitive: specialiųjų reikalavimų, specialiųjų architektūros reikalavimų, specialiųjų
+    saugomos teritorijos tvarkymo ir apsaugos reikalavimų struktūros ir išdavimo tvarkos
+    aprašo
+  number: D1-22
+  adopted: '2017-01-06'
+  dokumento_id: 1a1cd7a0d67e11e68d79c2033f194657
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: PKOT
+  no_abbr: true
+  name: Projekto konkurso organizavimo taisyklės
+  genitive: projekto konkurso organizavimo taisyklių
+  number: D1-671
+  adopted: '2017-08-22'
+  dokumento_id: 58ebec90874111e7a3c4a5eb10f04386
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: AGPTSAPA
+  no_abbr: true
+  name: Aktyviojo gydymo paslaugų teikimo sąnaudų, apmokamų Privalomojo sveikatos
+    draudimo fondo biudžeto lėšomis, priskyrimo sąnaudų grupėms pagal giminingų diagnozių
+    grupių metodą tvarkos aprašas
+  genitive: aktyviojo gydymo paslaugų teikimo sąnaudų, apmokamų Privalomojo sveikatos
+    draudimo fondo biudžeto lėšomis, priskyrimo sąnaudų grupėms pagal giminingų diagnozių
+    grupių metodą tvarkos aprašo
+  number: V-786
+  adopted: '2011-08-12'
+  dokumento_id: TAR.1300CDAD3FF3
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: VLPA
+  no_abbr: true
+  name: Vaiko laikinosios priežiūros tvarkos aprašas
+  genitive: vaiko laikinosios priežiūros tvarkos aprašo
+  number: A1-794
+  adopted: '2019-12-20'
+  dokumento_id: 2998f080233111eabe008ea93139d588
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: PGPSSPTA
+  no_abbr: true
+  name: Psichologinės gerovės ir psichikos sveikatos stiprinimo paslaugų teikimo tvarkos
+    aprašas
+  genitive: psichologinės gerovės ir psichikos sveikatos stiprinimo paslaugų teikimo
+    tvarkos aprašo
+  number: V-1733
+  adopted: '2020-07-31'
+  dokumento_id: 8a48f190d58e11eaabd5b5599dd4eebe
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: AĮKVA
+  no_abbr: true
+  name: Asmens įgytų kompetencijų vertinimo tvarkos aprašas
+  genitive: asmens įgytų kompetencijų vertinimo tvarkos aprašo
+  number: V-15
+  adopted: '2015-01-14'
+  dokumento_id: 43f8cf209cc411e48dcdae4eb2005eaf
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos švietimo ir mokslo ministerija
+- abbr: NAN
+  no_abbr: true
+  name: Notarų atestavimo nuostatai
+  genitive: notarų atestavimo nuostatų
+  number: 1R-226
+  adopted: '2018-10-30'
+  dokumento_id: cbda5320dc1f11e89a31865acf012092
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: ANTPNANT
+  no_abbr: true
+  name: Administracinio nusižengimo teisenos, protokolo ir nutarimo administracinio
+    nusižengimo byloje registravimo bei nutarimo vykdymo Valstybinėje energetikos
+    reguliavimo taryboje taisyklės
+  genitive: administracinio nusižengimo teisenos, protokolo ir nutarimo administracinio
+    nusižengimo byloje registravimo bei nutarimo vykdymo Valstybinėje energetikos
+    reguliavimo taryboje taisyklių
+  number: O3E-281
+  adopted: '2020-04-09'
+  dokumento_id: 4eb79e807a6a11eab005936df725feed
+  unit: punktas
+  issuer: Valstybinės energetikos reguliavimo tarybos
+  issuer_nom: Valstybinė energetikos reguliavimo taryba
+- abbr: FFŽŪFFSA
+  no_abbr: true
+  name: Fondų fondo Žemės ūkio fondas finansavimo sąlygų aprašas
+  genitive: fondų fondo Žemės ūkio fondas finansavimo sąlygų aprašo
+  number: 3D-422
+  adopted: '2020-06-08'
+  dokumento_id: 92dffa60a98811eab9d9cd0c85e0b745
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: DAPTT
+  no_abbr: true
+  name: Duomenų apie pašarus teikimo taisyklės
+  genitive: duomenų apie pašarus teikimo taisyklių
+  number: 3D-404
+  adopted: '2011-05-16'
+  dokumento_id: TAR.1ABECD296183
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: FPPBĮJŠA
+  no_abbr: true
+  name: Finansinės paskatos pirmąjį būstą įsigyjančioms jaunoms šeimoms teikimo organizavimo
+    tvarkos aprašas
+  genitive: finansinės paskatos pirmąjį būstą įsigyjančioms jaunoms šeimoms teikimo
+    organizavimo tvarkos aprašo
+  number: A1-448
+  adopted: '2018-08-30'
+  dokumento_id: be9c20d0ac5911e88f64a5ecc703f89b
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: KŠĮT
+  no_abbr: true
+  name: Kelių šviesoforų įrengimo taisyklės
+  genitive: kelių šviesoforų įrengimo taisyklių
+  number: 3-81
+  adopted: '2012-01-31'
+  dokumento_id: TAR.DFE4D46E0716
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: ULŽPEDKA
+  no_abbr: true
+  name: Užkrečiamosios ligos židinio ir protrūkio epidemiologinės diagnostikos ir
+    kontrolės tvarkos aprašas
+  genitive: užkrečiamosios ligos židinio ir protrūkio epidemiologinės diagnostikos
+    ir kontrolės tvarkos aprašo
+  number: V-1159
+  adopted: '2016-10-07'
+  dokumento_id: 89bc57b08f7b11e6b6098daee0c9a94f
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: MKSSADA
+  no_abbr: true
+  name: Mobiliųjų komandų sudarymo, specialistų atrankos ir jų darbo tvarkos aprašas
+  genitive: mobiliųjų komandų sudarymo, specialistų atrankos ir jų darbo tvarkos aprašo
+  number: A1-334
+  adopted: '2018-06-27'
+  dokumento_id: 6cc082107a0911e8ae2bfd1913d66d57
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: TPISN
+  no_abbr: true
+  name: Traktorininko pažymėjimų informacinės sistemos nuostatai
+  genitive: traktorininko pažymėjimų informacinės sistemos nuostatų
+  number: 3D-180
+  adopted: '2017-03-16'
+  dokumento_id: fcc328500a4c11e79ba1ee3112ade9bc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: GPNIKA
+  no_abbr: true
+  name: Gyvenamosios patalpos nuomos išlaidų kompensavimo tvarkos aprašas
+  genitive: gyvenamosios patalpos nuomos išlaidų kompensavimo tvarkos aprašo
+  number: V-668
+  adopted: '2016-07-11'
+  dokumento_id: ccd333f04cd411e693ecd724c0a0a1a6
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos krašto apsaugos ministro
+  issuer_nom: Lietuvos Respublikos krašto apsaugos ministerija
+- abbr: BFAN
+  no_abbr: true
+  name: Bibliotekų fondo apsaugos nuostatai
+  genitive: bibliotekų fondo apsaugos nuostatų
+  number: ĮV-499
+  adopted: '2010-10-06'
+  dokumento_id: TAR.6DFC64B0273C
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: IRLRVIFT
+  no_abbr: true
+  name: Informacijos, reikalingos Lietuvos Respublikos valstybės iždo finansinėms
+    ataskaitoms sudaryti, pateikimo taisyklės
+  genitive: informacijos, reikalingos Lietuvos Respublikos valstybės iždo finansinėms
+    ataskaitoms sudaryti, pateikimo taisyklių
+  number: 1K-063
+  adopted: '2011-02-18'
+  dokumento_id: TAR.2F6D21F4D654
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos finansų ministro
+  issuer_nom: Lietuvos Respublikos finansų ministerija
+- abbr: BUTN
+  no_abbr: true
+  name: Bendrojo ugdymo tarybos nuostatai
+  genitive: bendrojo ugdymo tarybos nuostatų
+  number: V-1442
+  adopted: '2011-07-26'
+  dokumento_id: TAR.84D7BEFD0F2A
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos švietimo ir mokslo ministerija
+- abbr: KKSDDSTA
+  no_abbr: true
+  name: Kraujo ir kraujo sudėtinių dalių donorų sveikatos tikrinimo ir donorų kraujo
+    ir kraujo sudėtinių dalių paėmimo tvarkos aprašas
+  genitive: kraujo ir kraujo sudėtinių dalių donorų sveikatos tikrinimo ir donorų
+    kraujo ir kraujo sudėtinių dalių paėmimo tvarkos aprašo
+  number: V-84
+  adopted: '2005-02-04'
+  dokumento_id: TAR.4F584C797F5B
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: ASASPPTR
+  no_abbr: true
+  name: Ambulatorinių specializuotų asmens sveikatos priežiūros paslaugų teikimo reikalavimai
+  genitive: ambulatorinių specializuotų asmens sveikatos priežiūros paslaugų teikimo
+    reikalavimų
+  number: V-528
+  adopted: '2007-06-22'
+  dokumento_id: TAR.E4959665A0BD
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: PMOASPĮA
+  no_abbr: true
+  name: Pacientų maitinimo organizavimo asmens sveikatos priežiūros įstaigose tvarkos
+    aprašas
+  genitive: pacientų maitinimo organizavimo asmens sveikatos priežiūros įstaigose
+    tvarkos aprašo
+  number: V-1000
+  adopted: '2019-08-20'
+  dokumento_id: a16cfe90c32211e9840ec0427c781bac
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: LBTN
+  no_abbr: true
+  name: Lietuvos bibliotekų tarybos nuostatai
+  genitive: Lietuvos bibliotekų tarybos nuostatų
+  number: ĮV-367
+  adopted: '2005-08-23'
+  dokumento_id: TAR.6AF3F1908BE3
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: KPNAGKVA
+  no_abbr: true
+  name: Krūties piktybinio naviko ambulatorinio gydymo kompensuojamaisiais vaistais
+    tvarkos aprašas
+  genitive: krūties piktybinio naviko ambulatorinio gydymo kompensuojamaisiais vaistais
+    tvarkos aprašo
+  number: V-713
+  adopted: '2011-07-22'
+  dokumento_id: TAR.1D37445B86F9
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: SPSDVVA
+  no_abbr: true
+  name: Socialinių paslaugų srities darbuotojų veiklos vertinimo tvarkos aprašas
+  genitive: socialinių paslaugų srities darbuotojų veiklos vertinimo tvarkos aprašo
+  number: A1-158
+  adopted: '2017-03-29'
+  dokumento_id: 68c4b7001ab311e79800e8266c1e5d1b
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: LRGPN
+  no_abbr: true
+  name: Lietuvos Respublikos gynybos patarėjų nuostatai
+  genitive: Lietuvos Respublikos gynybos patarėjų nuostatų
+  number: '1522'
+  adopted: '2004-11-29'
+  dokumento_id: TAR.D35ADE239BC1
+  unit: punktas
+- abbr: FŠESDTAA
+  no_abbr: true
+  name: Fluorintų šiltnamio efektą sukeliančių dujų tvarkymo atestatų išdavimo, jų
+    galiojimo sustabdymo, galiojimo sustabdymo panaikinimo ir galiojimo panaikinimo
+    tvarkos aprašas
+  genitive: fluorintų šiltnamio efektą sukeliančių dujų tvarkymo atestatų išdavimo,
+    jų galiojimo sustabdymo, galiojimo sustabdymo panaikinimo ir galiojimo panaikinimo
+    tvarkos aprašo
+  number: D1-420
+  adopted: '2009-07-20'
+  dokumento_id: TAR.E5369713E116
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: APPAASPA
+  no_abbr: true
+  name: Asmenų prirašymo prie pirminės ambulatorinės asmens sveikatos priežiūros įstaigų
+    ir psichikos sveikatos centrų tvarkos aprašas
+  genitive: asmenų prirašymo prie pirminės ambulatorinės asmens sveikatos priežiūros
+    įstaigų ir psichikos sveikatos centrų tvarkos aprašo
+  number: '583'
+  adopted: '2001-11-09'
+  dokumento_id: TAR.914AB8255C83
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: LRTPDRIN
+  no_abbr: true
+  name: Lietuvos Respublikos teritorijų planavimo dokumentų registro informacinės
+    sistemos nuostatai
+  genitive: Lietuvos Respublikos teritorijų planavimo dokumentų registro informacinės
+    sistemos nuostatų
+  number: D1-399
+  adopted: '2024-11-22'
+  dokumento_id: 8c3a35e0a8ca11ef90b5ee8931e5ce5e
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: LDLRUIA
+  no_abbr: true
+  name: Leidimo dirbti Lietuvos Respublikoje užsieniečiams išdavimo tvarkos aprašas
+  genitive: leidimo dirbti Lietuvos Respublikoje užsieniečiams išdavimo tvarkos aprašo
+  number: A1-133
+  adopted: '2013-03-27'
+  dokumento_id: TAR.4EC56EA73663
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: PSKAKMIT
+  no_abbr: true
+  name: Paramos siekiant kompensuoti afrikinio kiaulių maro III zonos kiaulininkystės
+    sektoriaus subjektų patirtus nuostolius taisyklės
+  genitive: paramos siekiant kompensuoti afrikinio kiaulių maro III zonos kiaulininkystės
+    sektoriaus subjektų patirtus nuostolius taisyklių
+  number: 3D-710
+  adopted: '2022-11-22'
+  dokumento_id: 41f7faa06a7211edbc04912defe897d1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: STANPĮLM
+  no_abbr: true
+  name: Sankcijų už teisės aktų nuostatų pažeidimus įgyvendinant Lietuvos žemės ūkio
+    ir kaimo plėtros 2023–2027 metų strateginio plano intervencines priemones taikymo
+    metodika
+  genitive: sankcijų už teisės aktų nuostatų pažeidimus įgyvendinant Lietuvos žemės
+    ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencines priemones
+    taikymo metodikos
+  number: 3D-80
+  adopted: '2023-02-14'
+  dokumento_id: ec7f7e60ac4611ed8df094f359a60216
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: VAESIN
+  no_abbr: true
+  name: Valstybinės atominės energetikos saugos inspekcijos nuostatai
+  genitive: valstybinės atominės energetikos saugos inspekcijos nuostatų
+  number: '1406'
+  adopted: '2012-11-21'
+  dokumento_id: TAR.3F8669CA894E
+  unit: punktas
+- abbr: NVNPIAPA
+  no_abbr: true
+  name: Notarinių veiksmų ir notaro pajamų bei išlaidų ataskaitų pateikimo tvarkos
+    aprašas
+  genitive: notarinių veiksmų ir notaro pajamų bei išlaidų ataskaitų pateikimo tvarkos
+    aprašo
+  number: 1R-44
+  adopted: '2011-02-03'
+  dokumento_id: TAR.E1607D5AFE1C
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: SLSDUŠRA
+  no_abbr: true
+  name: Subsidijų Lietuvos startuolių dalyvavimui užsienio šalių renginiuose skatinti
+    skyrimo ir administravimo tvarkos aprašas
+  genitive: subsidijų Lietuvos startuolių dalyvavimui užsienio šalių renginiuose skatinti
+    skyrimo ir administravimo tvarkos aprašo
+  number: 4-364
+  adopted: '2023-06-30'
+  dokumento_id: 318a19e0172f11ee9f7ec2ffce8b47bc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos ekonomikos ir inovacijų ministro
+  issuer_nom: Lietuvos Respublikos ekonomikos ir inovacijų ministerija
+- abbr: LRSLSVPN
+  no_abbr: true
+  name: Lietuvos Respublikos statybos leidimų ir statybos valstybinės priežiūros informacinės
+    sistemos Infostatyba nuostatai
+  genitive: Lietuvos Respublikos statybos leidimų ir statybos valstybinės priežiūros
+    informacinės sistemos Infostatyba nuostatų
+  number: D1-502
+  adopted: '2004-09-27'
+  dokumento_id: TAR.4E0B55408E10
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: ISGIUVIA
+  no_abbr: true
+  name: Institucinės socialinės globos iš užsienio valstybės (-ių), kurią (-ias),
+    Lietuvos Respublikos užsienio reikalų ministerijos Socialinių paslaugų priežiūros
+    departamentui prie Socialinės apsaugos ir darbo ministerijos pateiktais duomenimis,
+    ištiko humanitarinė krizė, atvykusiems nelydimiems nepilnamečiams užsieniečiams
+    ar likusiems be tėvų globos vaikams finansavimo iš Lietuvos Respublikos valstybės
+    biudžeto lėšų skyrimo tvarkos aprašas
+  genitive: institucinės socialinės globos iš užsienio valstybės (-ių), kurią (-ias),
+    Lietuvos Respublikos užsienio reikalų ministerijos Socialinių paslaugų priežiūros
+    departamentui prie Socialinės apsaugos ir darbo ministerijos pateiktais duomenimis,
+    ištiko humanitarinė krizė, atvykusiems nelydimiems nepilnamečiams užsieniečiams
+    ar likusiems be tėvų globos vaikams finansavimo iš Lietuvos Respublikos valstybės
+    biudžeto lėšų skyrimo tvarkos aprašo
+  number: A1-232
+  adopted: '2022-03-31'
+  dokumento_id: 252a3c70b11411ec8d9390588bf2de65
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: VSFBSVT
+  no_abbr: true
+  name: Valstybės socialinių fondų biudžetų sudarymo ir vykdymo taisyklės
+  genitive: valstybės socialinių fondų biudžetų sudarymo ir vykdymo taisyklių
+  number: A1-461
+  adopted: '2023-07-13'
+  dokumento_id: 4a09ba90213c11ee9de9e7e0fd363afc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: IPRISN
+  no_abbr: true
+  name: Išankstinės pacientų registracijos informacinės sistemos nuostatai
+  genitive: išankstinės pacientų registracijos informacinės sistemos nuostatų
+  number: V-748
+  adopted: '2023-06-30'
+  dokumento_id: fc08a5f0170311ee9f7ec2ffce8b47bc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: ŽŪMPSISN
+  no_abbr: true
+  name: Žemės ūkio ir maisto produktų sertifikavimo informacinės sistemos nuostatai
+  genitive: žemės ūkio ir maisto produktų sertifikavimo informacinės sistemos nuostatų
+  number: 3D-723
+  adopted: '2014-10-10'
+  dokumento_id: c1b154e0504411e4a698d921e3e46801
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: PVPGPIET
+  no_abbr: true
+  name: Projekto vykdytojo, pretenduojančio gauti paramą iš Europos žemės ūkio fondo
+    kaimo plėtrai, prekių, paslaugų ar darbų pirkimo taisyklės
+  genitive: projekto vykdytojo, pretenduojančio gauti paramą iš Europos žemės ūkio
+    fondo kaimo plėtrai, prekių, paslaugų ar darbų pirkimo taisyklių
+  number: 3D-637
+  adopted: '2023-09-29'
+  dokumento_id: bc9ea1e05e8811ee81b8b446907f594f
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: TRĮRSEPA
+  no_abbr: true
+  name: Tymų, raudonukės ir įgimto raudonukės sindromo epidemiologinės priežiūros
+    ir kontrolės tvarkos aprašas
+  genitive: tymų, raudonukės ir įgimto raudonukės sindromo epidemiologinės priežiūros
+    ir kontrolės tvarkos aprašo
+  number: V-241
+  adopted: '2009-03-31'
+  dokumento_id: TAR.976B18891FE8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: LŽŪKP2219T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Negamybinės investicijos, susijusios su biologinės įvairovės, buveinių,
+    kraštovaizdžių atkūrimu ir išsaugojimu įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Negamybinės investicijos, susijusios su biologinės įvairovės,
+    buveinių, kraštovaizdžių atkūrimu ir išsaugojimu įgyvendinimo taisyklių
+  number: 3D-421
+  adopted: '2024-05-27'
+  dokumento_id: ba6095a01c2e11ef8b14c5bcce136045
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: LŽŪKP2220T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Mokymai ir įgūdžių įgijimas įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Mokymai ir įgūdžių įgijimas įgyvendinimo taisyklių
+  number: 3D-483
+  adopted: '2023-07-25'
+  dokumento_id: e2b0b0c02abd11ee9de9e7e0fd363afc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: KBKPŽŪKA
+  no_abbr: true
+  name: Kooperatinių bendrovių (kooperatyvų) pripažinimo žemės ūkio kooperatinėmis
+    bendrovėmis (kooperatyvais) tvarkos aprašas
+  genitive: kooperatinių bendrovių (kooperatyvų) pripažinimo žemės ūkio kooperatinėmis
+    bendrovėmis (kooperatyvais) tvarkos aprašo
+  number: 3D-435
+  adopted: '2016-07-22'
+  dokumento_id: b17b4b704ff811e6b72ff16034f7f796
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: DLNKA
+  no_abbr: true
+  name: Dalyvumo lygio nustatymo kriterijų ir tvarkos aprašas
+  genitive: dalyvumo lygio nustatymo kriterijų ir tvarkos aprašo
+  number: A1-78/V-179
+  adopted: '2005-03-21'
+  dokumento_id: TAR.D1F619C285A0
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro ir Lietuvos Respublikos
+    sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija, Lietuvos
+    Respublikos sveikatos apsaugos ministerija
+- abbr: DCPTAPSA
+  no_abbr: true
+  name: Dienos chirurgijos paslaugų teikimo ir apmokėjimo Privalomojo sveikatos draudimo
+    fondo biudžeto lėšomis reikalavimų aprašas
+  genitive: dienos chirurgijos paslaugų teikimo ir apmokėjimo Privalomojo sveikatos
+    draudimo fondo biudžeto lėšomis reikalavimų aprašo
+  number: V-668
+  adopted: '2009-08-21'
+  dokumento_id: TAR.99E96AB53856
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: RSUCKVA
+  no_abbr: true
+  name: Regioninių specialiojo ugdymo centrų kūrimo ir jų veiklos aprašas
+  genitive: regioninių specialiojo ugdymo centrų kūrimo ir jų veiklos aprašo
+  number: V-1597
+  adopted: '2022-10-06'
+  dokumento_id: 0cc9a3a0454311edbc04912defe897d1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: LŽŪKP2221T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Tvarios investicijos į žemės ūkio valdas įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Tvarios investicijos į žemės ūkio valdas įgyvendinimo
+    taisyklių
+  number: 3D-425
+  adopted: '2023-06-27'
+  dokumento_id: 412685a014af11ee9f7ec2ffce8b47bc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: VPPSPPTA
+  no_abbr: true
+  name: Vaikų ir paauglių psichikos sveikatos priežiūros paslaugų teikimo reikalavimų
+    aprašas
+  genitive: vaikų ir paauglių psichikos sveikatos priežiūros paslaugų teikimo reikalavimų
+    aprašo
+  number: '730'
+  adopted: '2000-12-14'
+  dokumento_id: TAR.46B678F87605
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: KPAFA
+  no_abbr: true
+  name: Kultūros paso administravimo ir finansavimo tvarkos aprašas
+  genitive: kultūros paso administravimo ir finansavimo tvarkos aprašo
+  number: ĮV-1000/V-1055
+  adopted: '2018-12-21'
+  dokumento_id: 64a5736009a111e9a5eaf2cd290f1944
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro ir Lietuvos Respublikos švietimo
+    ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija, Lietuvos Respublikos švietimo
+    ir mokslo ministerija
+- abbr: MPBSPNUA
+  no_abbr: true
+  name: Medicinos priemonių, būtinų sveikatos priežiūrai namuose užtikrinti, nuomos
+    bazinių kainų nustatymo, nuomos išlaidų kompensavimo ir sutarčių sudarymo tvarkos
+    aprašas
+  genitive: medicinos priemonių, būtinų sveikatos priežiūrai namuose užtikrinti, nuomos
+    bazinių kainų nustatymo, nuomos išlaidų kompensavimo ir sutarčių sudarymo tvarkos
+    aprašo
+  number: V-429
+  adopted: '2018-04-18'
+  dokumento_id: 9e957cc043a211e8ad2f97b2a095557a
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: ŪSUPŽŪPT
+  no_abbr: true
+  name: Ūkio subjektų, užsiimančių pirmine žemės ūkio produktų gamyba, konsultavimo
+    išlaidų finansavimo taisyklės
+  genitive: ūkio subjektų, užsiimančių pirmine žemės ūkio produktų gamyba, konsultavimo
+    išlaidų finansavimo taisyklių
+  number: 3D-243
+  adopted: '2015-04-01'
+  dokumento_id: 8d9518e0d86611e4894f9bde45468d3f
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: STPTA
+  no_abbr: true
+  name: Skubiosios telemedicinos paslaugų teikimo tvarkos aprašas
+  genitive: skubiosios telemedicinos paslaugų teikimo tvarkos aprašo
+  number: V-1825
+  adopted: '2020-08-11'
+  dokumento_id: c7f6d2e0dbca11eaabd5b5599dd4eebe
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: PSPOTA
+  no_abbr: true
+  name: Prevencinių socialinių paslaugų organizavimo ir teikimo tvarkos aprašas
+  genitive: prevencinių socialinių paslaugų organizavimo ir teikimo tvarkos aprašo
+  number: A1-776
+  adopted: '2022-11-23'
+  dokumento_id: 370708c06b3511edbc04912defe897d1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: DLNKTPJA
+  no_abbr: true
+  name: Didžiausiųjų leidžiamų naudojantis keliais transporto priemonių ar jų junginių
+    techninių parametrų aprašas
+  genitive: didžiausiųjų leidžiamų naudojantis keliais transporto priemonių ar jų
+    junginių techninių parametrų aprašo
+  number: 3-66
+  adopted: '2002-02-18'
+  dokumento_id: TAR.B3618189BEF5
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: ŪAPPPPŪA
+  no_abbr: true
+  name: Ūkininko arba jo partnerio (partnerių) profesinio pasirengimo ūkininkauti
+    reikalavimų aprašas
+  genitive: ūkininko arba jo partnerio (partnerių) profesinio pasirengimo ūkininkauti
+    reikalavimų aprašo
+  number: 3D-131
+  adopted: '2003-03-31'
+  dokumento_id: TAR.C62BA40A0E43
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: KVLSVAM
+  no_abbr: true
+  name: Kompetencijų vertinimo lėšų skaičiavimo vienam asmeniui metodika
+  genitive: kompetencijų vertinimo lėšų skaičiavimo vienam asmeniui metodikos
+  number: '1373'
+  adopted: '2012-11-14'
+  dokumento_id: TAR.514EFEA67A27
+  unit: punktas
+- abbr: ŪGVISN
+  no_abbr: true
+  name: Ūkinių gyvūnų veislininkystės informacinės sistemos nuostatai
+  genitive: ūkinių gyvūnų veislininkystės informacinės sistemos nuostatų
+  number: 3D-946
+  adopted: '2015-12-22'
+  dokumento_id: 842dd400a94d11e5be7fbe3f919a1ebe
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: NPŽSSTT
+  no_abbr: true
+  name: Nacionalinės paramos žemdirbių savivaldai stiprinti teikimo taisyklės
+  genitive: nacionalinės paramos žemdirbių savivaldai stiprinti teikimo taisyklių
+  number: 3D-231
+  adopted: '2022-03-31'
+  dokumento_id: 55e943c0b0e611ec8d9390588bf2de65
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: LŽŪKP2222T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Jaunuolynų ugdymas įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Jaunuolynų ugdymas įgyvendinimo taisyklių
+  number: 3D-499
+  adopted: '2023-07-27'
+  dokumento_id: cf8a77802c7811ee9de9e7e0fd363afc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: TPPKBVFT
+  no_abbr: true
+  name: Tautinio paveldo produktų kūrėjų bendradarbiavimo veiklos finansavimo taisyklės
+  genitive: tautinio paveldo produktų kūrėjų bendradarbiavimo veiklos finansavimo
+    taisyklių
+  number: 3D-649
+  adopted: '2023-10-10'
+  dokumento_id: e43d26f0673311ee9fc7ee37cec6fc59
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: AŠGTNDIT
+  no_abbr: true
+  name: Arklinių šeimos gyvūno tapatybės nustatymo dokumento išdavimo ir naudojimo
+    taisyklės
+  genitive: arklinių šeimos gyvūno tapatybės nustatymo dokumento išdavimo ir naudojimo
+    taisyklių
+  number: 3D-274
+  adopted: '2006-06-28'
+  dokumento_id: TAR.597ADBA034E7
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: STSPRT
+  no_abbr: true
+  name: Saugomų teritorijų specialiųjų planų rengimo taisyklės
+  genitive: saugomų teritorijų specialiųjų planų rengimo taisyklių
+  number: D1-330/ĮV-706
+  adopted: '2020-06-03'
+  dokumento_id: 48bf4b50a64211ea9515f752ff221ec9
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro ir Lietuvos Respublikos kultūros
+    ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija, Lietuvos Respublikos kultūros
+    ministerija
+- abbr: LVNŽSMTA
+  no_abbr: true
+  name: Laikinųjų valstybinio numerio ženklų, skirtų motorinėms transporto priemonėms,
+    priekaboms, savivaldžių automobilių bandymams ženklinti, išdavimo ir jų naudojimo
+    tvarkos aprašas
+  genitive: laikinųjų valstybinio numerio ženklų, skirtų motorinėms transporto priemonėms,
+    priekaboms, savivaldžių automobilių bandymams ženklinti, išdavimo ir jų naudojimo
+    tvarkos aprašo
+  number: 1V-446
+  adopted: '2014-06-30'
+  dokumento_id: 3bf97870005611e4bfca9cc6968de163
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos vidaus reikalų ministro
+  issuer_nom: Lietuvos Respublikos vidaus reikalų ministerija
+- abbr: PMĮKPMTA
+  no_abbr: true
+  name: Profesinio mokymo įstaigų ir kitų profesinio mokymo teikėjų, vykdančių formalųjį
+    profesinį mokymą, veiklos išorinio vertinimo tvarkos aprašas
+  genitive: profesinio mokymo įstaigų ir kitų profesinio mokymo teikėjų, vykdančių
+    formalųjį profesinį mokymą, veiklos išorinio vertinimo tvarkos aprašo
+  number: V-442
+  adopted: '2020-03-25'
+  dokumento_id: 7f6484806ea311eabee4a336e7e6fdab
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: PASPSVLT
+  no_abbr: true
+  name: Papildomosios ir alternatyviosios sveikatos priežiūros specialistų veiklos
+    licencijavimo taisyklės
+  genitive: papildomosios ir alternatyviosios sveikatos priežiūros specialistų veiklos
+    licencijavimo taisyklių
+  number: V-2701
+  adopted: '2020-11-23'
+  dokumento_id: 9e44e1d02e5e11eb932eb1ed7f923910
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: ODSPTŠP2A
+  no_abbr: true
+  name: Onkologijos dienos stacionaro paslaugų teikimo ir šių paslaugų išlaidų apmokėjimo
+    Privalomojo sveikatos draudimo fondo biudžeto lėšomis tvarkos aprašas
+  genitive: onkologijos dienos stacionaro paslaugų teikimo ir šių paslaugų išlaidų
+    apmokėjimo Privalomojo sveikatos draudimo fondo biudžeto lėšomis tvarkos aprašo
+  number: V-1173
+  adopted: '2018-10-29'
+  dokumento_id: 1a4ad9c0dc4411e89a31865acf012092
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: VSDRFSVN
+  no_abbr: true
+  name: Valstybinio socialinio draudimo rezervinio fondo sudarymo ir valdymo nuostatai
+  genitive: valstybinio socialinio draudimo rezervinio fondo sudarymo ir valdymo nuostatų
+  number: '438'
+  adopted: '2017-06-14'
+  dokumento_id: f8c39790526211e7846ef01bfffb9b64
+  unit: punktas
+- abbr: ŽSPTA
+  no_abbr: true
+  name: Žemo slenksčio paslaugų teikimo tvarkos aprašas
+  genitive: žemo slenksčio paslaugų teikimo tvarkos aprašo
+  number: V-584
+  adopted: '2006-07-05'
+  dokumento_id: TAR.566695AEA478
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: MDN
+  no_abbr: true
+  name: Mokslo doktorantūros nuostatai
+  genitive: mokslo doktorantūros nuostatų
+  number: V-739
+  adopted: '2020-05-18'
+  dokumento_id: 08504a3098df11ea9515f752ff221ec9
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: KKVSBĮDA
+  no_abbr: true
+  name: Kvalifikacinių kategorijų valstybės ar savivaldybių biudžetinėse įstaigose
+    pagal darbo sutartis dirbantiems treneriams suteikimo ir panaikinimo tvarkos aprašas
+  genitive: kvalifikacinių kategorijų valstybės ar savivaldybių biudžetinėse įstaigose
+    pagal darbo sutartis dirbantiems treneriams suteikimo ir panaikinimo tvarkos aprašo
+  number: V-103
+  adopted: '2019-02-08'
+  dokumento_id: 1ec52db02b6911e9b66f85227a03f7a3
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: LRIGLGEA
+  no_abbr: true
+  name: Lietuvos Respublikos ilgalaikio gyventojo leidimo gyventi Europos Sąjungoje
+    išdavimo tvarkos aprašas
+  genitive: Lietuvos Respublikos ilgalaikio gyventojo leidimo gyventi Europos Sąjungoje
+    išdavimo tvarkos aprašo
+  number: 1V-445
+  adopted: '2005-12-21'
+  dokumento_id: TAR.AB0C074487E8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos vidaus reikalų ministro
+  issuer_nom: Lietuvos Respublikos vidaus reikalų ministerija
+- abbr: LTECN
+  no_abbr: true
+  name: Lietuvos teismo ekspertizės centro nuostatai
+  genitive: Lietuvos teismo ekspertizės centro nuostatų
+  number: 1R-312
+  adopted: '2007-08-21'
+  dokumento_id: TAR.9757E04EA075
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: MASEMA
+  no_abbr: true
+  name: Mokytojų atrankos ir skyrimo į Europos mokyklas tvarkos aprašas
+  genitive: mokytojų atrankos ir skyrimo į Europos mokyklas tvarkos aprašo
+  number: ISAK-1354
+  adopted: '2006-06-27'
+  dokumento_id: TAR.2B76B8C91FD6
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos švietimo ir mokslo ministerija
+- abbr: VVSFOA
+  no_abbr: true
+  name: Vaikų vasaros stovyklų finansavimo ir organizavimo tvarkos aprašas
+  genitive: vaikų vasaros stovyklų finansavimo ir organizavimo tvarkos aprašo
+  number: V-628
+  adopted: '2021-04-26'
+  dokumento_id: 6fa2e1c0a66711ebbcbbc2971cdac3cb
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: VKTTNNCA
+  no_abbr: true
+  name: Vaizdo konferencijų ir telekonferencijų technologijų naudojimo nagrinėjant
+    civilines ir administracines bylas tvarkos aprašas
+  genitive: vaizdo konferencijų ir telekonferencijų technologijų naudojimo nagrinėjant
+    civilines ir administracines bylas tvarkos aprašo
+  number: 1R-309
+  adopted: '2012-12-07'
+  dokumento_id: TAR.0FE0E66B3D4D
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: BUMVSUKA
+  no_abbr: true
+  name: Bendrojo ugdymo mokyklų, vykdančių specializuoto ugdymo krypties programas
+    (pradinio, pagrindinio ir vidurinio ugdymo kartu su sportiniu ugdymu programas),
+    tikslinio finansavimo sąlygų ir tvarkos aprašas
+  genitive: bendrojo ugdymo mokyklų, vykdančių specializuoto ugdymo krypties programas
+    (pradinio, pagrindinio ir vidurinio ugdymo kartu su sportiniu ugdymu programas),
+    tikslinio finansavimo sąlygų ir tvarkos aprašo
+  number: V-1028
+  adopted: '2019-09-17'
+  dokumento_id: f2473fc0d91f11e99681cd81dcdca52c
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: NGTN
+  no_abbr: true
+  name: Notarų garbės teismo nuostatai
+  genitive: notarų garbės teismo nuostatų
+  number: 1R-184
+  adopted: '2004-07-22'
+  dokumento_id: TAR.E80C14CA5A6C
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: VPTN
+  no_abbr: true
+  name: Viešųjų pirkimų tarnybos nuostatai
+  genitive: viešųjų pirkimų tarnybos nuostatų
+  number: '1517'
+  adopted: '2011-12-21'
+  dokumento_id: TAR.C66B13886C49
+  unit: punktas
+- abbr: NTAKDN
+  no_abbr: true
+  name: Narkotikų, tabako ir alkoholio kontrolės departamento nuostatai
+  genitive: narkotikų, tabako ir alkoholio kontrolės departamento nuostatų
+  number: '244'
+  adopted: '2011-02-23'
+  dokumento_id: TAR.E74573D033A5
+  unit: punktas
+- abbr: CAVPMPPA
+  no_abbr: true
+  name: Centralizuotai apmokamų vaistinių preparatų ir medicinos pagalbos priemonių
+    sąrašo sudarymo ir keitimo, šių preparatų ir priemonių įsigijimo ir asmens sveikatos
+    priežiūros įstaigų aprūpinimo šiais preparatais ir priemonėmis tvarkos aprašas
+  genitive: centralizuotai apmokamų vaistinių preparatų ir medicinos pagalbos priemonių
+    sąrašo sudarymo ir keitimo, šių preparatų ir priemonių įsigijimo ir asmens sveikatos
+    priežiūros įstaigų aprūpinimo šiais preparatais ir priemonėmis tvarkos aprašo
+  number: V-136
+  adopted: '2007-03-02'
+  dokumento_id: TAR.579247B100D6
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: TPETNPIT
+  no_abbr: true
+  name: Tautinio paveldo ekspertų teikiamų nematerialaus pobūdžio (intelektinių) paslaugų
+    apmokėjimo taisyklės
+  genitive: tautinio paveldo ekspertų teikiamų nematerialaus pobūdžio (intelektinių)
+    paslaugų apmokėjimo taisyklių
+  number: 3D-711
+  adopted: '2009-09-29'
+  dokumento_id: TAR.928BCC93AAFE
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: TPVAA
+  no_abbr: true
+  name: Teritorijų planavimo vadovų atestavimo tvarkos aprašas
+  genitive: teritorijų planavimo vadovų atestavimo tvarkos aprašo
+  number: D1-72/ĮV-141
+  adopted: '2017-01-23'
+  dokumento_id: aa9d76b0e20c11e68503b67e3b82e8bd
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro ir Lietuvos Respublikos kultūros
+    ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija, Lietuvos Respublikos kultūros
+    ministerija
+- abbr: PVLTKVJT
+  no_abbr: true
+  name: Prekių vežimo, laikymo ir tikrinimo Klaipėdos valstybinio jūrų uosto pasienio
+    kontrolės punktų teritorijoje esančiose muitinės prižiūrimose uosto komplekso
+    zonose taisyklės
+  genitive: prekių vežimo, laikymo ir tikrinimo Klaipėdos valstybinio jūrų uosto pasienio
+    kontrolės punktų teritorijoje esančiose muitinės prižiūrimose uosto komplekso
+    zonose taisyklių
+  number: '78'
+  adopted: '1999-01-22'
+  dokumento_id: TAR.9D01AA23274C
+  unit: punktas
+- abbr: ASPĮSLPA
+  no_abbr: true
+  name: Asmens sveikatos priežiūros įstaigoms skiriamų lėšų pirminės ambulatorinės
+    asmens sveikatos priežiūros paslaugoms apmokėti planavimo tvarkos aprašas
+  genitive: asmens sveikatos priežiūros įstaigoms skiriamų lėšų pirminės ambulatorinės
+    asmens sveikatos priežiūros paslaugoms apmokėti planavimo tvarkos aprašo
+  number: V-833
+  adopted: '2013-08-29'
+  dokumento_id: TAR.425E07AADD4C
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: ŽŪMISN
+  no_abbr: true
+  name: Žemės ūkio ministerijos informacinės sistemos nuostatai
+  genitive: žemės ūkio ministerijos informacinės sistemos nuostatų
+  number: 3D-774
+  adopted: '2012-10-02'
+  dokumento_id: TAR.D4935CB4CDA4
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: UVLKT
+  no_abbr: true
+  name: Užsienio valstybių laivų kontrolės taisyklės
+  genitive: užsienio valstybių laivų kontrolės taisyklių
+  number: 3-23
+  adopted: '2004-01-15'
+  dokumento_id: TAR.874C62217DDC
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: LRSTVKRN
+  no_abbr: true
+  name: Lietuvos Respublikos saugomų teritorijų valstybės kadastro reorganizavimo
+    ir Lietuvos Respublikos saugomų teritorijų valstybės kadastro nuostatai
+  genitive: Lietuvos Respublikos saugomų teritorijų valstybės kadastro reorganizavimo
+    ir Lietuvos Respublikos saugomų teritorijų valstybės kadastro nuostatų
+  number: '766'
+  adopted: '2017-09-27'
+  dokumento_id: 615e5f50a4da11e78a4c904b1afa0332
+  unit: punktas
+- abbr: LDPPKRSA
+  no_abbr: true
+  name: Laboratorinės diagnostikos paslaugų prieinamumo ir kokybės rodiklių ir jų
+    stebėsenos tvarkos aprašas
+  genitive: laboratorinės diagnostikos paslaugų prieinamumo ir kokybės rodiklių ir
+    jų stebėsenos tvarkos aprašo
+  number: V-2572
+  adopted: '2020-11-10'
+  dokumento_id: 515bd450235f11eb932eb1ed7f923910
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: PPNVKAZA
+  no_abbr: true
+  name: Pritarimo projektui ar numatomai veiklai kelių apsaugos zonose tvarkos aprašas
+  genitive: pritarimo projektui ar numatomai veiklai kelių apsaugos zonose tvarkos
+    aprašo
+  number: 3-353
+  adopted: '2021-07-20'
+  dokumento_id: 15ad9170e96411eb9f09e7df20500045
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: RRVPMPKT
+  no_abbr: true
+  name: Receptų rašymo ir vaistinių preparatų, medicinos priemonių ir kompensuojamųjų
+    medicinos pagalbos priemonių išdavimo (pardavimo) vaistinėse gyventojams ir popierinių
+    receptų saugojimo, išdavus (pardavus) vaistinius preparatus, medicinos priemones
+    ir kompensuojamąsias medicinos pagalbos priemones vaistinėje, taisyklės
+  genitive: receptų rašymo ir vaistinių preparatų, medicinos priemonių ir kompensuojamųjų
+    medicinos pagalbos priemonių išdavimo (pardavimo) vaistinėse gyventojams ir popierinių
+    receptų saugojimo, išdavus (pardavus) vaistinius preparatus, medicinos priemones
+    ir kompensuojamąsias medicinos pagalbos priemones vaistinėje, taisyklių
+  number: '112'
+  adopted: '2002-03-08'
+  dokumento_id: TAR.8268A928D936
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: HIN
+  no_abbr: true
+  name: Higienos instituto nuostatai
+  genitive: higienos instituto nuostatų
+  number: V-1142
+  adopted: '2012-12-11'
+  dokumento_id: TAR.6AB465F462DF
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: MVSVPĮFA
+  no_abbr: true
+  name: Muziejų veiklos skatinimo veiksmų plano įgyvendinimo ir finansavimo tvarkos
+    aprašas
+  genitive: muziejų veiklos skatinimo veiksmų plano įgyvendinimo ir finansavimo tvarkos
+    aprašo
+  number: ĮV-724
+  adopted: '2023-09-13'
+  dokumento_id: e50ac560522511ee81b8b446907f594f
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: IMPSSNSA
+  no_abbr: true
+  name: Individualių mokymosi paskyrų sistemoje skelbiamų neformaliojo suaugusiųjų
+    švietimo ir tęstinio mokymosi programų kokybės užtikrinimo tvarkos aprašas
+  genitive: individualių mokymosi paskyrų sistemoje skelbiamų neformaliojo suaugusiųjų
+    švietimo ir tęstinio mokymosi programų kokybės užtikrinimo tvarkos aprašo
+  number: V-1218
+  adopted: '2023-09-18'
+  dokumento_id: 29a3971055e611ee81b8b446907f594f
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: LNSSĮTSA
+  no_abbr: true
+  name: Lietuvos nacionalinės sveikatos sistemos įstaigų, teikiančių stacionarines
+    aktyviojo gydymo asmens sveikatos priežiūros paslaugas, išdėstymo reikalavimų
+    ir išdėstymo tvarkos aprašas
+  genitive: Lietuvos nacionalinės sveikatos sistemos įstaigų, teikiančių stacionarines
+    aktyviojo gydymo asmens sveikatos priežiūros paslaugas, išdėstymo reikalavimų
+    ir išdėstymo tvarkos aprašo
+  number: '551'
+  adopted: '2023-07-12'
+  dokumento_id: a53fc150222411ee9de9e7e0fd363afc
+  unit: punktas
+- abbr: MTPJPNTA
+  no_abbr: true
+  name: Motorinės transporto priemonės ir jos priekabos nuosavybės teisės deklaravimo
+    tvarkos aprašas
+  genitive: motorinės transporto priemonės ir jos priekabos nuosavybės teisės deklaravimo
+    tvarkos aprašo
+  number: 1V-379
+  adopted: '2021-04-29'
+  dokumento_id: 4c059a80a8fd11ebbcbbc2971cdac3cb
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos vidaus reikalų ministro
+  issuer_nom: Lietuvos Respublikos vidaus reikalų ministerija
+- abbr: DAŽPSTIT
+  no_abbr: true
+  name: Duomenų apie žalio pieno supirkimą teikimo ir informacijos viešinimo taisyklės
+  genitive: duomenų apie žalio pieno supirkimą teikimo ir informacijos viešinimo taisyklių
+  number: 3D-603
+  adopted: '2015-07-27'
+  dokumento_id: 67cf46d0345511e5b1be8e104a145478
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: PPKAJVA
+  no_abbr: true
+  name: Prevencinių programų kriterijų ir atitikties jiems vertinimo tvarkos aprašas
+  genitive: prevencinių programų kriterijų ir atitikties jiems vertinimo tvarkos aprašo
+  number: V-317
+  adopted: '2024-03-19'
+  dokumento_id: 75014f20e5b711eea5aeb6ee8214b4a6
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: SPFLAM
+  no_abbr: true
+  name: Socialinių paslaugų finansavimo ir lėšų apskaičiavimo metodika
+  genitive: socialinių paslaugų finansavimo ir lėšų apskaičiavimo metodikos
+  number: A1-426
+  adopted: '2024-06-25'
+  dokumento_id: 1a9ca680330d11efbdaea558de59136c
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: PAISN
+  no_abbr: true
+  name: Pieno apskaitos informacinės sistemos nuostatai
+  genitive: pieno apskaitos informacinės sistemos nuostatų
+  number: 3D-482
+  adopted: '2021-07-28'
+  dokumento_id: 09edcbb0efaa11eb9f09e7df20500045
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: MDOKKRN
+  no_abbr: true
+  name: Mokinių dalykinių olimpiadų, konkursų ir kitų renginių nuostatai
+  genitive: mokinių dalykinių olimpiadų, konkursų ir kitų renginių nuostatų
+  number: V-663
+  adopted: '2020-05-05'
+  dokumento_id: e36423c08e9a11ea9515f752ff221ec9
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: IPTIKSMA
+  no_abbr: true
+  name: Individualios pagalbos teikimo išlaidų kompensacijų skyrimo ir mokėjimo tvarkos
+    aprašas
+  genitive: individualios pagalbos teikimo išlaidų kompensacijų skyrimo ir mokėjimo
+    tvarkos aprašo
+  number: A1-39
+  adopted: '2019-01-23'
+  dokumento_id: 708e2ca020a111e9875cdc20105dd260
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: LŽS22MPT
+  no_abbr: true
+  name: Lietuvos žuvininkystės sektoriaus 2021‒2027 metų programos trečiojo prioriteto
+    Sąlygų tvariai mėlynajai ekonomikai pakrantės rajonuose ir salų bei krašto gilumos
+    vietovėse sudarymas ir žvejybos bei akvakultūros bendruomenių vystymosi skatinimas
+    priemonės Vietos plėtros strategijų įgyvendinimas administravimo taisyklės
+  genitive: Lietuvos žuvininkystės sektoriaus 2021‒2027 metų programos trečiojo prioriteto
+    Sąlygų tvariai mėlynajai ekonomikai pakrantės rajonuose ir salų bei krašto gilumos
+    vietovėse sudarymas ir žvejybos bei akvakultūros bendruomenių vystymosi skatinimas
+    priemonės Vietos plėtros strategijų įgyvendinimas administravimo taisyklių
+  number: 3D-867
+  adopted: '2023-12-18'
+  dokumento_id: 51b225d09d7811eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: VGGIIGAN
+  no_abbr: true
+  name: Valstybės garantuojamos garantijų institucijos individualių garantijų už akcinių
+    bendrovių ir uždarųjų akcinių bendrovių obligacijų emisijas teikimo nuostatai
+  genitive: valstybės garantuojamos garantijų institucijos individualių garantijų
+    už akcinių bendrovių ir uždarųjų akcinių bendrovių obligacijų emisijas teikimo
+    nuostatų
+  number: 4-401
+  adopted: '2024-07-23'
+  dokumento_id: 6b39f14048b311efbdaea558de59136c
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos ekonomikos ir inovacijų ministro
+  issuer_nom: Lietuvos Respublikos ekonomikos ir inovacijų ministerija
+- abbr: NKVTDPFA
+  no_abbr: true
+  name: Nekilnojamųjų kultūros vertybių tvarkybos darbų (paveldotvarkos) finansavimo
+    tvarkos aprašas
+  genitive: nekilnojamųjų kultūros vertybių tvarkybos darbų (paveldotvarkos) finansavimo
+    tvarkos aprašo
+  number: ĮV-524
+  adopted: '2014-06-30'
+  dokumento_id: 31e83e90012111e4bfca9cc6968de163
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: LRARUVDA
+  no_abbr: true
+  name: Lietuvos Respublikoje akredituotų ir reziduojančių užsienio valstybių diplomatinių
+    atstovybių ir konsulinių įstaigų, tarptautinių organizacijų atstovybių, kitų atstovybių,
+    Europos Sąjungos, NATO, kitų tarptautinių organizacijų institucijų ir įstaigų,
+    jų personalo ir jų šeimos narių, turinčių Lietuvos Respublikos užsienio reikalų
+    ministerijos Valstybinio ir diplomatinio protokolo departamento išduotus galiojančius
+    A, B ir E kategorijos akreditacijos pažymėjimus, transporto priemonių registravimo
+    tvarkos aprašas
+  genitive: Lietuvos Respublikoje akredituotų ir reziduojančių užsienio valstybių
+    diplomatinių atstovybių ir konsulinių įstaigų, tarptautinių organizacijų atstovybių,
+    kitų atstovybių, Europos Sąjungos, NATO, kitų tarptautinių organizacijų institucijų
+    ir įstaigų, jų personalo ir jų šeimos narių, turinčių Lietuvos Respublikos užsienio
+    reikalų ministerijos Valstybinio ir diplomatinio protokolo departamento išduotus
+    galiojančius A, B ir E kategorijos akreditacijos pažymėjimus, transporto priemonių
+    registravimo tvarkos aprašo
+  number: V-119/1V-317
+  adopted: '2004-09-29'
+  dokumento_id: TAR.5D0AF2819F2F
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos užsienio reikalų ministro ir Lietuvos Respublikos vidaus
+    reikalų ministro
+  issuer_nom: Lietuvos Respublikos užsienio reikalų ministerija, Lietuvos Respublikos
+    vidaus reikalų ministerija
+- abbr: VĮŽŪDCSA
+  no_abbr: true
+  name: Valstybės įmonei Žemės ūkio duomenų centrui skiriamų lėšų, gautų už parduotus
+    valstybinės žemės ūkio paskirties žemės sklypus, pervedimo, naudojimo ir atsiskaitymo
+    tvarkos aprašas
+  genitive: valstybės įmonei Žemės ūkio duomenų centrui skiriamų lėšų, gautų už parduotus
+    valstybinės žemės ūkio paskirties žemės sklypus, pervedimo, naudojimo ir atsiskaitymo
+    tvarkos aprašo
+  number: 3D-82
+  adopted: '2016-02-24'
+  dokumento_id: 0c8d5c10dad811e583a295d9366c7ab3
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: SPFSA
+  no_abbr: true
+  name: Sporto programų finansavimo sąlygų aprašas
+  genitive: sporto programų finansavimo sąlygų aprašo
+  number: V-1871
+  adopted: '2022-11-28'
+  dokumento_id: 4927e8106eed11edbc04912defe897d1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: ŽKKLTPAA
+  no_abbr: true
+  name: Žmogaus kraujodaros kamieninių ląstelių transplantacijos paslaugų, apmokamų
+    iš Transplantacijos programos lėšų, teikimo reikalavimų ir mokėjimo už šias paslaugas
+    tvarkos aprašas
+  genitive: žmogaus kraujodaros kamieninių ląstelių transplantacijos paslaugų, apmokamų
+    iš Transplantacijos programos lėšų, teikimo reikalavimų ir mokėjimo už šias paslaugas
+    tvarkos aprašo
+  number: V-965
+  adopted: '2019-08-02'
+  dokumento_id: 7caac870b52711e98451fa7b5933515d
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: TKUPSVSA
+  no_abbr: true
+  name: Tikslinių kompetencijų ugdymo palydimųjų subsidijų verslui skyrimo ir administravimo
+    tvarkos aprašas
+  genitive: tikslinių kompetencijų ugdymo palydimųjų subsidijų verslui skyrimo ir
+    administravimo tvarkos aprašo
+  number: 4-436
+  adopted: '2023-08-04'
+  dokumento_id: 38d46b4032a211ee9de9e7e0fd363afc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos ekonomikos ir inovacijų ministro
+  issuer_nom: Lietuvos Respublikos ekonomikos ir inovacijų ministerija
+- abbr: MŽMSAT
+  no_abbr: true
+  name: Melioruotos žemės ir melioracijos statinių apskaitos taisyklės
+  genitive: melioruotos žemės ir melioracijos statinių apskaitos taisyklių
+  number: 3D-243
+  adopted: '2004-04-29'
+  dokumento_id: TAR.0D755BBD7DF9
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: IMPSAASA
+  no_abbr: true
+  name: Individualių mokymosi paskyrų sistemos administravimo ir asmenų, siekiančių
+    tobulinti kompetencijas ir (arba) jų įgyti per šią sistemą finansavimo bei konkurso
+    gauti finansavimą, skiriamą dalyvauti neformaliojo suaugusiųjų švietimo ir tęstinio
+    mokymosi programose, organizavimo tvarkos aprašas
+  genitive: individualių mokymosi paskyrų sistemos administravimo ir asmenų, siekiančių
+    tobulinti kompetencijas ir (arba) jų įgyti per šią sistemą finansavimo bei konkurso
+    gauti finansavimą, skiriamą dalyvauti neformaliojo suaugusiųjų švietimo ir tęstinio
+    mokymosi programose, organizavimo tvarkos aprašo
+  number: V-1515
+  adopted: '2023-11-29'
+  dokumento_id: e95ea5808e8611eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: 22MSPPPT
+  no_abbr: true
+  name: 2023–2027 metų susietosios pajamų paramos už pienines karves administravimo
+    taisyklės
+  genitive: 2023–2027 metų susietosios pajamų paramos už pienines karves administravimo
+    taisyklių
+  number: 3D-103
+  adopted: '2023-02-24'
+  dokumento_id: ab27f310b40d11ed8df094f359a60216
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: LŽŪKP2224T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 m. strateginio plano sektorinės
+    intervencinės priemonės Investicijos į vyno sektorių įgyvendinimo taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 m. strateginio plano sektorinės
+    intervencinės priemonės Investicijos į vyno sektorių įgyvendinimo taisyklių
+  number: 3D-180
+  adopted: '2023-03-24'
+  dokumento_id: e2bb0090ca3f11ed9978886e85107ab2
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: GOGOSKTA
+  no_abbr: true
+  name: Gydytojo odontologo ir gydytojo odontologo specialisto konsultacijos teikimo
+    organizavimo ir apmokėjimo už ją tvarkos aprašas
+  genitive: gydytojo odontologo ir gydytojo odontologo specialisto konsultacijos teikimo
+    organizavimo ir apmokėjimo už ją tvarkos aprašo
+  number: V-462
+  adopted: '2012-05-28'
+  dokumento_id: TAR.A26E8A25CE44
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: AĮKSTAMA
+  no_abbr: true
+  name: Asmenų, įgijusių kvalifikaciją, suteikiančią teisę į aukštąjį mokslą, pagal
+    tarptautinių organizacijų arba užsienio valstybių švietimo programas, konkuravimo
+    dėl priėmimo į valstybės finansuojamas studijas aukštosiose mokyklose tvarkos
+    aprašas
+  genitive: asmenų, įgijusių kvalifikaciją, suteikiančią teisę į aukštąjį mokslą,
+    pagal tarptautinių organizacijų arba užsienio valstybių švietimo programas, konkuravimo
+    dėl priėmimo į valstybės finansuojamas studijas aukštosiose mokyklose tvarkos
+    aprašo
+  number: V-932
+  adopted: '2020-06-19'
+  dokumento_id: 37a29be0b1fc11eab9d9cd0c85e0b745
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: PEGRPTA
+  no_abbr: true
+  name: Priemonių už ekologinės gamybos reikalavimų pažeidimus taikymo tvarkos aprašas
+  genitive: priemonių už ekologinės gamybos reikalavimų pažeidimus taikymo tvarkos
+    aprašo
+  number: 3D-879
+  adopted: '2022-12-29'
+  dokumento_id: b9740190877e11ed8df094f359a60216
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: BPANPNBA
+  no_abbr: true
+  name: Būsto pritaikymo asmeniui su negalia poreikio nustatymo, būsto pritaikymo
+    ir finansavimo tvarkos aprašas
+  genitive: būsto pritaikymo asmeniui su negalia poreikio nustatymo, būsto pritaikymo
+    ir finansavimo tvarkos aprašo
+  number: A1-103
+  adopted: '2019-02-19'
+  dokumento_id: 25069bc035df11e99595d005d42b863e
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: VBSTDSVA
+  no_abbr: true
+  name: Valstybės biudžeto specialios tikslinės dotacijos, skirtos valstybinei (valstybės
+    perduotai savivaldybėms) funkcijai neveiksnių asmenų būklės peržiūrėjimui užtikrinti,
+    planavimo ir paskirstymo savivaldybėms bei savivaldybių atsiskaitymo už šias lėšas
+    tvarkos aprašas
+  genitive: valstybės biudžeto specialios tikslinės dotacijos, skirtos valstybinei
+    (valstybės perduotai savivaldybėms) funkcijai neveiksnių asmenų būklės peržiūrėjimui
+    užtikrinti, planavimo ir paskirstymo savivaldybėms bei savivaldybių atsiskaitymo
+    už šias lėšas tvarkos aprašo
+  number: V-1443
+  adopted: '2016-12-19'
+  dokumento_id: dc20b9d0c67e11e69dec860c1f4a5372
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: MĮAGKSUA
+  no_abbr: true
+  name: Mokinių įvairovei atvirų grupių, klasių sudarymo ir ugdymo organizavimo jose
+    tvarkos ir finansavimo sąlygų aprašas
+  genitive: mokinių įvairovei atvirų grupių, klasių sudarymo ir ugdymo organizavimo
+    jose tvarkos ir finansavimo sąlygų aprašo
+  number: V-615
+  adopted: '2023-05-02'
+  dokumento_id: 287a4750e8cf11ed9978886e85107ab2
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: PPPOTA
+  no_abbr: true
+  name: Pacientų pavėžėjimo paslaugų organizavimo ir teikimo tvarkos aprašas
+  genitive: pacientų pavėžėjimo paslaugų organizavimo ir teikimo tvarkos aprašo
+  number: '1196'
+  adopted: '2022-11-30'
+  dokumento_id: 3b97203074a111edbc04912defe897d1
+  unit: punktas
+- abbr: PRPNKPRA
+  no_abbr: true
+  name: Profesinės reabilitacijos poreikio nustatymo kriterijų, profesinės reabilitacijos
+    paslaugų teikimo ir finansavimo tvarkos aprašas
+  genitive: profesinės reabilitacijos poreikio nustatymo kriterijų, profesinės reabilitacijos
+    paslaugų teikimo ir finansavimo tvarkos aprašo
+  number: A1-280
+  adopted: '2024-04-12'
+  dokumento_id: eafa89a0f8de11eeb15a8086c0c045d4
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: VPŠDBPTN
+  no_abbr: true
+  name: Vyriausybinio plačiajuosčio šifruoto duomenų ir balso perdavimo tinklo nuostatai
+  genitive: vyriausybinio plačiajuosčio šifruoto duomenų ir balso perdavimo tinklo
+    nuostatų
+  number: '360'
+  adopted: '2022-04-13'
+  dokumento_id: 5acc7c80bc7c11ec8d9390588bf2de65
+  unit: punktas
+- abbr: SRIVA
+  no_abbr: true
+  name: Socialinio recepto iniciatyvos vykdymo tvarkos aprašas
+  genitive: socialinio recepto iniciatyvos vykdymo tvarkos aprašo
+  number: V-18
+  adopted: '2023-01-05'
+  dokumento_id: cb92efe08d0911ed8df094f359a60216
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: EEKPISTA
+  no_abbr: true
+  name: Energiškai efektyvių ir klimatui palankių investicijų skatinant taikyti tiesioginę
+    sėją žemės ūkio gamyboje priemonės tvarkos aprašas
+  genitive: energiškai efektyvių ir klimatui palankių investicijų skatinant taikyti
+    tiesioginę sėją žemės ūkio gamyboje priemonės tvarkos aprašo
+  number: 3D-367
+  adopted: '2022-05-30'
+  dokumento_id: 8989d200dfdd11ec8d9390588bf2de65
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: GCVA
+  no_abbr: true
+  name: Globos centro veiklos aprašas
+  genitive: globos centro veiklos aprašo
+  number: A1-28
+  adopted: '2018-01-19'
+  dokumento_id: 1f4830d0fce311e78bcec397524184ce
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: KBVT
+  no_abbr: true
+  name: Keleivių ir bagažo vežimo taisyklės
+  genitive: keleivių ir bagažo vežimo taisyklių
+  number: 3-223
+  adopted: '2011-04-13'
+  dokumento_id: TAR.881400CFCF4F
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: KHŽT
+  no_abbr: true
+  name: Kelių horizontaliojo ženklinimo taisyklės
+  genitive: kelių horizontaliojo ženklinimo taisyklių
+  number: 3-82
+  adopted: '2012-01-31'
+  dokumento_id: TAR.91891E789689
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: SKPOAA
+  no_abbr: true
+  name: Skubios konsultacinės pagalbos organizavimo ir apmokėjimo tvarkos aprašas
+  genitive: skubios konsultacinės pagalbos organizavimo ir apmokėjimo tvarkos aprašo
+  number: V-39
+  adopted: '2008-01-16'
+  dokumento_id: TAR.6E00BC1A0C96
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: AASPPTVA
+  no_abbr: true
+  name: Anestezijos asmens sveikatos priežiūros paslaugų teikimo vaikams ir suaugusiesiems
+    tvarkos aprašas
+  genitive: anestezijos asmens sveikatos priežiūros paslaugų teikimo vaikams ir suaugusiesiems
+    tvarkos aprašo
+  number: V-429
+  adopted: '2022-02-25'
+  dokumento_id: 6aa8e090985411ecaf3aba0cb308998c
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: BASPPTTA
+  no_abbr: true
+  name: Būtinųjų asmens sveikatos priežiūros paslaugų teikimo tvarkos ir masto aprašas
+  genitive: būtinųjų asmens sveikatos priežiūros paslaugų teikimo tvarkos ir masto
+    aprašo
+  number: V-976
+  adopted: '2022-05-17'
+  dokumento_id: 60445630d5de11ec8d9390588bf2de65
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: 22MSPPMT
+  no_abbr: true
+  name: 2023–2027 m. susietosios pajamų paramos už mėsinius galvijus, avis ir ožkas
+    administravimo taisyklės
+  genitive: 2023–2027 m. susietosios pajamų paramos už mėsinius galvijus, avis ir
+    ožkas administravimo taisyklių
+  number: 3D-101
+  adopted: '2023-02-24'
+  dokumento_id: 33bf8f40b40d11ed8df094f359a60216
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: SPFSPKTA
+  no_abbr: true
+  name: Sveikatos priežiūros ir farmacijos specialistų profesinės kvalifikacijos tobulinimo
+    ir jo finansavimo tvarkos aprašas
+  genitive: sveikatos priežiūros ir farmacijos specialistų profesinės kvalifikacijos
+    tobulinimo ir jo finansavimo tvarkos aprašo
+  number: '132'
+  adopted: '2002-03-18'
+  dokumento_id: TAR.5E0A0662E5CB
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: PKTKKSKA
+  no_abbr: true
+  name: Profesinės karo tarnybos karių, karių savanorių ar kitų savanoriškos nenuolatinės
+    karo tarnybos karių tarnybos vertinimo tvarkos aprašas
+  genitive: profesinės karo tarnybos karių, karių savanorių ar kitų savanoriškos nenuolatinės
+    karo tarnybos karių tarnybos vertinimo tvarkos aprašo
+  number: V-738
+  adopted: '2015-07-21'
+  dokumento_id: b4641930310311e5b1be8e104a145478
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos krašto apsaugos ministro
+  issuer_nom: Lietuvos Respublikos krašto apsaugos ministerija
+- abbr: ĮVAIAĮVT
+  no_abbr: true
+  name: Įgaliotųjų vartotojų asociacijų išlaidų apmokėjimo ir įgyvendinamų vartotojų
+    apsaugos projektų atrankos bei finansavimo taisyklės
+  genitive: įgaliotųjų vartotojų asociacijų išlaidų apmokėjimo ir įgyvendinamų vartotojų
+    apsaugos projektų atrankos bei finansavimo taisyklių
+  number: 1R-440
+  adopted: '2020-12-30'
+  dokumento_id: fab91d604aaf11eb8d9fe110e148c770
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: SKSSĮDTA
+  no_abbr: true
+  name: Subsidijų, kuriomis siekiama skatinti įmonių dalyvavimą tarptautinėse mokslinių
+    tyrimų ir eksperimentinės plėtros ir inovacijų diplomatijos programose, skyrimo
+    ir administravimo tvarkos aprašas
+  genitive: subsidijų, kuriomis siekiama skatinti įmonių dalyvavimą tarptautinėse
+    mokslinių tyrimų ir eksperimentinės plėtros ir inovacijų diplomatijos programose,
+    skyrimo ir administravimo tvarkos aprašo
+  number: 4-497
+  adopted: '2023-09-07'
+  dokumento_id: 6694b7104d8711ee81b8b446907f594f
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos ekonomikos ir inovacijų ministro
+  issuer_nom: Lietuvos Respublikos ekonomikos ir inovacijų ministerija
+- abbr: EĮPKDAM
+  no_abbr: true
+  name: Elektromobilių įkrovimo paslaugos kainos dydžio apskaičiavimo metodika
+  genitive: elektromobilių įkrovimo paslaugos kainos dydžio apskaičiavimo metodikos
+  number: 3-478
+  adopted: '2023-11-27'
+  dokumento_id: 9c2090708d1a11eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: NPKBVTT
+  no_abbr: true
+  name: Nacionalinės paramos kaimo bendruomenių veiklai teikimo taisyklės
+  genitive: nacionalinės paramos kaimo bendruomenių veiklai teikimo taisyklių
+  number: 3D-847
+  adopted: '2023-12-13'
+  dokumento_id: a1346cb0998d11eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: ASPPAPSM
+  no_abbr: true
+  name: Asmens sveikatos priežiūros paslaugų, apmokamų Privalomojo sveikatos draudimo
+    fondo biudžeto lėšomis, poreikio nustatymo metodika
+  genitive: asmens sveikatos priežiūros paslaugų, apmokamų Privalomojo sveikatos draudimo
+    fondo biudžeto lėšomis, poreikio nustatymo metodikos
+  number: V-862
+  adopted: '2023-07-28'
+  dokumento_id: b3dbfba02d0c11ee9de9e7e0fd363afc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: LŽŪKP2225T
+  no_abbr: true
+  name: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano intervencinės
+    priemonės Apsaugos priemonės nuo didžiųjų plėšrūnų daromos žalos įgyvendinimo
+    taisyklės
+  genitive: Lietuvos žemės ūkio ir kaimo plėtros 2023–2027 metų strateginio plano
+    intervencinės priemonės Apsaugos priemonės nuo didžiųjų plėšrūnų daromos žalos
+    įgyvendinimo taisyklių
+  number: 3D-720
+  adopted: '2023-11-07'
+  dokumento_id: 48f3d4a07d7c11eea5a28c81c82193a8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: LNŠAN
+  no_abbr: true
+  name: Lietuvos neformaliojo švietimo agentūros nuostatai
+  genitive: Lietuvos neformaliojo švietimo agentūros nuostatų
+  number: V-871
+  adopted: '2023-06-22'
+  dokumento_id: 433969c010c211ee9f7ec2ffce8b47bc
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo, mokslo ir sporto ministro
+  issuer_nom: Lietuvos Respublikos švietimo, mokslo ir sporto ministerija
+- abbr: LKVVSN
+  no_abbr: true
+  name: Lietuvos kariuomenės veterano vardo suteikimo nuostatai
+  genitive: Lietuvos kariuomenės veterano vardo suteikimo nuostatų
+  number: V-290
+  adopted: '2022-04-01'
+  dokumento_id: b0981920b1ce11ec8d9390588bf2de65
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos krašto apsaugos ministro
+  issuer_nom: Lietuvos Respublikos krašto apsaugos ministerija
+- abbr: GRRGRN
+  no_abbr: true
+  name: Ginklų registro reorganizavimo ir ginklų registro nuostatai
+  genitive: ginklų registro reorganizavimo ir ginklų registro nuostatų
+  number: '600'
+  adopted: '2020-06-10'
+  dokumento_id: d8b394e0aedb11eab9d9cd0c85e0b745
+  unit: punktas
+- abbr: KPŽPRT
+  no_abbr: true
+  name: Kaimo plėtros žemėtvarkos projektų rengimo taisyklės
+  genitive: kaimo plėtros žemėtvarkos projektų rengimo taisyklių
+  number: 3D-476/D1-429
+  adopted: '2004-08-11'
+  dokumento_id: TAR.3E43FA6C38E4
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro ir Lietuvos Respublikos žemės ūkio
+    ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija, Lietuvos Respublikos žemės
+    ūkio ministerija
+- abbr: KKPKITFA
+  no_abbr: true
+  name: Klimato kaitos programos kompensacinių išmokų teikimo fiziniams asmenims vieno
+    ar dviejų butų gyvenamųjų namų atnaujinimui (modernizavimui) tvarkos aprašas
+  genitive: klimato kaitos programos kompensacinių išmokų teikimo fiziniams asmenims
+    vieno ar dviejų butų gyvenamųjų namų atnaujinimui (modernizavimui) tvarkos aprašo
+  number: D1-201
+  adopted: '2020-04-07'
+  dokumento_id: c97206b078ad11eab005936df725feed
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: LNŠISN
+  no_abbr: true
+  name: Lietuvos nacionalinės Šengeno informacinės sistemos nuostatai
+  genitive: Lietuvos nacionalinės Šengeno informacinės sistemos nuostatų
+  number: 1V-324
+  adopted: '2007-09-17'
+  dokumento_id: TAR.2F53E301AE3F
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos vidaus reikalų ministro
+  issuer_nom: Lietuvos Respublikos vidaus reikalų ministerija
+- abbr: NVSCSAMT
+  no_abbr: true
+  name: Nacionalinio visuomenės sveikatos centro prie Sveikatos apsaugos ministerijos
+    medicininės-karantininės kontrolės taisyklės
+  genitive: nacionalinio visuomenės sveikatos centro prie Sveikatos apsaugos ministerijos
+    medicininės-karantininės kontrolės taisyklių
+  number: V-87
+  adopted: '2010-02-01'
+  dokumento_id: TAR.EC1B0418A630
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: MRSORSPA
+  no_abbr: true
+  name: Medicinos rezidentūros studijų ir odontologijos rezidentūros studijų programų
+    vykdymo reikalavimų ir priežiūros tvarkos aprašas
+  genitive: medicinos rezidentūros studijų ir odontologijos rezidentūros studijų programų
+    vykdymo reikalavimų ir priežiūros tvarkos aprašo
+  number: '144'
+  adopted: '2019-02-13'
+  dokumento_id: 746d03a0335c11e99595d005d42b863e
+  unit: punktas
+- abbr: PSNKTKSA
+  no_abbr: true
+  name: Priėmimo į savanorišką nenuolatinę karo tarnybą, kario savanorio ir kito savanoriškos
+    nenuolatinės karo tarnybos kario sutarčių sudarymo ir pratęsimo tvarkos aprašas
+  genitive: priėmimo į savanorišką nenuolatinę karo tarnybą, kario savanorio ir kito
+    savanoriškos nenuolatinės karo tarnybos kario sutarčių sudarymo ir pratęsimo tvarkos
+    aprašo
+  number: V-802
+  adopted: '2018-08-31'
+  dokumento_id: 666bf6f0b01a11e88f64a5ecc703f89b
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos krašto apsaugos ministro
+  issuer_nom: Lietuvos Respublikos krašto apsaugos ministerija
+- abbr: VSŠĮIAMN
+  no_abbr: true
+  name: Valstybinių ir savivaldybių švietimo įstaigų (išskyrus aukštąsias mokyklas)
+    vadovų, jų pavaduotojų ugdymui, ugdymą organizuojančių skyrių vedėjų veiklos vertinimo
+    nuostatai
+  genitive: valstybinių ir savivaldybių švietimo įstaigų (išskyrus aukštąsias mokyklas)
+    vadovų, jų pavaduotojų ugdymui, ugdymą organizuojančių skyrių vedėjų veiklos vertinimo
+    nuostatų
+  number: V-279
+  adopted: '2018-03-27'
+  dokumento_id: b6ad2140317e11e8bbc3f206caa14d00
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos švietimo ir mokslo ministerija
+- abbr: BSVRA
+  no_abbr: true
+  name: Bendrųjų studijų vykdymo reikalavimų aprašas
+  genitive: bendrųjų studijų vykdymo reikalavimų aprašo
+  number: V-1168
+  adopted: '2016-12-30'
+  dokumento_id: 739065a0ce9911e69e09f35d37acd719
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos švietimo ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos švietimo ir mokslo ministerija
+- abbr: KKPPPJAA
+  no_abbr: true
+  name: Klimato kaitos programos priemonės Privačių juridinių asmenų energijos vartojimo
+    efektyvumo įgyvendinimas pagal energijos audito ataskaitas tvarkos aprašas
+  genitive: klimato kaitos programos priemonės Privačių juridinių asmenų energijos
+    vartojimo efektyvumo įgyvendinimas pagal energijos audito ataskaitas tvarkos aprašo
+  number: D1-417
+  adopted: '2020-07-09'
+  dokumento_id: 304593a0c1bc11ea9815f635b9c0dcef
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: SPŠNLLNA
+  no_abbr: true
+  name: Sąjungos piliečio šeimos nario leidimo laikinai ar nuolat gyventi šalyje kortelės
+    išdavimo tvarkos aprašas
+  genitive: sąjungos piliečio šeimos nario leidimo laikinai ar nuolat gyventi šalyje
+    kortelės išdavimo tvarkos aprašo
+  number: 1V-594
+  adopted: '2019-06-28'
+  dokumento_id: e1cacab099a811e9ae2e9d61b1f977b3
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos vidaus reikalų ministro
+  issuer_nom: Lietuvos Respublikos vidaus reikalų ministerija
+- abbr: AVA
+  no_abbr: true
+  name: Atvejo vadybos tvarkos aprašas
+  genitive: atvejo vadybos tvarkos aprašo
+  number: A1-141
+  adopted: '2018-03-29'
+  dokumento_id: ae5fec90335c11e881f2ba995b003ed2
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos socialinės apsaugos ir darbo ministro
+  issuer_nom: Lietuvos Respublikos socialinės apsaugos ir darbo ministerija
+- abbr: GVGKKHVN
+  no_abbr: true
+  name: Grynaveislių veislinių gyvūnų kilmės knygų ir hibridinių veislinių kiaulių
+    kilmės registrų nuostatai
+  genitive: grynaveislių veislinių gyvūnų kilmės knygų ir hibridinių veislinių kiaulių
+    kilmės registrų nuostatų
+  number: '220'
+  adopted: '2001-06-29'
+  dokumento_id: TAR.4610A47FAA1B
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: DAGAASTT
+  no_abbr: true
+  name: Duomenų apie grūdus ir aliejinių augalų sėklas teikimo taisyklės
+  genitive: duomenų apie grūdus ir aliejinių augalų sėklas teikimo taisyklių
+  number: 3D-512
+  adopted: '2006-12-29'
+  dokumento_id: TAR.D71C5FEE1540
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: FATIAPFA
+  no_abbr: true
+  name: Fizinių asmenų tikrinimo, informacijos apie patikrintus fizinius asmenis nuolatinio
+    stebėjimo ir tokios informacijos teikimo branduolinės energetikos srityje tvarkos
+    aprašas
+  genitive: fizinių asmenų tikrinimo, informacijos apie patikrintus fizinius asmenis
+    nuolatinio stebėjimo ir tokios informacijos teikimo branduolinės energetikos srityje
+    tvarkos aprašo
+  number: '1414'
+  adopted: '2018-12-27'
+  dokumento_id: 0afb5740102111e9a5eaf2cd290f1944
+  unit: punktas
+- abbr: NTRPVM
+  no_abbr: true
+  name: Numatomo teisinio reguliavimo poveikio vertinimo metodika
+  genitive: numatomo teisinio reguliavimo poveikio vertinimo metodikos
+  number: '276'
+  adopted: '2003-02-26'
+  dokumento_id: TAR.814F485EB18B
+  unit: punktas
+- abbr: AIPVA
+  no_abbr: true
+  name: Ankstyvosios intervencijos programos vykdymo tvarkos aprašas
+  genitive: ankstyvosios intervencijos programos vykdymo tvarkos aprašo
+  number: V-60/V-39
+  adopted: '2018-01-18'
+  dokumento_id: 41ca926001c511e88bcec397524184ce
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro ir Lietuvos Respublikos
+    švietimo ir mokslo ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija, Lietuvos Respublikos
+    švietimo ir mokslo ministerija
+- abbr: KŽMTKTMA
+  no_abbr: true
+  name: Karių, žuvusių (mirusių) tikrosios karo tarnybos metu, laidojimo išlaidų,
+    karių ir jų šeimos narių palaikų pervežimo į Lietuvą išlaidų apmokėjimo tvarkos
+    aprašas
+  genitive: karių, žuvusių (mirusių) tikrosios karo tarnybos metu, laidojimo išlaidų,
+    karių ir jų šeimos narių palaikų pervežimo į Lietuvą išlaidų apmokėjimo tvarkos
+    aprašo
+  number: '1340'
+  adopted: '1998-11-17'
+  dokumento_id: TAR.F96740FCEE5A
+  unit: punktas
+- abbr: PKPILT
+  no_abbr: true
+  name: Pluoštinių kanapių produktų importo licencijavimo taisyklės
+  genitive: pluoštinių kanapių produktų importo licencijavimo taisyklių
+  number: 3D-908
+  adopted: '2013-12-30'
+  dokumento_id: 39c1d4707ddf11e3a664e78d6e36b6a1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: PSDFBRLA
+  no_abbr: true
+  name: Privalomojo sveikatos draudimo fondo biudžeto rezervo lėšų skyrimo ir naudojimo
+    tvarkos aprašas
+  genitive: privalomojo sveikatos draudimo fondo biudžeto rezervo lėšų skyrimo ir
+    naudojimo tvarkos aprašo
+  number: '798'
+  adopted: '2002-06-03'
+  dokumento_id: TAR.09851FA614CE
+  unit: punktas
+- abbr: NVTPT
+  no_abbr: true
+  name: Notarų veiklos tarnybinės priežiūros taisyklės
+  genitive: notarų veiklos tarnybinės priežiūros taisyklių
+  number: 1R-282
+  adopted: '2004-11-15'
+  dokumento_id: TAR.498959DDCE67
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija
+- abbr: CVPAPKKT
+  no_abbr: true
+  name: Centralizuotai valdyti perduoto administracinės paskirties ir kito kartu perduoto
+    valstybės nekilnojamojo turto nuomos mokesčio apskaičiavimo taisyklės
+  genitive: centralizuotai valdyti perduoto administracinės paskirties ir kito kartu
+    perduoto valstybės nekilnojamojo turto nuomos mokesčio apskaičiavimo taisyklių
+  number: 1K-357
+  adopted: '2020-11-10'
+  dokumento_id: b641ea50234911eb932eb1ed7f923910
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos finansų ministro
+  issuer_nom: Lietuvos Respublikos finansų ministerija
+- abbr: VGPAAISN
+  no_abbr: true
+  name: Vieningos gaminių, pakuočių ir atliekų apskaitos informacinės sistemos nuostatai
+  genitive: vieningos gaminių, pakuočių ir atliekų apskaitos informacinės sistemos
+    nuostatų
+  number: D1-976
+  adopted: '2013-12-20'
+  dokumento_id: 73522d60723711e3b29084acd991add8
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: CCCCDDDA
+  no_abbr: true
+  name: C1, C1E, C, CE, D1, D1E, D, DE kategorijų motorinių transporto priemonių vairuotojų
+    mokymo pradinei profesinei kvalifikacijai įgyti ir vairuotojų periodinio profesinio
+    mokymo tvarkos aprašas
+  genitive: c1, C1E, C, CE, D1, D1E, D, DE kategorijų motorinių transporto priemonių
+    vairuotojų mokymo pradinei profesinei kvalifikacijai įgyti ir vairuotojų periodinio
+    profesinio mokymo tvarkos aprašo
+  number: 3-79
+  adopted: '2011-02-03'
+  dokumento_id: TAR.17FCD7FB38B1
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: ATVA
+  no_abbr: true
+  name: Atliekų tarpvalstybinių vežimų tvarkos aprašas
+  genitive: atliekų tarpvalstybinių vežimų tvarkos aprašo
+  number: D1-207
+  adopted: '2004-04-27'
+  dokumento_id: TAR.79137AB8DD0F
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: KESVNAVA
+  no_abbr: true
+  name: Kitų Europos Sąjungos valstybių narių apdraustųjų valstybiniu sveikatos draudimu
+    sveikatos priežiūros organizavimo Lietuvos Respublikoje ir jos išlaidų apmokėjimo
+    tvarkos aprašas
+  genitive: kitų Europos Sąjungos valstybių narių apdraustųjų valstybiniu sveikatos
+    draudimu sveikatos priežiūros organizavimo Lietuvos Respublikoje ir jos išlaidų
+    apmokėjimo tvarkos aprašo
+  number: V-1014
+  adopted: '2015-08-28'
+  dokumento_id: 1e654a004fce11e5b0f2b883009b2d06
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: VTNNPVPA
+  no_abbr: true
+  name: Veterinarijos tikslams naudojamų narkotinių ir psichotropinių vaistinių preparatų
+    skyrimo, laikymo, atsargų dydžio nustatymo bei apskaitos tvarkos aprašas
+  genitive: veterinarijos tikslams naudojamų narkotinių ir psichotropinių vaistinių
+    preparatų skyrimo, laikymo, atsargų dydžio nustatymo bei apskaitos tvarkos aprašo
+  number: V-753
+  adopted: '2014-07-02'
+  dokumento_id: 9e183c90036b11e4a721d671355b1e64
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: VIRSISN
+  no_abbr: true
+  name: Viešosios informacijos rengėjų ir skleidėjų informacinės sistemos nuostatai
+  genitive: viešosios informacijos rengėjų ir skleidėjų informacinės sistemos nuostatų
+  number: ĮV-727
+  adopted: '2018-10-10'
+  dokumento_id: 71870810cc8d11e8bf37fd1541d65f38
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos kultūros ministro
+  issuer_nom: Lietuvos Respublikos kultūros ministerija
+- abbr: BMPTTMA
+  no_abbr: true
+  name: Būtinosios medicinos pagalbos teikimo tvarkos ir masto aprašas
+  genitive: būtinosios medicinos pagalbos teikimo tvarkos ir masto aprašo
+  number: V-208
+  adopted: '2004-04-08'
+  dokumento_id: TAR.B8E6F91F019F
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos sveikatos apsaugos ministro
+  issuer_nom: Lietuvos Respublikos sveikatos apsaugos ministerija
+- abbr: PBNBVĮBT
+  no_abbr: true
+  name: Paramos buitinių nuotekų (biologinio) valymo įrenginių bandomiesiems projektams
+    įgyvendinimo taisyklės
+  genitive: paramos buitinių nuotekų (biologinio) valymo įrenginių bandomiesiems projektams
+    įgyvendinimo taisyklių
+  number: 3D-139
+  adopted: '2020-02-28'
+  dokumento_id: d01dc9b05a2e11ea931dbf3357b5b1c0
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos žemės ūkio ministro
+  issuer_nom: Lietuvos Respublikos žemės ūkio ministerija
+- abbr: BSLRKĮPA
+  no_abbr: true
+  name: Baudų, skiriamų už Lietuvos Respublikos konkurencijos įstatymo pažeidimus,
+    dydžio nustatymo tvarkos aprašas
+  genitive: baudų, skiriamų už Lietuvos Respublikos konkurencijos įstatymo pažeidimus,
+    dydžio nustatymo tvarkos aprašo
+  number: '64'
+  adopted: '2012-01-18'
+  dokumento_id: TAR.65DD45F1CF66
+  unit: punktas
+- abbr: APTOUAPA
+  no_abbr: true
+  name: Antžeminių paslaugų teikimo oro uostuose ir antžeminių paslaugų teikėjų ir
+    savateikių patvirtinimo tvarkos aprašas
+  genitive: antžeminių paslaugų teikimo oro uostuose ir antžeminių paslaugų teikėjų
+    ir savateikių patvirtinimo tvarkos aprašo
+  number: 3-144
+  adopted: '2002-04-12'
+  dokumento_id: TAR.0601B8250A55
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos susisiekimo ministro
+  issuer_nom: Lietuvos Respublikos susisiekimo ministerija
+- abbr: KKPPVTDA
+  no_abbr: true
+  name: Klimato kaitos programos priemonės Visuomeninio transporto ir darnaus judumo
+    skatinimas (paspirtukai, dviračiai, dalijimosi paslauga ir pan.) tvarkos aprašas
+  genitive: klimato kaitos programos priemonės Visuomeninio transporto ir darnaus
+    judumo skatinimas (paspirtukai, dviračiai, dalijimosi paslauga ir pan.) tvarkos
+    aprašo
+  number: D1-269
+  adopted: '2020-05-11'
+  dokumento_id: 0c23afb1935511ea9515f752ff221ec9
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos aplinkos ministro
+  issuer_nom: Lietuvos Respublikos aplinkos ministerija
+- abbr: TPPISN
+  no_abbr: true
+  name: Teisinės pagalbos paslaugų informacinės sistemos nuostatai
+  genitive: teisinės pagalbos paslaugų informacinės sistemos nuostatų
+  number: 1R-124
+  adopted: '2018-07-16'
+  dokumento_id: 2344373088c811e8af589337bf1eb893
+  unit: punktas
+  kind: Įsakymas
+  issuer: Lietuvos Respublikos teisingumo ministro
+  issuer_nom: Lietuvos Respublikos teisingumo ministerija

@@ -2,7 +2,7 @@
 
 **[atviri-teises-aktai.lt](https://atviri-teises-aktai.lt)** · for agents: [MCP and REST](https://atviri-teises-aktai.lt/llms.txt) (`lt.atviri-teises-aktai/lithuanian-law` in the [MCP registry](https://registry.modelcontextprotocol.io))
 
-**Lithuanian codes, laws and rules, one page per article or point, each marked whether its text is in force today.** Free, unofficial, no registration, readable by people, search engines and AI assistants alike. Live at **https://atviri-teises-aktai.lt** since 2026-10-23: 1,666 acts (2026-11-26): the Constitution, every code and 529 laws and statutes in all, 966 sets of rules (Government, ministers, the energy regulator) and 171 EU acts, across every area of law: energy first and in depth, then health, education, farming and food, transport, social security, environment and the state. Amending laws show their Seimas adoption vote wherever the voting data identify it.
+**Lithuanian codes, laws and rules, one page per article or point, each marked whether its text is in force today.** Free, unofficial, no registration, readable by people, search engines and AI assistants alike. Live at **https://atviri-teises-aktai.lt** since 2026-10-23: 1,865 acts (2026-11-26): the Constitution, every code and 530 laws and statutes in all, 1,164 sets of rules (Government, ministers, the energy regulator) and 171 EU acts, across every area of law: energy first and in depth, then health, education, farming and food, transport, social security, environment and the state. Amending laws show their Seimas adoption vote wherever the voting data identify it.
 
 > **Unofficial text, not legal advice.** The only official publication is the Register of Legal Acts, [e-tar.lt](https://www.e-tar.lt). Every page links to the official text; check it there before relying on it.
 
@@ -44,7 +44,7 @@ The site itself is the product: for people and the AI assistants they use, with 
   - **0** of the 23,944 articles and points called current were wrong (26,509 compared);
   - 901 of 901 texts recovered from other official versions are correct.
 
-  The price of caution: 144 articles and points (0.5%) were flagged although e-tar shows them unchanged. The acts added since (1,666 on the site by 2026-11-26) were each checked this way when they went in; a random sample of 120 of them checked again on 2026-11-15: 0 of 4,568 labels "current" wrong.
+  The price of caution: 144 articles and points (0.5%) were flagged although e-tar shows them unchanged. The acts added since (1,865 by 2026-11-26) were each checked this way when they went in; a random sample of 120 of them checked again on 2026-11-15: 0 of 4,568 labels "current" wrong.
 - **Checked against history** (2026-10-23, 219 acts): the rules applied to the Chancellery's own 2023–2025 consolidations would have called 0.067% of articles current wrongly ([`docs/ACCURACY.md`](docs/ACCURACY.md)). The acts added since will be back-tested once the open data's consolidation table answers again.
 - Each page says when its data were last checked. If the data are more than 2 days old, the page carries a warning.
 

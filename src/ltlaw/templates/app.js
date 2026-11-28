@@ -12,18 +12,25 @@
     });
   } catch (e) { /* storage unavailable: just don't remember */ }
 
-  // 2. "Kopijuoti citatą" on article pages.
+  // 2. "Kopijuoti nuorodą" (the address alone, with the part or point the reader is at: #d2, #d2-p3) and
+  //    "Kopijuoti citatą" (the citation line and the address) on article pages.
   var main = document.querySelector("main[data-cite]");
   if (main && navigator.clipboard) {
-    var h1 = main.querySelector("h1");
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "cite"; b.textContent = "Kopijuoti citatą";
-    b.addEventListener("click", function () {
-      navigator.clipboard.writeText(main.getAttribute("data-cite") + " " + location.href.split("#")[0]).then(function () {
-        b.textContent = "Nukopijuota ✓"; setTimeout(function () { b.textContent = "Kopijuoti citatą"; }, 1800);
+    var h1 = main.querySelector("h1"), row = document.createElement("div");
+    row.className = "copyrow";
+    var button = function (label, text) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "cite"; b.textContent = label;
+      b.addEventListener("click", function () {
+        navigator.clipboard.writeText(text()).then(function () {
+          b.textContent = "Nukopijuota ✓"; setTimeout(function () { b.textContent = label; }, 1800);
+        });
       });
-    });
-    if (h1) h1.insertAdjacentElement("afterend", b);
+      row.appendChild(b);
+    };
+    button("Kopijuoti nuorodą", function () { return location.href; });
+    button("Kopijuoti citatą", function () { return main.getAttribute("data-cite") + " " + location.href.split("#")[0]; });
+    if (h1) h1.insertAdjacentElement("afterend", row);
   }
 
   // 3. A page copied, cached or left behind by a stopped build: say so when its status day is old (builds come at least every

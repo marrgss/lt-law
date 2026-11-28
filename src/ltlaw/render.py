@@ -265,8 +265,10 @@ def _plain(a) -> str:
 def act_alias(seed_slug: str | None, name: str, abbr: str, tag: str | None) -> str:
     """The act's short URL (/dk/, /viesuju-istaigu-istatymas/): the seed's slug, the abbreviation in use, or the name.
     A file name is at most 255 bytes (api/v1/refs/<alias>.json): a name longer than 220 (the longest kept whole) gives its
-    first words and a hash of the whole (2026-11-03: rules with 250–500-byte names)."""
+    first words and a hash of the whole (2026-11-03: rules with 250–500-byte names). Characters a file name can't hold
+    on every system (GitHub's artifacts refuse them: "M 1:5 000", 2026-11-26) become a hyphen."""
     alias = seed_slug or (slug("-".join(name.split())) if not tag else slug(abbr))
+    alias = re.sub(r'-*["<>|*?:\\]+-*', "-", alias)
     if len(alias.encode()) > 220:
         cut = alias.encode()[:150].decode("utf-8", "ignore").rsplit("-", 1)[0].rstrip(",-")
         alias = f"{cut}-{hashlib.sha1(alias.encode()).hexdigest()[:6]}"
@@ -1647,6 +1649,8 @@ class Site:
         self.write("/favicon.svg", FAVICON_SVG)
         self.write("/favicon.ico", _favicon_ico())
         self.write("/icon-512.png", _icon_png(512))  # the MCP registry entry's icon (bin/mcp_registry.py)
+        # the card chat and social apps show for a pasted link (og:image; drawn once, 2026-11-26): the site, never a label
+        self.write("/og.png", (pathlib.Path(__file__).parent / "templates" / "og.png").read_bytes())
         # a real 404 page: without one, Cloudflare Pages answers every unknown path with the home page and 200 (scanners'
         # "/.env", "/.git/config" got the home page: nothing leaked, but soft 404s for search engines). Never indexed.
         self.write("/404.html", env.get_template("404.html").render(

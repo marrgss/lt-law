@@ -696,3 +696,11 @@ def test_document_after_the_approval_laws_signature_is_the_main_act():
     assert [(a.label, a.blocks[0].text) for a in act.main.articles] == [
         ("1", "Statuto paskirtis – bandyti."), ("2", "Statutas taikomas kariams.")]
     assert not act.main.signature
+
+
+def test_an_alias_holds_no_character_a_file_name_cant():
+    # 2026-11-26: "M 1:5 000" in a rule set's name gave api/v1/refs/…m-1:5-000….json; the artifact upload refused it
+    from ltlaw.render import act_alias
+    a = act_alias(None, "Lietuvos Respublikos teritorijos M 1:5 000 kontrolinių žemės sklypų aprašas", "X", None)
+    assert a == "lietuvos-respublikos-teritorijos-m-1-5-000-kontroliniu-zemes-sklypu-aprasas"
+    assert act_alias(None, "Tvarkos aprašas, AB „Operatorius“ – 2014–2020", "X", None) == "tvarkos-aprasas,-ab-„operatorius“-–-2014–2020"  # others as before

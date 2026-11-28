@@ -74,12 +74,12 @@ No server of our own, no database, no personal computer in production (D-006).
 ## Limits and thresholds
 | Limit | Value | Our use | When it bites |
 |---|---|---|---|
-| Worker static assets: files per version | 100,000 per Worker (Workers Paid) | 116,918 on two Workers (1,666 acts, 2026-11-24: 62,769 + 54,149; ~70 per act) | a third Worker at ~2,800 acts (`bin/split_site.py`) |
+| Worker static assets: files per version | 100,000 per Worker (Workers Paid) | 128,454 on two Workers (1,865 acts, 2026-11-26 gate: 72,337 + 56,994; ~69 per act) | a third Worker at ~2,800 acts (`bin/split_site.py`) |
 | Static asset requests | free, unlimited | all page traffic | never |
 | Worker requests | 10 M/month included, then ~$0.30/M | ~1–40 k/day (agents, dated pages, 404s) | alerts at 2 M |
 | Worker CPU | 50 ms cap per request (ours) | search is the heaviest | an oversized query is cut (300 characters, 12 words) |
 | R2 | 10 GB, 10 M reads/month free | the article history | alerts at 5 M reads |
-| Bulk Redirects | 10,000 entries account-wide | 1,433 (2026-11-11) | not soon |
+| Bulk Redirects | 10,000 entries account-wide | 397 (2026-11-26: the aliases the Workers' own `_redirects` don't hold) | not soon |
 | Pages (fallback) | 20,000 files | exceeded since 2026-10-26: the fallback keeps the newest site that fit | — |
 | GitHub Actions | 2,000 min/month free (private repo) | a build every second day (D-050) | the $5 budget, then stop |
 | GitHub release asset | 2 GB per file | ~165 MB | not soon |
